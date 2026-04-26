@@ -1,0 +1,1770 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Mixer Chuck</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="importmap">
+{
+  "imports": {
+    "d3-force": "https://cdn.jsdelivr.net/npm/d3-force@3.0.0/+esm",
+    "d3-selection": "https://cdn.jsdelivr.net/npm/d3-selection@3.0.0/+esm",
+    "d3-zoom": "https://cdn.jsdelivr.net/npm/d3-zoom@3.0.0/+esm",
+    "d3-drag": "https://cdn.jsdelivr.net/npm/d3-drag@3.0.0/+esm"
+  }
+}
+</script>
+<script src="https://cdn.jsdelivr.net/npm/pixi.js@7.4.2/dist/pixi.min.js"></script>
+<script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";mermaid.initialize({startOnLoad:!0})</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-sv0slik/5O0JIPdLBCR2A3XDg/1U3WuDEheZfI/DI5n8Yqc3h5kjrnr46FGBNiUAJF7rE4LHKwQ/SoSLRKAxEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>window.addEventListener("load",(()=>{document.querySelectorAll(".callout").forEach((e=>{const t=getComputedStyle(e).getPropertyValue("--callout-icon"),l=t&&t.trim().replace(/^lucide-/,"");if(l){const t=e.querySelector(".callout-title");if(t){const e=document.createElement("div"),c=document.createElement("i");e.appendChild(c),c.setAttribute("data-lucide",l),e.setAttribute("class","callout-icon"),t.insertBefore(e,t.firstChild)}}})),lucide.createIcons(),Array.from(document.querySelectorAll(".callout.is-collapsible")).forEach((e=>{e.querySelector(".callout-title").addEventListener("click",(t=>{e.classList.contains("is-collapsed")?e.classList.remove("is-collapsed"):e.classList.add("is-collapsed")}))}))}))</script>
+<script defer="defer" src="https://fastly.jsdelivr.net/npm/@alpinejs/persist@3.11.1/dist/cdn.min.js"></script>
+<script defer="defer" src="https://fastly.jsdelivr.net/npm/alpinejs@3.11.1/dist/cdn.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer" async>
+<script src="https://fastly.jsdelivr.net/npm/whatwg-fetch@3.6.2/dist/fetch.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
+<link href="/styles/obsidian-base.css" rel="stylesheet">
+<link href="/styles/_theme.d92311c2.css" rel="stylesheet">
+<link href="/styles/digital-garden-base.css" rel="stylesheet">
+<link href="/styles/custom-style.css" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<style></style>
+</head>
+<body class="theme-dark markdown-preview-view markdown-rendered markdown-preview-section">
+<div x-init="isDesktop = (window.innerWidth>=1000) ? true: false;" x-on:resize.window="isDesktop = (window.innerWidth>=1000) ? true : false;" x-data="{isDesktop: true, showFilesMobile: false}">
+<div x-show.important="!isDesktop" style="display:none">
+<nav class="navbar">
+<div class="navbar-inner">
+<span style="font-size:1.5rem;margin-right:10px" @click="showFilesMobile=!showFilesMobile"><i data-lucide="menu"></i></span>
+<a href="/" style="text-decoration:none;text-align:center">
+<h1 style="margin:15px!important">Digital Garden</h1>
+</a>
+</div>
+<div class="search-button align-icon" onclick="toggleSearch()">
+<span class="search-icon">
+<i data-lucide="search"></i>
+</span>
+<span class="search-text">Search</span>
+<span class="search-keys"><code>Ctrl</code>&nbsp;+&nbsp;<code>K</code></span>
+</div>
+</nav>
+</div>
+<div x-show="showFilesMobile && !isDesktop" @click="showFilesMobile = false" style="display:none" class="fullpage-overlay"></div>
+<div class="filetree-wrapper" x-show.important="isDesktop || showFilesMobile" style="display:none">
+<nav class="filetree-sidebar">
+<a href="/" style="text-decoration:none;text-align:center">
+<h1 style="text-align:center">Digital Garden</h1>
+</a>
+<div class="search-button align-icon" onclick="toggleSearch()">
+<span class="search-icon">
+<i data-lucide="search"></i>
+</span>
+<span class="search-text">Search</span>
+<span class="search-keys"><code>Ctrl</code>&nbsp;+&nbsp;<code>K</code></span>
+</div>
+<div class="folder" x-data="{isOpen: true}">
+<div x-show="isOpen" style="display:none" class="">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as(&quot;Buildings&quot;)}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" data-lucide="chevron-down"></i>
+<i x-show="!isOpen" data-lucide="chevron-right"></i>
+<span class="foldername">Buildings</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/buildings/agora/">Agora </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/buildings/alan-turing-center/">Alan Turing Center </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/buildings/arnold/">Arnold </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/buildings/btc/">BTC </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/buildings/buildings/">Buildings </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/buildings/chappelle-manufacturing-center/">Chappelle Manufacturing Center </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/buildings/commerce-park-drive/">Commerce Park Drive </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/buildings/da-vinci/">DaVinci </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/buildings/faraday/">Faraday </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/buildings/feynman/">Feynman </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/buildings/keppler/">Keppler </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/buildings/kornberg/">Kornberg </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/buildings/lamarr/">Lamarr </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/buildings/research-and-development-center/">Research and Development Center </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/buildings/rfc/">RFC </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as(&quot;Definitions&quot;)}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" data-lucide="chevron-down"></i>
+<i x-show="!isOpen" data-lucide="chevron-right"></i>
+<span class="foldername">Definitions</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/96-well-plate/">96 Well Plate </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/building-automation-system/">Building Automation System </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/capa/">CAPA </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/change-control/">Change Control </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/cleanroom/">Cleanroom </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/co-c/">CoC </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/cybertrol/">Cybertrol </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/design-control/">Design Control </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/ecr/">ECR </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/ehs/">EHS </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/electrophoresis/">Electrophoresis </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/engineering-study/">Engineering Study </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/ersa/">ERSA </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/esst/">ESST </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/feynman-bottle-lyophilizer/">Feynman Bottle Lyophilizer </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/gowning/">Gowning </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/hmi/">HMI </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/in-vitro-dispensing/">In Vitro Dispensing </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/isa-88/">ISA-88 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/lightnin-mixer/">Lightnin Mixer </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/lyo-finishing-b/">LYO Finishing B </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/lyophilizer/">Lyophilizer </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/lysis/">Lysis </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/material-naming-convention/">Material Naming Convention </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/maxwell-rsc/">Maxwell RSC </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/metrology/">Metrology </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/multiple-materials-request-spreadsheet/">Multiple Materials Request Spreadsheet </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/nlag/">NLAG </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/nonconformance/">Nonconformance </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/operations-engineering/">Operations Engineering </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/operations/">Operations </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/optima/">Optima </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/packaging-engineering/">Packaging Engineering </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/part-number/">Part Number </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/particle-monitoring-system/">Particle Monitoring System </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/parts-order-form/">Parts Order Form </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/parts-process/">Parts Process </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/polymerase-chain-reaction/">Polymerase Chain Reaction </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/polymerase/">Polymerase </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/preventive-maintenance/">Preventive Maintenance </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/promega-instrumentation/">Promega Instrumentation </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/promega/">Promega </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/purified-water-system/">Purified Water System </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/qa-and-regulatory-affairs/">QA and Regulatory Affairs </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/resistance-temperature-detector/">Resistance Temperature Detector </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/risk-assessment/">Risk Assessment </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/robowrap/">Robowrap </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/root-cause-analysis/">Root Cause Analysis </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/screw-labeling/">Screw Labeling </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/septa-mat-cutting-robot/">Septa Mat Cutting Robot </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/septa-mats/">Septa Mats </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/shop-request/">Shop Request </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/solid-works-drawing-standards/">SolidWorks Drawing Standards </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/sop/">SOP </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/spectrum/">Spectrum </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/steam-in-place/">Steam in Place </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/validation/">Validation </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/vials/">Vials </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as(&quot;Fabrication&quot;)}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" data-lucide="chevron-down"></i>
+<i x-show="!isOpen" data-lucide="chevron-right"></i>
+<span class="foldername">Fabrication</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/fabrication/3-d-printers/">3D Printers </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/fabrication/emt-mill/">EMT Mill </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/fabrication/formlabs-form-3-l/">Formlabs Form 3L </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/fabrication/laser-cutter/">Laser Cutter </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/fabrication/markforged-desktop-onyx/">Markforged Desktop Onyx </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/fabrication/markforged-industrial-x7/">Markforged Industrial X7 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/fabrication/mc-master-carr/">McMaster-Carr </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/fabrication/prusa-xl/">Prusa XL </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/fabrication/water-jet/">Water Jet </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/fabrication/zund/">Zund </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as(&quot;Lines&quot;)}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" data-lucide="chevron-down"></i>
+<i x-show="!isOpen" data-lucide="chevron-right"></i>
+<span class="foldername">Lines</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as(&quot;Lines/MA3&quot;)}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" data-lucide="chevron-down"></i>
+<i x-show="!isOpen" data-lucide="chevron-right"></i>
+<span class="foldername">MA3</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/lines/ma-3/ma-3-pusher/">MA3 Pusher </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/lines/ma-3/ma-3/">MA3 </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/lines/fab/">FAB </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/lines/kpa/">KPA </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/lines/ma-1/">MA1 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/lines/ma-2/">MA2 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/lines/max-auto/">MaxAuto </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as(&quot;My Projects&quot;)}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" data-lucide="chevron-down"></i>
+<i x-show="!isOpen" data-lucide="chevron-right"></i>
+<span class="foldername">My Projects</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as(&quot;My Projects/ArC Notes&quot;)}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" data-lucide="chevron-down"></i>
+<i x-show="!isOpen" data-lucide="chevron-right"></i>
+<span class="foldername">ArC Notes</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/ar-c-notes/agitator/">Agitator </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/ar-c-notes/batch-run-testing/">Batch Run Testing </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/ar-c-notes/biomass/">Biomass </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/ar-c-notes/cell-paste/">Cell Paste </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/ar-c-notes/centrifuge/">Centrifuge </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/ar-c-notes/dissolved-oxygen/">Dissolved Oxygen </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/ar-c-notes/fermentation-101/">Fermentation 101 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/ar-c-notes/fermentation-media/">Fermentation Media </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/ar-c-notes/fermentation/">Fermentation </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/ar-c-notes/fermenters/">Fermenters </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/ar-c-notes/induction/">Induction </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/ar-c-notes/inoculation/">Inoculation </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/ar-c-notes/p-h/">pH </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/ar-c-notes/sterilize-in-place/">Sterilize in Place </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/ar-c-notes/supernatant/">Supernatant </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as(&quot;My Projects/Claude Projects&quot;)}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" data-lucide="chevron-down"></i>
+<i x-show="!isOpen" data-lucide="chevron-right"></i>
+<span class="foldername">Claude Projects</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/claude-projects/brain-dump-interviewer/">Brain Dump Interviewer </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/claude-projects/drawing-from-3-d-model/">Drawing From 3D Model </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/claude-projects/gizmos-and-gadgets-glossary/">Gizmos and Gadgets Glossary </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/claude-projects/new-hire-help-hub/">New Hire Help Hub </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/claude-projects/teams-album-of-the-day/">Teams Album of the Day </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/96-well-bracket/">96 Well Bracket </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/chair-piece/">Chair Piece </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/dip-tube-baffle-assembly/">Dip Tube Baffle Assembly </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/falling-vial-bin/">Falling Vial Bin </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/filter-connection/">Filter Connection </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/gel-electrophoresis-tray/">Gel Electrophoresis Tray </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/kpa-cutting-boards/">KPA Cutting Boards </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/label-arm/">Label Arm </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/ma-3-pusher-redesign/">MA3 Pusher Redesign </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/micro-vu-jig/">MicroVu Jig </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/mixer-chuck-drawing-review-1/">Mixer Chuck Drawing Review 1 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink active-note">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/mixer-chuck/">Mixer Chuck </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/septa-mat-excel/">Septa Mat Excel </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as(&quot;Other&quot;)}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" data-lucide="chevron-down"></i>
+<i x-show="!isOpen" data-lucide="chevron-right"></i>
+<span class="foldername">Other</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/other/metrology-meeting-2026-04-22/">Metrology Meeting 2026-04-22 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/other/vial-tray-jig/">Vial Tray jig </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as(&quot;People&quot;)}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" data-lucide="chevron-down"></i>
+<i x-show="!isOpen" data-lucide="chevron-right"></i>
+<span class="foldername">People</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/aaron-vergiels/">Aaron Vergiels </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/adiva-kabir/">Adiva Kabir </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/alex-rabbach/">Alex Rabbach </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/allona-san-diego/">Allona San Diego </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/amanda-maly/">Amanda Maly </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/beau-york/">Beau York </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/bethany-zepnick/">Bethany Zepnick </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/bill-linton/">Bill Linton </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/claire-moll/">Claire Moll </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/co-ops/">Co-ops </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/david-velazquez/">David Velazquez </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/doug-fahrenkrug/">Doug Fahrenkrug </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/electro-mechanical-technician/">Electro-Mechanical Technician </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/ethan-hazra/">Ethan Hazra </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/garrett-tschanz/">Garrett Tschanz </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/gary-mc-cauley/">Gary McCauley </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/ike-yeloushan/">Ike Yeloushan </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/isaac-bednarski/">Isaac Bednarski </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/jack-miller/">Jack Miller </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/jacob-holze/">Jacob Holze </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/jeremy-dassler/">Jeremy Dassler </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/kent-toepfer/">Kent Toepfer </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/kevin-rogers/">Kevin Rogers </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/kimberly-steinhauer/">Kimberly Steinhauer </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/madeline-henneman/">Madeline Henneman </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/matt-swanson/">Matt Swanson </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/matt-wahl/">Matt Wahl </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/mike-mc-kuen/">Mike McKuen </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/mike-moothart/">Mike Moothart </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/mindy-becker/">Mindy Becker </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/misha-dyskin/">Misha Dyskin </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/nikki-masterson/">Nikki Masterson </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/packaging-team/">Packaging Team </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/patrick-foelker/">Patrick Foelker </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/patrick-swails/">Patrick Swails </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/paul-doll/">Paul Doll </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/will-aadland/">Will Aadland </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/william-hopfensperger/">William Hopfensperger </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/zack-wermeling/">Zack Wermeling </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as(&quot;Software&quot;)}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" data-lucide="chevron-down"></i>
+<i x-show="!isOpen" data-lucide="chevron-right"></i>
+<span class="foldername">Software</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/software/anthropic-claude/">Anthropic Claude </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/software/auto-cad/">AutoCAD </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/software/batch/">Batch </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/software/engineering-workstations/">Engineering Workstations </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/software/epdm/">EPDM </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/software/et-q-reliance/">EtQ Reliance </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/software/microsoft-teams/">Microsoft Teams </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/software/obsidian/">Obsidian </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/software/one-drive/">OneDrive </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/software/one-note/">OneNote </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/software/outlook/">Outlook </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/software/smartsheet/">Smartsheet </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/software/software/">Software </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/software/solidworks-sheet-metal/">Solidworks Sheet Metal </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/software/solidworks/">Solidworks </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as(&quot;Unknown&quot;)}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" data-lucide="chevron-down"></i>
+<i x-show="!isOpen" data-lucide="chevron-right"></i>
+<span class="foldername">Unknown</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/unknown/design-review/">Design Review </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/unknown/drop-gate/">Drop Gate </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/unknown/evco-eo-bag/">EVCO EO Bag </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/">Ryan Meyer </a>
+</div>
+</div>
+</div>
+</nav>
+</div>
+</div>
+<div class="search-container" id="globalsearch" onclick="toggleSearch()">
+<div class="search-box" onclick="event.stopPropagation()">
+<div class="search-header">
+<input type="search" id="term" placeholder="Start typing...">
+</div>
+<div class="search-layout no-preview" id="search-layout">
+<div class="search-results-panel" id="search-results">
+<span><i>Enter your search text in the box above</i></span>
+</div>
+<div class="search-preview-panel" id="search-preview">
+<div class="preview-placeholder">
+<i data-lucide="file-text"></i>
+<p>Select a result to preview</p>
+</div>
+<div class="preview-content" id="preview-content"></div>
+</div>
+</div>
+<footer class="search-box-footer">
+<div class="navigation-hint">
+<span><code>Enter</code>&nbsp;to select</span>
+</div>
+<div class="navigation-hint">
+<span><code>⇅</code>&nbsp;to navigate</span>
+</div>
+<div class="navigation-hint">
+<span><code>ESC</code>&nbsp;to close</span>
+</div>
+</footer>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/flexsearch@0.7.21/dist/flexsearch.bundle.js"></script>
+<script>document.addEventListener("DOMContentLoaded",init,!1),document.addEventListener("DOMContentLoaded",setCorrectShortcut,!1);const previewCache=new Map;window.toggleSearch=function(){const e=document.getElementById("globalsearch");e.classList.contains("active")?e.classList.remove("active"):(e.classList.add("active"),document.getElementById("term").focus())},window.toggleTagSearch=function(e){const t=e.textContent;t&&(document.getElementById("term").value=t.trim(),window.toggleSearch(),window.search())};const loadingSvg='\n    <div style="display: flex; justify-content: center; padding: 40px;">\n        <svg width="40" height="40" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" stroke="currentColor">\n            <g fill="none" fill-rule="evenodd" transform="translate(1 1)" stroke-width="2">\n                <circle cx="22" cy="22" r="6" stroke-opacity="0">\n                    <animate attributeName="r" begin="1.5s" dur="3s" values="6;22" calcMode="linear" repeatCount="indefinite" />\n                    <animate attributeName="stroke-opacity" begin="1.5s" dur="3s" values="1;0" calcMode="linear" repeatCount="indefinite" />\n                    <animate attributeName="stroke-width" begin="1.5s" dur="3s" values="2;0" calcMode="linear" repeatCount="indefinite" />\n                </circle>\n                <circle cx="22" cy="22" r="6" stroke-opacity="0">\n                    <animate attributeName="r" begin="3s" dur="3s" values="6;22" calcMode="linear" repeatCount="indefinite" />\n                    <animate attributeName="stroke-opacity" begin="3s" dur="3s" values="1;0" calcMode="linear" repeatCount="indefinite" />\n                    <animate attributeName="stroke-width" begin="3s" dur="3s" values="2;0" calcMode="linear" repeatCount="indefinite" />\n                </circle>\n                <circle cx="22" cy="22" r="8">\n                    <animate attributeName="r" begin="0s" dur="1.5s" values="6;1;2;3;4;5;6" calcMode="linear" repeatCount="indefinite" />\n                </circle>\n            </g>\n        </svg>\n    </div>';function debounce(e,t,n){var r;return function(){var i=this,a=arguments,s=n&&!r;clearTimeout(r),r=setTimeout((function(){r=null,n||e.apply(i,a)}),t),s&&e.apply(i,a)}}function setCorrectShortcut(){navigator.platform.toUpperCase().indexOf("MAC")>=0&&document.querySelectorAll(".search-keys").forEach((e=>e.innerHTML="<code>⌘</code>&nbsp;+&nbsp;<code>K</code>"))}function tokenizeSearchTerms(e){const t=[],n=/"([^"]+)"|(\S+)/g;let r;for(;null!==(r=n.exec(e));){const e=(r[1]||r[2]).toLowerCase();e.length>1&&t.push(e)}return t.sort(((e,t)=>t.length-e.length))}function highlightTerms(e,t){if(!t||0===t.length||!e)return e;let n=e;return t.forEach((e=>{const t=e.replace(/[.*+?^${}()|[\]\\]/g,"\\$&"),r=new RegExp(`(${t})`,"gi");n=n.replace(r,'<span class="search-highlight">$1</span>')})),n}function getContextualExcerpt(e,t,n=150){if(!e)return"";const r=e.replace(/<[^>]*>/g,"");if(!t||0===t.length)return truncateText(r,n);let i=r.length;if(t.forEach((e=>{const t=r.toLowerCase().indexOf(e.toLowerCase());-1!==t&&t<i&&(i=t)})),i===r.length)return truncateText(r,n);const a=Math.max(0,i-50),s=Math.min(r.length,a+n);let o=r.substring(a,s);return a>0&&(o="..."+o),s<r.length&&(o+="..."),o}function truncateText(e,t){return e?(e=e.replace(/<[^>]*>/g,"")).length<=t?e:e.substring(0,t-3)+"...":""}async function fetchPreviewContent(e){if(previewCache.has(e))return previewCache.get(e);try{const t=await fetch(e),n=await t.text(),r=new DOMParser,i=r.parseFromString(n,"text/html").querySelector(".content, .cm-s-obsidian, article, main"),a=i?i.innerHTML:"";return previewCache.set(e,a),a}catch(e){return console.error("Failed to fetch preview:",e),""}}function highlightTextNodes(e,t){if(!t||0===t.length)return;const n=document.createTreeWalker(e,NodeFilter.SHOW_TEXT,null,!1),r=[];for(;n.nextNode();)r.push(n.currentNode);r.forEach((e=>{const n=e.textContent;let r=!1;if(t.forEach((e=>{n.toLowerCase().includes(e.toLowerCase())&&(r=!0)})),r){const r=document.createElement("span");r.innerHTML=highlightTerms(n,t),e.parentNode.replaceChild(r,e)}}))}async function showPreview(e){const t=window.searchResults;if(!t||!t[e])return;const n=t[e],r=document.getElementById("search-preview"),i=document.getElementById("preview-content"),a=r.querySelector(".preview-placeholder");if(!r||!i)return;document.querySelectorAll(".searchresult").forEach((e=>e.classList.remove("active")));const s=document.querySelector(`.searchresult[data-index="${e}"]`);s&&s.classList.add("active"),i.innerHTML=loadingSvg,i.classList.add("has-content"),a.style.display="none";const o=await fetchPreviewContent(n.url),c=n.tags&&n.tags.length>0?`<div class="preview-tags">${n.tags.map((e=>`<a class="tag" href="javascript:void(0);" onclick="toggleTagSearch(this)">#${e}</a>`)).join("")}</div>`:"";i.innerHTML=`\n            <div class="preview-title">${highlightTerms(n.title,window.searchTerms)}</div>\n            ${c}\n            <div class="preview-body">${o}</div>\n        `;const l=i.querySelector(".preview-body");l&&window.searchTerms&&highlightTextNodes(l,window.searchTerms),window.currentPreviewIndex=e}function hidePreview(){const e=document.getElementById("search-preview"),t=document.getElementById("preview-content"),n=e?.querySelector(".preview-placeholder");n&&(n.style.display="flex"),t&&(t.classList.remove("has-content"),t.innerHTML=""),window.currentPreviewIndex=-1}function createIndex(e){const t=e=>(e=>e.toLowerCase().normalize("NFD").replace(/n\u0303/g,"ñ").replace(/[\u0300-\u036f]/g,"").normalize("NFC"))(e).split(/([^a-z]|[^\x00-\x7F])/),n=new FlexSearch.Document({cache:!0,charset:"latin:extra",optimize:!0,index:[{field:"content",tokenize:"reverse",encode:t},{field:"title",tokenize:"forward",encode:t},{field:"tags",tokenize:"forward",encode:t}]});return e.forEach(((e,t)=>{n.add({id:t,title:e.title,content:e.content,tags:e.tags})})),n}async function init(){const e=await fetch("/searchIndex.json?v=2026-04-26T23:58:16.687Z").then((e=>e.json())),t=createIndex(e);function n(e){const t=document.querySelectorAll(".searchresult");if(0===t.length)return;let n,r=-1;t.forEach(((e,t)=>{e.classList.contains("active")&&(r=t)})),-1===r?n=e>0?0:t.length-1:(n=r+e,n<0&&(n=t.length-1),n>=t.length&&(n=0)),t.forEach((e=>e.classList.remove("active"))),t[n].classList.add("active"),t[n].scrollIntoView({behavior:"smooth",block:"nearest"}),showPreview(parseInt(t[n].dataset.index))}window.docs=e,window.index=t,document.addEventListener("keydown",(e=>{if((e.ctrlKey||e.metaKey)&&"k"===e.key&&(e.preventDefault(),toggleSearch()),"Escape"===e.key&&document.getElementById("globalsearch").classList.remove("active"),document.getElementById("globalsearch").classList.contains("active")&&("ArrowDown"===e.key&&(e.preventDefault(),n(1)),"ArrowUp"===e.key&&(e.preventDefault(),n(-1)),"Enter"===e.key)){e.preventDefault();const t=document.querySelector(".searchresult.active");if(t){const e=t.dataset.url;e&&(window.location.href=e)}}}));const r=debounce(search,200,!1);window.field=document.querySelector("#term"),field.addEventListener("keydown",(e=>{"ArrowDown"!==e.key&&"ArrowUp"!==e.key&&"Enter"!==e.key&&r()})),window.resultsDiv=document.querySelector("#search-results");const i=new URL(location.href).searchParams;i.get("q")&&(field.setAttribute("value",i.get("q")),toggleSearch(),search())}async function search(){const e=field.value.trim(),t=document.getElementById("search-layout");if(!e)return resultsDiv.innerHTML="<span><i>Enter your search text in the box above</i></span>",hidePreview(),void(t&&t.classList.add("no-preview"));window.lastSearch=e,window.searchTerms=tokenizeSearchTerms(e),resultsDiv.innerHTML=loadingSvg,hidePreview();const n=offlineSearch(e);if(window.searchResults=n,!n.length)return t&&t.classList.add("no-preview"),void(resultsDiv.innerHTML=`\n                <div class="no-results">\n                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">\n                        <circle cx="11" cy="11" r="8"></circle>\n                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>\n                        <line x1="8" y1="11" x2="14" y2="11"></line>\n                    </svg>\n                    <p>No results for "${e}"</p>\n                </div>\n            `);t&&t.classList.remove("no-preview");let r="";n.forEach(((e,t)=>{const n=highlightTerms(getContextualExcerpt(e.content,window.searchTerms,120),window.searchTerms),i=highlightTerms(e.title,window.searchTerms),a=e.tags&&e.tags.length>0?`<div class="result-tags">${e.tags.map((e=>`<span class="tag">#${e}</span>`)).join("")}</div>`:"";r+=`\n                <div class="searchresult${0===t?" active":""}"\n                     data-index="${t}"\n                     data-url="${e.url}"\n                     onmouseenter="showPreview(${t})"\n                     onclick="window.location.href='${e.url}'">\n                    <span class="result-title">${i}</span>\n                    ${a}\n                    <div class="result-excerpt">${n}</div>\n                </div>\n            `})),resultsDiv.innerHTML=r,n.length>0&&showPreview(0),"undefined"!=typeof lucide&&lucide.createIcons()}function offlineSearch(e){const t=window.docs,n="#"===e[0]&&e.length>1?index.search(e.substring(1),[{field:"tags"}]):index.search(e,[{field:"title",limit:5},{field:"content",limit:10}]),r=e=>{const t=n.filter((t=>t.field===e));return 0===t.length?[]:[...t[0].result]};return[...new Set([...r("title"),...r("content"),...r("tags")])].map((e=>{const n={...t[e]};return n.tags=n.tags.filter((e=>"gardenEntry"!==e&&"note"!==e)),n}))}window.lastSearch="",window.searchResults=[],window.searchTerms=[],window.currentPreviewIndex=-1,window.search=search</script>
+<main class="content cm-s-obsidian print">
+<header>
+<h1 data-note-icon="">Mixer Chuck</h1>
+<div class="header-meta">
+<div class="header-tags">
+<a class="tag" onclick="toggleTagSearch(this)">
+#My-Projects
+</a>
+</div>
+</div>
+</header>
+<p><a class="tag" onclick="toggleTagSearch(this)" data-content="#My-Projects">#My-Projects</a></p>
+<p><strong>Related Areas:</strong> <a class="internal-link" target="" data-note-icon="undefined" href="/lines/ma-2/">MA2</a>, <a class="internal-link" target="" data-note-icon="undefined" href="/buildings/lamarr/">Lamarr</a><br>
+<strong>Drawing review notes:</strong> <a class="internal-link" target="" data-note-icon="undefined" href="/my-projects/mixer-chuck-drawing-review-1/">Mixer Chuck Drawing Review 1</a></p>
+<hr>
+<h2 id="project-overview" tabindex="-1">📋 Project Overview</h2>
+<p>There are 12 total mixers across BTC (5x X5P33, 1x EV5L25M), RDC (1x XSS1P33), and IVD (4x XSS1P33, 1x XSS5P33). The goal of this project is to redesign the mixer chuck system. The current collet-style redesign (done by <a class="internal-link is-unresolved" href="/404" target="">Travis Beyer</a>) uses a collet-style chuck — the same approach CNC machines use to hold tooling. This design can hold multiple shaft sizes, uses parts easily sourced from <a class="internal-link" target="" data-note-icon="undefined" href="/fabrication/mc-master-carr/">McMaster-Carr</a>, and has no internal water exposure.</p>
+<p><a class="internal-link" target="" data-note-icon="undefined" href="/definitions/change-control/">CCs</a> are confirmed as required for the IVD mixers. <a class="internal-link is-unresolved" href="/404" target="">Ted Lenoch</a> and <a class="internal-link" target="" data-note-icon="undefined" href="/people/garrett-tschanz/">Garrett</a> are the main contacts for organizing CCs and associated downtime. Reach out to them early before installation begins.</p>
+<p><strong>Timeline:</strong> Shop request pending chuck style confirmation with <a class="internal-link" target="" data-note-icon="undefined" href="/people/jacob-holze/">Jake</a>. Parts process and installation to follow.</p>
+<hr>
+<h2 id="my-action-items-ryan" tabindex="-1">✅ My Action Items (Ryan)</h2>
+<h3 id="phase-1-drawings-do-first" tabindex="-1">Phase 1 — Drawings (do first)</h3>
+<ul class="task-list">
+<li class="task-list-item"><input type="checkbox" id="cbx_0" disabled="true"><label for="cbx_0"> Fix all drawing files to move equipment numbers into the Notes section of the title block (top left) — currently in a separate area</label></li>
+<li class="task-list-item"><input type="checkbox" id="cbx_1" disabled="true"><label for="cbx_1"> Get drawings approved by <a class="internal-link is-unresolved" href="/404" target="">Ali</a> or <a class="internal-link is-unresolved" href="/404" target="">Brian</a> before moving files</label></li>
+</ul>
+<h4 id="drawing-notes-section-checklist" tabindex="-1">Drawing Notes Section Checklist</h4>
+<p>For each drawing below, open in <a class="internal-link" target="" data-note-icon="undefined" href="/software/solidworks/">Solidworks</a> and move the equipment numbers into the Notes section in the title block (top left).</p>
+<ul class="task-list">
+<li class="task-list-item"><input type="checkbox" id="cbx_2" checked="true" disabled="true"><label for="cbx_2"> Chuck, Mixer, Style A (SAP 1016437)</label></li>
+<li class="task-list-item"><input type="checkbox" id="cbx_3" checked="true" disabled="true"><label for="cbx_3"> Chuck, Mixer, Style B (SAP 1016438)</label></li>
+<li class="task-list-item"><input type="checkbox" id="cbx_4" checked="true" disabled="true"><label for="cbx_4"> Chuck, Mixer, Style C (SAP 1016439)</label></li>
+<li class="task-list-item"><input type="checkbox" id="cbx_5" checked="true" disabled="true"><label for="cbx_5"> Stop, Mixer Chuck, Stainless Steel (SAP 1016455)</label></li>
+<li class="task-list-item"><input type="checkbox" id="cbx_6" checked="true" disabled="true"><label for="cbx_6"> Collet, Mixer Chuck, Stainless Steel (SAP 1016456)</label></li>
+<li class="task-list-item"><input type="checkbox" id="cbx_7" checked="true" disabled="true"><label for="cbx_7"> Collet Cap, Mixer Chuck, Stainless Steel (SAP 1016457)</label></li>
+<li class="task-list-item"><input type="checkbox" id="cbx_8" checked="true" disabled="true"><label for="cbx_8"> Tool, Spanner, Mixer Chuck, Stainless Steel (SAP 1016458)</label></li>
+<li class="task-list-item"><input type="checkbox" id="cbx_9" checked="true" disabled="true"><label for="cbx_9"> Chuck Tool, Mixer, Stainless/Delrin (SAP 1016459)</label></li>
+</ul>
+<h3 id="phase-2-e-pdm-after-approval" tabindex="-1">Phase 2 — ePDM (after approval)</h3>
+<ul class="task-list">
+<li class="task-list-item"><input type="checkbox" id="cbx_10" disabled="true"><label for="cbx_10"> Rename each file to its SAP part number</label></li>
+<li class="task-list-item"><input type="checkbox" id="cbx_11" disabled="true"><label for="cbx_11"> Move each file to the correct <a class="internal-link" target="" data-note-icon="undefined" href="/software/epdm/">ePDM</a> folder (keep <a class="internal-link" target="" data-note-icon="undefined" href="/software/solidworks/">Solidworks</a> references intact)</label></li>
+</ul>
+<h4 id="e-pdm-rename-and-move-process" tabindex="-1">ePDM Rename and Move Process</h4>
+<p>Do everything through <a class="internal-link" target="" data-note-icon="undefined" href="/software/epdm/">ePDM</a>, not Windows Explorer. Renaming or moving through Explorer breaks <a class="internal-link" target="" data-note-icon="undefined" href="/software/solidworks/">Solidworks</a> references.</p>
+<ol>
+<li>Check out all affected files in <a class="internal-link" target="" data-note-icon="undefined" href="/software/epdm/">ePDM</a> first — parts, assemblies, and drawings together in one batch. Files must be checked out before they can be renamed or moved.</li>
+<li>Right-click the file in <a class="internal-link" target="" data-note-icon="undefined" href="/software/epdm/">ePDM</a> and use Rename to change the filename to the SAP part number.</li>
+<li>After renaming, right-click and use Move to put it in the correct folder.</li>
+<li><a class="internal-link" target="" data-note-icon="undefined" href="/software/epdm/">ePDM</a> will prompt to update references — confirm yes on all of them.</li>
+<li>Check everything back in once all renames and moves are complete.</li>
+</ol>
+<p>Process files in this order: parts first, then assemblies, then drawings. This follows the reference chain so each update propagates correctly before the next file type looks for it.</p>
+<h3 id="phase-3-shop-request-waiting-on-jake-claire" tabindex="-1">Phase 3 — Shop Request (waiting on Jake/Claire)</h3>
+<ul class="task-list">
+<li class="task-list-item"><input type="checkbox" id="cbx_12" disabled="true"><label for="cbx_12"> Complete disassembly with <a class="internal-link" target="" data-note-icon="undefined" href="/people/jacob-holze/">Jake</a> to confirm X5P33 chuck style and re-inspect EV5L25M</label></li>
+<li class="task-list-item"><input type="checkbox" id="cbx_13" disabled="true"><label for="cbx_13"> Confirm which mixers Jake is removing from scope (changes quantities significantly)</label></li>
+<li class="task-list-item"><input type="checkbox" id="cbx_14" disabled="true"><label for="cbx_14"> Loop in <a class="internal-link" target="" data-note-icon="undefined" href="/people/claire-moll/">Claire</a> once chuck styles are confirmed</label></li>
+<li class="task-list-item"><input type="checkbox" id="cbx_15" disabled="true"><label for="cbx_15"> Receive final numbers and submit shop request to <a class="internal-link is-unresolved" href="/404" target="">Travis</a></label></li>
+</ul>
+<p>Working order quantity is 18 (6 per style) plus 2 extra hardware sets for Jake's incomplete assemblies. IVD mixers confirmed as Style C. X5P33 BTC and EV5L25M still unknown — see Updates (2026-04-21) for full disassembly context. Jake is back Wed 2026-04-23, disassembly date TBD.</p>
+<h3 id="phase-4-parts-process-after-parts-arrive" tabindex="-1">Phase 4 — Parts Process (after parts arrive)</h3>
+<ul class="task-list">
+<li class="task-list-item"><input type="checkbox" id="cbx_16" disabled="true"><label for="cbx_16"> Complete <a class="internal-link" target="" data-note-icon="undefined" href="/definitions/co-c/">CoCs</a> for all parts</label></li>
+<li class="task-list-item"><input type="checkbox" id="cbx_17" disabled="true"><label for="cbx_17"> Submit CoCs to <a class="internal-link" target="" data-note-icon="undefined" href="/software/epdm/">ePDM</a></label></li>
+<li class="task-list-item"><input type="checkbox" id="cbx_18" disabled="true"><label for="cbx_18"> Hand off parts to relevant production areas (process TBD)</label></li>
+</ul>
+<h3 id="completed" tabindex="-1">Completed</h3>
+<ul class="task-list">
+<li class="task-list-item"><input type="checkbox" id="cbx_19" checked="true" disabled="true"><label for="cbx_19"> Confirm we have accurate models for all mixers</label></li>
+<li class="task-list-item"><input type="checkbox" id="cbx_20" checked="true" disabled="true"><label for="cbx_20"> Determine if chuck needs to be different per mixer</label></li>
+<li class="task-list-item"><input type="checkbox" id="cbx_21" checked="true" disabled="true"><label for="cbx_21"> Confirm 3 tools are accounted for every mixer: counter-rotation tool, chuck tightener, and chuck itself</label></li>
+<li class="task-list-item"><input type="checkbox" id="cbx_22" checked="true" disabled="true"><label for="cbx_22"> Create 2D drawings for all parts</label></li>
+<li class="task-list-item"><input type="checkbox" id="cbx_23" checked="true" disabled="true"><label for="cbx_23"> Confirm drawings are accurate and complete</label></li>
+<li class="task-list-item"><input type="checkbox" id="cbx_24" checked="true" disabled="true"><label for="cbx_24"> Get SAP part numbers created (1016437–1016439, 1016455–1016459)</label></li>
+<li class="task-list-item"><input type="checkbox" id="cbx_25" checked="true" disabled="true"><label for="cbx_25"> Submit additional parts order via Parts Order Form — approved 2026-03-25, SLOC 6072 (Feynman)</label></li>
+<li class="task-list-item"><input type="checkbox" id="cbx_26" checked="true" disabled="true"><label for="cbx_26"> Contact <a class="internal-link" target="" data-note-icon="undefined" href="/definitions/ehs/">EHS</a> re: purchase part for spares</label></li>
+<li class="task-list-item"><input type="checkbox" id="cbx_27" checked="true" disabled="true"><label for="cbx_27"> Get SAP numbers for each mixer (IVD: <a class="internal-link" target="" data-note-icon="undefined" href="/people/garrett-tschanz/">Garrett</a>; BTC: <a class="internal-link is-unresolved" href="/404" target="">Sean</a>)</label></li>
+<li class="task-list-item"><input type="checkbox" id="cbx_28" checked="true" disabled="true"><label for="cbx_28"> Talk to <a class="internal-link" target="" data-note-icon="undefined" href="/people/nikki-masterson/">Nikki</a> — parts process Excel file obtained</label></li>
+</ul>
+<hr>
+<h2 id="background-and-amp-design-context" tabindex="-1">🔧 Background &amp; Design Context</h2>
+<h3 id="problem-with-old-design" tabindex="-1">Problem with Old Design</h3>
+<p>The original chuck allowed impellers to fall out during mixing. A key system redesign between the impeller and chuck was attempted, but caused metal shavings and round-out issues over time.</p>
+<h3 id="current-design-travis-s-collet-style" tabindex="-1">Current Design (Travis's Collet-Style)</h3>
+<p><a class="internal-link is-unresolved" href="/404" target="">Travis Beyer</a> redesigned the chuck to match the collet style used by CNC machines for holding tooling. Travis has 3 different options modeled.</p>
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>Holds multiple shaft sizes</li>
+<li>Easy to source replacement parts from <a class="internal-link" target="" data-note-icon="undefined" href="/fabrication/mc-master-carr/">McMaster-Carr</a></li>
+<li>Sealed — no water internally</li>
+</ul>
+<h3 id="motor-mount-note" tabindex="-1">Motor Mount Note</h3>
+<p>Mixers differ in how the motor mounts to the gear box. The manufacturer ships them in 3 different configurations — this needs to be accounted for in the chuck design.</p>
+<h3 id="sap-and-amp-drawings" tabindex="-1">SAP &amp; Drawings</h3>
+<p><a class="internal-link" target="" data-note-icon="undefined" href="/people/aaron-vergiels/">Aaron Vergiels</a> originally obtained the list of mixer equipment. <a class="internal-link is-unresolved" href="/404" target="">Travis Beyer</a> designed the 3 chuck styles and built the SolidWorks models — he was given dimensions by someone else and cannot match styles to mixers without physical inspection. SAP part numbers 1016437–1016439 and 1016455–1016459 are assigned. See drawing review note for drawing correction checklist: <a class="internal-link" target="" data-note-icon="undefined" href="/my-projects/mixer-chuck-drawing-review-1/">Mixer Chuck Drawing Review 1</a>.</p>
+<hr>
+<h2 id="updates-2026-03-30" tabindex="-1">📝 Updates (2026-03-30)</h2>
+<p>BTC urgent safety issue resolved — <a class="internal-link is-unresolved" href="/404" target="">Travis Beyer</a> delivered a replacement chuck (Style B) to <a class="internal-link" target="" data-note-icon="undefined" href="/buildings/btc/">BTC</a> last week per <a class="internal-link" target="" data-note-icon="undefined" href="/people/jacob-holze/">Jacob</a>. <a class="internal-link" target="" data-note-icon="undefined" href="/people/kent-toepfer/">Kent</a> had flagged this as an open safety issue and was tracking status.</p>
+<hr>
+<h2 id="meeting-notes-2026-03-17" tabindex="-1">📝 Meeting Notes (2026-03-17)</h2>
+<p>Schedule a design review meeting with <a class="internal-link" target="" data-note-icon="undefined" href="/people/kent-toepfer/">Kent</a> (he is out next week — plan around his availability). Talk to <a class="internal-link" target="" data-note-icon="undefined" href="/people/nikki-masterson/">Nikki</a> to get her parts process Excel file.</p>
+<p>SAP numbers are needed for each mixer. Contacts by area:</p>
+<ul>
+<li><a class="internal-link" target="" data-note-icon="undefined" href="/people/garrett-tschanz/">Garrett</a> — mixers with <a class="internal-link" target="" data-note-icon="undefined" href="/definitions/in-vitro-dispensing/">IVD</a></li>
+<li><a class="internal-link is-unresolved" href="/404" target="">Sean</a> — mixers at <a class="internal-link" target="" data-note-icon="undefined" href="/buildings/btc/">BTC</a></li>
+</ul>
+<h3 id="action-items" tabindex="-1">Action Items</h3>
+<ul class="task-list">
+<li class="task-list-item"><input type="checkbox" id="cbx_29" checked="true" disabled="true"><label for="cbx_29"> Schedule design review meeting with <a class="internal-link" target="" data-note-icon="undefined" href="/people/kent-toepfer/">Kent</a></label></li>
+<li class="task-list-item"><input type="checkbox" id="cbx_30" checked="true" disabled="true"><label for="cbx_30"> Talk to <a class="internal-link" target="" data-note-icon="undefined" href="/people/nikki-masterson/">Nikki</a> — get parts process Excel file</label></li>
+<li class="task-list-item"><input type="checkbox" id="cbx_31" checked="true" disabled="true"><label for="cbx_31"> Talk with <a class="internal-link is-unresolved" href="/404" target="">Sean</a> regarding <a class="internal-link is-unresolved" href="/404" target="">SAP</a> numbers for <a class="internal-link" target="" data-note-icon="undefined" href="/buildings/btc/">BTC</a> mixers</label></li>
+<li class="task-list-item"><input type="checkbox" id="cbx_32" checked="true" disabled="true"><label for="cbx_32"> Get SAP numbers for each mixer (coordinate with <a class="internal-link" target="" data-note-icon="undefined" href="/people/garrett-tschanz/">Garrett</a> for <a class="internal-link" target="" data-note-icon="undefined" href="/definitions/in-vitro-dispensing/">IVD</a> mixers, <a class="internal-link is-unresolved" href="/404" target="">Sean</a> for <a class="internal-link" target="" data-note-icon="undefined" href="/buildings/btc/">BTC</a> mixers)</label></li>
+</ul>
+<h2 id="parts-and-amp-sap-numbers-by-equipment" tabindex="-1">🔩 Parts &amp; SAP Numbers by Equipment</h2>
+<blockquote>
+<p>Drawing # = SAP Material # (per title block convention). Only diverges if a part has multiple drawings/sheets.<br>
+Chuck Style per equipment number TBD — to be confirmed and filled in.<br>
+Order quantities are based on 18 assemblies (6 per style, guaranteeing coverage across all 3 mixer models) plus 2 extra hardware sets for Jake's incomplete assemblies at his desk. Jake's assemblies already have chuck bodies, so no extra chucks are ordered. Stop qty is doubled since there are 2 per assembly. Spanner Tool qty confirmed to match Chuck Tool.</p>
+</blockquote>
+<h4 id="mixers-list" tabindex="-1">Mixers list:</h4>
+<h5 id="table" tabindex="-1">Table</h5>
+<h6 id="btc" tabindex="-1">BTC</h6>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Equipment #</th>
+<th>Equipment - Desc.</th>
+<th>Functional Loc.</th>
+<th>Func. Loc. - Desc.</th>
+<th>Created On</th>
+<th>Created By</th>
+<th>BOM Component</th>
+<th>BOM Comp. Desc.</th>
+<th>Quantity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>102956</td>
+<td>Mixer, X5P33</td>
+<td>MAD-BTC-G153</td>
+<td>MagaZorb Production</td>
+<td>01/16/2015</td>
+<td>SKASTE</td>
+<td>1003831</td>
+<td>Drive Shaft Hardware Kit (Lightnin Mixr)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>112142</td>
+<td>Mixer, X5P33</td>
+<td>MAD-BTC-G151C</td>
+<td>Bay 3</td>
+<td>05/05/2020</td>
+<td>GMCCAULE</td>
+<td>1010478</td>
+<td>Impellor, 10&quot;, A-100</td>
+<td>1.000</td>
+</tr>
+<tr>
+<td>122278</td>
+<td>Mixer, X5P33</td>
+<td>MAD-BTC-G130</td>
+<td>Hallway</td>
+<td>01/19/2021</td>
+<td>GMCCAULE</td>
+<td>1010478</td>
+<td>Impellor, 10&quot;, A-100</td>
+<td>1.000</td>
+</tr>
+<tr>
+<td>122277</td>
+<td>Mixer, X5P33</td>
+<td>MAD-BTC-G130</td>
+<td>Hallway</td>
+<td>01/19/2021</td>
+<td>GMCCAULE</td>
+<td>1010478</td>
+<td>Impellor, 10&quot;, A-100</td>
+<td>1.000</td>
+</tr>
+<tr>
+<td><mark>102943</mark></td>
+<td><mark>Mixer, X5P33</mark></td>
+<td><mark>MAD-BTC-G152</mark></td>
+<td><mark>Tank Cleaning</mark></td>
+<td><mark>04/16/2014</mark></td>
+<td><mark>SKASTE</mark></td>
+<td><mark>1011007</mark></td>
+<td><mark>Set Screw (Lamarr)</mark></td>
+<td><mark>5.000</mark></td>
+</tr>
+<tr>
+<td>102978</td>
+<td>Mixer, EV5L25M</td>
+<td>MAD-BTC-G151C</td>
+<td>Bay 3</td>
+<td>03/07/2018</td>
+<td>GMCCAULE</td>
+<td>1008762</td>
+<td>Ball Bearing, Mtd, 2 Bolt Flange, NFL205</td>
+<td>1.000</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h6 id="rdc" tabindex="-1">RDC</h6>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Equipment #</th>
+<th>Equipment - Desc.</th>
+<th>Functional Loc.</th>
+<th>Func. Loc. - Desc.</th>
+<th>Created On</th>
+<th>Created By</th>
+<th>BOM Component</th>
+<th>BOM Comp. Desc.</th>
+<th>Quantity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>102883</td>
+<td>Mixer, XSS1P33</td>
+<td>MAD-RDC-204</td>
+<td>Large Scale Formulation</td>
+<td>10/11/2017</td>
+<td>GMCCAULE</td>
+<td>1008931</td>
+<td>Mixer, SS, 1:1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table></div>
+<h6 id="ivd" tabindex="-1">IVD</h6>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Equipment #</th>
+<th>Equipment - Desc.</th>
+<th>Functional Loc.</th>
+<th>Func. Loc. - Desc.</th>
+<th>Created On</th>
+<th>Created By</th>
+<th>BOM Component</th>
+<th>BOM Comp. Desc.</th>
+<th>Quantity</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>113417</td>
+<td>GMP Resin Mixer, Lightnin XSS1P33</td>
+<td>MAD-GMP-2210</td>
+<td>Small Compounding <a class="tag" onclick="toggleTagSearch(this)" data-content="#1">#1</a></td>
+<td>07/30/2020</td>
+<td>GMCCAULE</td>
+<td>500000005448</td>
+<td>1003831</td>
+<td>Drive Shaft Hardware Kit (Lightnin Mixr)</td>
+<td>1.000</td>
+</tr>
+<tr>
+<td>113418</td>
+<td>GMP Resin Mixer, Lightnin XSS1P33</td>
+<td>MAD-GMP-2215</td>
+<td>Small Compounding <a class="tag" onclick="toggleTagSearch(this)" data-content="#2">#2</a></td>
+<td>07/30/2020</td>
+<td>GMCCAULE</td>
+<td>500000005448</td>
+<td>1003831</td>
+<td>Drive Shaft Hardware Kit (Lightnin Mixr)</td>
+<td>1.000</td>
+</tr>
+<tr>
+<td>117266</td>
+<td>GMP Resin Mixer, Lightnin XSS1P33</td>
+<td>MAD-GMP-2232</td>
+<td>Compound Resin RM <a class="tag" onclick="toggleTagSearch(this)" data-content="#3">#3</a></td>
+<td>11/26/2018</td>
+<td>GMCCAULE</td>
+<td>500000005448</td>
+<td>1003831</td>
+<td>Drive Shaft Hardware Kit (Lightnin Mixr)</td>
+<td>1.000</td>
+</tr>
+<tr>
+<td>127950</td>
+<td>GMP Resin Mixer, Lightnin XSS5P33</td>
+<td>MAD-GMP-2224</td>
+<td>Large Compounding <a class="tag" onclick="toggleTagSearch(this)" data-content="#1">#1</a></td>
+<td>07/12/2022</td>
+<td>GMCCAULE</td>
+<td>500000005448</td>
+<td>1003831</td>
+<td>Drive Shaft Hardware Kit (Lightnin Mixr)</td>
+<td>1.000</td>
+</tr>
+<tr>
+<td>120019</td>
+<td>GMP Resin Mixer, Lightnin XSS1P33</td>
+<td>MAD-GMP-2215</td>
+<td>Small Compounding <a class="tag" onclick="toggleTagSearch(this)" data-content="#2">#2</a></td>
+<td>07/30/2020</td>
+<td>GMCCAULE</td>
+<td>500000005448</td>
+<td>1003831</td>
+<td>Drive Shaft Hardware Kit (Lightnin Mixr)</td>
+<td>1.000</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h3 id="chuck-bodies-by-equipment" tabindex="-1">Chuck Bodies by Equipment</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th style="text-align:left">Equipment #</th>
+<th style="text-align:left">Area</th>
+<th style="text-align:left">Chuck Style</th>
+<th style="text-align:left">SAP Material #</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">102956</td>
+<td style="text-align:left">BTC</td>
+<td style="text-align:left">Unknown — needs Jake (sun gear, can't access alone)</td>
+<td style="text-align:left">1016437 / 1016438 / 1016439</td>
+</tr>
+<tr>
+<td style="text-align:left">112142</td>
+<td style="text-align:left">BTC</td>
+<td style="text-align:left">Unknown — needs Jake (sun gear, can't access alone)</td>
+<td style="text-align:left">1016437 / 1016438 / 1016439</td>
+</tr>
+<tr>
+<td style="text-align:left">122278</td>
+<td style="text-align:left">BTC</td>
+<td style="text-align:left">Unknown — needs Jake (sun gear, can't access alone)</td>
+<td style="text-align:left">1016437 / 1016438 / 1016439</td>
+</tr>
+<tr>
+<td style="text-align:left">122277</td>
+<td style="text-align:left">BTC</td>
+<td style="text-align:left">Unknown — needs Jake (sun gear, can't access alone)</td>
+<td style="text-align:left">1016437 / 1016438 / 1016439</td>
+</tr>
+<tr>
+<td style="text-align:left">102943</td>
+<td style="text-align:left">BTC</td>
+<td style="text-align:left">Unknown — needs Jake (sun gear, can't access alone)</td>
+<td style="text-align:left">1016437 / 1016438 / 1016439</td>
+</tr>
+<tr>
+<td style="text-align:left">102978</td>
+<td style="text-align:left">BTC</td>
+<td style="text-align:left">Likely Style C (unconfirmed — needs re-inspection with Jake)</td>
+<td style="text-align:left">1016437 / 1016438 / 1016439</td>
+</tr>
+<tr>
+<td style="text-align:left">102883</td>
+<td style="text-align:left"><a class="internal-link" target="" data-note-icon="undefined" href="/buildings/arnold/">RDC</a></td>
+<td style="text-align:left">Style C (assumed — same model as XSS1P33 IVD units)</td>
+<td style="text-align:left">1016437 / 1016438 / 1016439</td>
+</tr>
+<tr>
+<td style="text-align:left">113417</td>
+<td style="text-align:left">IVD</td>
+<td style="text-align:left">Style C (confirmed — Lovejoy/spider coupling, inspected 2026-04-20)</td>
+<td style="text-align:left">1016439</td>
+</tr>
+<tr>
+<td style="text-align:left">113418</td>
+<td style="text-align:left">IVD</td>
+<td style="text-align:left">Style C (confirmed by model match)</td>
+<td style="text-align:left">1016439</td>
+</tr>
+<tr>
+<td style="text-align:left">117266</td>
+<td style="text-align:left">IVD</td>
+<td style="text-align:left">Style C (confirmed by model match)</td>
+<td style="text-align:left">1016439</td>
+</tr>
+<tr>
+<td style="text-align:left">127950</td>
+<td style="text-align:left">IVD</td>
+<td style="text-align:left">Likely Style C (unconfirmed — XSS5P33, assumed same as XSS1P33)</td>
+<td style="text-align:left">1016437 / 1016438 / 1016439</td>
+</tr>
+<tr>
+<td style="text-align:left">120019</td>
+<td style="text-align:left">IVD</td>
+<td style="text-align:left">Style C (confirmed by model match)</td>
+<td style="text-align:left">1016439</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="all-parts-sap-reference" tabindex="-1">All Parts — SAP Reference</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th style="text-align:left">SAP Material #</th>
+<th style="text-align:left">Description</th>
+<th style="text-align:left">Order Qty</th>
+<th style="text-align:left">BOM Equipment #</th>
+<th style="text-align:left">BOM Qty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1016437</td>
+<td style="text-align:left">Chuck, Mixer, Style A</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left">102956, 112142, 122278, 122277, 102943, 102978, 102883, 113417, 113418, 117266, 127950, 120019</td>
+<td style="text-align:left">1</td>
+</tr>
+<tr>
+<td style="text-align:left">1016438</td>
+<td style="text-align:left">Chuck, Mixer, Style B</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left">102956, 112142, 122278, 122277, 102943, 102978, 102883, 113417, 113418, 117266, 127950, 120019</td>
+<td style="text-align:left">1</td>
+</tr>
+<tr>
+<td style="text-align:left">1016439</td>
+<td style="text-align:left">Chuck, Mixer, Style C</td>
+<td style="text-align:left">—</td>
+<td style="text-align:left">102956, 112142, 122278, 122277, 102943, 102978, 102883, 113417, 113418, 117266, 127950, 120019</td>
+<td style="text-align:left">1</td>
+</tr>
+<tr>
+<td style="text-align:left">1016455</td>
+<td style="text-align:left">Stop, Mixer Chuck, Stainless Steel</td>
+<td style="text-align:left">40</td>
+<td style="text-align:left">102956, 112142, 122278, 122277, 102943, 102978, 102883, 113417, 113418, 117266, 127950, 120019</td>
+<td style="text-align:left">2</td>
+</tr>
+<tr>
+<td style="text-align:left">1016456</td>
+<td style="text-align:left">Collet, Mixer Chuck, Stainless Steel</td>
+<td style="text-align:left">20</td>
+<td style="text-align:left">102956, 112142, 122278, 122277, 102943, 102978, 102883, 113417, 113418, 117266, 127950, 120019</td>
+<td style="text-align:left">1</td>
+</tr>
+<tr>
+<td style="text-align:left">1016457</td>
+<td style="text-align:left">Collet Cap, Mixer Chuck, Stainless Steel</td>
+<td style="text-align:left">20</td>
+<td style="text-align:left">102956, 112142, 122278, 122277, 102943, 102978, 102883, 113417, 113418, 117266, 127950, 120019</td>
+<td style="text-align:left">1</td>
+</tr>
+<tr>
+<td style="text-align:left">1016458</td>
+<td style="text-align:left">Tool, Spanner, Mixer Chuck, Stainless Steel</td>
+<td style="text-align:left">20</td>
+<td style="text-align:left">102956, 112142, 122278, 122277, 102943, 102978, 102883, 113417, 113418, 117266, 127950, 120019</td>
+<td style="text-align:left">1</td>
+</tr>
+<tr>
+<td style="text-align:left">1016459</td>
+<td style="text-align:left">Chuck Tool, Mixer, Stainless/Delrin</td>
+<td style="text-align:left">20</td>
+<td style="text-align:left">102956, 112142, 122278, 122277, 102943, 102978, 102883, 113417, 113418, 117266, 127950, 120019</td>
+<td style="text-align:left">1</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2 id="updates-2026-04-21" tabindex="-1">📝 Updates (2026-04-21)</h2>
+<p>Chuck style mapping is now partially confirmed following disassembly sessions on 2026-04-20 with <a class="internal-link" target="" data-note-icon="undefined" href="/people/alex-rabbach/">Alex</a> (IVD) and independently at BTC.</p>
+<p>XSS1P33 (inspected 113417 with Alex) — uses a Lovejoy/spider coupling (jaw coupling with rubber damper between two star-shaped halves). The internal shaft has a large central hole with one flat side for a set screw. This matches Style C. All other XSS1P33 units (113418, 117266, 120019, 102883) are assumed Style C by model match. XSS5P33 (127950) is assumed Style C by intuition — not directly confirmed.</p>
+<p>EV5L25M / Vektor V1P25M (102978) — SAP lists this as EV5L25M but the physical label reads Lightnin Vektor V1P25M. Possible the unit was replaced and SAP was never updated, or the naming convention differs. This is an open issue that needs investigation. Internally it has a different geometry than the models (slots and a set screw tab), but Travis and Ryan believe it may share the same form factor as Style C. Needs re-inspection with Jake to confirm.</p>
+<p>X5P33 BTC mixers (102956, 112142, 122278, 122277, 102943) — attempted inspection on one unit in G152 alone. These use a planetary sun gear reduction and the chuck is not accessible without going deeper into disassembly. Not a one-person job and requires familiarity with gear systems. Needs Jake.</p>
+<p>Travis confirmed he was given dimensions by someone else when he built the models and cannot match styles to mixers without physical inspection.</p>
+<p><a class="internal-link" target="" data-note-icon="undefined" href="/people/jacob-holze/">Jake</a> is back Wednesday 2026-04-23. Disassembly of remaining mixers (X5P33 and EV5L25M re-inspection) to be scheduled with Jake, possibly with <a class="internal-link" target="" data-note-icon="undefined" href="/people/alex-rabbach/">Alex</a> as well. No confirmed date yet.</p>
+<p>Background on how this session happened: Jake had a car accident on Friday 2026-04-18 and was out Monday/Tuesday. He recommended reaching out to <a class="internal-link" target="" data-note-icon="undefined" href="/people/nikki-masterson/">Nikki</a> and <a class="internal-link" target="" data-note-icon="undefined" href="/people/alex-rabbach/">Alex</a>. Alex helped with the IVD session; Sean Doering directed access to the BTC units (split across G153, G152, G151B — all available, height not set to anything specific).</p>
+<h2 id="updates-2026-04-16" tabindex="-1">📝 Updates (2026-04-16)</h2>
+<p>CCs are confirmed as required for the IVD mixers. <a class="internal-link" target="" data-note-icon="undefined" href="/people/garrett-tschanz/">Garrett</a> and <a class="internal-link is-unresolved" href="/404" target="">Ted</a> are the main contacts when CCs are initiated — reach out to them early to get ahead of that process.</p>
+<p>For the chuck style to mixer model mapping, only 2 mixers need to be disassembled and visually inspected (one each of two different models). The third model is covered by process of elimination.</p>
+<p>Pending items discussed:</p>
+<ul>
+<li>Get ahead on SOPs for chuck installation and use — these need to exist before parts arrive and installation begins</li>
+<li>Reach out to <a class="internal-link" target="" data-note-icon="undefined" href="/people/garrett-tschanz/">Garrett</a> and <a class="internal-link is-unresolved" href="/404" target="">Ted</a> (CC on IVD mixers) to initiate CC process</li>
+<li>Talk to <a class="internal-link is-unresolved" href="/404" target="">Travis</a> in person — he is bad at responding digitally; need to ask how he built the SolidWorks models for the chucks</li>
+<li>Discuss two-mixer idea with <a class="internal-link" target="" data-note-icon="undefined" href="/people/jacob-holze/">Jake</a> — disassemble one each of two models, use process of elimination to confirm the third</li>
+</ul>
+</main>
+<aside>
+<div class="sidebar">
+<div class="sidebar-container">
+<script type="module">import{forceSimulation,forceManyBody,forceCenter,forceLink,forceCollide,forceRadial}from"d3-force";import{select}from"d3-selection";import{zoom as d3Zoom,zoomIdentity}from"d3-zoom";import{drag as d3Drag}from"d3-drag";const{Application:Application,Container:Container,Graphics:Graphics,Text:Text,Circle:Circle}=PIXI;async function fetchGraphData(){const e=await fetch("/graph.json").then((e=>e.json()));return{graphData:e,fullGraphData:filterFullGraphData(e)}}function filterFullGraphData(e){if(!e)return null;e=JSON.parse(JSON.stringify(e));const t=Object.values(e.nodes).filter((e=>e.hide)).map((e=>e.id));return{links:e.links.filter((e=>-1===t.indexOf(e.source)&&-1===t.indexOf(e.target))),nodes:Object.values(e.nodes).filter((e=>!e.hide))}}function filterLocalGraphData(e){if(!e)return null;const t=JSON.parse(JSON.stringify(e.nodes)),a=JSON.parse(JSON.stringify(e.links));let n=decodeURI(window.location.pathname),o=t[n];if(!o){const e=n.toLowerCase();o=Object.values(t).find((t=>t.url.toLowerCase()===e))}if(o||(o=Object.values(t).find((e=>e.home))),!o)return null;o.current=!0;const l=new Set;l.add(o.url),o.neighbors&&o.neighbors.forEach((e=>l.add(e)));const r=Object.values(t).filter((e=>!e.hide&&l.has(e.url)));if(!o.home&&o.neighbors){const e=r.find((e=>e.home));if(e&&!o.neighbors.includes(e.url)){const t=r.indexOf(e);t>-1&&r.splice(t,1)}}const i=r.map((e=>e.id));return{nodes:r,links:a.filter((e=>i.indexOf(e.target)>-1&&i.indexOf(e.source)>-1))}}function getCssVar(e){return getComputedStyle(document.body).getPropertyValue(e).trim()}const _colorProbe=document.createElement("div");function resolveColor(e){_colorProbe.style.color=e;const t=getComputedStyle(_colorProbe).color.match(/(\d+),\s*(\d+),\s*(\d+)/);return t?(parseInt(t[1])<<16)+(parseInt(t[2])<<8)+parseInt(t[3]):6710886}_colorProbe.style.display="none",document.body.appendChild(_colorProbe);const _decodeEl=document.createElement("textarea");function htmlDecode(e){return _decodeEl.innerHTML=e,_decodeEl.value}function buildDegreeMap(e){const t={};for(const a of e){const e="object"==typeof a.source?a.source.id:a.source,n="object"==typeof a.target?a.target.id:a.target;t[e]=(t[e]||0)+1,t[n]=(t[n]||0)+1}return t}function nodeRadius(e,t){return 2+Math.sqrt(t[e]||0)}function renderGraph(e,t,a){if(!e||!e.nodes||0===e.nodes.length)return null;const n=document.getElementById(t);if(!n)return null;for(;n.firstChild;)n.removeChild(n.firstChild);const o=n.offsetWidth,l=n.offsetHeight||250;if(0===o)return null;const r=resolveColor(getCssVar("--dg-graph-node-color")||getCssVar("--graph-main")||"#666"),i=resolveColor(getCssVar("--dg-graph-node-color-muted")||getCssVar("--graph-muted")||"#ccc"),c=resolveColor(getCssVar("--dg-graph-label-color")||getCssVar("--text-normal")||"#eee"),s=getComputedStyle(document.body).fontFamily||"Sans-Serif",u=buildDegreeMap(e.links),d=e.nodes.map((e=>({...e,text:htmlDecode(e.title)}))),p=e.links.map((e=>({source:e.source,target:e.target}))),f=a?-300:-100,h=a?80:40,g=Math.min(o,l)/3,m=forceSimulation(d).force("charge",forceManyBody().strength(f)).force("center",forceCenter(o/2,l/2).strength(.5)).force("link",forceLink(p).id((e=>e.id)).distance(h)).force("collide",forceCollide((e=>nodeRadius(e.id,u)+1)).iterations(3)).force("radial",forceRadial(g,o/2,l/2).strength(.05)),y=new Application({width:o,height:l,antialias:!0,autoStart:!1,autoDensity:!0,backgroundAlpha:0,resolution:window.devicePixelRatio});n.appendChild(y.view);const C=y.stage;C.interactive=!0,C.hitArea=y.screen;const b=new Graphics,x=new Container,D=new Container;C.addChild(b,x,D);let G=null,v=new Set,w=!1,A=0,S=null,k=zoomIdentity;const L=[],M=[];function O(e){if(G=e,v.clear(),null===e){for(const e of L)e.active=!1;for(const e of M)e.active=!1}else{for(const t of M){const a=t.simulationData.source,n=t.simulationData.target,o="object"==typeof a?a.id:a,l="object"==typeof n?n.id:n;o!==e&&l!==e||(v.add(o),v.add(l)),t.active=o===e||l===e}for(const e of L)e.active=v.has(e.simulationData.id)}}for(const e of d){const t=nodeRadius(e.id,u),a=new Text(e.text,{fontSize:16,fill:c,fontFamily:s});a.resolution=2,a.anchor.set(.5,1),a.scale.set(1/3),a.alpha=0;const n=new Graphics;n.interactive=!0,n.cursor="pointer",n.hitArea=new Circle(0,0,t+2),n._nodeId=e.id;const o=e.current?r:i;n.beginFill(o),n.drawCircle(0,0,t),n.endFill(),e.current&&(n.lineStyle(.5,r),n.drawCircle(0,0,t+1.5));let l=0;n.on("pointerover",(()=>{O(n._nodeId),l=a.alpha,w||j()})),n.on("pointerleave",(()=>{O(null),a.alpha=l,w||j()})),x.addChild(n),D.addChild(a),L.push({simulationData:e,gfx:n,label:a,radius:t,active:!1,baseAlpha:1,targetAlpha:1,currentAlpha:1})}for(const e of p)M.push({simulationData:e,active:!1,baseAlpha:.4,targetAlpha:.4,currentAlpha:.4});function j(){for(const e of L)e.targetAlpha=null!==G?e.active?1:.1:e.baseAlpha;for(const e of M)e.targetAlpha=null!==G?e.active?.8:.05:e.baseAlpha}function I(e,t,a){return e+(t-e)*a}select(y.view).call(d3Drag().container((()=>y.view)).subject((()=>{if(!G)return null;const e=d.find((e=>e.id===G));return e?{x:e.x*k.k+k.x,y:e.y*k.k+k.y,node:e}:null})).on("start",(function(e){e.active||m.alphaTarget(1).restart();const t=e.subject.node;t.fx=t.x,t.fy=t.y,A=Date.now(),S={x:e.x,y:e.y},w=!0})).on("drag",(function(e){const t=e.subject.node;t.fx=(e.x-k.x)/k.k,t.fy=(e.y-k.y)/k.k})).on("end",(function(e){e.active||m.alphaTarget(0);const t=e.subject.node;t.fx=null,t.fy=null,w=!1;const a=Date.now()-A,n=e.x-S.x,o=e.y-S.y,l=Math.sqrt(n*n+o*o);a<500&&l<5&&t.url&&(window.location=t.url)})));const E=d3Zoom().extent([[0,0],[o,l]]).scaleExtent([.25,4]).on("zoom",(({transform:e})=>{k=e,C.scale.set(e.k,e.k),C.position.set(e.x,e.y);const t=Math.max((e.k-1)/3.75,0);for(const e of L)e.simulationData.id!==G&&(e.label.alpha=t)}));select(y.view).call(E);let F=!1;return requestAnimationFrame((function e(){if(!F){for(const e of L){const{x:t,y:a}=e.simulationData;null!=t&&null!=a&&(e.gfx.position.set(t,a),e.label.position.set(t,a-e.radius-2),e.currentAlpha=I(e.currentAlpha,e.targetAlpha,.15),e.gfx.alpha=e.currentAlpha,e.simulationData.id===G&&(e.label.alpha=1))}b.clear();for(const e of M){const t=e.simulationData.source,a=e.simulationData.target;null!=t.x&&null!=a.x&&(e.currentAlpha=I(e.currentAlpha,e.targetAlpha,.15),b.lineStyle(1,e.active?r:i,e.currentAlpha),b.moveTo(t.x,t.y),b.lineTo(a.x,a.y))}y.render(),requestAnimationFrame(e)}})),(a||e.nodes.length>4)&&setTimeout((()=>{let e=1/0,t=-1/0,a=1/0,n=-1/0;for(const o of d)null!=o.x&&null!=o.y&&(e=Math.min(e,o.x),t=Math.max(t,o.x),a=Math.min(a,o.y),n=Math.max(n,o.y));if(e===1/0)return;const r=t-e+100,i=n-a+100,c=Math.min(o/r,l/i,2),s=(e+t)/2,u=(a+n)/2,p=zoomIdentity.translate(o/2-s*c,l/2-u*c).scale(c);select(y.view).call(E.transform,p)}),500),function(){F=!0,m.stop(),select(y.view).on(".drag",null).on(".zoom",null),y.destroy(!0,{children:!0})}}let graphDataCache=null,fullGraphDataCache=null,localGraphCleanup=null,globalGraphCleanup=null;async function init(){const{graphData:e,fullGraphData:t}=await fetchGraphData();graphDataCache=e,fullGraphDataCache=t,renderLocal()}function renderLocal(){localGraphCleanup&&(localGraphCleanup(),localGraphCleanup=null);const e=renderGraph(filterLocalGraphData(graphDataCache),"link-graph",!1);localGraphCleanup=e}function openModal(e){globalGraphCleanup&&(globalGraphCleanup(),globalGraphCleanup=null),document.getElementById("full-graph").style.display="",setTimeout((()=>{globalGraphCleanup=renderGraph(e,"full-graph-container",!0),lucide.createIcons({attrs:{class:["svg-icon"]}})}),50)}function openFullGraph(){openModal(fullGraphDataCache)}function openExpandedLocal(){openModal(filterLocalGraphData(graphDataCache))}function closeFullGraph(){document.getElementById("full-graph").style.display="none",globalGraphCleanup&&(globalGraphCleanup(),globalGraphCleanup=null)}window.__graph={openFullGraph:openFullGraph,closeFullGraph:closeFullGraph,openExpandedLocal:openExpandedLocal,rerenderLocal:renderLocal},document.addEventListener("forestry:css-changed",(function(){graphDataCache&&renderLocal()})),init()</script>
+<div id="graph-component" class="graph" x-data="{ showFullGraph: false }">
+<div class="graph-title-container">
+<div class="graph-title">Connected Pages</div>
+<div id="graph-controls">
+<div class="ctrl-right">
+<span id="global-graph-btn" x-on:click="showFullGraph = true; window.__graph.openFullGraph()"><i data-lucide="globe" aria-hidden="true"></i></span>
+<span id="graph-fs-btn" x-on:click="showFullGraph = true; window.__graph.openExpandedLocal()"><i data-lucide="expand" aria-hidden="true"></i></span>
+</div>
+</div>
+</div>
+<div id="link-graph"></div>
+<div x-show="showFullGraph" id="full-graph" class="show" style="display:none" x-on:click.self="window.__graph.closeFullGraph(); showFullGraph = false;">
+<span id="full-graph-close" x-on:click="window.__graph.closeFullGraph(); showFullGraph = false;"><i data-lucide="x" aria-hidden="true"></i></span>
+<div id="full-graph-container"></div>
+</div>
+</div>
+<div class="toc">
+<div class="toc-title-container">
+<div class="toc-title">
+Mixer Chuck
+</div>
+</div>
+<div class="toc-container">
+<nav class="toc">
+<ol>
+<li><a href="#project-overview">📋 Project Overview</a>
+</li>
+<li><a href="#my-action-items-ryan">✅ My Action Items (Ryan)</a>
+<ol>
+<li><a href="#phase-1-drawings-do-first">Phase 1 — Drawings (do first)</a>
+<ol>
+<li><a href="#drawing-notes-section-checklist">Drawing Notes Section Checklist</a>
+</li>
+</ol>
+</li>
+<li><a href="#phase-2-e-pdm-after-approval">Phase 2 — ePDM (after approval)</a>
+<ol>
+<li><a href="#e-pdm-rename-and-move-process">ePDM Rename and Move Process</a>
+</li>
+</ol>
+</li>
+<li><a href="#phase-3-shop-request-waiting-on-jake-claire">Phase 3 — Shop Request (waiting on Jake/Claire)</a>
+</li>
+<li><a href="#phase-4-parts-process-after-parts-arrive">Phase 4 — Parts Process (after parts arrive)</a>
+</li>
+<li><a href="#completed">Completed</a>
+</li>
+</ol>
+</li>
+<li><a href="#background-and-amp-design-context">🔧 Background & Design Context</a>
+<ol>
+<li><a href="#problem-with-old-design">Problem with Old Design</a>
+</li>
+<li><a href="#current-design-travis-s-collet-style">Current Design (Travis's Collet-Style)</a>
+</li>
+<li><a href="#motor-mount-note">Motor Mount Note</a>
+</li>
+<li><a href="#sap-and-amp-drawings">SAP & Drawings</a>
+</li>
+</ol>
+</li>
+<li><a href="#updates-2026-03-30">📝 Updates (2026-03-30)</a>
+</li>
+<li><a href="#meeting-notes-2026-03-17">📝 Meeting Notes (2026-03-17)</a>
+<ol>
+<li><a href="#action-items">Action Items</a>
+</li>
+</ol>
+</li>
+<li><a href="#parts-and-amp-sap-numbers-by-equipment">🔩 Parts & SAP Numbers by Equipment</a>
+<ol>
+<li><a href="#mixers-list">Mixers list:</a>
+<ol>
+<li><a href="#table">Table</a>
+<ol>
+<li><a href="#btc">BTC</a>
+</li>
+<li><a href="#rdc">RDC</a>
+</li>
+<li><a href="#ivd">IVD</a>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><a href="#chuck-bodies-by-equipment">Chuck Bodies by Equipment</a>
+</li>
+<li><a href="#all-parts-sap-reference">All Parts — SAP Reference</a>
+</li>
+</ol>
+</li>
+<li><a href="#updates-2026-04-21">📝 Updates (2026-04-21)</a>
+</li>
+<li><a href="#updates-2026-04-16">📝 Updates (2026-04-16)</a>
+</li>
+</ol>
+</nav>
+</div>
+</div>
+<script>!function(){const t=document.querySelectorAll('.toc-container a[href^="#"]');if(!t.length)return;const e=Array.from(t).map((t=>{const e=decodeURIComponent(t.getAttribute("href").slice(1));return{link:t,target:document.getElementById(e)}})).filter((t=>t.target));function n(){let n=e[0];for(const t of e)t.target.getBoundingClientRect().top<=100&&(n=t);t.forEach((t=>t.classList.remove("toc-active"))),n&&n.link.classList.add("toc-active")}window.addEventListener("scroll",n,{passive:!0}),n()}()</script>
+<div class="backlinks">
+<div class="backlink-title">Pages mentioning this page</div>
+<div class="backlink-list"><div class="backlink-card"><i data-lucide="link"></i><a href="/definitions/ersa/" data-note-icon="" class="backlink">ERSA</a>
+</div><div class="backlink-card"><i data-lucide="link"></i><a href="/definitions/lightnin-mixer/" data-note-icon="" class="backlink">Lightnin Mixer</a>
+</div><div class="backlink-card"><i data-lucide="link"></i><a href="/definitions/multiple-materials-request-spreadsheet/" data-note-icon="" class="backlink">Multiple Materials Request Spreadsheet</a>
+</div><div class="backlink-card"><i data-lucide="link"></i><a href="/definitions/nlag/" data-note-icon="" class="backlink">NLAG</a>
+</div><div class="backlink-card"><i data-lucide="link"></i><a href="/definitions/parts-order-form/" data-note-icon="" class="backlink">Parts Order Form</a>
+</div><div class="backlink-card"><i data-lucide="link"></i><a href="/definitions/parts-process/" data-note-icon="" class="backlink">Parts Process</a>
+</div><div class="backlink-card"><i data-lucide="link"></i><a href="/definitions/shop-request/" data-note-icon="" class="backlink">Shop Request</a>
+</div><div class="backlink-card"><i data-lucide="link"></i><a href="/my-projects/mixer-chuck-drawing-review-1/" data-note-icon="" class="backlink">Mixer Chuck Drawing Review 1</a>
+</div><div class="backlink-card"><i data-lucide="link"></i><a href="/people/claire-moll/" data-note-icon="" class="backlink">Claire Moll</a>
+</div><div class="backlink-card"><i data-lucide="link"></i><a href="/people/garrett-tschanz/" data-note-icon="" class="backlink">Garrett Tschanz</a>
+</div><div class="backlink-card"><i data-lucide="link"></i><a href="/people/gary-mc-cauley/" data-note-icon="" class="backlink">Gary McCauley</a>
+</div><div class="backlink-card"><i data-lucide="link"></i><a href="/people/jacob-holze/" data-note-icon="" class="backlink">Jacob Holze</a>
+</div><div class="backlink-card"><i data-lucide="link"></i><a href="/people/nikki-masterson/" data-note-icon="" class="backlink">Nikki Masterson</a>
+</div><div class="backlink-card"><i data-lucide="link"></i><a href="/" data-note-icon="" class="backlink">Ryan Meyer</a>
+</div><div class="backlink-card"><i data-lucide="link"></i><a href="/software/epdm/" data-note-icon="" class="backlink">EPDM</a>
+</div></div>
+</div>
+</div>
+</div>
+</aside>
+<style>#tooltip-wrapper{background:var(--background-primary);padding:1em;border-radius:4px;overflow:hidden;position:fixed;width:80%;max-width:400px;height:auto;max-height:300px;font-size:.8em;box-shadow:0 5px 10px rgba(0,0,0,.1);opacity:0;transition:opacity .1s;unicode-bidi:plaintext;overflow-y:scroll;z-index:10}#tooltip-wrapper:after{content:"";position:absolute;z-index:1;bottom:0;left:0;pointer-events:none;width:100%;unicode-bidi:plaintext;height:75px}.tooltip-pdf{width:100%;height:260px;border:0}</style>
+<div style="opacity:0;display:none" id="tooltip-wrapper">
+<div id="tooltip-content">
+</div>
+</div>
+<iframe style="display:none;height:0;width:0" id="link-preview-iframe" src="">
+</iframe>
+<script>var opacityTimeout,contentTimeout,transitionDurationMs=100,iframe=document.getElementById("link-preview-iframe"),tooltipWrapper=document.getElementById("tooltip-wrapper"),tooltipContent=document.getElementById("tooltip-content"),linkHistories={};function hideTooltip(){opacityTimeout=setTimeout((function(){tooltipWrapper.style.opacity=0,contentTimeout=setTimeout((function(){tooltipContent.innerHTML="",tooltipWrapper.style.display="none"}),transitionDurationMs+1)}),transitionDurationMs)}function positionTooltip(t){var o=t.getClientRects()[t.getClientRects().length-1],e=document.documentElement.clientWidth,i=window.innerHeight,p=12,n=10,l=(o.top,i-(o.top+o.height)),r=(o.left,e-(o.left+o.width)),s=l>=tooltipWrapper.offsetHeight+p?"bottom":"top",a=r>=tooltipWrapper.offsetWidth+p?"right":"left";tooltipWrapper.style.top="bottom"===s?o.top+o.height+p+"px":o.top-tooltipWrapper.offsetHeight-p+"px",tooltipWrapper.style.left="right"===a?o.left+o.width+p+"px":o.left-tooltipWrapper.offsetWidth-p+"px";var c=parseFloat(tooltipWrapper.style.top),f=parseFloat(tooltipWrapper.style.left);c<n?tooltipWrapper.style.top="10px":c+tooltipWrapper.offsetHeight+n>i&&(tooltipWrapper.style.top=i-tooltipWrapper.offsetHeight-n+"px"),f<n?tooltipWrapper.style.left="10px":f+tooltipWrapper.offsetWidth+n>e&&(tooltipWrapper.style.left=e-tooltipWrapper.offsetWidth-n+"px")}function showTooltip(t){var o=t.currentTarget||t.target;if(o){var e=o.getAttribute("href");if(-1===e.indexOf("http")||-1!==e.indexOf(window.location.host)){tooltipWrapper.style.display="block",tooltipWrapper.style.opacity=0,positionTooltip(o);let t=e.split("#")[0];if(t.toLowerCase().endsWith(".pdf"))return tooltipContent.innerHTML='<iframe class="tooltip-pdf" src="'+t+'"></iframe>',tooltipWrapper.scrollTop=0,void setTimeout((function(){positionTooltip(o),tooltipWrapper.style.opacity=1}),1);if(/\.(png|jpg|jpeg|gif|webp|svg)$/i.test(t))return tooltipContent.innerHTML='<img src="'+t+'" style="max-width:100%;height:auto;" />',tooltipWrapper.scrollTop=0,void setTimeout((function(){positionTooltip(o),tooltipWrapper.style.opacity=1}),1);linkHistories[t]?(tooltipContent.innerHTML=linkHistories[t],setTimeout((function(){if(positionTooltip(o),tooltipWrapper.style.opacity=1,-1!=e.indexOf("#")){let t=e.split("#")[1];const o=tooltipWrapper.querySelector(`[id='${t}']`);o.classList.add("referred"),o.scrollIntoView({behavior:"smooth"},!0)}else tooltipWrapper.scroll(0,0)}),1)):(iframe.src=t,iframe.onload=function(){let i,p;try{i=iframe.contentWindow,p=i?i.document:null}catch(t){return tooltipContent.innerHTML="<div>Preview not available for this file.</div>",tooltipWrapper.scrollTop=0,void setTimeout((function(){positionTooltip(o),tooltipWrapper.style.opacity=1}),1)}if(!p)return;const n=p.querySelector("h1"),l=p.querySelector(".content");if(tooltipContentHtml="",n&&(tooltipContentHtml+='<div style="font-weight: bold; unicode-bidi: plaintext;">'+n.innerHTML+"</div>"),l)tooltipContentHtml+=l.innerHTML;else if(p.body)tooltipContentHtml+=p.body.innerHTML;else{if(!p.documentElement)return;tooltipContentHtml+=p.documentElement.innerHTML}tooltipContent.innerHTML=tooltipContentHtml,linkHistories[t]=tooltipContentHtml,tooltipWrapper.scrollTop=0,setTimeout((function(){if(positionTooltip(o),tooltipWrapper.style.opacity=1,-1!=e.indexOf("#")){let t=e.split("#")[1];const o=tooltipWrapper.querySelector(`[id='${t}']`);o.classList.add("referred"),console.log(o),o.scrollIntoView({behavior:"smooth"},!0)}else tooltipWrapper.scroll(0,0)}),1)}),positionTooltip(o)}}}function setupListeners(t){t.addEventListener("mouseleave",(function(t){hideTooltip()})),tooltipWrapper.addEventListener("mouseleave",(function(t){hideTooltip()})),t.addEventListener("mouseenter",(function(t){clearTimeout(opacityTimeout),clearTimeout(contentTimeout),showTooltip(t)})),tooltipWrapper.addEventListener("mouseenter",(function(t){clearTimeout(opacityTimeout),clearTimeout(contentTimeout)}))}window.addEventListener("load",(function(t){document.querySelectorAll(".internal-link").forEach(setupListeners),document.querySelectorAll(".backlink-card a").forEach(setupListeners)}))</script>
+<script>window.location.hash&&document.getElementById(window.location.hash.slice(1)).classList.add("referred"),window.addEventListener("hashchange",(e=>{const t=e.oldURL.split("#");t[1]&&document.getElementById(t[1]).classList.remove("referred");const n=e.newURL.split("#");n[1]&&document.getElementById(n[1]).classList.add("referred")}),!1);const url_parts=window.location.href.split("#"),url=url_parts[0],referrence=url_parts[1];document.querySelectorAll(".cm-s-obsidian > *[id]").forEach((function(e){e.ondblclick=function(e){const t=url+"#"+e.target.id;navigator.clipboard.writeText(t)}}))</script>
+<script src="https://fastly.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js"></script>
+<script defer="defer">TIMESTAMP_FORMAT="MMM dd, yyyy h:mm a",document.querySelectorAll(".human-date").forEach((function(e){date=e.getAttribute("data-date")||e.innerText,parsed_date=luxon.DateTime.fromISO(date),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromSQL(date)),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromHTML(date)),e.innerHTML=parsed_date.toFormat(TIMESTAMP_FORMAT)}))</script>
+<script defer="defer" src="https://unpkg.com/lucide@latest"></script>
+<script defer="defer">document.addEventListener("DOMContentLoaded",(()=>{lucide.createIcons({attrs:{class:["svg-icon"]}})}))</script>
+<script>document.addEventListener("DOMContentLoaded",(function(){document.querySelectorAll(".obsidian-bases-views").forEach((function(e){var t=e.querySelector(".obsidian-bases-active-view"),a=e.querySelector(".obsidian-bases-dropdown"),i=e.querySelectorAll(".obsidian-bases-dropdown-item"),n=e.querySelectorAll(".obsidian-bases-view-panel"),o=e.querySelector(".obsidian-bases-active-view-name"),r=e.querySelector(".obsidian-bases-count-value");t&&a&&(t.addEventListener("click",(function(e){e.stopPropagation();var i="none"!==a.style.display;a.style.display=i?"none":"block",t.setAttribute("aria-expanded",!i)})),document.addEventListener("click",(function(){a.style.display="none",t.setAttribute("aria-expanded","false")})),i.forEach((function(s){s.addEventListener("click",(function(s){s.stopPropagation();var d=this.getAttribute("data-view-index");i.forEach((function(e){e.classList.remove("active")})),this.classList.add("active"),n.forEach((function(e){e.style.display="none"}));var l=e.querySelector('.obsidian-bases-view-panel[data-view-index="'+d+'"]');l&&(l.style.display="block");var c=this.querySelector(".obsidian-bases-view-icon"),u=t.querySelector(".obsidian-bases-view-icon");if(c&&u&&u.replaceWith(c.cloneNode(!0)),o&&(o.textContent=this.textContent.trim()),r&&l){var b=l.querySelectorAll("tbody tr:not(.obsidian-base-group-row), .obsidian-base-card, .obsidian-base-list li");r.textContent=b.length}a.style.display="none",t.setAttribute("aria-expanded","false")}))})))})),document.querySelectorAll(".bases-dynamic-date").forEach((function(e){var t=e.getAttribute("data-type"),a=new Date;if("today"===t){var i=a.getFullYear(),n=String(a.getMonth()+1).padStart(2,"0"),o=String(a.getDate()).padStart(2,"0");e.textContent=i+"-"+n+"-"+o}else if("now"===t){i=a.getFullYear(),n=String(a.getMonth()+1).padStart(2,"0"),o=String(a.getDate()).padStart(2,"0");var r=String(a.getHours()).padStart(2,"0"),s=String(a.getMinutes()).padStart(2,"0");e.textContent=i+"-"+n+"-"+o+" "+r+":"+s}}))}))</script>
+</body>
+</html>
