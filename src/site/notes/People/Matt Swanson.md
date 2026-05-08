@@ -1,6 +1,14 @@
 ---
-{"dg-publish":true,"permalink":"/people/matt-swanson/","tags":["People"],"dg-note-properties":{"tags":["People"]}}
+{"dg-publish":true,"permalink":"/people/matt-swanson/","tags":["People"],"dg-note-properties":{"tags":["People"],"source":"personal_notes","last_updated":"2026-05-05"}}
 ---
 
 
-Leader of [[People/Electro-Mechanical Technician\|EMT]] , but possibly not?
+#People
+
+Matt Swanson is a Sustaining Engineer on the PF (Product Finishing) team at Promega. He previously worked as an [[People/Electro-Mechanical Technician\|EMT]] before transitioning to this role.
+
+> [!info]- Details & Notes
+>
+> **Unknowns:** Previous EMT role details and exact transition date unknown.
+>
+> **See also:** [[People/Patrick Foelker\|Patrick Foelker]], [[People/Electro-Mechanical Technician\|Electro-Mechanical Technician]], [[Definitions/Operations Engineering\|Operations Engineering]]

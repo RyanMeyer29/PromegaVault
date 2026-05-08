@@ -1,9 +1,11 @@
 ---
-{"dg-publish":true,"permalink":"/my-projects/dip-tube-baffle-assembly/","tags":["My-Projects"],"dg-note-properties":{"tags":["My-Projects"],"source":"personal_notes","last_updated":"2026-02-20"}}
+{"dg-publish":true,"permalink":"/my-projects/dip-tube-baffle-assembly/","tags":["My-Projects"],"dg-note-properties":{"tags":["My-Projects"],"source":"personal_notes","last_updated":"2026-05-05"}}
 ---
 
 
 #My-Projects
+
+**Drawing review notes:** [[Definitions/SolidWorks Drawings/Drawing Reviews/Dip Tube Baffle Assembly Drawing Review 1\|Dip Tube Baffle Assembly Drawing Review 1]]
 
 The Dip Tube Baffle Assembly project is a design and fabrication project done for [[People/Philip McKeefry\|Philip]]. He is collaborating with the [[Definitions/In Vitro Dispensing\|IVD]] team on this project. The assembly is a 2L sinker shroud with two metal barbed hose connectors that needed redesign. The opposite side of the barb piece includes some kind of bubble protection feature (bubble catcher or releaser — exact function unclear).
 
@@ -20,14 +22,13 @@ Produced two prototype barb pickup pieces based on the original drawing and a sm
 
 After a second meeting, redesigned to produce 3 more larger versions (slightly smaller than prototype 1, using intuition to determine sizing). Philip then met with the [[Definitions/In Vitro Dispensing\|IVD]] team separately to select preferred sizes. They chose to move forward with the largest of both size options.
 
-## Current Action Items (from Philip's email, 2/20/2026)
+## Current Action Items (from Philip's email, 2026-04-28, target: 2026-05-08)
 
-- [x] Confirm both selected sizes are on the same barb piece that was [[Fabrication/3D Printers\|3D printed]]
-- [ ] Send Philip the .prt and .dwg files for the updated barb piece (for machine shop submission)
-- [x] Open the existing assembly zip file and confirm the updated barb piece fits correctly with the other parts (dip tube and baffles) — parts will be fabricated separately and welded together
-- [x] Specifically check that the bottom of the dip tube pickup rod has the ~14–15 mm notch that's thinner — this is where the barb weld slides on when welded
-- [ ] Create a new Pack and Go assembly (if that's the right term) with the .prt, .dwg, and .asm files — see [[Software/Solidworks\|Solidworks]]
-- [ ] Generate PDFs of the barb piece and total assembly — reference the two attached drawings for dimensions to call out
+- [ ] Footer updates — fill in Material, Drawn By, SAP #, Equipment #, Description, and Finish fields on all part drawings using old drawings as reference
+  - Barb piece and complete assembly SAP numbers not yet created — leave blank or mark TBD; [[People/Nikki Masterson\|Nikki]] is working with SAP to get them assigned
+- [ ] Tolerances/Units — update pickup rod and split baffle drawings to match original drawing tolerances; recreate split baffle drawing in millimeters
+- [ ] File naming — rename drawing files to their SAP part numbers (e.g., "1015705") once numbers are assigned; blocked on new part numbers for barb piece and assembly
+- [ ] Split Baffle Assembly Drawing — recreate with Promega drawing template; add different views showing barb orientation relative to baffles for spatial reference
 
 ## Notes
 
@@ -41,4 +42,4 @@ Philip mentioned a future mini project involving designing a lid — not yet sta
 >
 > **Encountered in:** Collaboration with [[People/Philip McKeefry\|Philip McKeefry]] and the [[Definitions/In Vitro Dispensing\|IVD]] team
 >
-> **See also:** [[People/Philip McKeefry\|Philip McKeefry]], [[Definitions/In Vitro Dispensing\|In Vitro Dispensing]], [[Fabrication/Formlabs Form 3L\|Formlabs Form 3L]], [[Software/Solidworks\|Solidworks]]
+> **See also:** [[People/Philip McKeefry\|Philip McKeefry]], [[Definitions/In Vitro Dispensing\|In Vitro Dispensing]], [[Fabrication/Formlabs Form 3L\|Formlabs Form 3L]], [[Software/SolidWorks/Solidworks\|Solidworks]]

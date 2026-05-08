@@ -1,19 +1,18 @@
 ---
-{"dg-publish":true,"permalink":"/my-projects/gel-electrophoresis-tray/","tags":["My-Projects"],"dg-note-properties":{"tags":["My-Projects"],"source":"personal_notes","last_updated":"2026-04-10"}}
+{"dg-publish":true,"permalink":"/my-projects/gel-electrophoresis-tray/","tags":["My-Projects","active"],"dg-note-properties":{"tags":["My-Projects","active"],"source":"personal_notes","last_updated":"2026-04-10"}}
 ---
 
 
 #My-Projects
 
 ## Status & Remaining Work
+**Priority (as of 2026-04-23): #5 of active projects**
 
-**Priority (as of 2026-04-10): #4 of active projects**
-
-Most of the tray components have been cut. The joint design has been updated to use a rabbet joint for cleaner, stronger epoxy bonds. [[Software/Solidworks\|Solidworks]] models need to be updated to reflect this before machining continues.
+Most of the tray components have been cut. The joint design has been updated to use a rabbet joint for cleaner, stronger epoxy bonds. [[Software/SolidWorks/Solidworks\|Solidworks]] models need to be updated to reflect this before machining continues.
 
 Remaining work:
 
-- [ ] Update [[Software/Solidworks\|Solidworks]] models to incorporate rabbet joint on all mating surfaces
+- [ ] Update [[Software/SolidWorks/Solidworks\|Solidworks]] models to incorporate rabbet joint on all mating surfaces
 - [ ] Update 2D drawings to reflect rabbet joint geometry
 - [ ] Machine updated parts and do test fit
 - [ ] Cut combs and comb handles

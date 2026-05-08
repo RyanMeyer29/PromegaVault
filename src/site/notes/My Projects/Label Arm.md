@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/my-projects/label-arm/","tags":["My-Projects"],"dg-note-properties":{"tags":["My-Projects"]}}
+{"dg-publish":true,"permalink":"/my-projects/label-arm/","tags":["My-Projects","active"],"dg-note-properties":{"tags":["My-Projects","active"]}}
 ---
 
 #My-Projects

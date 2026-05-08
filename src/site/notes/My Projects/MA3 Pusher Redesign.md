@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/my-projects/ma-3-pusher-redesign/","tags":["My-Projects"],"dg-note-properties":{"aliases":["New pusher design","MA3 Push"],"tags":["My-Projects"]}}
+{"dg-publish":true,"permalink":"/my-projects/ma-3-pusher-redesign/","tags":["My-Projects","active"],"dg-note-properties":{"aliases":["New pusher design","MA3 Push"],"tags":["My-Projects","active"]}}
 ---
 
 
@@ -11,11 +11,11 @@
 - [ ] Check with [[People/Matt Wahl\|Matt]] about what improvements he has in mind for the pusher (flagged in 1:1, 2026-04-10)
 - [ ] Verify whether the slots on the front plate are still needed (flagged in 1:1, 2026-04-10)
 - [ ] Investigate fine adjustment mechanism for pusher plate position
-- [ ] Shift front plate left by ~1-2 mm in model to correct alignment offset
-- [ ] Verify pin hole diameter in model (may be undersized — required filing during fit test)
-- [ ] Fix countersink dimensions in model (screw sitting slightly proud)
-- [ ] Confirm whether plate offset is a model error or 3D print warping from transport
-- [ ] Print updated prototype on [[Fabrication/Markforged Industrial X7\|Markforged Industrial X7]] once model is corrected
+- [x] Shift front plate left by ~1-2 mm in model to correct alignment offset
+- [x] Verify pin hole diameter in model (may be undersized — required filing during fit test)
+- [x] Fix countersink dimensions in model (screw sitting slightly proud)
+- [x] Confirm whether plate offset is a model error or 3D print warping from transport
+- [x] Print updated prototype on [[Fabrication/Markforged Industrial X7\|Markforged Industrial X7]] — fit well, project moving to Engineering Study phase (as of 2026-04-30)
 - [x] Print pusher (3D print test candidate — flagged in 1:1, 2026-04-03)
 
 ## Steps
@@ -35,7 +35,7 @@ Evaluate how lead-ins on the [[Unknown/Drop Gate\|Drop Gate]] can be modified to
 
 ## Prototype Fit Test — 2026-04-10 (ECR)
 
-A prototype was printed in [[Fabrication/Markforged Industrial X7\|Markforged Onyx]] on the industrial X7 at [[Buildings/Lamarr\|Lamarr]]. The original design was modeled in [[Software/Solidworks\|Solidworks]] from measurements of the existing part. The redesign removes the bend/curve from the original fork while maintaining the front plate slot geometry. No changes were made to the mounting interface.
+A prototype was printed in [[Fabrication/Markforged Industrial X7\|Markforged Onyx]] on the industrial X7 at [[Buildings/Lamarr\|Lamarr]]. The original design was modeled in [[Software/SolidWorks/Solidworks\|Solidworks]] from measurements of the existing part. The redesign removes the bend/curve from the original fork while maintaining the front plate slot geometry. No changes were made to the mounting interface.
 
 The screws used for the test were 4-40 stainless steel flat head hex screws (McMaster-Carr 91781A106). The originals are believed to have been sourced by [[Definitions/Optima\|Optima]], the vendor who built [[Lines/MA3/MA3\|MA3]], but the exact spec is unconfirmed. The McMaster screws were the closest available equivalent.
 
@@ -70,4 +70,4 @@ Note: some or all of the dimensional errors below may be attributable to polymer
 
 
 
-![MA3 Pusher kickoff drawing.png](/img/user/Other/MA3%20Pusher%20kickoff%20drawing.png)
+![MA3 Pusher kickoff drawing.png](/img/user/Other/Images/MA3%20Pusher%20kickoff%20drawing.png)

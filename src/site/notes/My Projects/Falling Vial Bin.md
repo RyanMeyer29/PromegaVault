@@ -15,7 +15,7 @@
 
 Vials from the [[Definitions/Feynman Bottle Lyophilizer\|Lyo]] go through an intermediate room before the go to the [[Definitions/LYO Finishing B\|finishing station]]. If a vial is on its side, it will roll off the conveyor into a bin. This bin has a sloped bottom and a hole on the low end so that it could potentially be funneled into another conveyor and through the wall, but that will not be implemented. [[People/Paul Doll\|Paul]] is having me patch the hole on the one end, since their temporary fix was just cardboard and tape. It also has the vials falling a significant distance, so a ramp to slow the vials down will be implemented. 
 ## Process
-I will use [[Software/Solidworks\|Solidworks]] to model current bin using the [[Software/Solidworks Sheet Metal\|sheet metal]] features in order to get reference geometry for the added features. This will be done by first creating the general shape as a solid body, using the shell feature to bring it to the sheet metal gauge, and then converting to sheet metal. 
+I will use [[Software/SolidWorks/Solidworks\|Solidworks]] to model current bin using the [[Software/SolidWorks/Solidworks Sheet Metal\|sheet metal]] features in order to get reference geometry for the added features. This will be done by first creating the general shape as a solid body, using the shell feature to bring it to the sheet metal gauge, and then converting to sheet metal. 
 
 To cap the end, I made a drawing on a sticky note of a possible solution. It is only 1 bend, and is mostly a flat rectangle with a flange to mount it to existing screw holes in the bin. I will make sure that there are no gaps big enough to let the smallest vials through. 
 

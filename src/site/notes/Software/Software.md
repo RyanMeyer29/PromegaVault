@@ -10,7 +10,7 @@
 - [[Software/OneNote\|OneNote]]
 
 ## Production
-- [[Software/Solidworks\|Solidworks]]
+- [[Software/SolidWorks/Solidworks\|Solidworks]]
 - [[Software/AutoCAD\|AutoCAD]]
 ## Communication 
 - [[Software/Outlook\|Outlook]]

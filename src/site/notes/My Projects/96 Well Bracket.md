@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/my-projects/96-well-bracket/","tags":["My-Projects"],"dg-note-properties":{"tags":["My-Projects"],"last_updated":"2026-04-10"}}
+{"dg-publish":true,"permalink":"/my-projects/96-well-bracket/","tags":["My-Projects","active"],"dg-note-properties":{"tags":["My-Projects","active"],"last_updated":"2026-04-10"}}
 ---
 
 #My-Projects
@@ -19,4 +19,4 @@
 
 [[People/Zack Wermeling\|Zack Wermeling]] needs a bracket to hold 4 [[Definitions/96 Well Plate\|96 Well Plate]] together on an automatic dispensing machine in his lab in [[Buildings/BTC\|BTC]]. The bracket is just there to make sure the plates are oriented correctly, so that the labels on the plate match the wells that the computer thinks they are. 
 
-I made a model in [[Software/Solidworks\|Solidworks]] for the plate and the bracket. I plan to cut it out of HDPE on the [[Fabrication/Zund\|Zund]]. 
+I made a model in [[Software/SolidWorks/Solidworks\|Solidworks]] for the plate and the bracket. I plan to cut it out of HDPE on the [[Fabrication/Zund\|Zund]]. 
