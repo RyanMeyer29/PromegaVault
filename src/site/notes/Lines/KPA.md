@@ -7,10 +7,10 @@
 
 KPA (Kit Packaging Area) is a packaging line located in [[Buildings/Feynman\|Feynman]]. The Engineering Ownership Tracker lists the engineering owner as Cameron Stuart and validation support as Evelyn Stencel.
 
-Known equipment includes Lane 1 & 2 conveyors, a tray labeler, [[Definitions/Robowrap\|Robowrap]], [[Definitions/HMI\|HMI]] units, a box taper, a shrink wrapper, and a Shuttleworth conveyor. The box taper and shrink wrapper have had minor issues flagged in the P5 meeting (2026-03-25), though both were resolved quickly.
+Known equipment includes Lane 1 & 2 conveyors, a tray labeler, [[Definitions/Equipment/Robowrap\|Robowrap]], [[Definitions/HMI\|HMI]] units, a box taper, a shrink wrapper, and a Shuttleworth conveyor. The box taper and shrink wrapper have had minor issues flagged in the P5 meeting (2026-03-25), though both were resolved quickly.
 
 > [!info]- Details & Notes
 >
-> **See also:** [[Buildings/Feynman\|Feynman]], [[Definitions/Robowrap\|Robowrap]], [[Definitions/HMI\|HMI]]
+> **See also:** [[Buildings/Feynman\|Feynman]], [[Definitions/Equipment/Robowrap\|Robowrap]], [[Definitions/HMI\|HMI]]
 >
 > **Encountered in:** Feynman P5 meeting (2026-03-25)

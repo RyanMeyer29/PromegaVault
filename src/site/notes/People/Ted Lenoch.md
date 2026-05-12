@@ -5,10 +5,10 @@
 
 #People
 
-Ted Lenoch is the Sr Supervisor of IVD Production at Promega, in the IVD Bulk Production department. He is a contact on the [[My Projects/Mixer Chuck\|Mixer Chuck]] project for organizing any change control or associated downtime if required.
+Ted Lenoch is the Sr Supervisor of IVD Production at Promega, in the IVD Bulk Production department. He is a contact on the [[My Projects/Mixer Chuck/Mixer Chuck\|Mixer Chuck]] project for organizing any change control or associated downtime if required.
 
 > [!info]- Details & Notes
 >
-> **Encountered in:** [[My Projects/Mixer Chuck\|Mixer Chuck]]
+> **Encountered in:** [[My Projects/Mixer Chuck/Mixer Chuck\|Mixer Chuck]]
 >
-> **See also:** [[Definitions/In Vitro Dispensing\|In Vitro Dispensing]], [[My Projects/Mixer Chuck\|Mixer Chuck]], [[People/Garrett Tschanz\|Garrett Tschanz]]
+> **See also:** [[Definitions/In Vitro Dispensing\|In Vitro Dispensing]], [[My Projects/Mixer Chuck/Mixer Chuck\|Mixer Chuck]], [[People/Garrett Tschanz\|Garrett Tschanz]]

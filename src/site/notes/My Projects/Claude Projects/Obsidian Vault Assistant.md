@@ -264,7 +264,7 @@ Plain prose. No blockquote > indenting, no bold, no italics. Include:
 
 Inline wikilink style:
 - People: [[Full Name\|First Name]] — e.g. [[People/Paul Doll\|Paul]]
-- Acronyms: [[Full Name\|ACRONYM]] — e.g. [[Definitions/Change Control\|CC]]
+- Acronyms: [[Full Name\|ACRONYM]] — e.g. [[Definitions/Quality/Change Control\|CC]]
 - Production lines / equipment: use short designation in text — e.g. [[Lines/MA1\|MA1]]
 
 ### Collapsible Info Section

@@ -4,7 +4,7 @@
 
 #My-Projects
 
-Septa Mat Excel is an Excel file in the [[Software/OneDrive\|OneDrive]] of [[Ryan Meyer\|Ryan Meyer]], that has transcribed run logs of the [[Definitions/Septa Mat Cutting Robot\|Septa Mat Cutting Robot]], compiling information on run times and failed runs. 
+Septa Mat Excel is an Excel file in the [[Software/OneDrive\|OneDrive]] of [[Ryan Meyer\|Ryan Meyer]], that has transcribed run logs of the [[Definitions/Equipment/Septa Mat Cutting Robot\|Septa Mat Cutting Robot]], compiling information on run times and failed runs. 
 
 ## History
 Ali gave me a few scanned copies of handwritten [[Definitions/Septa Mats\|Septa Mat]] Cutting logs, with the plan to digitize them. I wrote them into the excel sheet as separate tabs.

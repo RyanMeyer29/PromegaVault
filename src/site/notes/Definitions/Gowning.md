@@ -5,10 +5,10 @@
 
 #Definitions
 
-Gowning is the process of putting on appropriate protective clothing before entering a [[Definitions/Cleanroom\|Cleanroom]] or [[Definitions/ECR\|ECR]]. This typically involves items like gowns, gloves, hairnets, and shoe covers, and must be done in a specific sequence to avoid contaminating the controlled environment.
+Gowning is the process of putting on appropriate protective clothing before entering a [[Definitions/Cleanroom\|Cleanroom]] or [[Definitions/Quality/ECR\|ECR]]. This typically involves items like gowns, gloves, hairnets, and shoe covers, and must be done in a specific sequence to avoid contaminating the controlled environment.
 
 > [!info]- Details & Notes
 >
 > **Unknowns:** Specific gowning requirements and sequence for Promega cleanrooms not yet documented. #unsure-or-needs-to-be-finished
 >
-> **See also:** [[Definitions/Cleanroom\|Cleanroom]], [[Definitions/ECR\|ECR]], [[Buildings/Feynman\|Feynman]]
+> **See also:** [[Definitions/Cleanroom\|Cleanroom]], [[Definitions/Quality/ECR\|ECR]], [[Buildings/Feynman\|Feynman]]

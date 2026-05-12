@@ -11,4 +11,4 @@ LYO Finishing B (room 1275, ISO CNC) is a room in the [[Buildings/Feynman\|Feynm
 >
 > **Official name/model:** LYO Finishing B — room 1275, Feynman First Floor
 >
-> **See also:** [[Unknown/LYO Finishing A\|LYO Finishing A]], [[Unknown/LYO Production\|LYO Production]], [[Buildings/Feynman\|Feynman]], [[Definitions/Feynman Bottle Lyophilizer\|Feynman Bottle Lyophilizer]], [[Definitions/Lyophilizer\|Lyophilizer]]
+> **See also:** [[Unknown/LYO Finishing A\|LYO Finishing A]], [[Unknown/LYO Production\|LYO Production]], [[Buildings/Feynman\|Feynman]], [[Definitions/Equipment/Feynman Bottle Lyophilizer\|Feynman Bottle Lyophilizer]], [[Definitions/Lyophilizer\|Lyophilizer]]

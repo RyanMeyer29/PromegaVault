@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/software/solid-works/solid-works-macros/json-property-filler/","tags":["Software"],"dg-note-properties":{"tags":["Software"],"source":"personal_notes","last_updated":"2026-05-07"}}
+{"dg-publish":true,"permalink":"/software/solid-works/solid-works-macros/json-property-filler/","tags":["Software"],"dg-note-properties":{"tags":["Software"],"source":"personal_notes","last_updated":"2026-05-11"}}
 ---
 
 
@@ -97,7 +97,7 @@ Sub main()
     swProps.Delete "Equipment #"
     On Error GoTo 0
 
-    Dim keys(11) As String
+    Dim keys(12) As String
     keys(0) = "SAP#"
     keys(1) = "Drawing#"
     keys(2) = "Description"
@@ -106,16 +106,17 @@ Sub main()
     keys(5) = "DesignedBy"
     keys(6) = "DesignedDate"
     keys(7) = "ApprovedBy"
-    keys(8) = "Equipment#"
-    keys(9) = "Manufacturer"
-    keys(10) = "OldNumber"
-    keys(11) = "Revision"
+    keys(8) = "ApprovedDate"
+    keys(9) = "Equipment#"
+    keys(10) = "Manufacturer"
+    keys(11) = "OldNumber"
+    keys(12) = "Revision"
 
     Dim i As Integer
     Dim resultMsg As String
     resultMsg = "Properties written and file saved!" & Chr(10) & Chr(10)
 
-    For i = 0 To 11
+    For i = 0 To 12
         Dim val As String
         val = ExtractJsonValue(jsonContent, keys(i))
         On Error Resume Next
@@ -157,7 +158,7 @@ End Function
 
 ## Mixer Chuck Use Case
 
-JSON property files for all [[My Projects/Mixer Chuck\|Mixer Chuck]] parts. Stored in `My Projects/Mixer Chuck Part JSONs/`. See [[My Projects/Mixer Chuck Drawing Properties\|Mixer Chuck Drawing Properties]] for the full title block reference.
+JSON property files for all [[My Projects/Mixer Chuck/Mixer Chuck\|Mixer Chuck]] parts. Stored in `My Projects/Mixer Chuck Part JSONs/`. See [[My Projects/Mixer Chuck/Mixer Chuck Drawing Properties\|Mixer Chuck Drawing Properties]] for the full title block reference.
 
 ### Chuck Bodies
 [[Chuck Style A.json|Chuck Style A]] (SAP 1016437)
@@ -178,4 +179,4 @@ JSON property files for all [[My Projects/Mixer Chuck\|Mixer Chuck]] parts. Stor
 
 > [!info]- Details & Notes
 >
-> **See also:** [[Software/SolidWorks/Solidworks\|Solidworks]], [[Software/SolidWorks/SolidWorks Templates\|SolidWorks Templates]], [[My Projects/Mixer Chuck\|Mixer Chuck]], [[My Projects/Mixer Chuck Drawing Properties\|Mixer Chuck Drawing Properties]]
+> **See also:** [[Software/SolidWorks/Solidworks\|Solidworks]], [[Software/SolidWorks/SolidWorks Templates\|SolidWorks Templates]], [[My Projects/Mixer Chuck/Mixer Chuck\|Mixer Chuck]], [[My Projects/Mixer Chuck/Mixer Chuck Drawing Properties\|Mixer Chuck Drawing Properties]]

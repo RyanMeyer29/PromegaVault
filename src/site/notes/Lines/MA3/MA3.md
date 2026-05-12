@@ -17,7 +17,7 @@ MA3 (MaxAuto3) is one of the MaxAuto fill/finish lines in the Feynman building. 
 
 **Active Projects:**
 
-- [[Definitions/Engineering Study\|Engineering Study]] — [[My Projects/MA3 Pusher Redesign\|New pusher design]]  _(I will be involved in this project)_
+- [[Definitions/Quality/Engineering Study\|Engineering Study]] — [[My Projects/MA3 Pusher Redesign\|New pusher design]]  _(I will be involved in this project)_
 - MA2 software improvements being ported to MA3 by Bethany Zepnick (scheduled Friday 2026-03-27). Includes fixing mislabeled HMI buttons, a vacuum pump that never shuts off, and a crash issue when rejecting all objects.
 
 **Notes:**
@@ -28,4 +28,4 @@ MA3 (MaxAuto3) is one of the MaxAuto fill/finish lines in the Feynman building. 
 
 > [!info]- Details & Notes
 >
-> **See also:** [[Lines/MaxAuto\|MaxAuto]], [[Lines/MA1\|MA1]], [[Lines/MA2\|MA2]], [[Definitions/Maxwell RSC\|Maxwell RSC]], [[My Projects/MA3 Pusher Redesign\|MA3 Pusher Redesign]], [[Definitions/HMI\|HMI]]
+> **See also:** [[Lines/MaxAuto\|MaxAuto]], [[Lines/MA1\|MA1]], [[Lines/MA2\|MA2]], [[Definitions/Equipment/Maxwell RSC\|Maxwell RSC]], [[My Projects/MA3 Pusher Redesign\|MA3 Pusher Redesign]], [[Definitions/HMI\|HMI]]

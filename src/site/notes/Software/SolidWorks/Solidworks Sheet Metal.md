@@ -5,4 +5,9 @@
 
 ## Tips and Tricks
 
-Some projects may be easier to start as a solid body and convert to sheet metal. You must define the base flange and its thickness, as well as the bend radius. Then, you must define the edges that will be bent. 
+Some projects may be easier to start as a solid body and convert to sheet metal. You must define the base flange and its thickness, as well as the bend radius. Then, you must define the edges that will be bent.
+
+## Projects Using Sheet Metal
+
+- [[My Projects/Lyo Clear Cover\|Lyo Clear Cover]]
+- [[My Projects/Falling Vial Bin\|Falling Vial Bin]]

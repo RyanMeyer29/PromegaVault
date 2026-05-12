@@ -4,4 +4,4 @@
 
 
 
-> _Orphan — involved in upcoming [[Unknown/EVCO EO Bag\|EVCO EO Bag]] [[Definitions/Change Control\|CC]] on [[Lines/MA1\|MA1]]._
+> _Orphan — involved in upcoming [[Unknown/EVCO EO Bag\|EVCO EO Bag]] [[Definitions/Quality/Change Control\|CC]] on [[Lines/MA1\|MA1]]._

@@ -9,6 +9,6 @@ NLAG is an SAP material type for non-stocked, non-valuated maintenance supplies.
 
 > [!info]- Details & Notes
 >
-> **Encountered in:** [[My Projects/Mixer Chuck\|Mixer Chuck]] (via [[Definitions/Multiple Materials Request Spreadsheet\|Multiple Materials Request Spreadsheet]])
+> **Encountered in:** [[My Projects/Mixer Chuck/Mixer Chuck\|Mixer Chuck]] (via [[Definitions/Parts Process/Multiple Materials Request Spreadsheet\|Multiple Materials Request Spreadsheet]])
 >
-> **See also:** [[Definitions/ERSA\|ERSA]], [[Software/SAP\|SAP]], [[Definitions/Multiple Materials Request Spreadsheet\|Multiple Materials Request Spreadsheet]], [[Definitions/Parts Order Form\|Parts Order Form]]
+> **See also:** [[Definitions/Parts Process/ERSA\|ERSA]], [[Software/SAP\|SAP]], [[Definitions/Parts Process/Multiple Materials Request Spreadsheet\|Multiple Materials Request Spreadsheet]], [[Definitions/Parts Process/Parts Order Form\|Parts Order Form]]

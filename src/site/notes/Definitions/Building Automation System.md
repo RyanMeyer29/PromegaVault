@@ -9,4 +9,4 @@ A Building Automation System (BAS) is a network of interconnected systems design
 
 > [!info]- Details & Notes
 >
-> **See also:** [[Definitions/ECR\|ECR]], [[Definitions/Particle Monitoring System\|Particle Monitoring System]], [[Buildings/Feynman\|Feynman]]
+> **See also:** [[Definitions/Quality/ECR\|ECR]], [[Definitions/Particle Monitoring System\|Particle Monitoring System]], [[Buildings/Feynman\|Feynman]]

@@ -9,6 +9,6 @@ Nikki Masterson is the Supervisor of EMT & Facilities Op Planning at Promega in 
 
 > [!info]- Details & Notes
 >
-> **Encountered in:** [[My Projects/Mixer Chuck\|Mixer Chuck]]
+> **Encountered in:** [[My Projects/Mixer Chuck/Mixer Chuck\|Mixer Chuck]]
 >
-> **See also:** [[Definitions/Multiple Materials Request Spreadsheet\|Multiple Materials Request Spreadsheet]], [[Definitions/Parts Order Form\|Parts Order Form]], [[Software/SAP\|SAP]]
+> **See also:** [[Definitions/Parts Process/Multiple Materials Request Spreadsheet\|Multiple Materials Request Spreadsheet]], [[Definitions/Parts Process/Parts Order Form\|Parts Order Form]], [[Software/SAP\|SAP]]

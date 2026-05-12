@@ -27,7 +27,7 @@ Resolve the sideways translation (offset) issue with the pusher. See Prototype F
 Develop design options for the pusher end. [[Fabrication/3D Printers\|3D print]] and test candidates.
 
 ### Step 3: [[Unknown/Drop Gate\|Drop Gate]] Improvements
-Evaluate how lead-ins on the [[Unknown/Drop Gate\|Drop Gate]] can be modified to improve function. Begin with a [[Fabrication/3D Printers\|3D print]]. Ryan leads [[Definitions/Change Control\|Change Control]] for this step.
+Evaluate how lead-ins on the [[Unknown/Drop Gate\|Drop Gate]] can be modified to improve function. Begin with a [[Fabrication/3D Printers\|3D print]]. Ryan leads [[Definitions/Quality/Change Control\|Change Control]] for this step.
 
 **Step 3a:** Assess whether the connection point can be modified to allow for future adjustments, avoiding the need to redesign from scratch later.
 
@@ -57,12 +57,12 @@ Note: some or all of the dimensional errors below may be attributable to polymer
 ## Long-Term Plan
 
 - Evaluate model options, including 3D printed versions
-- Conduct [[Definitions/Engineering Study\|Engineering Study]] (Ryan leads) — a structured internal process with informal steps **(active as of 2026-03-20)**
+- Conduct [[Definitions/Quality/Engineering Study\|Engineering Study]] (Ryan leads) — a structured internal process with informal steps **(active as of 2026-03-20)**
 - Narrow down design options
 - Machine final part
-- Complete [[Definitions/Change Control\|Change Control]] to add final part:
+- Complete [[Definitions/Quality/Change Control\|Change Control]] to add final part:
   - [[Software/EPDM\|EPDM]] updates
-  - [[Definitions/CoC\|CoC]]
+  - [[Definitions/Quality/CoC\|CoC]]
   - Final parts process
 
 

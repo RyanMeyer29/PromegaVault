@@ -9,6 +9,6 @@ Gary McCauley is an Engineering Analyst at Promega in the Operations Engineering
 
 > [!info]- Details & Notes
 >
-> **Encountered in:** [[My Projects/Mixer Chuck\|Mixer Chuck]] (part number requests)
+> **Encountered in:** [[My Projects/Mixer Chuck/Mixer Chuck\|Mixer Chuck]] (part number requests)
 >
 > **See also:** [[Software/SAP\|SAP]], [[Definitions/Operations Engineering\|Operations Engineering]]

@@ -16,4 +16,4 @@ MA2 (MaxAuto2) is one of the MaxAuto fill/finish lines in the Feynman building. 
 
 > [!info]- Details & Notes
 >
-> **See also:** [[Lines/MaxAuto\|MaxAuto]], [[Lines/MA1\|MA1]], [[Lines/MA3/MA3\|MA3]], [[Definitions/Maxwell RSC\|Maxwell RSC]], [[Definitions/Optima\|Optima]]
+> **See also:** [[Lines/MaxAuto\|MaxAuto]], [[Lines/MA1\|MA1]], [[Lines/MA3/MA3\|MA3]], [[Definitions/Equipment/Maxwell RSC\|Maxwell RSC]], [[Definitions/Optima\|Optima]]

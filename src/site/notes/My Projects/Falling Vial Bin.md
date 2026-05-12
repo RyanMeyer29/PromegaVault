@@ -13,7 +13,7 @@
 
 ## Background
 
-Vials from the [[Definitions/Feynman Bottle Lyophilizer\|Lyo]] go through an intermediate room before the go to the [[Definitions/LYO Finishing B\|finishing station]]. If a vial is on its side, it will roll off the conveyor into a bin. This bin has a sloped bottom and a hole on the low end so that it could potentially be funneled into another conveyor and through the wall, but that will not be implemented. [[People/Paul Doll\|Paul]] is having me patch the hole on the one end, since their temporary fix was just cardboard and tape. It also has the vials falling a significant distance, so a ramp to slow the vials down will be implemented. 
+Vials from the [[Definitions/Equipment/Feynman Bottle Lyophilizer\|Lyo]] go through an intermediate room before the go to the [[Definitions/LYO Finishing B\|finishing station]]. If a vial is on its side, it will roll off the conveyor into a bin. This bin has a sloped bottom and a hole on the low end so that it could potentially be funneled into another conveyor and through the wall, but that will not be implemented. [[People/Paul Doll\|Paul]] is having me patch the hole on the one end, since their temporary fix was just cardboard and tape. It also has the vials falling a significant distance, so a ramp to slow the vials down will be implemented. 
 ## Process
 I will use [[Software/SolidWorks/Solidworks\|Solidworks]] to model current bin using the [[Software/SolidWorks/Solidworks Sheet Metal\|sheet metal]] features in order to get reference geometry for the added features. This will be done by first creating the general shape as a solid body, using the shell feature to bring it to the sheet metal gauge, and then converting to sheet metal. 
 

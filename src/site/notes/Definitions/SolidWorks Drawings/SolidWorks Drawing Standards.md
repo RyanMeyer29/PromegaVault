@@ -316,6 +316,6 @@ Final pass before submission. If any of these are true, fix before sending for r
 > **See also:** [[Software/SolidWorks/Solidworks\|SolidWorks]], [[Software/EPDM\|ePDM]], [[People/Brian Osterbrink\|Brian Osterbrink]], [[People/Ali Heinemann\|Ali Heinemann]]
 >
 > **In-person reviews informing this note:**
-> - [[Definitions/SolidWorks Drawings/Drawing Reviews/Mixer Chuck Drawing Review 1\|Mixer Chuck Drawing Review 1]] — 2026-04-21 (Brian)
+> - [[My Projects/Mixer Chuck/Mixer Chuck Drawing Review 1\|Mixer Chuck Drawing Review 1]] — 2026-04-21 (Brian)
 > - Bubble sensor mount drawing review — 2026-04-27 (Brian): virtual sharp on tapered angles, projection order with bottom view, ordinate dimension duplicates
 > - Mixer chuck shaft drawing review — 2026-04-30 (Brian): detail view required for non-45° chamfers on shafts when proportionally small

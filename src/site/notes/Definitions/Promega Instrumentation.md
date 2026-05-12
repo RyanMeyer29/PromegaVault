@@ -5,7 +5,7 @@
 
 Promega develops and manufactures a range of scientific instruments used in molecular biology, forensics, and life sciences research. As a fill/finish engineer, the instruments are relevant because the cartridges, kits, and reagents produced on the production lines here — like the MaxAuto lines — are what end customers load into these instruments to do their work. Understanding what the instruments do gives context for why what we make matters.
 
-Two instruments I encounter most in this context are the [[Definitions/Maxwell RSC\|Maxwell RSC]] and the [[Definitions/Spectrum\|Spectrum]].
+Two instruments I encounter most in this context are the [[Definitions/Equipment/Maxwell RSC\|Maxwell RSC]] and the [[Definitions/Spectrum\|Spectrum]].
 
 The Maxwell® RSC is an automated nucleic acid extraction instrument. It uses prefilled cartridges — the kind filled and labeled on the MaxAuto lines — to purify DNA or RNA from a variety of sample types using magnetic bead-based separation. Customers use it in research, clinical, and food safety applications.
 
@@ -17,4 +17,4 @@ The Spectrum is Promega's capillary electrophoresis instrument. It separates and
 >
 > **Unknowns:** Full range of Promega instruments not yet documented here. Other notable instruments include the GloMax® luminometer/plate reader family and the Maxprep® Liquid Handler. Not all instruments have a direct connection to fill/finish operations.
 >
-> **See also:** [[Definitions/Maxwell RSC\|Maxwell RSC]], [[Definitions/Spectrum\|Spectrum]], [[Lines/MaxAuto\|MaxAuto]], [[Definitions/Electrophoresis\|Electrophoresis]]
+> **See also:** [[Definitions/Equipment/Maxwell RSC\|Maxwell RSC]], [[Definitions/Spectrum\|Spectrum]], [[Lines/MaxAuto\|MaxAuto]], [[Definitions/Electrophoresis\|Electrophoresis]]

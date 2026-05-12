@@ -8,20 +8,16 @@ Mechanical Engineering Co-op working under [[People/Ali Heinemann\|Ali]] in [[De
 
 ## TO DO
 
-| Task                                                                     | Related Project              | Person                                            | Notes                                                                                              |
-| :----------------------------------------------------------------------- | :--------------------------- | :------------------------------------------------ | :------------------------------------------------------------------------------------------------- |
-| Complete drawing updates per Philip's email                              | [[My Projects/Dip Tube Baffle Assembly\|Dip Tube Baffle Assembly]] | [[People/Philip McKeefry\|Philip]]                       | Target: 2026-05-08 — footer, tolerances, file naming, split baffle assembly drawing                |
-| Finish drawings edits per Brian's review, get approval                   | [[My Projects/Mixer Chuck\|Mixer Chuck]]              | [[People/Brian Osterbrink\|Brian]]                       | Brian reviewed, edits in progress — approval needed before ePDM rename/move and shop request       |
-| Confirm spares quantity with Claire, then submit shop request            | [[My Projects/Mixer Chuck\|Mixer Chuck]]              | [[People/Claire Moll\|Claire]], [[People/Travis Beyer\|Travis]] | Chuck styles fully confirmed — only blocker is spares qty from Claire                              |
-| Finish SolidWorks drawings for Brian's parts                             | [[My Projects/Bubble Sensor Tray\|Bubble Sensor Tray]]       | [[People/Brian Osterbrink\|Brian]]                       | One done, one remaining (simple backing plate)                                                     |
-| Fix 96 well bracket model and recut                                      | [[My Projects/96 Well Bracket\|96 Well Bracket]]          | [[People/Zack Wermeling\|Zack]]                          | Bad original measurements, new ones taken; Z-axis clearance issue for metal tabs also needs fixing |
-| Make model for finishing panel                                           | [[Unknown/Pauls Finishing Panel\|Pauls Finishing Panel]]    | [[People/Paul Doll\|Paul]]                               | Measurements taken, model not started yet                                                          |
-| Redesign models with rabbet joint, update drawings, machine and test fit | [[My Projects/Gel Electrophoresis Tray\|Gel Electrophoresis Tray]] |                                                   | Rabbet joint will make epoxy cleaner and stronger — update [[Software/SolidWorks/Solidworks\|Solidworks]] models first             |
-| Determine next steps for MA3 Pusher after successful reprint             | [[My Projects/MA3 Pusher Redesign\|MA3 Pusher Redesign]]      |                                                   | Model fixed, reprinted, fit well — moving forward in process                                       |
-| Get part number for filter adapter                                       | [[My Projects/Filter Connection\|Filter Connection]]        |                                                   |                                                                                                    |
-| Get bottle alignment CoC and drawings                                    | [[My Projects/Label Arm\|Label Arm]]                |                                                   | Waiting on Paul — low priority for him, will be a while                                            |
-| Update SolidWorks templates                                              | [[Software/SolidWorks/SolidWorks Templates\|SolidWorks Templates]]     |                                                   | 3D part templates and drawing templates                                                            |
-| Fix Claude usage                                                         | [[Software/Anthropic Claude\|Anthropic Claude]]         |                                                   |                                                                                                    |
+| Task                                                                     | Related Project               | Person                     | Notes                                                                                              |
+| :----------------------------------------------------------------------- | :---------------------------- | :------------------------- | :------------------------------------------------------------------------------------------------- |
+| Schedule design review and confirm PEEK with bath lip temp measurement   | [[My Projects/Calibration Probe Fixture\|Calibration Probe Fixture]] | [[People/David Velazquez\|David]] | Due June. Bath lip temp at 280°C operation needed to confirm PEEK universal suitability            |
+| Fix 96 well bracket model and recut                                      | [[My Projects/96 Well Bracket\|96 Well Bracket]]           | [[People/Zack Wermeling\|Zack]]   | Bad original measurements, new ones taken; Z-axis clearance issue for metal tabs also needs fixing |
+| Make model for finishing panel                                           | [[Unknown/Pauls Finishing Panel\|Pauls Finishing Panel]]     | [[People/Paul Doll\|Paul]]        | Measurements taken, model not started yet                                                          |
+| Redesign models with rabbet joint, update drawings, machine and test fit | [[My Projects/Gel Electrophoresis Tray\|Gel Electrophoresis Tray]]  |                            | Rabbet joint will make epoxy cleaner and stronger — update [[Software/SolidWorks/Solidworks\|Solidworks]] models first             |
+| Determine next steps for MA3 Pusher after successful reprint             | [[My Projects/MA3 Pusher Redesign\|MA3 Pusher Redesign]]       |                            | Model fixed, reprinted, fit well — moving forward in process                                       |
+| Get part number for filter adapter                                       | [[My Projects/Filter Connection\|Filter Connection]]         |                            |                                                                                                    |
+| Remodel lyo clear cover in SolidWorks sheet metal mode                   | [[My Projects/Lyo Clear Cover\|Lyo Clear Cover]]           | [[People/Ali Heinemann\|Ali]]     | 3/8" stock, no top holes, all other dimensions per existing drawing                                |
+| Update SolidWorks templates                                              | [[Software/SolidWorks/SolidWorks Templates\|SolidWorks Templates]]      |                            | 3D part templates and drawing templates                                                            |
 
 ## Projects 
 ### Base List
@@ -50,36 +46,44 @@ views:
 
 ### High Priority
 
-1. [[My Projects/Dip Tube Baffle Assembly\|Dip Tube Baffle Assembly]] (**DUE 2026-05-08**)
-	STATUS: Drawing updates required per Philip's April email — footer SAP fields (TBD, Nikki creating numbers), tolerances/units on pickup rod and split baffle, file naming blocked on new SAP numbers, split baffle assembly drawing needs recreating with Promega template.
-2. [[My Projects/Mixer Chuck\|Mixer Chuck]] (**TIMELINE IS HIGH PRIORITY**)
-	STATUS: Chuck styles fully confirmed — X5P33 (BTC) = Style B, XSS1P33 = Style C, XSS5P33 = Style C (assumed). EV5L25M removed from scope. Drawings with Brian for approval. Spares qty needs follow-up with Claire before shop request can be submitted.
-3. [[My Projects/96 Well Bracket\|96 Well Bracket]]
-	STATUS: Test fit failed — bad measurements and Z-axis clearance issue with metal tabs. New measurements taken, model needs fixing, recut on Zund and retest with Zack
-4. [[Unknown/Pauls Finishing Panel\|Paul's Finishing Panel]]
-	STATUS: Measurements taken, need to make a model
-5. [[My Projects/Gel Electrophoresis Tray\|Gel Electrophoresis Tray]]
-	STATUS: Redesign models with rabbet joint, update drawings, machine and test fit
+1. [[My Projects/Calibration Probe Fixture\|Calibration Probe Fixture]] (**DUE JUNE**)
+	STATUS: Schedule design review with Metrology. Material direction is PEEK universal, pending bath lip temperature measurement at 280°C operation to confirm suitability.
+2. [[My Projects/96 Well Bracket\|96 Well Bracket]]
+	STATUS: Test fit failed — bad measurements and Z-axis clearance issue with metal tabs. New measurements taken, model needs fixing, recut on Zund and retest with Zack.
+3. [[Unknown/Pauls Finishing Panel\|Paul's Finishing Panel]]
+	STATUS: Measurements taken, need to make a model.
+4. [[My Projects/Gel Electrophoresis Tray\|Gel Electrophoresis Tray]]
+	STATUS: Redesign models with rabbet joint, update drawings, machine and test fit.
+
+### Medium Priority
+
+[[My Projects/Lyo Clear Cover\|Lyo Clear Cover]]
+	STATUS: Remodel in SolidWorks sheet metal mode. 3/8" acrylic stock (changing from original 8 mm metric). No holes on top per Paul. Drawing exists with current dimensions.
 
 ### Low Priority
 
 [[My Projects/MA3 Pusher Redesign\|MA3 Pusher Redesign]]
-	STATUS: Model fixed, reprinted, fit well — determine next steps
+	STATUS: Model fixed, reprinted, fit well — determine next steps.
 
-[[My Projects/Label Arm\|Label Arm]]
-	STATUS: Waiting on Paul — low priority for him, will be a while
-		- Do drawings and parts process
+[[Software/SolidWorks/SolidWorks Templates\|SolidWorks Templates]]
+	STATUS: Update part and drawing templates when time allows.
 
 ### Waiting on something
 
-[[My Projects/Calibration Probe Fixture\|Metrology fixture]]
-	STATUS: Meeting with Metrology Wed Apr 22 — prep in progress
+[[My Projects/Mixer Chuck/Mixer Chuck\|Mixer Chuck]]
+	STATUS: Shop request submitted 2026-05-11. Waiting on fabrication, then receive, assemble, and deliver.
 
-[[My Projects/Mixer Chuck\|Mixer Chuck]] (shop request)
-	STATUS: Waiting on Brian drawing approval and Claire spares qty confirmation
+[[My Projects/Dip Tube Baffle/Dip Tube Baffle Assembly\|Dip Tube Baffle Assembly]]
+	STATUS: Drawings delivered to Philip. Waiting on next steps from him.
+
+[[My Projects/Label Arm\|Label Arm]]
+	STATUS: Waiting on Paul indefinitely. Bottle alignment CoC and drawings still needed when Paul provides them.
 
 [[My Projects/Filter Connection\|Filter Connection]]
-	STATUS: Machined part expected mid-June
+	STATUS: Machined part expected mid-June.
+
+Bluebeam access
+	STATUS: Waiting on IT.
 
 ### Future
 
@@ -89,6 +93,7 @@ views:
 [[My Projects/Septa Mat Excel\|Septa Mat Excel]]
 [[My Projects/Falling Vial Bin\|Falling Vial Bin]]
 [[My Projects/MicroVu Jig\|MicroVu Jig]]
+[[My Projects/Flipper Tray Blocker\|Flipper Tray Blocker]]
 
 
 

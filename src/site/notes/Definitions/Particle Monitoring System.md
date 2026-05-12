@@ -5,8 +5,8 @@
 
 #Definitions
 
-A Particle Monitoring System (PMS) is a device or set of devices used to detect and measure the presence and concentration of airborne particles. At Promega, PMS is used in [[Definitions/ECR\|ECR]] environments to ensure particulate contamination stays within regulated limits. The Facilities department is responsible for responding to PMS alarms.
+A Particle Monitoring System (PMS) is a device or set of devices used to detect and measure the presence and concentration of airborne particles. At Promega, PMS is used in [[Definitions/Quality/ECR\|ECR]] environments to ensure particulate contamination stays within regulated limits. The Facilities department is responsible for responding to PMS alarms.
 
 > [!info]- Details & Notes
 >
-> **See also:** [[Definitions/ECR\|ECR]], [[Definitions/Cleanroom\|Cleanroom]], [[Definitions/Building Automation System\|Building Automation System]], [[Buildings/Feynman\|Feynman]]
+> **See also:** [[Definitions/Quality/ECR\|ECR]], [[Definitions/Cleanroom\|Cleanroom]], [[Definitions/Building Automation System\|Building Automation System]], [[Buildings/Feynman\|Feynman]]
