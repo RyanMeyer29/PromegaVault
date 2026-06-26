@@ -192,6 +192,35 @@
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as(&quot;Definitions/Materials&quot;)}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" data-lucide="chevron-down"></i>
+<i x-show="!isOpen" data-lucide="chevron-right"></i>
+<span class="foldername">Materials</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/materials/316-l-stainless-steel/">316L Stainless Steel </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/materials/delrin/">Delrin </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/materials/peek/">PEEK </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/materials/polycarbonate/">Polycarbonate </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
 <div class="folder inner-folder" x-data="{isOpen: $persist(false).as(&quot;Definitions/Parts Process&quot;)}" @click.stop="isOpen=!isOpen">
 <div class="foldername-wrapper align-icon">
 <i x-show="isOpen" style="display:none" data-lucide="chevron-down"></i>
@@ -233,6 +262,50 @@
 <span class="foldername">Quality</span>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as(&quot;Definitions/Quality/CC Sections&quot;)}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" data-lucide="chevron-down"></i>
+<i x-show="!isOpen" data-lucide="chevron-right"></i>
+<span class="foldername">CC Sections</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/quality/cc-sections/additional-description/">Additional Description </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/quality/cc-sections/brief-description/">Brief Description </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/quality/cc-sections/impacted-documentation/">Impacted Documentation </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/quality/cc-sections/implementation-actions/">Implementation Actions </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/quality/cc-sections/justification-for-change/">Justification for Change </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/quality/cc-sections/reason-for-change/">Reason for Change </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/quality/cc-sections/testing-actions/">Testing Actions </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
 <div @click.stop class="notelink">
 <a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/quality/capa/">CAPA </a>
 </div>
@@ -244,7 +317,17 @@
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
 <div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/quality/change-types/">Change Types </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
 <a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/quality/co-c/">CoC </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/quality/design-control-process/">Design Control Process </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
@@ -264,7 +347,17 @@
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
 <div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/quality/form-fit-function/">Form Fit Function </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
 <a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/quality/nonconformance/">Nonconformance </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/quality/program-level-change-control/">Program-Level Change Control </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
@@ -433,6 +526,11 @@
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
 <div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/design-review/">Design Review </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
 <a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/ehs/">EHS </a>
 </div>
 </div>
@@ -448,7 +546,17 @@
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
 <div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/fill-lyophilize-finish/">Fill Lyophilize Finish </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
 <a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/gowning/">Gowning </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/hdpe/">HDPE </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
@@ -589,6 +697,11 @@
 <div x-show="isOpen" style="display:none" class="filelist">
 <div @click.stop class="notelink">
 <a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/steam-in-place/">Steam in Place </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/transformer-plan/">Transformer Plan </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
@@ -807,6 +920,49 @@
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as(&quot;My Projects/Calibration Probe Fixture&quot;)}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" data-lucide="chevron-down"></i>
+<i x-show="!isOpen" data-lucide="chevron-right"></i>
+<span class="foldername">Calibration Probe Fixture</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as(&quot;My Projects/Calibration Probe Fixture/Technical Specs&quot;)}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" data-lucide="chevron-down"></i>
+<i x-show="!isOpen" data-lucide="chevron-right"></i>
+<span class="foldername">Technical Specs</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/calibration-probe-fixture/technical-specs/bath-and-probe-spec/">Bath and Probe Spec </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/calibration-probe-fixture/technical-specs/fluke-in-house-sop/">Fluke In-House SOP </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/calibration-probe-fixture/calibration-probe-fixture-materials-research-2026-05-12/">Calibration Probe Fixture - Materials Research 2026-05-12 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/calibration-probe-fixture/calibration-probe-fixture/">Calibration Probe Fixture </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/calibration-probe-fixture/probe-summary/">Probe Summary </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
 <div class="folder inner-folder" x-data="{isOpen: $persist(false).as(&quot;My Projects/Claude Projects&quot;)}" @click.stop="isOpen=!isOpen">
 <div class="foldername-wrapper align-icon">
 <i x-show="isOpen" style="display:none" data-lucide="chevron-down"></i>
@@ -826,6 +982,11 @@
 <div x-show="isOpen" style="display:none" class="filelist">
 <div @click.stop class="notelink">
 <a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/claude-projects/gizmos-and-gadgets-glossary/">Gizmos and Gadgets Glossary </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/claude-projects/listenr/">Listenr </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
@@ -934,6 +1095,11 @@
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
 <div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/mixer-chuck/mixer-chuck-parts/parlec-er-32-collet/">Parlec ER32 Collet </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
 <a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/mixer-chuck/mixer-chuck-parts/stop-mixer-chuck/">Stop, Mixer Chuck </a>
 </div>
 </div>
@@ -942,6 +1108,11 @@
 <a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/mixer-chuck/mixer-chuck-parts/tool-spanner-mixer-chuck/">Tool, Spanner, Mixer Chuck </a>
 </div>
 </div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/mixer-chuck/mixer-chuck-cc-meeting-2026-06-09/">Mixer Chuck CC Meeting 2026-06-09 </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
@@ -1047,6 +1218,11 @@
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
 <div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/other/metrology-meeting-2026-06-10/">Metrology Meeting 2026-06-10 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
 <a data-note-icon="" style="text-decoration:none" class="filename" href="/other/vial-tray-jig/">Vial Tray jig </a>
 </div>
 </div>
@@ -1121,7 +1297,17 @@
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
 <div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/cameron-boeder/">Cameron Boeder </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
 <a data-note-icon="" style="text-decoration:none" class="filename" href="/people/chris-rusthoven/">Chris Rusthoven </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/chuck-york/">Chuck York </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
@@ -1141,6 +1327,11 @@
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
 <div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/diego-lamela/">Diego Lamela </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
 <a data-note-icon="" style="text-decoration:none" class="filename" href="/people/doug-fahrenkrug/">Doug Fahrenkrug </a>
 </div>
 </div>
@@ -1152,6 +1343,11 @@
 <div x-show="isOpen" style="display:none" class="filelist">
 <div @click.stop class="notelink">
 <a data-note-icon="" style="text-decoration:none" class="filename" href="/people/ethan-hazra/">Ethan Hazra </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/evelyn-stencel/">Evelyn Stencel </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
@@ -1221,6 +1417,11 @@
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
 <div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/mark-koeff/">Mark Koeff </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
 <a data-note-icon="" style="text-decoration:none" class="filename" href="/people/matt-swanson/">Matt Swanson </a>
 </div>
 </div>
@@ -1286,6 +1487,11 @@
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
 <div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/ryan-kimmel/">Ryan Kimmel </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
 <a data-note-icon="" style="text-decoration:none" class="filename" href="/people/sean-doering/">Sean Doering </a>
 </div>
 </div>
@@ -1321,11 +1527,6 @@
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
 <div @click.stop class="notelink">
-<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/william-hopfensperger/">William Hopfensperger </a>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink">
 <a data-note-icon="" style="text-decoration:none" class="filename" href="/people/zack-wermeling/">Zack Wermeling </a>
 </div>
 </div>
@@ -1351,6 +1552,11 @@
 <i x-show="isOpen" style="display:none" data-lucide="chevron-down"></i>
 <i x-show="!isOpen" data-lucide="chevron-right"></i>
 <span class="foldername">SolidWorks Macros</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/software/solid-works/solid-works-macros/default-lighting-setter/">Default Lighting Setter </a>
+</div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
 <div @click.stop class="notelink">
@@ -1477,11 +1683,6 @@
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
 <div @click.stop class="notelink">
-<a data-note-icon="" style="text-decoration:none" class="filename" href="/unknown/design-review/">Design Review </a>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink">
 <a data-note-icon="" style="text-decoration:none" class="filename" href="/unknown/drop-gate/">Drop Gate </a>
 </div>
 </div>
@@ -1562,7 +1763,7 @@
 </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/flexsearch@0.7.21/dist/flexsearch.bundle.js"></script>
-<script>document.addEventListener("DOMContentLoaded",init,!1),document.addEventListener("DOMContentLoaded",setCorrectShortcut,!1);const previewCache=new Map;window.toggleSearch=function(){const e=document.getElementById("globalsearch");e.classList.contains("active")?e.classList.remove("active"):(e.classList.add("active"),document.getElementById("term").focus())},window.toggleTagSearch=function(e){const t=e.textContent;t&&(document.getElementById("term").value=t.trim(),window.toggleSearch(),window.search())};const loadingSvg='\n    <div style="display: flex; justify-content: center; padding: 40px;">\n        <svg width="40" height="40" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" stroke="currentColor">\n            <g fill="none" fill-rule="evenodd" transform="translate(1 1)" stroke-width="2">\n                <circle cx="22" cy="22" r="6" stroke-opacity="0">\n                    <animate attributeName="r" begin="1.5s" dur="3s" values="6;22" calcMode="linear" repeatCount="indefinite" />\n                    <animate attributeName="stroke-opacity" begin="1.5s" dur="3s" values="1;0" calcMode="linear" repeatCount="indefinite" />\n                    <animate attributeName="stroke-width" begin="1.5s" dur="3s" values="2;0" calcMode="linear" repeatCount="indefinite" />\n                </circle>\n                <circle cx="22" cy="22" r="6" stroke-opacity="0">\n                    <animate attributeName="r" begin="3s" dur="3s" values="6;22" calcMode="linear" repeatCount="indefinite" />\n                    <animate attributeName="stroke-opacity" begin="3s" dur="3s" values="1;0" calcMode="linear" repeatCount="indefinite" />\n                    <animate attributeName="stroke-width" begin="3s" dur="3s" values="2;0" calcMode="linear" repeatCount="indefinite" />\n                </circle>\n                <circle cx="22" cy="22" r="8">\n                    <animate attributeName="r" begin="0s" dur="1.5s" values="6;1;2;3;4;5;6" calcMode="linear" repeatCount="indefinite" />\n                </circle>\n            </g>\n        </svg>\n    </div>';function debounce(e,t,n){var r;return function(){var i=this,a=arguments,s=n&&!r;clearTimeout(r),r=setTimeout((function(){r=null,n||e.apply(i,a)}),t),s&&e.apply(i,a)}}function setCorrectShortcut(){navigator.platform.toUpperCase().indexOf("MAC")>=0&&document.querySelectorAll(".search-keys").forEach((e=>e.innerHTML="<code>⌘</code>&nbsp;+&nbsp;<code>K</code>"))}function tokenizeSearchTerms(e){const t=[],n=/"([^"]+)"|(\S+)/g;let r;for(;null!==(r=n.exec(e));){const e=(r[1]||r[2]).toLowerCase();e.length>1&&t.push(e)}return t.sort(((e,t)=>t.length-e.length))}function highlightTerms(e,t){if(!t||0===t.length||!e)return e;let n=e;return t.forEach((e=>{const t=e.replace(/[.*+?^${}()|[\]\\]/g,"\\$&"),r=new RegExp(`(${t})`,"gi");n=n.replace(r,'<span class="search-highlight">$1</span>')})),n}function getContextualExcerpt(e,t,n=150){if(!e)return"";const r=e.replace(/<[^>]*>/g,"");if(!t||0===t.length)return truncateText(r,n);let i=r.length;if(t.forEach((e=>{const t=r.toLowerCase().indexOf(e.toLowerCase());-1!==t&&t<i&&(i=t)})),i===r.length)return truncateText(r,n);const a=Math.max(0,i-50),s=Math.min(r.length,a+n);let o=r.substring(a,s);return a>0&&(o="..."+o),s<r.length&&(o+="..."),o}function truncateText(e,t){return e?(e=e.replace(/<[^>]*>/g,"")).length<=t?e:e.substring(0,t-3)+"...":""}async function fetchPreviewContent(e){if(previewCache.has(e))return previewCache.get(e);try{const t=await fetch(e),n=await t.text(),r=new DOMParser,i=r.parseFromString(n,"text/html").querySelector(".content, .cm-s-obsidian, article, main"),a=i?i.innerHTML:"";return previewCache.set(e,a),a}catch(e){return console.error("Failed to fetch preview:",e),""}}function highlightTextNodes(e,t){if(!t||0===t.length)return;const n=document.createTreeWalker(e,NodeFilter.SHOW_TEXT,null,!1),r=[];for(;n.nextNode();)r.push(n.currentNode);r.forEach((e=>{const n=e.textContent;let r=!1;if(t.forEach((e=>{n.toLowerCase().includes(e.toLowerCase())&&(r=!0)})),r){const r=document.createElement("span");r.innerHTML=highlightTerms(n,t),e.parentNode.replaceChild(r,e)}}))}async function showPreview(e){const t=window.searchResults;if(!t||!t[e])return;const n=t[e],r=document.getElementById("search-preview"),i=document.getElementById("preview-content"),a=r.querySelector(".preview-placeholder");if(!r||!i)return;document.querySelectorAll(".searchresult").forEach((e=>e.classList.remove("active")));const s=document.querySelector(`.searchresult[data-index="${e}"]`);s&&s.classList.add("active"),i.innerHTML=loadingSvg,i.classList.add("has-content"),a.style.display="none";const o=await fetchPreviewContent(n.url),c=n.tags&&n.tags.length>0?`<div class="preview-tags">${n.tags.map((e=>`<a class="tag" href="javascript:void(0);" onclick="toggleTagSearch(this)">#${e}</a>`)).join("")}</div>`:"";i.innerHTML=`\n            <div class="preview-title">${highlightTerms(n.title,window.searchTerms)}</div>\n            ${c}\n            <div class="preview-body">${o}</div>\n        `;const l=i.querySelector(".preview-body");l&&window.searchTerms&&highlightTextNodes(l,window.searchTerms),window.currentPreviewIndex=e}function hidePreview(){const e=document.getElementById("search-preview"),t=document.getElementById("preview-content"),n=e?.querySelector(".preview-placeholder");n&&(n.style.display="flex"),t&&(t.classList.remove("has-content"),t.innerHTML=""),window.currentPreviewIndex=-1}function createIndex(e){const t=e=>(e=>e.toLowerCase().normalize("NFD").replace(/n\u0303/g,"ñ").replace(/[\u0300-\u036f]/g,"").normalize("NFC"))(e).split(/([^a-z]|[^\x00-\x7F])/),n=new FlexSearch.Document({cache:!0,charset:"latin:extra",optimize:!0,index:[{field:"content",tokenize:"reverse",encode:t},{field:"title",tokenize:"forward",encode:t},{field:"tags",tokenize:"forward",encode:t}]});return e.forEach(((e,t)=>{n.add({id:t,title:e.title,content:e.content,tags:e.tags})})),n}async function init(){const e=await fetch("/searchIndex.json?v=2026-06-17T16:11:40.463Z").then((e=>e.json())),t=createIndex(e);function n(e){const t=document.querySelectorAll(".searchresult");if(0===t.length)return;let n,r=-1;t.forEach(((e,t)=>{e.classList.contains("active")&&(r=t)})),-1===r?n=e>0?0:t.length-1:(n=r+e,n<0&&(n=t.length-1),n>=t.length&&(n=0)),t.forEach((e=>e.classList.remove("active"))),t[n].classList.add("active"),t[n].scrollIntoView({behavior:"smooth",block:"nearest"}),showPreview(parseInt(t[n].dataset.index))}window.docs=e,window.index=t,document.addEventListener("keydown",(e=>{if((e.ctrlKey||e.metaKey)&&"k"===e.key&&(e.preventDefault(),toggleSearch()),"Escape"===e.key&&document.getElementById("globalsearch").classList.remove("active"),document.getElementById("globalsearch").classList.contains("active")&&("ArrowDown"===e.key&&(e.preventDefault(),n(1)),"ArrowUp"===e.key&&(e.preventDefault(),n(-1)),"Enter"===e.key)){e.preventDefault();const t=document.querySelector(".searchresult.active");if(t){const e=t.dataset.url;e&&(window.location.href=e)}}}));const r=debounce(search,200,!1);window.field=document.querySelector("#term"),field.addEventListener("keydown",(e=>{"ArrowDown"!==e.key&&"ArrowUp"!==e.key&&"Enter"!==e.key&&r()})),window.resultsDiv=document.querySelector("#search-results");const i=new URL(location.href).searchParams;i.get("q")&&(field.setAttribute("value",i.get("q")),toggleSearch(),search())}async function search(){const e=field.value.trim(),t=document.getElementById("search-layout");if(!e)return resultsDiv.innerHTML="<span><i>Enter your search text in the box above</i></span>",hidePreview(),void(t&&t.classList.add("no-preview"));window.lastSearch=e,window.searchTerms=tokenizeSearchTerms(e),resultsDiv.innerHTML=loadingSvg,hidePreview();const n=offlineSearch(e);if(window.searchResults=n,!n.length)return t&&t.classList.add("no-preview"),void(resultsDiv.innerHTML=`\n                <div class="no-results">\n                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">\n                        <circle cx="11" cy="11" r="8"></circle>\n                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>\n                        <line x1="8" y1="11" x2="14" y2="11"></line>\n                    </svg>\n                    <p>No results for "${e}"</p>\n                </div>\n            `);t&&t.classList.remove("no-preview");let r="";n.forEach(((e,t)=>{const n=highlightTerms(getContextualExcerpt(e.content,window.searchTerms,120),window.searchTerms),i=highlightTerms(e.title,window.searchTerms),a=e.tags&&e.tags.length>0?`<div class="result-tags">${e.tags.map((e=>`<span class="tag">#${e}</span>`)).join("")}</div>`:"";r+=`\n                <div class="searchresult${0===t?" active":""}"\n                     data-index="${t}"\n                     data-url="${e.url}"\n                     onmouseenter="showPreview(${t})"\n                     onclick="window.location.href='${e.url}'">\n                    <span class="result-title">${i}</span>\n                    ${a}\n                    <div class="result-excerpt">${n}</div>\n                </div>\n            `})),resultsDiv.innerHTML=r,n.length>0&&showPreview(0),"undefined"!=typeof lucide&&lucide.createIcons()}function offlineSearch(e){const t=window.docs,n="#"===e[0]&&e.length>1?index.search(e.substring(1),[{field:"tags"}]):index.search(e,[{field:"title",limit:5},{field:"content",limit:10}]),r=e=>{const t=n.filter((t=>t.field===e));return 0===t.length?[]:[...t[0].result]};return[...new Set([...r("title"),...r("content"),...r("tags")])].map((e=>{const n={...t[e]};return n.tags=n.tags.filter((e=>"gardenEntry"!==e&&"note"!==e)),n}))}window.lastSearch="",window.searchResults=[],window.searchTerms=[],window.currentPreviewIndex=-1,window.search=search</script>
+<script>document.addEventListener("DOMContentLoaded",init,!1),document.addEventListener("DOMContentLoaded",setCorrectShortcut,!1);const previewCache=new Map;window.toggleSearch=function(){const e=document.getElementById("globalsearch");e.classList.contains("active")?e.classList.remove("active"):(e.classList.add("active"),document.getElementById("term").focus())},window.toggleTagSearch=function(e){const t=e.textContent;t&&(document.getElementById("term").value=t.trim(),window.toggleSearch(),window.search())};const loadingSvg='\n    <div style="display: flex; justify-content: center; padding: 40px;">\n        <svg width="40" height="40" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" stroke="currentColor">\n            <g fill="none" fill-rule="evenodd" transform="translate(1 1)" stroke-width="2">\n                <circle cx="22" cy="22" r="6" stroke-opacity="0">\n                    <animate attributeName="r" begin="1.5s" dur="3s" values="6;22" calcMode="linear" repeatCount="indefinite" />\n                    <animate attributeName="stroke-opacity" begin="1.5s" dur="3s" values="1;0" calcMode="linear" repeatCount="indefinite" />\n                    <animate attributeName="stroke-width" begin="1.5s" dur="3s" values="2;0" calcMode="linear" repeatCount="indefinite" />\n                </circle>\n                <circle cx="22" cy="22" r="6" stroke-opacity="0">\n                    <animate attributeName="r" begin="3s" dur="3s" values="6;22" calcMode="linear" repeatCount="indefinite" />\n                    <animate attributeName="stroke-opacity" begin="3s" dur="3s" values="1;0" calcMode="linear" repeatCount="indefinite" />\n                    <animate attributeName="stroke-width" begin="3s" dur="3s" values="2;0" calcMode="linear" repeatCount="indefinite" />\n                </circle>\n                <circle cx="22" cy="22" r="8">\n                    <animate attributeName="r" begin="0s" dur="1.5s" values="6;1;2;3;4;5;6" calcMode="linear" repeatCount="indefinite" />\n                </circle>\n            </g>\n        </svg>\n    </div>';function debounce(e,t,n){var r;return function(){var i=this,a=arguments,s=n&&!r;clearTimeout(r),r=setTimeout((function(){r=null,n||e.apply(i,a)}),t),s&&e.apply(i,a)}}function setCorrectShortcut(){navigator.platform.toUpperCase().indexOf("MAC")>=0&&document.querySelectorAll(".search-keys").forEach((e=>e.innerHTML="<code>⌘</code>&nbsp;+&nbsp;<code>K</code>"))}function tokenizeSearchTerms(e){const t=[],n=/"([^"]+)"|(\S+)/g;let r;for(;null!==(r=n.exec(e));){const e=(r[1]||r[2]).toLowerCase();e.length>1&&t.push(e)}return t.sort(((e,t)=>t.length-e.length))}function highlightTerms(e,t){if(!t||0===t.length||!e)return e;let n=e;return t.forEach((e=>{const t=e.replace(/[.*+?^${}()|[\]\\]/g,"\\$&"),r=new RegExp(`(${t})`,"gi");n=n.replace(r,'<span class="search-highlight">$1</span>')})),n}function getContextualExcerpt(e,t,n=150){if(!e)return"";const r=e.replace(/<[^>]*>/g,"");if(!t||0===t.length)return truncateText(r,n);let i=r.length;if(t.forEach((e=>{const t=r.toLowerCase().indexOf(e.toLowerCase());-1!==t&&t<i&&(i=t)})),i===r.length)return truncateText(r,n);const a=Math.max(0,i-50),s=Math.min(r.length,a+n);let o=r.substring(a,s);return a>0&&(o="..."+o),s<r.length&&(o+="..."),o}function truncateText(e,t){return e?(e=e.replace(/<[^>]*>/g,"")).length<=t?e:e.substring(0,t-3)+"...":""}async function fetchPreviewContent(e){if(previewCache.has(e))return previewCache.get(e);try{const t=await fetch(e),n=await t.text(),r=new DOMParser,i=r.parseFromString(n,"text/html").querySelector(".content, .cm-s-obsidian, article, main"),a=i?i.innerHTML:"";return previewCache.set(e,a),a}catch(e){return console.error("Failed to fetch preview:",e),""}}function highlightTextNodes(e,t){if(!t||0===t.length)return;const n=document.createTreeWalker(e,NodeFilter.SHOW_TEXT,null,!1),r=[];for(;n.nextNode();)r.push(n.currentNode);r.forEach((e=>{const n=e.textContent;let r=!1;if(t.forEach((e=>{n.toLowerCase().includes(e.toLowerCase())&&(r=!0)})),r){const r=document.createElement("span");r.innerHTML=highlightTerms(n,t),e.parentNode.replaceChild(r,e)}}))}async function showPreview(e){const t=window.searchResults;if(!t||!t[e])return;const n=t[e],r=document.getElementById("search-preview"),i=document.getElementById("preview-content"),a=r.querySelector(".preview-placeholder");if(!r||!i)return;document.querySelectorAll(".searchresult").forEach((e=>e.classList.remove("active")));const s=document.querySelector(`.searchresult[data-index="${e}"]`);s&&s.classList.add("active"),i.innerHTML=loadingSvg,i.classList.add("has-content"),a.style.display="none";const o=await fetchPreviewContent(n.url),c=n.tags&&n.tags.length>0?`<div class="preview-tags">${n.tags.map((e=>`<a class="tag" href="javascript:void(0);" onclick="toggleTagSearch(this)">#${e}</a>`)).join("")}</div>`:"";i.innerHTML=`\n            <div class="preview-title">${highlightTerms(n.title,window.searchTerms)}</div>\n            ${c}\n            <div class="preview-body">${o}</div>\n        `;const l=i.querySelector(".preview-body");l&&window.searchTerms&&highlightTextNodes(l,window.searchTerms),window.currentPreviewIndex=e}function hidePreview(){const e=document.getElementById("search-preview"),t=document.getElementById("preview-content"),n=e?.querySelector(".preview-placeholder");n&&(n.style.display="flex"),t&&(t.classList.remove("has-content"),t.innerHTML=""),window.currentPreviewIndex=-1}function createIndex(e){const t=e=>(e=>e.toLowerCase().normalize("NFD").replace(/n\u0303/g,"ñ").replace(/[\u0300-\u036f]/g,"").normalize("NFC"))(e).split(/([^a-z]|[^\x00-\x7F])/),n=new FlexSearch.Document({cache:!0,charset:"latin:extra",optimize:!0,index:[{field:"content",tokenize:"reverse",encode:t},{field:"title",tokenize:"forward",encode:t},{field:"tags",tokenize:"forward",encode:t}]});return e.forEach(((e,t)=>{n.add({id:t,title:e.title,content:e.content,tags:e.tags})})),n}async function init(){const e=await fetch("/searchIndex.json?v=2026-06-26T19:19:44.350Z").then((e=>e.json())),t=createIndex(e);function n(e){const t=document.querySelectorAll(".searchresult");if(0===t.length)return;let n,r=-1;t.forEach(((e,t)=>{e.classList.contains("active")&&(r=t)})),-1===r?n=e>0?0:t.length-1:(n=r+e,n<0&&(n=t.length-1),n>=t.length&&(n=0)),t.forEach((e=>e.classList.remove("active"))),t[n].classList.add("active"),t[n].scrollIntoView({behavior:"smooth",block:"nearest"}),showPreview(parseInt(t[n].dataset.index))}window.docs=e,window.index=t,document.addEventListener("keydown",(e=>{if((e.ctrlKey||e.metaKey)&&"k"===e.key&&(e.preventDefault(),toggleSearch()),"Escape"===e.key&&document.getElementById("globalsearch").classList.remove("active"),document.getElementById("globalsearch").classList.contains("active")&&("ArrowDown"===e.key&&(e.preventDefault(),n(1)),"ArrowUp"===e.key&&(e.preventDefault(),n(-1)),"Enter"===e.key)){e.preventDefault();const t=document.querySelector(".searchresult.active");if(t){const e=t.dataset.url;e&&(window.location.href=e)}}}));const r=debounce(search,200,!1);window.field=document.querySelector("#term"),field.addEventListener("keydown",(e=>{"ArrowDown"!==e.key&&"ArrowUp"!==e.key&&"Enter"!==e.key&&r()})),window.resultsDiv=document.querySelector("#search-results");const i=new URL(location.href).searchParams;i.get("q")&&(field.setAttribute("value",i.get("q")),toggleSearch(),search())}async function search(){const e=field.value.trim(),t=document.getElementById("search-layout");if(!e)return resultsDiv.innerHTML="<span><i>Enter your search text in the box above</i></span>",hidePreview(),void(t&&t.classList.add("no-preview"));window.lastSearch=e,window.searchTerms=tokenizeSearchTerms(e),resultsDiv.innerHTML=loadingSvg,hidePreview();const n=offlineSearch(e);if(window.searchResults=n,!n.length)return t&&t.classList.add("no-preview"),void(resultsDiv.innerHTML=`\n                <div class="no-results">\n                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">\n                        <circle cx="11" cy="11" r="8"></circle>\n                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>\n                        <line x1="8" y1="11" x2="14" y2="11"></line>\n                    </svg>\n                    <p>No results for "${e}"</p>\n                </div>\n            `);t&&t.classList.remove("no-preview");let r="";n.forEach(((e,t)=>{const n=highlightTerms(getContextualExcerpt(e.content,window.searchTerms,120),window.searchTerms),i=highlightTerms(e.title,window.searchTerms),a=e.tags&&e.tags.length>0?`<div class="result-tags">${e.tags.map((e=>`<span class="tag">#${e}</span>`)).join("")}</div>`:"";r+=`\n                <div class="searchresult${0===t?" active":""}"\n                     data-index="${t}"\n                     data-url="${e.url}"\n                     onmouseenter="showPreview(${t})"\n                     onclick="window.location.href='${e.url}'">\n                    <span class="result-title">${i}</span>\n                    ${a}\n                    <div class="result-excerpt">${n}</div>\n                </div>\n            `})),resultsDiv.innerHTML=r,n.length>0&&showPreview(0),"undefined"!=typeof lucide&&lucide.createIcons()}function offlineSearch(e){const t=window.docs,n="#"===e[0]&&e.length>1?index.search(e.substring(1),[{field:"tags"}]):index.search(e,[{field:"title",limit:5},{field:"content",limit:10}]),r=e=>{const t=n.filter((t=>t.field===e));return 0===t.length?[]:[...t[0].result]};return[...new Set([...r("title"),...r("content"),...r("tags")])].map((e=>{const n={...t[e]};return n.tags=n.tags.filter((e=>"gardenEntry"!==e&&"note"!==e)),n}))}window.lastSearch="",window.searchResults=[],window.searchTerms=[],window.currentPreviewIndex=-1,window.search=search</script>
 <main class="content cm-s-obsidian print">
 <header>
 <h1 data-note-icon="">FAB</h1>
@@ -1579,7 +1780,7 @@
 <div class="callout is-collapsible is-collapsed" data-callout="info"><div class="callout-title"><div class="callout-title-inner"> Details &amp; Notes</div><div class="callout-fold"><i icon-name="chevron-down"></i></div></div>
 <div class="callout-content">
 <p>
-</p><p><strong>See also:</strong> <a class="internal-link" target="" data-note-icon="undefined" href="/definitions/esst/">ESST</a>, <a class="internal-link" target="" data-note-icon="undefined" href="/definitions/optima/">Optima</a>, <a class="internal-link" target="" data-note-icon="undefined" href="/buildings/feynman/">Feynman</a></p>
+</p><p><strong>See also:</strong> <a class="internal-link" target="" data-note-icon="undefined" href="/definitions/esst/">ESST</a>, <a class="internal-link" target="" data-note-icon="undefined" href="/definitions/optima/">Optima</a>, <a class="internal-link" target="" data-note-icon="undefined" href="/buildings/feynman/">Feynman</a>, <a class="internal-link" target="" data-note-icon="undefined" href="/people/stirling-mitchell/">Stirling Mitchell</a></p>
 </div></div>
 </main>
 <aside>

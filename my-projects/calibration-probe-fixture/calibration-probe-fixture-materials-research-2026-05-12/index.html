@@ -1,0 +1,2769 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Calibration Probe Fixture - Materials Research 2026-05-12</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script type="importmap">
+{
+  "imports": {
+    "d3-force": "https://cdn.jsdelivr.net/npm/d3-force@3.0.0/+esm",
+    "d3-selection": "https://cdn.jsdelivr.net/npm/d3-selection@3.0.0/+esm",
+    "d3-zoom": "https://cdn.jsdelivr.net/npm/d3-zoom@3.0.0/+esm",
+    "d3-drag": "https://cdn.jsdelivr.net/npm/d3-drag@3.0.0/+esm"
+  }
+}
+</script>
+<script src="https://cdn.jsdelivr.net/npm/pixi.js@7.4.2/dist/pixi.min.js"></script>
+<script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";mermaid.initialize({startOnLoad:!0})</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-sv0slik/5O0JIPdLBCR2A3XDg/1U3WuDEheZfI/DI5n8Yqc3h5kjrnr46FGBNiUAJF7rE4LHKwQ/SoSLRKAxEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>window.addEventListener("load",(()=>{document.querySelectorAll(".callout").forEach((e=>{const t=getComputedStyle(e).getPropertyValue("--callout-icon"),l=t&&t.trim().replace(/^lucide-/,"");if(l){const t=e.querySelector(".callout-title");if(t){const e=document.createElement("div"),c=document.createElement("i");e.appendChild(c),c.setAttribute("data-lucide",l),e.setAttribute("class","callout-icon"),t.insertBefore(e,t.firstChild)}}})),lucide.createIcons(),Array.from(document.querySelectorAll(".callout.is-collapsible")).forEach((e=>{e.querySelector(".callout-title").addEventListener("click",(t=>{e.classList.contains("is-collapsed")?e.classList.remove("is-collapsed"):e.classList.add("is-collapsed")}))}))}))</script>
+<script defer="defer" src="https://fastly.jsdelivr.net/npm/@alpinejs/persist@3.11.1/dist/cdn.min.js"></script>
+<script defer="defer" src="https://fastly.jsdelivr.net/npm/alpinejs@3.11.1/dist/cdn.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer" async>
+<script src="https://fastly.jsdelivr.net/npm/whatwg-fetch@3.6.2/dist/fetch.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
+<link href="/styles/obsidian-base.css" rel="stylesheet">
+<link href="/styles/_theme.d92311c2.css" rel="stylesheet">
+<link href="/styles/digital-garden-base.css" rel="stylesheet">
+<link href="/styles/custom-style.css" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<style></style>
+</head>
+<body class="theme-dark markdown-preview-view markdown-rendered markdown-preview-section">
+<div x-init="isDesktop = (window.innerWidth>=1000) ? true: false;" x-on:resize.window="isDesktop = (window.innerWidth>=1000) ? true : false;" x-data="{isDesktop: true, showFilesMobile: false}">
+<div x-show.important="!isDesktop" style="display:none">
+<nav class="navbar">
+<div class="navbar-inner">
+<span style="font-size:1.5rem;margin-right:10px" @click="showFilesMobile=!showFilesMobile"><i data-lucide="menu"></i></span>
+<a href="/" style="text-decoration:none;text-align:center">
+<h1 style="margin:15px!important">Digital Garden</h1>
+</a>
+</div>
+<div class="search-button align-icon" onclick="toggleSearch()">
+<span class="search-icon">
+<i data-lucide="search"></i>
+</span>
+<span class="search-text">Search</span>
+<span class="search-keys"><code>Ctrl</code>&nbsp;+&nbsp;<code>K</code></span>
+</div>
+</nav>
+</div>
+<div x-show="showFilesMobile && !isDesktop" @click="showFilesMobile = false" style="display:none" class="fullpage-overlay"></div>
+<div class="filetree-wrapper" x-show.important="isDesktop || showFilesMobile" style="display:none">
+<nav class="filetree-sidebar">
+<a href="/" style="text-decoration:none;text-align:center">
+<h1 style="text-align:center">Digital Garden</h1>
+</a>
+<div class="search-button align-icon" onclick="toggleSearch()">
+<span class="search-icon">
+<i data-lucide="search"></i>
+</span>
+<span class="search-text">Search</span>
+<span class="search-keys"><code>Ctrl</code>&nbsp;+&nbsp;<code>K</code></span>
+</div>
+<div class="folder" x-data="{isOpen: true}">
+<div x-show="isOpen" style="display:none" class="">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as(&quot;Buildings&quot;)}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" data-lucide="chevron-down"></i>
+<i x-show="!isOpen" data-lucide="chevron-right"></i>
+<span class="foldername">Buildings</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/buildings/agora/">Agora </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/buildings/alan-turing-center/">Alan Turing Center </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/buildings/arnold/">Arnold </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/buildings/btc/">BTC </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/buildings/buildings/">Buildings </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/buildings/chappelle-manufacturing-center/">Chappelle Manufacturing Center </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/buildings/commerce-park-drive/">Commerce Park Drive </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/buildings/da-vinci/">DaVinci </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/buildings/faraday/">Faraday </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/buildings/feynman/">Feynman </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/buildings/keppler/">Keppler </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/buildings/kornberg/">Kornberg </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/buildings/lamarr/">Lamarr </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/buildings/research-and-development-center/">Research and Development Center </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/buildings/rfc/">RFC </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as(&quot;Definitions&quot;)}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" data-lucide="chevron-down"></i>
+<i x-show="!isOpen" data-lucide="chevron-right"></i>
+<span class="foldername">Definitions</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as(&quot;Definitions/Equipment&quot;)}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" data-lucide="chevron-down"></i>
+<i x-show="!isOpen" data-lucide="chevron-right"></i>
+<span class="foldername">Equipment</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/equipment/feynman-bottle-lyophilizer/">Feynman Bottle Lyophilizer </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/equipment/lightnin-mixer/">Lightnin Mixer </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/equipment/maxwell-rsc/">Maxwell RSC </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/equipment/robowrap/">Robowrap </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/equipment/septa-mat-cutting-robot/">Septa Mat Cutting Robot </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as(&quot;Definitions/Materials&quot;)}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" data-lucide="chevron-down"></i>
+<i x-show="!isOpen" data-lucide="chevron-right"></i>
+<span class="foldername">Materials</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/materials/316-l-stainless-steel/">316L Stainless Steel </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/materials/delrin/">Delrin </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/materials/peek/">PEEK </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/materials/polycarbonate/">Polycarbonate </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as(&quot;Definitions/Parts Process&quot;)}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" data-lucide="chevron-down"></i>
+<i x-show="!isOpen" data-lucide="chevron-right"></i>
+<span class="foldername">Parts Process</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/parts-process/ersa/">ERSA </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/parts-process/multiple-materials-request-spreadsheet/">Multiple Materials Request Spreadsheet </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/parts-process/part-number/">Part Number </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/parts-process/parts-order-form/">Parts Order Form </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/parts-process/parts-process/">Parts Process </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as(&quot;Definitions/Quality&quot;)}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" data-lucide="chevron-down"></i>
+<i x-show="!isOpen" data-lucide="chevron-right"></i>
+<span class="foldername">Quality</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as(&quot;Definitions/Quality/CC Sections&quot;)}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" data-lucide="chevron-down"></i>
+<i x-show="!isOpen" data-lucide="chevron-right"></i>
+<span class="foldername">CC Sections</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/quality/cc-sections/additional-description/">Additional Description </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/quality/cc-sections/brief-description/">Brief Description </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/quality/cc-sections/impacted-documentation/">Impacted Documentation </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/quality/cc-sections/implementation-actions/">Implementation Actions </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/quality/cc-sections/justification-for-change/">Justification for Change </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/quality/cc-sections/reason-for-change/">Reason for Change </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/quality/cc-sections/testing-actions/">Testing Actions </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/quality/capa/">CAPA </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/quality/change-control/">Change Control </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/quality/change-types/">Change Types </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/quality/co-c/">CoC </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/quality/design-control-process/">Design Control Process </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/quality/design-control/">Design Control </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/quality/ecr/">ECR </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/quality/engineering-study/">Engineering Study </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/quality/form-fit-function/">Form Fit Function </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/quality/nonconformance/">Nonconformance </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/quality/program-level-change-control/">Program-Level Change Control </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/quality/risk-assessment/">Risk Assessment </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/quality/root-cause-analysis/">Root Cause Analysis </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/quality/sop/">SOP </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/quality/validation/">Validation </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as(&quot;Definitions/SolidWorks Drawings&quot;)}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" data-lucide="chevron-down"></i>
+<i x-show="!isOpen" data-lucide="chevron-right"></i>
+<span class="foldername">SolidWorks Drawings</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as(&quot;Definitions/SolidWorks Drawings/ASME Y14.5-2018&quot;)}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" data-lucide="chevron-down"></i>
+<i x-show="!isOpen" data-lucide="chevron-right"></i>
+<span class="foldername">ASME Y14.5-2018</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as(&quot;Definitions/SolidWorks Drawings/ASME Y14.5-2018/Parsed&quot;)}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" data-lucide="chevron-down"></i>
+<i x-show="!isOpen" data-lucide="chevron-right"></i>
+<span class="foldername">Parsed</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/solid-works-drawings/asme-y14-5-2018/parsed/app-a-principal-changes-asme-y14-5-2018/">AppA - Principal Changes - ASME Y14.5-2018 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/solid-works-drawings/asme-y14-5-2018/parsed/app-b-positional-tolerancing-formulas-asme-y14-5-2018/">AppB - Positional Tolerancing Formulas - ASME Y14.5-2018 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/solid-works-drawings/asme-y14-5-2018/parsed/app-c-symbols-reference-asme-y14-5-2018/">AppC - Symbols Reference - ASME Y14.5-2018 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/solid-works-drawings/asme-y14-5-2018/parsed/app-d-former-practices-asme-y14-5-2018/">AppD - Former Practices - ASME Y14.5-2018 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/solid-works-drawings/asme-y14-5-2018/parsed/app-i-alternate-practices-asme-y14-5-2018/">AppI - Alternate Practices - ASME Y14.5-2018 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/solid-works-drawings/asme-y14-5-2018/parsed/index-asme-y14-5-2018/">Index - ASME Y14.5-2018 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/solid-works-drawings/asme-y14-5-2018/parsed/sec1-scope-asme-y14-5-2018/">Sec1 - Scope - ASME Y14.5-2018 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/solid-works-drawings/asme-y14-5-2018/parsed/sec2-references-asme-y14-5-2018/">Sec2 - References - ASME Y14.5-2018 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/solid-works-drawings/asme-y14-5-2018/parsed/sec3-definitions-asme-y14-5-2018/">Sec3 - Definitions - ASME Y14.5-2018 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/solid-works-drawings/asme-y14-5-2018/parsed/sec4-dimensioning-practices-asme-y14-5-2018/">Sec4 - Dimensioning Practices - ASME Y14.5-2018 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/solid-works-drawings/asme-y14-5-2018/parsed/sec5-tolerancing-and-limits-asme-y14-5-2018/">Sec5 - Tolerancing and Limits - ASME Y14.5-2018 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/solid-works-drawings/asme-y14-5-2018/parsed/sec6-symbology-asme-y14-5-2018/">Sec6 - Symbology - ASME Y14.5-2018 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/solid-works-drawings/asme-y14-5-2018/parsed/sec7-datum-reference-frames-asme-y14-5-2018/">Sec7 - Datum Reference Frames - ASME Y14.5-2018 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/solid-works-drawings/asme-y14-5-2018/parsed/sec8-tolerances-of-form-asme-y14-5-2018/">Sec8 - Tolerances of Form - ASME Y14.5-2018 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/solid-works-drawings/asme-y14-5-2018/parsed/sec9-tolerances-of-orientation-asme-y14-5-2018/">Sec9 - Tolerances of Orientation - ASME Y14.5-2018 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/solid-works-drawings/asme-y14-5-2018/parsed/sec10-tolerances-of-position-asme-y14-5-2018/">Sec10 - Tolerances of Position - ASME Y14.5-2018 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/solid-works-drawings/asme-y14-5-2018/parsed/sec11-tolerances-of-profile-asme-y14-5-2018/">Sec11 - Tolerances of Profile - ASME Y14.5-2018 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/solid-works-drawings/asme-y14-5-2018/parsed/sec12-tolerances-of-runout-asme-y14-5-2018/">Sec12 - Tolerances of Runout - ASME Y14.5-2018 </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/solid-works-drawings/solid-works-drawing-standards/">SolidWorks Drawing Standards </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/96-well-plate/">96 Well Plate </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/building-automation-system/">Building Automation System </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/cleanroom/">Cleanroom </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/cybertrol/">Cybertrol </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/design-review/">Design Review </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/ehs/">EHS </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/electrophoresis/">Electrophoresis </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/esst/">ESST </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/fill-lyophilize-finish/">Fill Lyophilize Finish </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/gowning/">Gowning </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/hdpe/">HDPE </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/hmi/">HMI </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/in-vitro-dispensing/">In Vitro Dispensing </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/isa-88/">ISA-88 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/lyo-finishing-b/">LYO Finishing B </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/lyophilizer/">Lyophilizer </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/lysis/">Lysis </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/material-naming-convention/">Material Naming Convention </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/maxx-tooling-er-32-collet-nut/">Maxx Tooling ER32 Collet Nut </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/metrology/">Metrology </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/nlag/">NLAG </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/operations-engineering/">Operations Engineering </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/operations/">Operations </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/optima/">Optima </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/packaging-engineering/">Packaging Engineering </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/particle-monitoring-system/">Particle Monitoring System </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/polymerase-chain-reaction/">Polymerase Chain Reaction </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/polymerase/">Polymerase </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/preventive-maintenance/">Preventive Maintenance </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/promega-instrumentation/">Promega Instrumentation </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/promega/">Promega </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/purified-water-system/">Purified Water System </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/qa-and-regulatory-affairs/">QA and Regulatory Affairs </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/resistance-temperature-detector/">Resistance Temperature Detector </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/screw-labeling/">Screw Labeling </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/septa-mats/">Septa Mats </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/shop-request/">Shop Request </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/spectrum/">Spectrum </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/steam-in-place/">Steam in Place </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/transformer-plan/">Transformer Plan </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/vials/">Vials </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as(&quot;Fabrication&quot;)}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" data-lucide="chevron-down"></i>
+<i x-show="!isOpen" data-lucide="chevron-right"></i>
+<span class="foldername">Fabrication</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/fabrication/3-d-printers/">3D Printers </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/fabrication/emt-mill/">EMT Mill </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/fabrication/formlabs-form-3-l/">Formlabs Form 3L </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/fabrication/laser-cutter/">Laser Cutter </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/fabrication/markforged-desktop-onyx/">Markforged Desktop Onyx </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/fabrication/markforged-industrial-x7/">Markforged Industrial X7 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/fabrication/mc-master-carr/">McMaster-Carr </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/fabrication/prusa-xl/">Prusa XL </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/fabrication/water-jet/">Water Jet </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/fabrication/zund/">Zund </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as(&quot;Lines&quot;)}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" data-lucide="chevron-down"></i>
+<i x-show="!isOpen" data-lucide="chevron-right"></i>
+<span class="foldername">Lines</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as(&quot;Lines/MA3&quot;)}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" data-lucide="chevron-down"></i>
+<i x-show="!isOpen" data-lucide="chevron-right"></i>
+<span class="foldername">MA3</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/lines/ma-3/ma-3-pusher/">MA3 Pusher </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/lines/ma-3/ma-3/">MA3 </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/lines/fab/">FAB </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/lines/kpa/">KPA </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/lines/ma-1/">MA1 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/lines/ma-2/">MA2 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/lines/max-auto/">MaxAuto </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as(&quot;My Projects&quot;)}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" data-lucide="chevron-down"></i>
+<i x-show="!isOpen" data-lucide="chevron-right"></i>
+<span class="foldername">My Projects</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as(&quot;My Projects/ArC Notes&quot;)}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" data-lucide="chevron-down"></i>
+<i x-show="!isOpen" data-lucide="chevron-right"></i>
+<span class="foldername">ArC Notes</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/ar-c-notes/agitator/">Agitator </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/ar-c-notes/batch-run-testing/">Batch Run Testing </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/ar-c-notes/biomass/">Biomass </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/ar-c-notes/cell-paste/">Cell Paste </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/ar-c-notes/centrifuge/">Centrifuge </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/ar-c-notes/dissolved-oxygen/">Dissolved Oxygen </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/ar-c-notes/fermentation-101/">Fermentation 101 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/ar-c-notes/fermentation-media/">Fermentation Media </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/ar-c-notes/fermentation/">Fermentation </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/ar-c-notes/fermenters/">Fermenters </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/ar-c-notes/induction/">Induction </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/ar-c-notes/inoculation/">Inoculation </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/ar-c-notes/luciferase/">Luciferase </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/ar-c-notes/p-h/">pH </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/ar-c-notes/sterilize-in-place/">Sterilize in Place </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/ar-c-notes/supernatant/">Supernatant </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as(&quot;My Projects/Calibration Probe Fixture&quot;)}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" data-lucide="chevron-down"></i>
+<i x-show="!isOpen" data-lucide="chevron-right"></i>
+<span class="foldername">Calibration Probe Fixture</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as(&quot;My Projects/Calibration Probe Fixture/Technical Specs&quot;)}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" data-lucide="chevron-down"></i>
+<i x-show="!isOpen" data-lucide="chevron-right"></i>
+<span class="foldername">Technical Specs</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/calibration-probe-fixture/technical-specs/bath-and-probe-spec/">Bath and Probe Spec </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/calibration-probe-fixture/technical-specs/fluke-in-house-sop/">Fluke In-House SOP </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink active-note">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/calibration-probe-fixture/calibration-probe-fixture-materials-research-2026-05-12/">Calibration Probe Fixture - Materials Research 2026-05-12 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/calibration-probe-fixture/calibration-probe-fixture/">Calibration Probe Fixture </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/calibration-probe-fixture/probe-summary/">Probe Summary </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as(&quot;My Projects/Claude Projects&quot;)}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" data-lucide="chevron-down"></i>
+<i x-show="!isOpen" data-lucide="chevron-right"></i>
+<span class="foldername">Claude Projects</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/claude-projects/brain-dump-interviewer/">Brain Dump Interviewer </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/claude-projects/drawing-from-3-d-model/">Drawing From 3D Model </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/claude-projects/gizmos-and-gadgets-glossary/">Gizmos and Gadgets Glossary </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/claude-projects/listenr/">Listenr </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/claude-projects/new-hire-help-hub/">New Hire Help Hub </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/claude-projects/obsidian-vault-assistant/">Obsidian Vault Assistant </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/claude-projects/teams-album-of-the-day/">Teams Album of the Day </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as(&quot;My Projects/Dip Tube Baffle&quot;)}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" data-lucide="chevron-down"></i>
+<i x-show="!isOpen" data-lucide="chevron-right"></i>
+<span class="foldername">Dip Tube Baffle</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as(&quot;My Projects/Dip Tube Baffle/Dip Tube Baffle Parts&quot;)}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" data-lucide="chevron-down"></i>
+<i x-show="!isOpen" data-lucide="chevron-right"></i>
+<span class="foldername">Dip Tube Baffle Parts</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/dip-tube-baffle/dip-tube-baffle-parts/pickup-rod-2-l/">Pickup Rod, 2L </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/dip-tube-baffle/dip-tube-baffle-parts/split-baffle-assembly-2-l/">Split Baffle Assembly, 2L </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/dip-tube-baffle/dip-tube-baffle-parts/split-baffle-2-l/">Split Baffle, 2L </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/dip-tube-baffle/dip-tube-baffle-parts/two-barb-pickup-2-l/">Two Barb Pickup, 2L </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/dip-tube-baffle/dip-tube-baffle-assembly/">Dip Tube Baffle Assembly </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/dip-tube-baffle/dip-tube-baffle-drawing-review-1/">Dip Tube Baffle Drawing Review 1 </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as(&quot;My Projects/Mixer Chuck&quot;)}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" data-lucide="chevron-down"></i>
+<i x-show="!isOpen" data-lucide="chevron-right"></i>
+<span class="foldername">Mixer Chuck</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as(&quot;My Projects/Mixer Chuck/Mixer Chuck Parts&quot;)}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" data-lucide="chevron-down"></i>
+<i x-show="!isOpen" data-lucide="chevron-right"></i>
+<span class="foldername">Mixer Chuck Parts</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/mixer-chuck/mixer-chuck-parts/chuck-tool-mixer/">Chuck Tool, Mixer </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/mixer-chuck/mixer-chuck-parts/chuck-mixer-style-a/">Chuck, Mixer, Style A </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/mixer-chuck/mixer-chuck-parts/chuck-mixer-style-b/">Chuck, Mixer, Style B </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/mixer-chuck/mixer-chuck-parts/chuck-mixer-style-c/">Chuck, Mixer, Style C </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/mixer-chuck/mixer-chuck-parts/collet-cap-mixer-chuck/">Collet Cap, Mixer Chuck </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/mixer-chuck/mixer-chuck-parts/parlec-er-32-collet/">Parlec ER32 Collet </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/mixer-chuck/mixer-chuck-parts/stop-mixer-chuck/">Stop, Mixer Chuck </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/mixer-chuck/mixer-chuck-parts/tool-spanner-mixer-chuck/">Tool, Spanner, Mixer Chuck </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/mixer-chuck/mixer-chuck-cc-meeting-2026-06-09/">Mixer Chuck CC Meeting 2026-06-09 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/mixer-chuck/mixer-chuck-drawing-properties/">Mixer Chuck Drawing Properties </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/mixer-chuck/mixer-chuck-drawing-review-1/">Mixer Chuck Drawing Review 1 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/mixer-chuck/mixer-chuck-notes-archive/">Mixer Chuck Notes Archive </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/mixer-chuck/mixer-chuck/">Mixer Chuck </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/96-well-bracket/">96 Well Bracket </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/bubble-sensor-tray/">Bubble Sensor Tray </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/chair-piece/">Chair Piece </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/falling-vial-bin/">Falling Vial Bin </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/filter-connection/">Filter Connection </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/flipper-tray-blocker/">Flipper Tray Blocker </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/gel-electrophoresis-tray/">Gel Electrophoresis Tray </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/kpa-cutting-boards/">KPA Cutting Boards </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/label-arm/">Label Arm </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/lyo-clear-cover/">Lyo Clear Cover </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/ma-3-pusher-redesign/">MA3 Pusher Redesign </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/micro-vu-jig/">MicroVu Jig </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/septa-mat-excel/">Septa Mat Excel </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as(&quot;Other&quot;)}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" data-lucide="chevron-down"></i>
+<i x-show="!isOpen" data-lucide="chevron-right"></i>
+<span class="foldername">Other</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/other/metrology-meeting-2026-04-22/">Metrology Meeting 2026-04-22 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/other/metrology-meeting-2026-06-10/">Metrology Meeting 2026-06-10 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/other/vial-tray-jig/">Vial Tray jig </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as(&quot;People&quot;)}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" data-lucide="chevron-down"></i>
+<i x-show="!isOpen" data-lucide="chevron-right"></i>
+<span class="foldername">People</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/aaron-vergiels/">Aaron Vergiels </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/adiva-kabir/">Adiva Kabir </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/alex-rabbach/">Alex Rabbach </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/ali-heinemann/">Ali Heinemann </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/allona-san-diego/">Allona San Diego </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/amanda-maly/">Amanda Maly </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/andy-swetlik/">Andy Swetlik </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/beau-york/">Beau York </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/bethany-zepnick/">Bethany Zepnick </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/bill-linton/">Bill Linton </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/brian-osterbrink/">Brian Osterbrink </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/brian-schauf/">Brian Schauf </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/cameron-boeder/">Cameron Boeder </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/chris-rusthoven/">Chris Rusthoven </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/chuck-york/">Chuck York </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/claire-moll/">Claire Moll </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/co-ops/">Co-ops </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/david-velazquez/">David Velazquez </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/diego-lamela/">Diego Lamela </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/doug-fahrenkrug/">Doug Fahrenkrug </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/electro-mechanical-technician/">Electro-Mechanical Technician </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/ethan-hazra/">Ethan Hazra </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/evelyn-stencel/">Evelyn Stencel </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/garrett-tschanz/">Garrett Tschanz </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/gary-mc-cauley/">Gary McCauley </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/ike-yeloushan/">Ike Yeloushan </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/isaac-bednarski/">Isaac Bednarski </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/jack-miller/">Jack Miller </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/jacob-holze/">Jacob Holze </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/jason-esser/">Jason Esser </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/jeremy-dassler/">Jeremy Dassler </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/josh-lambert/">Josh Lambert </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/kent-toepfer/">Kent Toepfer </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/kevin-rogers/">Kevin Rogers </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/kimberly-steinhauer/">Kimberly Steinhauer </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/madeline-henneman/">Madeline Henneman </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/mark-koeff/">Mark Koeff </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/matt-swanson/">Matt Swanson </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/matt-wahl/">Matt Wahl </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/mike-mc-kuen/">Mike McKuen </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/mike-moothart/">Mike Moothart </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/mindy-becker/">Mindy Becker </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/misha-dyskin/">Misha Dyskin </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/nikki-masterson/">Nikki Masterson </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/packaging-team/">Packaging Team </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/patrick-foelker/">Patrick Foelker </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/patrick-swails/">Patrick Swails </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/paul-doll/">Paul Doll </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/philip-mc-keefry/">Philip McKeefry </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/product-finishing-team/">Product finishing Team </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/ryan-kimmel/">Ryan Kimmel </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/sean-doering/">Sean Doering </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/stirling-mitchell/">Stirling Mitchell </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/ted-lenoch/">Ted Lenoch </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/tony-brunnquell/">Tony Brunnquell </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/travis-beyer/">Travis Beyer </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/trish-gates/">Trish Gates </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/will-aadland/">Will Aadland </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/zack-wermeling/">Zack Wermeling </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as(&quot;Software&quot;)}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" data-lucide="chevron-down"></i>
+<i x-show="!isOpen" data-lucide="chevron-right"></i>
+<span class="foldername">Software</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as(&quot;Software/SolidWorks&quot;)}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" data-lucide="chevron-down"></i>
+<i x-show="!isOpen" data-lucide="chevron-right"></i>
+<span class="foldername">SolidWorks</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as(&quot;Software/SolidWorks/SolidWorks Macros&quot;)}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" data-lucide="chevron-down"></i>
+<i x-show="!isOpen" data-lucide="chevron-right"></i>
+<span class="foldername">SolidWorks Macros</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/software/solid-works/solid-works-macros/default-lighting-setter/">Default Lighting Setter </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/software/solid-works/solid-works-macros/json-property-filler/">JSON Property Filler </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/software/solid-works/solid-works-macros/symmetric-tolerance/">Symmetric Tolerance </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/software/solid-works/solidworks-sheet-metal/">Solidworks Sheet Metal </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/software/solid-works/solid-works-templates/">SolidWorks Templates </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/software/solid-works/solidworks/">Solidworks </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/software/ansible/">Ansible </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/software/anthropic-claude/">Anthropic Claude </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/software/asme-website-redesign/">ASME Website Redesign </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/software/auto-cad/">AutoCAD </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/software/batch/">Batch </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/software/engineering-workstations/">Engineering Workstations </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/software/epdm/">EPDM </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/software/et-q-reliance/">EtQ Reliance </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/software/microsoft-teams/">Microsoft Teams </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/software/obsidian/">Obsidian </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/software/one-drive/">OneDrive </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/software/one-note/">OneNote </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/software/ops-forge/">OpsForge </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/software/outlook/">Outlook </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/software/sap/">SAP </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/software/smartsheet/">Smartsheet </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/software/software/">Software </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as(&quot;Unknown&quot;)}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" data-lucide="chevron-down"></i>
+<i x-show="!isOpen" data-lucide="chevron-right"></i>
+<span class="foldername">Unknown</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/unknown/drop-gate/">Drop Gate </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/unknown/evco-eo-bag/">EVCO EO Bag </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/unknown/lyo-equipment-room/">LYO Equipment Room </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/unknown/lyo-finishing-a/">LYO Finishing A </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/unknown/lyo-production/">LYO Production </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/unknown/pauls-finishing-panel/">Pauls Finishing Panel </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/unknown/vial-it/">Vial-It </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/notes-to-add/">Notes To Add </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/">Ryan Meyer </a>
+</div>
+</div>
+</div>
+</nav>
+</div>
+</div>
+<div class="search-container" id="globalsearch" onclick="toggleSearch()">
+<div class="search-box" onclick="event.stopPropagation()">
+<div class="search-header">
+<input type="search" id="term" placeholder="Start typing...">
+</div>
+<div class="search-layout no-preview" id="search-layout">
+<div class="search-results-panel" id="search-results">
+<span><i>Enter your search text in the box above</i></span>
+</div>
+<div class="search-preview-panel" id="search-preview">
+<div class="preview-placeholder">
+<i data-lucide="file-text"></i>
+<p>Select a result to preview</p>
+</div>
+<div class="preview-content" id="preview-content"></div>
+</div>
+</div>
+<footer class="search-box-footer">
+<div class="navigation-hint">
+<span><code>Enter</code>&nbsp;to select</span>
+</div>
+<div class="navigation-hint">
+<span><code>⇅</code>&nbsp;to navigate</span>
+</div>
+<div class="navigation-hint">
+<span><code>ESC</code>&nbsp;to close</span>
+</div>
+</footer>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/flexsearch@0.7.21/dist/flexsearch.bundle.js"></script>
+<script>document.addEventListener("DOMContentLoaded",init,!1),document.addEventListener("DOMContentLoaded",setCorrectShortcut,!1);const previewCache=new Map;window.toggleSearch=function(){const e=document.getElementById("globalsearch");e.classList.contains("active")?e.classList.remove("active"):(e.classList.add("active"),document.getElementById("term").focus())},window.toggleTagSearch=function(e){const t=e.textContent;t&&(document.getElementById("term").value=t.trim(),window.toggleSearch(),window.search())};const loadingSvg='\n    <div style="display: flex; justify-content: center; padding: 40px;">\n        <svg width="40" height="40" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" stroke="currentColor">\n            <g fill="none" fill-rule="evenodd" transform="translate(1 1)" stroke-width="2">\n                <circle cx="22" cy="22" r="6" stroke-opacity="0">\n                    <animate attributeName="r" begin="1.5s" dur="3s" values="6;22" calcMode="linear" repeatCount="indefinite" />\n                    <animate attributeName="stroke-opacity" begin="1.5s" dur="3s" values="1;0" calcMode="linear" repeatCount="indefinite" />\n                    <animate attributeName="stroke-width" begin="1.5s" dur="3s" values="2;0" calcMode="linear" repeatCount="indefinite" />\n                </circle>\n                <circle cx="22" cy="22" r="6" stroke-opacity="0">\n                    <animate attributeName="r" begin="3s" dur="3s" values="6;22" calcMode="linear" repeatCount="indefinite" />\n                    <animate attributeName="stroke-opacity" begin="3s" dur="3s" values="1;0" calcMode="linear" repeatCount="indefinite" />\n                    <animate attributeName="stroke-width" begin="3s" dur="3s" values="2;0" calcMode="linear" repeatCount="indefinite" />\n                </circle>\n                <circle cx="22" cy="22" r="8">\n                    <animate attributeName="r" begin="0s" dur="1.5s" values="6;1;2;3;4;5;6" calcMode="linear" repeatCount="indefinite" />\n                </circle>\n            </g>\n        </svg>\n    </div>';function debounce(e,t,n){var r;return function(){var i=this,a=arguments,s=n&&!r;clearTimeout(r),r=setTimeout((function(){r=null,n||e.apply(i,a)}),t),s&&e.apply(i,a)}}function setCorrectShortcut(){navigator.platform.toUpperCase().indexOf("MAC")>=0&&document.querySelectorAll(".search-keys").forEach((e=>e.innerHTML="<code>⌘</code>&nbsp;+&nbsp;<code>K</code>"))}function tokenizeSearchTerms(e){const t=[],n=/"([^"]+)"|(\S+)/g;let r;for(;null!==(r=n.exec(e));){const e=(r[1]||r[2]).toLowerCase();e.length>1&&t.push(e)}return t.sort(((e,t)=>t.length-e.length))}function highlightTerms(e,t){if(!t||0===t.length||!e)return e;let n=e;return t.forEach((e=>{const t=e.replace(/[.*+?^${}()|[\]\\]/g,"\\$&"),r=new RegExp(`(${t})`,"gi");n=n.replace(r,'<span class="search-highlight">$1</span>')})),n}function getContextualExcerpt(e,t,n=150){if(!e)return"";const r=e.replace(/<[^>]*>/g,"");if(!t||0===t.length)return truncateText(r,n);let i=r.length;if(t.forEach((e=>{const t=r.toLowerCase().indexOf(e.toLowerCase());-1!==t&&t<i&&(i=t)})),i===r.length)return truncateText(r,n);const a=Math.max(0,i-50),s=Math.min(r.length,a+n);let o=r.substring(a,s);return a>0&&(o="..."+o),s<r.length&&(o+="..."),o}function truncateText(e,t){return e?(e=e.replace(/<[^>]*>/g,"")).length<=t?e:e.substring(0,t-3)+"...":""}async function fetchPreviewContent(e){if(previewCache.has(e))return previewCache.get(e);try{const t=await fetch(e),n=await t.text(),r=new DOMParser,i=r.parseFromString(n,"text/html").querySelector(".content, .cm-s-obsidian, article, main"),a=i?i.innerHTML:"";return previewCache.set(e,a),a}catch(e){return console.error("Failed to fetch preview:",e),""}}function highlightTextNodes(e,t){if(!t||0===t.length)return;const n=document.createTreeWalker(e,NodeFilter.SHOW_TEXT,null,!1),r=[];for(;n.nextNode();)r.push(n.currentNode);r.forEach((e=>{const n=e.textContent;let r=!1;if(t.forEach((e=>{n.toLowerCase().includes(e.toLowerCase())&&(r=!0)})),r){const r=document.createElement("span");r.innerHTML=highlightTerms(n,t),e.parentNode.replaceChild(r,e)}}))}async function showPreview(e){const t=window.searchResults;if(!t||!t[e])return;const n=t[e],r=document.getElementById("search-preview"),i=document.getElementById("preview-content"),a=r.querySelector(".preview-placeholder");if(!r||!i)return;document.querySelectorAll(".searchresult").forEach((e=>e.classList.remove("active")));const s=document.querySelector(`.searchresult[data-index="${e}"]`);s&&s.classList.add("active"),i.innerHTML=loadingSvg,i.classList.add("has-content"),a.style.display="none";const o=await fetchPreviewContent(n.url),c=n.tags&&n.tags.length>0?`<div class="preview-tags">${n.tags.map((e=>`<a class="tag" href="javascript:void(0);" onclick="toggleTagSearch(this)">#${e}</a>`)).join("")}</div>`:"";i.innerHTML=`\n            <div class="preview-title">${highlightTerms(n.title,window.searchTerms)}</div>\n            ${c}\n            <div class="preview-body">${o}</div>\n        `;const l=i.querySelector(".preview-body");l&&window.searchTerms&&highlightTextNodes(l,window.searchTerms),window.currentPreviewIndex=e}function hidePreview(){const e=document.getElementById("search-preview"),t=document.getElementById("preview-content"),n=e?.querySelector(".preview-placeholder");n&&(n.style.display="flex"),t&&(t.classList.remove("has-content"),t.innerHTML=""),window.currentPreviewIndex=-1}function createIndex(e){const t=e=>(e=>e.toLowerCase().normalize("NFD").replace(/n\u0303/g,"ñ").replace(/[\u0300-\u036f]/g,"").normalize("NFC"))(e).split(/([^a-z]|[^\x00-\x7F])/),n=new FlexSearch.Document({cache:!0,charset:"latin:extra",optimize:!0,index:[{field:"content",tokenize:"reverse",encode:t},{field:"title",tokenize:"forward",encode:t},{field:"tags",tokenize:"forward",encode:t}]});return e.forEach(((e,t)=>{n.add({id:t,title:e.title,content:e.content,tags:e.tags})})),n}async function init(){const e=await fetch("/searchIndex.json?v=2026-06-26T19:19:44.350Z").then((e=>e.json())),t=createIndex(e);function n(e){const t=document.querySelectorAll(".searchresult");if(0===t.length)return;let n,r=-1;t.forEach(((e,t)=>{e.classList.contains("active")&&(r=t)})),-1===r?n=e>0?0:t.length-1:(n=r+e,n<0&&(n=t.length-1),n>=t.length&&(n=0)),t.forEach((e=>e.classList.remove("active"))),t[n].classList.add("active"),t[n].scrollIntoView({behavior:"smooth",block:"nearest"}),showPreview(parseInt(t[n].dataset.index))}window.docs=e,window.index=t,document.addEventListener("keydown",(e=>{if((e.ctrlKey||e.metaKey)&&"k"===e.key&&(e.preventDefault(),toggleSearch()),"Escape"===e.key&&document.getElementById("globalsearch").classList.remove("active"),document.getElementById("globalsearch").classList.contains("active")&&("ArrowDown"===e.key&&(e.preventDefault(),n(1)),"ArrowUp"===e.key&&(e.preventDefault(),n(-1)),"Enter"===e.key)){e.preventDefault();const t=document.querySelector(".searchresult.active");if(t){const e=t.dataset.url;e&&(window.location.href=e)}}}));const r=debounce(search,200,!1);window.field=document.querySelector("#term"),field.addEventListener("keydown",(e=>{"ArrowDown"!==e.key&&"ArrowUp"!==e.key&&"Enter"!==e.key&&r()})),window.resultsDiv=document.querySelector("#search-results");const i=new URL(location.href).searchParams;i.get("q")&&(field.setAttribute("value",i.get("q")),toggleSearch(),search())}async function search(){const e=field.value.trim(),t=document.getElementById("search-layout");if(!e)return resultsDiv.innerHTML="<span><i>Enter your search text in the box above</i></span>",hidePreview(),void(t&&t.classList.add("no-preview"));window.lastSearch=e,window.searchTerms=tokenizeSearchTerms(e),resultsDiv.innerHTML=loadingSvg,hidePreview();const n=offlineSearch(e);if(window.searchResults=n,!n.length)return t&&t.classList.add("no-preview"),void(resultsDiv.innerHTML=`\n                <div class="no-results">\n                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">\n                        <circle cx="11" cy="11" r="8"></circle>\n                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>\n                        <line x1="8" y1="11" x2="14" y2="11"></line>\n                    </svg>\n                    <p>No results for "${e}"</p>\n                </div>\n            `);t&&t.classList.remove("no-preview");let r="";n.forEach(((e,t)=>{const n=highlightTerms(getContextualExcerpt(e.content,window.searchTerms,120),window.searchTerms),i=highlightTerms(e.title,window.searchTerms),a=e.tags&&e.tags.length>0?`<div class="result-tags">${e.tags.map((e=>`<span class="tag">#${e}</span>`)).join("")}</div>`:"";r+=`\n                <div class="searchresult${0===t?" active":""}"\n                     data-index="${t}"\n                     data-url="${e.url}"\n                     onmouseenter="showPreview(${t})"\n                     onclick="window.location.href='${e.url}'">\n                    <span class="result-title">${i}</span>\n                    ${a}\n                    <div class="result-excerpt">${n}</div>\n                </div>\n            `})),resultsDiv.innerHTML=r,n.length>0&&showPreview(0),"undefined"!=typeof lucide&&lucide.createIcons()}function offlineSearch(e){const t=window.docs,n="#"===e[0]&&e.length>1?index.search(e.substring(1),[{field:"tags"}]):index.search(e,[{field:"title",limit:5},{field:"content",limit:10}]),r=e=>{const t=n.filter((t=>t.field===e));return 0===t.length?[]:[...t[0].result]};return[...new Set([...r("title"),...r("content"),...r("tags")])].map((e=>{const n={...t[e]};return n.tags=n.tags.filter((e=>"gardenEntry"!==e&&"note"!==e)),n}))}window.lastSearch="",window.searchResults=[],window.searchTerms=[],window.currentPreviewIndex=-1,window.search=search</script>
+<main class="content cm-s-obsidian print">
+<header>
+<h1 data-note-icon="">Calibration Probe Fixture - Materials Research 2026-05-12</h1>
+<div class="header-meta">
+<div class="header-tags">
+<a class="tag" onclick="toggleTagSearch(this)">
+#My-Projects
+</a>
+<a class="tag" onclick="toggleTagSearch(this)">
+#reference
+</a>
+</div>
+</div>
+</header>
+<p><a class="tag" onclick="toggleTagSearch(this)" data-content="#My-Projects">#My-Projects</a></p>
+<div class="callout" data-callout="warning"><div class="callout-title"><div class="callout-title-inner"> Document age and scope drift<br></div></div>
+<div class="callout-content">
+<p>
+This research was written on 2026-05-12 based on the project scope known at that time. Since then, several pieces of information have surfaced that may invalidate or shift specific recommendations:</p>
+<ul>
+<li><strong>5628-12-S in scope.</strong> This probe (12 in long, 1/4 in diameter, rated 661 °C) was missing from the project notes when this research was done. The fixture footprint and slot count below assumed 5 probes; with the 5628-12-S it is 6 (or 5 if 5622-05/-10 share a slot).</li>
+<li><strong>7380 bath possibly in scope.</strong> The <a class="internal-link" target="" data-note-icon="undefined" href="/my-projects/calibration-probe-fixture/technical-specs/bath-and-probe-spec/">Bath and Probe Spec</a> lists a 7380 bath with a 3 x 4 in opening using Halocarbon 0.8 Oil. If this is in scope, the &quot;all baths share one opening&quot; finding (Section 1) is wrong and the universal-fixture rationale needs revisiting.</li>
+<li><strong>Two-jig design likely.</strong> The two-jig approach (hot and cold separate) is gaining momentum as the design develops. The 6331 (280 °C) bath being so different from the others makes a dedicated hot jig look like the cleaner path. If that happens, the recommendation toward one universal lid is obsolete — the hot jig becomes a much simpler one- or two-slot design for the 5622-32 only, and the cold/mid jig drops the 280 °C constraint.</li>
+<li><strong>Vent holes are permitted.</strong> Per <a class="internal-link" target="" data-note-icon="undefined" href="/people/david-velazquez/">David</a>, a sealed lid is only for speeding up bath ramp time, not for accuracy. Vent holes are explicitly allowed on all jigs and especially relevant for the hot jig. This changes the thermal model: hot vapor isn't necessarily trapped against the underside of the lid or against PEEK bushings. The PEEK-vs-Macor decision for the 280 °C case may resolve in PEEK's favor with vent holes, but this should be confirmed by test or measurement before committing.</li>
+<li><strong>5622-05 phase-out claim retracted.</strong> Per <a class="internal-link" target="" data-note-icon="undefined" href="/people/david-velazquez/">David</a>, the 5622-05 is not being phased out. It is grouped with 5622-10 in the <a class="internal-link" target="" data-note-icon="undefined" href="/my-projects/calibration-probe-fixture/technical-specs/bath-and-probe-spec/">Bath and Probe Spec</a> and the fixture should be designed around the 5622-10 dimensions to accommodate both.</li>
+<li><strong>5606 is the dangling probe.</strong> Per <a class="internal-link" target="" data-note-icon="undefined" href="/people/david-velazquez/">David</a> (Teams, 2026-04-02). The lower tube carrier design is driven by this probe specifically.</li>
+</ul>
+<p>The underlying material science (alloy comparisons, thermal calcs, insulation properties) remains valid regardless of these scope shifts.</p>
+</div></div>
+<p>Materials and design research for the <a class="internal-link" target="" data-note-icon="undefined" href="/my-projects/calibration-probe-fixture/calibration-probe-fixture/">Calibration Probe Fixture</a> project, prepared 2026-05-12 after the 2026-04-22 Metrology meeting pivoted the design from all-polymer to universal metal fixture. This document explores metal alloy options, insulation barrier options, Fluke bath and probe specifications, and presents three fully fleshed-out design paths with bills of materials and fabrication approaches.</p>
+<hr>
+<h2 id="tl-dr" tabindex="-1">TL;DR</h2>
+<ul>
+<li>Build the fixture body from 316L stainless steel (matching the bath wetted-parts material) with PEEK probe-contact bushings as a thermal/mechanical break, plus a small open-frame lower carrier that cradles the 1.5 ml reaction tubes concentric with each probe. This single combination covers the entire –80 °C to +280 °C workload, is fully compatible with silicone oil, 90% ethanol, and IPA, machines on the lathe/drill press/Zund/water-jet already available, and is the only path that needs no second insulation material across the full range. Titanium is the only &quot;single-material no-bushing&quot; alternative worth considering but it costs ~5–10× more and machines slowly.</li>
+<li>Drop elastomer insulation barriers as the primary thermal break. No single elastomer covers –80 °C to +280 °C: HNBR brittles around –35 to –40 °C, FKM (Viton) embrittles ~–20 °C (specialty low-T grades to –35 °C), and even FFKM (Kalrez 0040, the lowest-T perfluoroelastomer) only reaches –42 °C. Silicone rubber covers the temperature range but swells in silicone oil because the two materials are chemically the same family — a documented and well-known failure mode. Use elastomers only as secondary seals/O-rings outside the bath, not as the load-bearing thermal break submerged in fluid.</li>
+<li>Heat-loss math says the thermal-stability fear from the 2026-04-22 pivot is overstated. A reasonable 316L stainless lid (e.g., 6 mm thick, 120 × 172 mm) loses on the order of 10–50 W to ambient at the 280 °C extreme — well within the bath's heater authority (these baths reach 300 °C with multi-kW heaters). Bath uniformity (±0.005 to ±0.025 °C) is dominated by internal convection set by the controller and stir baffle, not by lid conduction. Confirming this empirically by measuring lip and fixture-top temperatures during the May/June build remains the right closeout step — including running the PEEK lip-temperature test that was deferred when the team pivoted to metal, since PEEK bushings are now part of the metal-path design.</li>
+</ul>
+<hr>
+<h2 id="key-findings" tabindex="-1">Key Findings</h2>
+<h3 id="1-the-three-fluke-baths-share-an-identical-opening-design-one-fixture-for-all" tabindex="-1">1. The three Fluke baths share an identical opening — design one fixture for all</h3>
+<p>All four &quot;Deep-Well Compact Bath&quot; siblings (7381, 7341, 6331, plus 6330 family) use the same 120 × 172 mm (4.7 × 6.8 in) rectangular access opening and the same 457 mm (18 in) tank depth, with 15.9 L (4.2 gal) working volume. Wetted parts are 304 stainless on the 7381, explicitly confirmed by Fluke. The 7341 and 6331 are from the same product family and almost certainly share that wetted-parts material, but this should be verified for the 6331 from its own user guide before assuming. A single fixture footprint will drop into all four Feynman Metrology baths interchangeably.</p>
+<p>Ryan should still physically measure the lip-thickness/flange profile and the existing jig dimensions at <a class="internal-link" target="" data-note-icon="undefined" href="/buildings/feynman/">Feynman</a> and <a class="internal-link" target="" data-note-icon="undefined" href="/buildings/chappelle-manufacturing-center/">CMC</a>, because the published spec only gives the opening — the surrounding flange/lid geometry is not in the datasheet and is what your fixture has to register against. For the CMC backup bath (a different/larger model), the lip profile is reported to potentially differ; do not assume parts interchange until measured. The forthcoming &quot;baby baths&quot; (count and model unconfirmed, going to 220 °C) need their lip dimensions and opening type confirmed before the fixture geometry is finalized — a scaled-down version of the same design philosophy is straightforward, but only if the openings are known.</p>
+<h3 id="2-the-280-c-requirement-is-driven-by-one-probe-5622-32-ceiling-is-actually-300-c" tabindex="-1">2. The 280 °C requirement is driven by ONE probe (5622-32); ceiling is actually 300 °C</h3>
+<p>The Fluke 6331 bath is rated 35 °C to 300 °C and the 280 °C calibration point is well within its range; stability/uniformity at 300 °C are ±0.015 °C / ±0.020 °C (Fluke). Fixture materials must be comfortably good past 280 °C with margin, ideally to 300+ °C continuous. This is why Torlon PAI (260 °C) and PPS/Ryton (~220 °C) were correctly ruled out — they have no margin.</p>
+<p>The 5622-32 is a 200 mm × 3.2 mm (8 in × 0.13 in) 316 stainless-sheathed PRT rated –200 °C to +350 °C (per Fluke 5622-series datasheet — the family rating; the 5622-32-specific page does not separately call out a different limit). Cable: PVC, 2 m long, 90 °C max. The cable rating is the binding constraint on how far above the bath surface the fixture must hold the probe handle / cable transition.</p>
+<p>Other probes for the fixture (all confirmed from Fluke datasheets):</p>
+<ul>
+<li>5606-50 &quot;Full Immersion PRT&quot;: 50 mm × 3.1 mm (1/8 in) 316 stainless sheath, –200 to +160 °C, 8 ft enameled copper lead, fully immersible including the lead wire. This is the &quot;dangles deepest&quot; probe in your context. Above 160 °C is not allowed, so the fixture must accommodate the 5606 being skipped on the 6331 (157/280 °C) bath but used on the 7381 (–80 °C).</li>
+<li>5622-05: 100 × 0.5 mm sheath, 316 SS, –200 to +350 °C (grouped with 5622-10 in <a class="internal-link" target="" data-note-icon="undefined" href="/my-projects/calibration-probe-fixture/technical-specs/bath-and-probe-spec/">Bath and Probe Spec</a>; design around 5622-10 dimensions accommodates both)</li>
+<li>5622-10: 100 × 1.0 mm sheath, 316 SS, –200 to +350 °C</li>
+<li>5623B: 152 mm × 6.35 mm (6 in × ¼ in) Inconel 600 sheath, –100 to +156 °C, PTFE-insulated 22 AWG silver-plated copper leads. Like the 5606, not usable on the 6331 high-temp bath.</li>
+</ul>
+<p>Immersion-depth rule of thumb (Fluke): 20 × probe diameter + sensor length. For the 5622-32 (3.2 mm dia, ~28 mm sensor): 20 × 3.2 + 28 ≈ 92 mm minimum below fluid surface. The 5606 is rated full-immersion. The 5623B needs ≥114 mm (4.5 in) to avoid stem effect (per its user guide). With a 457 mm tank depth, all probes have ample room.</p>
+<h3 id="3-heat-loss-through-a-metal-fixture-is-small-relative-to-bath-authority-verify-don-t-fear" tabindex="-1">3. Heat loss through a metal fixture is small relative to bath authority — verify, don't fear</h3>
+<p>Quick order-of-magnitude calc for a worst-case scenario (steady state, 6 mm thick × 120 × 172 mm fixture plate sitting on a 280 °C bath, ambient 22 °C):</p>
+<ul>
+<li>1-D conduction through plate edge to ambient: Q ≈ kAΔT/L. For 316L (k ≈ 14.5 W/m·K) the plate itself is essentially isothermal end-to-end; the rate-limiting resistance is convection from the top of the plate to air (h ≈ 5–15 W/m²·K for natural convection). With plate top area ≈ 0.021 m² at ~250 °C surface and ΔT ≈ 230 °C, Q ≈ h·A·ΔT ≈ 10 × 0.021 × 230 ≈ 48 W worst case bare metal.</li>
+<li>For the same fixture in 6061 aluminum (k = 167 W/m·K, ~10× SS), conduction is even less limiting; loss is still ~50 W (air-side limited).</li>
+<li>For PEEK (k ≈ 0.25 W/m·K), top surface stays much cooler, but the fixture also loses heat down through the fixture body via convection from its underside, which is the same regardless of material if the bottom face contacts the fluid.</li>
+</ul>
+<p>The 6331 bath reaches 300 °C with a quoted 250-minute heat-up from 35 °C, implying steady-state heater power on the order of several kW. A 50 W edge loss is in the noise. What matters for uniformity is whether the fixture disturbs the stir-flow pattern, not its conducted heat loss. Design the fixture to (a) sit on the lip rather than dunk a thick block deep into the working volume, (b) be open enough that fluid can still circulate around the probes, (c) keep submerged cross-section small, and (d) leave the original Fluke stir baffle and overflow drain clear.</p>
+<h3 id="4-elastomer-insulation-barriers-cannot-span-80-c-to-280-c-silicone-is-disqualified-by-silicone-oil-swelling" tabindex="-1">4. Elastomer insulation barriers cannot span –80 °C to +280 °C; silicone is disqualified by silicone-oil swelling</h3>
+<ul>
+<li>Standard NBR/Buna-N: ~–40 °C to +100 °C. Already ruled out — confirmed correct.</li>
+<li>HNBR (hydrogenated nitrile): typical –30 to +150 °C; low-ACN special grades reach ~–40 °C Tg per LANXESS Therban / Zeon Zetpol / Apple Rubber low-T HNBR data. Does not reach –80 °C. Also tops out around 150 °C, far below 280 °C.</li>
+<li>FKM / Viton: ~–20 to +230 °C standard, specialty low-T grades to –35 °C. Misses both ends.</li>
+<li>FFKM / Kalrez: standard –20 °C to +327 °C; Kalrez 0040 is the lowest-T grade at –42 °C. Still does not reach –80 °C. Excellent chemical resistance and reaches 280 °C, but cryogenic side fails.</li>
+<li>Silicone rubber (VMQ): –60 to +230 °C is the headline range, and specialty PVMQ grades reach –100 °C, which would actually cover the cold side. But silicone rubber swells in silicone oil because they are the same polymer family. This is a well-documented incompatibility — silicone oil is considered &quot;good with most elastomers EXCEPT silicone rubber.&quot; Fluke's 5010 (in the 7341) and 5012/5014/5017 silicone oils are exactly the bath media used in three of your four baths. Disqualified.</li>
+<li>Fluorosilicone (FVMQ): developed specifically to solve the oil-swell problem of VMQ; –60 to +175 °C. Doesn't reach –80 °C and doesn't reach 280 °C.</li>
+<li>EPDM, Aflas: both fall short on the cold side (–40 to –50 °C lower limit) and one or both ends on the high side; not contenders.</li>
+</ul>
+<p>Conclusion: there is no single elastomer that covers –80 to +280 °C in silicone-oil-compatible form. Any elastomer-based design needs two different elastomer parts (one set used at low temp, swapped out at high temp) — which violates &quot;universal&quot; fixture intent — or the elastomer must move out of the active thermal break role and serve only as a static seal/cushion outside the bath at near-ambient temperatures, where elastomer choice is unconstrained.</p>
+<h3 id="5-the-right-and-quot-insulation-and-quot-path-is-a-rigid-polymer-or-ceramic-bushing-in-a-metal-frame" tabindex="-1">5. The right &quot;insulation&quot; path is a rigid polymer or ceramic bushing in a metal frame</h3>
+<p>Materials that do span –80 °C to +280 °C as rigid inserts:</p>
+<ul>
+<li>PEEK (unfilled): typical –65 °C to +250 °C continuous, short excursions to 260–280 °C; chemical inertness in silicone oil, ethanol, IPA all excellent. Was your team's leading polymer candidate. The PEEK lip-temperature test was never performed because the team pivoted to metal — that test should still be the first thing done in May. PEEK as a small bushing (not the whole structure) sees lower temperatures than PEEK as the whole lid (because the metal carrier conducts heat away from the bushing's outer surface), making the 280 °C question more comfortable than it was for the all-polymer concept.</li>
+<li>PCTFE (Kel-F): –240 °C to +200 °C. Reaches cryo easily but fails the 280 °C bath. Also expensive and creep-prone like PTFE.</li>
+<li>Polyimide (Vespel SP-1 or DuPont equivalents): –240 °C to +290 °C continuous, excellent insulator (k ≈ 0.35 W/m·K). Same sourcing problem your team already identified — McMaster does carry SP-1 round stock in limited sizes (e.g., McMaster 8537K family) and that should be re-checked specifically as bushing rod rather than as bar stock if Path A's PEEK fails.</li>
+<li>Macor (machinable glass-ceramic, Corning): stable to 800 °C continuous, k = 1.46 W/m·K (~10× lower than 316SS), CTE ≈ 9.3 × 10⁻⁶/K (matches metals well). Machines with standard carbide tooling. Caveat: thermal shock sensitivity — Corning explicitly warns against rapid heat-up/cool-down cycles, and your –80 → +280 °C workload involves repeated thermal cycling. Bushings should be kept thin (&lt;5 mm wall) and gradually heated. Available from Corning, Final Advanced Materials, Precision Ceramics, and McMaster carries small Macor rod stock (McMaster 8489K family).</li>
+<li>Shapal Hi-M Soft: machinable aluminum-nitride composite, k ≈ 90 W/m·K (a thermal conductor, so the wrong choice if you want insulation — useful only if you specifically want geometric stability without insulation benefits).</li>
+<li>Alumina (Al₂O₃, 96–99%): k ≈ 25–30 W/m·K, –250 °C to ≥1500 °C, very chemically inert, more thermal-shock tolerant than Macor. Cannot be machined easily; buy as pre-formed bushings/tubes from Coorstek or McMaster (alumina tube McMaster 8746K family).</li>
+</ul>
+<h3 id="6-metal-alloy-down-select-316-l-is-the-right-answer" tabindex="-1">6. Metal alloy down-select — 316L is the right answer</h3>
+<p>Combining published thermal conductivity (W/m·K at ~25 °C), machinability, –80 °C toughness, chemical compatibility with all three fluids, and procurement realism:</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Alloy</th>
+<th>k (W/m·K)</th>
+<th>CTE (×10⁻⁶/K)</th>
+<th>Service to –80 °C</th>
+<th>Service to 300 °C</th>
+<th>Machinability (1100=Al ref)</th>
+<th>Cost ($/in³ ballpark, plate)</th>
+<th>Silicone oil</th>
+<th>Ethanol</th>
+<th>IPA</th>
+<th>Verdict</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>316/316L SS</td>
+<td>14–16</td>
+<td>16</td>
+<td>✅ tough, austenitic FCC</td>
+<td>✅ continuous</td>
+<td>~45 (work-hardens; carbide tooling, slower feeds)</td>
+<td>~$3–5</td>
+<td>✅ Excellent</td>
+<td>✅ Excellent (better than 304 for any chloride traces)</td>
+<td>✅ Excellent</td>
+<td>Recommended primary</td>
+</tr>
+<tr>
+<td>304 SS</td>
+<td>16</td>
+<td>17.2</td>
+<td>✅</td>
+<td>✅</td>
+<td>~45</td>
+<td>~$2–4</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>Acceptable; 316L preferred for ethanol pitting margin and probe-alloy match</td>
+</tr>
+<tr>
+<td>Aluminum 6061-T6</td>
+<td>167</td>
+<td>23.6</td>
+<td>✅ ductile at LN₂</td>
+<td>⚠️ softens above ~200 °C; 300 °C is near solutionizing</td>
+<td>~360 (excellent)</td>
+<td>~$1–2</td>
+<td>✅</td>
+<td>⚠️ Generally OK at room T; can pit in wet ethanol at elevated T; anodize for safety</td>
+<td>✅</td>
+<td>Disqualified by 280–300 °C service &amp; ethanol-corrosion risk</td>
+</tr>
+<tr>
+<td>Titanium Gr 2 (CP)</td>
+<td>16–22</td>
+<td>8.6</td>
+<td>✅ ductile</td>
+<td>✅ to 425 °C</td>
+<td>~30 (slow, work-hardens; carbide+coolant)</td>
+<td>~$25–35</td>
+<td>✅ Outstanding</td>
+<td>✅</td>
+<td>✅</td>
+<td>Strong alternative; cost &amp; machining time penalty</td>
+</tr>
+<tr>
+<td>Titanium Gr 5 (6Al-4V)</td>
+<td>6.7–7.2</td>
+<td>8.6</td>
+<td>✅</td>
+<td>✅</td>
+<td>~22 (harder than Gr 2; fire-risk swarf)</td>
+<td>~$40–60</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>Best thermal-isolation metal; expensive and slow on a co-op lathe</td>
+</tr>
+<tr>
+<td>Brass (C360)</td>
+<td>~115</td>
+<td>20.5</td>
+<td>✅</td>
+<td>✅</td>
+<td>100 (free-machining benchmark)</td>
+<td>~$5–8</td>
+<td>✅</td>
+<td>⚠️ Can tarnish/dezincify with ethanol over time</td>
+<td>✅</td>
+<td>Not recommended — high k undermines thermal-break intent; dezincification risk</td>
+</tr>
+<tr>
+<td>Inconel 625/600</td>
+<td>9.8–14</td>
+<td>13</td>
+<td>✅</td>
+<td>✅</td>
+<td>~15 (very slow, very hard)</td>
+<td>~$50–80</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>Overkill; same k as SS at 5–10× cost</td>
+</tr>
+<tr>
+<td>Hastelloy C-276</td>
+<td>~11</td>
+<td>11–12</td>
+<td>✅</td>
+<td>✅</td>
+<td>~15</td>
+<td>~$70–100</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>Overkill</td>
+</tr>
+</tbody>
+</table></div>
+<p>(Note: the specific cost figures above are typical small-quantity plate-stock values from McMaster and industrial distributors and should be re-quoted at order time; they were not all individually web-verified in this session — see Caveats.)</p>
+<p>Why 316L over 304: The 7381 ethanol bath at –80 °C has wetted parts in 304SS, which Fluke chose for it, so 304 is provably fine here. But 316L is only marginally more expensive in small quantities, and 316L has slightly better pitting/chloride resistance with any ethanol/IPA contamination over years of service. The probes themselves (5606, 5622-series) are 316 SST — using the same alloy avoids dissimilar-metal galvanic concerns at probe-fixture contact points.</p>
+<p>Why not titanium: Titanium Gr 5 has the best thermal-isolation profile (k ≈ 7, vs 16 for stainless), but: (a) cost is 5–10× stainless; (b) machining on a typical co-op shop lathe is slow, requires sharp carbide, flood coolant, and creates fire-risk swarf; (c) the calculated thermal advantage is small in absolute terms because the bath's heater overcomes 50 W trivially. The juice is not worth the squeeze.</p>
+<p>Why not aluminum: Two showstoppers. (1) 6061-T6 begins to lose properties significantly above 200 °C and the alloy's solutionizing temperature is around 530 °C — running it continuously at 280 °C will anneal the part and risk creep, especially under the weight of a fixture loaded with probes. (2) Aluminum-ethanol corrosion is a real concern: dry ethanol attacks unprotected aluminum, and the reaction can accelerate with temperature or moisture. While –80 °C ethanol service is benign, repeated wipe-down with IPA and any moisture creates corrosion conditions. Anodizing helps but isn't a typical co-op-shop process. Combined, 6061 is the wrong material for a universal fixture.</p>
+<h3 id="7-existing-fluke-oem-accessory-landscape" tabindex="-1">7. Existing Fluke OEM accessory landscape</h3>
+<p>Fluke sells the LIG (Liquid-in-Glass) Thermometer Calibration Kit as the standard accessory for the 6331/7341/7381 baths, consisting of a &quot;fluid level adapter tube&quot; that raises the meniscus to within 12 mm of the bath top surface, plus a &quot;thermometer carousel&quot; for up to ten LIG thermometers. That carousel design is the closest OEM analogue to what you're building, and reviewing it would directly inform your design. The 6332A/7342A (next-gen siblings) explicitly offer an &quot;optional probe holding fixture&quot; — Fluke confirms this product line uses fixtures of this style.</p>
+<p>Action: contact Fluke Calibration sales to request a quote and dimensional drawing of the LIG carousel and the 6332A probe-holding-fixture accessory. Even if you don't buy them, the OEM design choices (carousel geometry, attachment to the access opening, probe registration features) are a free reference design. None of these OEM products as documented holds 1.5 ml reaction tubes — that part appears to be a Promega-specific need that requires custom fabrication regardless of what OEM accessory exists.</p>
+<h3 id="8-design-pattern-literature-best-practices-and-gaps" tabindex="-1">8. Design pattern literature — best practices and gaps</h3>
+<p>Established best-practice rules for liquid-bath probe holders (drawn from Fluke user-guide guidance and standard thermometry practice):</p>
+<ul>
+<li>Insertion depth ≥ 20 × probe diameter + sensor length (Fluke's published rule across multiple user guides; this minimizes stem-conduction error).</li>
+<li>All probes at the same depth in a multi-probe calibration to ensure they sit in the same isothermal stratum of the bath (Fluke 7381 user guide).</li>
+<li>Probe handles must not be submerged (Fluke 7341 user guide); above-bath cable transition temperature must respect cable jacket rating (90 °C for the 5622 PVC).</li>
+<li>A removable heat shield around probe handles is recommended in Fluke's own guidance for high-T calibration; this can be as simple as aluminum foil or as engineered as a machined collar.</li>
+<li>Slow ramp rates to protect both the probe and any ceramic fixture parts from thermal shock.</li>
+<li>Vapor-loss sealing — at 280 °C silicone oil mists and vaporizes; the access opening should be substantially covered to retain oil and reduce ambient odor and operator exposure. A solid (non-airtight) lid that bridges the opening with cutouts only where probes pass through is the standard solution. Your fixture is functionally this lid.</li>
+<li>Allow for thermal expansion of probes — over a 360 °C span a 200 mm stainless probe grows ~1.2 mm; the bushing-to-probe fit should be a clearance slip-fit, never a press fit, to permit free axial growth.</li>
+</ul>
+<p>Explicit gaps: NIST Special Publications on thermometer calibration fixtures (e.g., SP 250 series), ASTM E77 / E563 / E644 standards for thermometer comparison testing, Isotech and Hart Scientific application notes on multi-probe fixtures, and any patent literature for calibration-bath probe holders. These should be a 30-minute literature pass before final design freeze — none is likely to overturn the recommendations above, but they may surface specific dimensional best-practices (e.g., minimum clearance between probes, depth-stop tolerances) worth incorporating.</p>
+<hr>
+<h2 id="details" tabindex="-1">Details</h2>
+<h3 id="bath-specifications-confirmed-from-fluke-datasheets-manuals" tabindex="-1">Bath specifications (confirmed from Fluke datasheets/manuals)</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>7381 (Heat Source 1)</th>
+<th>7341 (Heat Source 2/3)</th>
+<th>6331 (Heat Source 4)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Temperature range</td>
+<td>–80 to +110 °C</td>
+<td>–45 to +150 °C</td>
+<td>+35 to +300 °C</td>
+</tr>
+<tr>
+<td>Promega service temps</td>
+<td>–80, –38 °C</td>
+<td>–38 to +80 °C</td>
+<td>+157, +280 °C</td>
+</tr>
+<tr>
+<td>Stability</td>
+<td>±0.005 to ±0.006 °C</td>
+<td>±0.005 °C</td>
+<td>±0.007 °C @ 100 °C → ±0.015 @ 300 °C</td>
+</tr>
+<tr>
+<td>Uniformity</td>
+<td>±0.007 °C across range</td>
+<td>±0.007 °C</td>
+<td>±0.007 → ±0.020 °C</td>
+</tr>
+<tr>
+<td>Access opening</td>
+<td>120 × 172 mm (4.7 × 6.8 in)</td>
+<td>120 × 172 mm</td>
+<td>120 × 172 mm</td>
+</tr>
+<tr>
+<td>Tank depth</td>
+<td>457 mm (18 in)</td>
+<td>457 mm</td>
+<td>457 mm</td>
+</tr>
+<tr>
+<td>Volume</td>
+<td>15.9 L</td>
+<td>15.9 L</td>
+<td>15.9 L</td>
+</tr>
+<tr>
+<td>Wetted parts</td>
+<td>304 SS (Fluke-explicit)</td>
+<td>304 SS (presumed, same family)</td>
+<td>304 SS (presumed; verify)</td>
+</tr>
+<tr>
+<td>Stabilization time</td>
+<td>15–20 min</td>
+<td>15–20 min</td>
+<td>15–20 min</td>
+</tr>
+<tr>
+<td>Bath fluid (Fluke recommended)</td>
+<td>Ethanol or oil 5012</td>
+<td>Oil 5010</td>
+<td>Oil 5012 (low) / 5017 (high)</td>
+</tr>
+</tbody>
+</table></div>
+<p>Action items for Ryan to physically verify at Feynman: (a) flange/lip thickness above the 120×172 mm aperture, (b) any retaining feature around the opening (recess for lid, etc.), (c) actual lip height above bench surface, (d) clearance for cable strain reliefs to rise above 90 °C &quot;warm zone.&quot; For the CMC backup bath, the lip profile is reported to potentially differ — get measurements before designing CMC-compatible features. For the future baby baths, get model numbers as soon as they're identified so the lip dimensions can be cross-checked; the Path A design scales but only if openings are confirmed.</p>
+<h3 id="probe-geometry-summary-confirmed" tabindex="-1">Probe geometry summary (confirmed)</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Probe</th>
+<th>Sheath Ø × L</th>
+<th>Sheath material</th>
+<th>Lead wire</th>
+<th>Lead temp limit</th>
+<th>Service temp</th>
+<th>Used on bath(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5606-50</td>
+<td>3.1 mm × 50 mm</td>
+<td>316 SS</td>
+<td>0.2 mm enameled Cu, 2.4 m</td>
+<td>–200 to +160 °C (full immersion)</td>
+<td>–200 to +160 °C</td>
+<td>7381 only (cold)</td>
+</tr>
+<tr>
+<td>5622-05 (phasing out)</td>
+<td>0.5 mm × 100 mm</td>
+<td>316 SS</td>
+<td>PVC, 2 m</td>
+<td>90 °C</td>
+<td>–200 to +350 °C</td>
+<td>All</td>
+</tr>
+<tr>
+<td>5622-10</td>
+<td>1.0 mm × 100 mm</td>
+<td>316 SS</td>
+<td>PVC, 2 m</td>
+<td>90 °C</td>
+<td>–200 to +350 °C</td>
+<td>All</td>
+</tr>
+<tr>
+<td>5622-32</td>
+<td>3.2 mm × 200 mm</td>
+<td>316 SS</td>
+<td>PVC, 2 m</td>
+<td>90 °C</td>
+<td>–200 to +350 °C</td>
+<td>All; only one used at 280 °C</td>
+</tr>
+<tr>
+<td>5623B-6</td>
+<td>6.35 mm × 152 mm</td>
+<td>Inconel 600</td>
+<td>PTFE, 22 AWG silver-plated Cu, 6.1 m</td>
+<td>–100 to +156 °C</td>
+<td>–100 to +156 °C</td>
+<td>7381, 7341 (not 6331)</td>
+</tr>
+</tbody>
+</table></div>
+<p>Design implications:</p>
+<ul>
+<li>Fixture has to hold 5 distinct sheath diameters (0.5 / 1.0 / 3.2 / 3.1 / 6.35 mm) at 5 different lengths (50 to 200 mm). Best solution: interchangeable PEEK bushings — a single metal frame with five (or six, for the 5606) drilled/counterbored receptacles, into which the user drops a labeled bushing matched to the probe in use. The bushing's bottom shoulder rests on the metal counterbore and sets the vertical reference; the probe's collar/handle rests on the bushing's top shoulder and sets the insertion depth. This makes insertion depth a function of bushing geometry rather than operator skill — a quality benefit on top of the universality.</li>
+<li>The 1.5 ml reaction tube (typical OD ~10.5–11 mm, height ~38 mm with hinged cap) is the medium between probe and bath fluid. Hold the tube in a lower carrier plate sitting ~60–80 mm below the main lid plate, with a 11 mm clearance hole that accepts the tube barrel and a small ledge or wire spring that retains the tube cap-up. The lower carrier mounts to the upper lid by 3–4 stainless rod standoffs (¼ in 316L rod, threaded both ends). This puts the reaction tube ~50–100 mm below the fluid surface — within the 92 mm minimum immersion for the 5622-32 and well beyond the 114 mm rule for the 5623B if the lower carrier is positioned at ~120–130 mm below the lip.</li>
+<li>Cable rise height: The 90 °C-rated PVC cables on the 5622 series must stay above the high-temp &quot;warm zone&quot; above the 280 °C oil surface. With the silicone-oil-vapor zone hot for several centimeters above the meniscus, plan the fixture so the cable transition exits ≥ 50–80 mm above the bath top surface. The 5606's enameled copper lead is rated to 160 °C and is less constrained. Build a simple &quot;cable shelf&quot; or cable-relief post welded or threaded to the lid plate.</li>
+</ul>
+<h3 id="insulation-barrier-comparison-revised-with-cost-and-amp-sourcing" tabindex="-1">Insulation barrier comparison (revised, with cost &amp; sourcing)</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Material</th>
+<th>Form</th>
+<th>Lower T (continuous)</th>
+<th>Upper T (continuous)</th>
+<th>k (W/m·K)</th>
+<th>Silicone oil</th>
+<th>Ethanol</th>
+<th>IPA</th>
+<th>Cost / availability</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PEEK (unfilled)</td>
+<td>Machined bushing</td>
+<td>–65 °C</td>
+<td>+250 °C (260 short)</td>
+<td>0.25</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>~$40–60 per ½ in × 1 ft rod, McMaster 8504K72</td>
+<td>Preferred bushing material. Run the deferred lip-temp test on day 1.</td>
+</tr>
+<tr>
+<td>PEEK (30% glass)</td>
+<td>Bushing</td>
+<td>–65 °C</td>
+<td>+260 °C</td>
+<td>0.43</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>~$60–90 per ½ in × 1 ft rod, McMaster</td>
+<td>Backup if creep observed</td>
+</tr>
+<tr>
+<td>Polyimide (Vespel SP-1)</td>
+<td>Bushing</td>
+<td>–240 °C</td>
+<td>+290 °C</td>
+<td>0.35</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>$150–300 per ½ in × 6 in rod, McMaster 8537K family (limited sizes)</td>
+<td>Best polymer, expensive, limited stock sizes</td>
+</tr>
+<tr>
+<td>Macor</td>
+<td>Bushing</td>
+<td>–269 °C</td>
+<td>+800 °C</td>
+<td>1.46</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>~$80–150 per ½ in × 6 in rod, McMaster 8489K family</td>
+<td>Excellent thermally; thermal-shock sensitive; machinable</td>
+</tr>
+<tr>
+<td>Alumina 96%</td>
+<td>Pre-formed bushing</td>
+<td>–250 °C</td>
+<td>&gt;1500 °C</td>
+<td>25–30</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>$15–40 per pre-formed bushing, McMaster 8746K (tube) family, Coorstek</td>
+<td>Buy pre-formed; not machinable in-house</td>
+</tr>
+<tr>
+<td>Silicone rubber (VMQ)</td>
+<td>O-ring/sleeve</td>
+<td>–60 °C (PVMQ –100)</td>
+<td>+230 °C</td>
+<td>0.2</td>
+<td>❌ SWELLS</td>
+<td>✅</td>
+<td>✅</td>
+<td>trivial cost</td>
+<td>Disqualified for submerged use in silicone-oil baths</td>
+</tr>
+<tr>
+<td>HNBR (low-ACN)</td>
+<td>O-ring</td>
+<td>–40 °C</td>
+<td>+150 °C</td>
+<td>0.25</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>trivial</td>
+<td>Doesn't reach –80 °C, doesn't reach 280 °C</td>
+</tr>
+<tr>
+<td>FKM (Viton, low-T grade)</td>
+<td>O-ring</td>
+<td>–35 °C</td>
+<td>+230 °C</td>
+<td>0.2</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>trivial</td>
+<td>Doesn't reach –80 °C</td>
+</tr>
+<tr>
+<td>FFKM (Kalrez 0040)</td>
+<td>O-ring</td>
+<td>–42 °C</td>
+<td>+220 °C</td>
+<td>0.2</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>$$$$ (Kalrez is $20–80 per O-ring)</td>
+<td>Standard FFKM up to 327 °C, but cold-end fails –80 °C</td>
+</tr>
+<tr>
+<td>FFKM (Kalrez 7075)</td>
+<td>O-ring</td>
+<td>–20 °C</td>
+<td>+327 °C</td>
+<td>0.2</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>$$$$</td>
+<td>High-T excellent; cold-end fails</td>
+</tr>
+<tr>
+<td>Air-gap (geometric)</td>
+<td>Annular gap</td>
+<td>–273 °C</td>
+<td>structurally limited</td>
+<td>0.025</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>n/a</td>
+<td>free</td>
+<td>Best insulator if geometry permits</td>
+</tr>
+</tbody>
+</table></div>
+<p>Conclusion of insulation analysis: the question &quot;what elastomer covers –80 to +280 °C in silicone oil?&quot; has no good answer. The pragmatic path is PEEK or Macor bushings + an air-gap design within the metal fixture body. If a soft compliant cushion is also desired for vibration damping or probe-protection above the fluid line, an elastomer can be used there because conditions are mild (room temperature, no fluid contact); FKM or FFKM are robust during IPA wipe-down.</p>
+<h3 id="thermal-expansion-check-on-probe-insertion-depth-tolerance" tabindex="-1">Thermal-expansion check on probe insertion depth tolerance</h3>
+<p>Probe insertion depth must remain repeatable to support the &quot;consistent, controlled depth&quot; requirement. Differential thermal expansion of fixture and probe will shift effective depth slightly. Over a ΔT of 360 °C (–80 to +280 °C):</p>
+<ul>
+<li>316L SS CTE ≈ 16 × 10⁻⁶/K. For a 100 mm holder, ΔL = 100 × 360 × 16e-6 = 0.58 mm.</li>
+<li>6061 Al CTE ≈ 23.6 × 10⁻⁶/K → ΔL = 0.85 mm.</li>
+<li>Titanium Gr 5 CTE ≈ 8.6 × 10⁻⁶/K → ΔL = 0.31 mm.</li>
+<li>PEEK CTE ≈ 47 × 10⁻⁶/K → ΔL = 1.69 mm (this is one reason an all-PEEK fixture had a hidden problem).</li>
+<li>Macor CTE ≈ 9.3 × 10⁻⁶/K → ΔL = 0.33 mm.</li>
+</ul>
+<p>Sub-millimeter shifts over 360 °C are tolerable for these calibrations because (a) the actual fixture geometry that sets insertion depth is the vertical distance from the bath lip to the bushing, which is in the 20–50 mm range, not 100 mm — so divide by ~2–5; (b) Fluke's own immersion guidance (20× diameter + sensor length) is itself a coarse rule with built-in margin. 316L with PEEK bushings has a CTE mismatch (16 vs 47) that wants the bushing to be free-floating in the bore (slip fit + retaining shoulder) rather than press-fit, otherwise the bushing will compress at cold and pop loose at hot. Design rule: bushing OD = bore ID minus 0.05–0.10 mm at room temperature.</p>
+<hr>
+<h2 id="three-fully-fleshed-out-design-paths" tabindex="-1">Three Fully Fleshed-Out Design Paths</h2>
+<h3 id="path-a-recommended-316-l-stainless-frame-peek-bushings-open-frame-lower-tube-carrier" tabindex="-1">PATH A (RECOMMENDED): 316L Stainless Frame + PEEK Bushings + Open-Frame Lower Tube Carrier</h3>
+<p>Concept: A 6 mm thick 316L stainless steel &quot;lid plate&quot; sized to bridge the 120 × 172 mm opening with a small overhang to register on the bath flange. Six counterbored holes (one per probe type plus a spare/blank) accept drop-in PEEK bushings machined to match each probe's sheath diameter with a slip clearance and depth-setting shoulder. Below each bushing, an open-frame lower carrier plate (also 316L, ~3 mm) holds the 1.5 ml reaction tube concentric with the probe, sitting ~120 mm below the lid plate (~50 mm below the fluid surface). Lower carrier mounts to the lid via 3–4 stainless rod standoffs. The lid plate has cutouts (oval slots or open windows) between probe slots so fluid circulation from the stir baffle is not impeded. Cable strain relief is integral — a raised &quot;shelf&quot; (machined post or welded standoff) ~60 mm above the lid plate holds each cable transition, keeping the PVC cable above the 90 °C zone.</p>
+<p>Bill of Materials (one fixture set):</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Description</th>
+<th>Qty</th>
+<th>Source</th>
+<th>Est. unit cost</th>
+<th>Subtotal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>316L SS plate, 6 mm × 6 × 8 in</td>
+<td>Lid body</td>
+<td>1</td>
+<td>McMaster 8983K family or Promega Parts Order Form (ERSA)</td>
+<td>$35</td>
+<td>$35</td>
+</tr>
+<tr>
+<td>316L SS plate, 3 mm × 6 × 8 in</td>
+<td>Lower tube carrier</td>
+<td>1</td>
+<td>McMaster</td>
+<td>$20</td>
+<td>$20</td>
+</tr>
+<tr>
+<td>316L SS rod ¼ in, threaded both ends</td>
+<td>Standoffs (4×)</td>
+<td>4</td>
+<td>McMaster 90575A136 or similar</td>
+<td>$5 ea</td>
+<td>$20</td>
+</tr>
+<tr>
+<td>316L SS rod 1/8 in × 6 in</td>
+<td>Cable shelf posts</td>
+<td>4</td>
+<td>McMaster</td>
+<td>$3 ea</td>
+<td>$12</td>
+</tr>
+<tr>
+<td>PEEK rod stock, ½ in dia × 1 ft</td>
+<td>Larger bushings (5622-32, 5623B, 5606)</td>
+<td>1</td>
+<td>McMaster 8504K72</td>
+<td>$50</td>
+<td>$50</td>
+</tr>
+<tr>
+<td>PEEK rod stock, ¼ in dia × 1 ft</td>
+<td>Smaller bushings (5622-05, 5622-10)</td>
+<td>1</td>
+<td>McMaster</td>
+<td>$25</td>
+<td>$25</td>
+</tr>
+<tr>
+<td>18-8 SS socket head cap screws (M4 or 8-32)</td>
+<td>Fasteners</td>
+<td>~12</td>
+<td>McMaster</td>
+<td>&lt;$10</td>
+<td>$10</td>
+</tr>
+<tr>
+<td>Spring wire or SS clip</td>
+<td>1.5 ml tube retainer</td>
+<td>1</td>
+<td>McMaster</td>
+<td>$5</td>
+<td>$5</td>
+</tr>
+<tr>
+<td>Optional: Macor rod, ½ in × 4 in</td>
+<td>Test piece for 280 °C variant bushing if PEEK creeps</td>
+<td>1</td>
+<td>McMaster 8489K family</td>
+<td>$80</td>
+<td>$80</td>
+</tr>
+<tr>
+<td>Total (without Macor backup)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>~$177</td>
+</tr>
+<tr>
+<td>Total (with Macor backup)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>~$257</td>
+</tr>
+</tbody>
+</table></div>
+<p>Fabrication approach:</p>
+<ol>
+<li>Water-jet cut the 316L lid plate outer profile and the access window cutouts (Zund or external water jet — 316L 6 mm is within water-jet capability).</li>
+<li>Water-jet or saw + mill the lower carrier plate; drill its tube-holes.</li>
+<li>Drill-press the six probe bores in the lid plate oversize, then move to the lathe to bore each receptacle to its final ID + counterbore.</li>
+<li>Lathe-turn each PEEK bushing: OD to slip-fit the receptacle (clearance 0.05–0.10 mm), ID to slip-fit its probe sheath (0.5, 1.0, 3.2, 3.1, 6.35 mm with 0.05–0.10 mm clearance), shoulder to set depth and prevent fall-through.</li>
+<li>Machine cable-shelf standoffs on the lathe; thread their bottoms M4 or 8-32; tap matching holes in the lid plate.</li>
+<li>Cut and thread the four main standoffs that connect lid plate to lower tube carrier; assemble.</li>
+<li>Deburr, passivate the SS (nitric or citric — nitric preferred for 316L; Promega lab can do this or send out).</li>
+<li>Engrave/label each bushing slot by probe model.</li>
+</ol>
+<p>Thermal performance: Calculated ~50 W heat loss at 280 °C, dominated by air-side convection — within bath heater authority. PEEK bushings keep direct probe-to-metal contact off (probes touch only PEEK), so even if the metal plate is hot on top, heat conduction into the probe through the bushing is small. Do the deferred PEEK lip-temperature test in week 1: set 6331 to 280 °C, run an IR thermometer or a fine-gauge thermocouple at the bushing top surface, confirm &lt;200 °C (well within PEEK).</p>
+<p>Chemical compatibility verification: 316L wetted parts already match the bath's own 304 wetted parts. Silicone oil + 316L = excellent (industry standard for oil baths). Ethanol + 316L = excellent. IPA wipe = trivial. PEEK is essentially inert to all three. No incompatibility.</p>
+<p>Risks / unknowns:</p>
+<ul>
+<li>(Low) PEEK creep under sustained 280 °C — mitigated by short bushing length (~20–30 mm), no axial load on bushing, and using 30% glass-filled PEEK if creep is observed in the deferred test.</li>
+<li>(Low) CTE mismatch between PEEK bushing and SS bore — manageable with slip fit + shoulder, not press fit.</li>
+<li>(Medium) Fluid splash / vapor condensation on the cable shelf at high T — mitigate with a small SS heat shield or raise the shelf further (verify against bath cabinet clearance).</li>
+<li>(Low) The 5606 must NOT be used on the 6331 (160 °C limit). Make this clear with bushing labeling and/or physically block its slot on the 6331 fixture variant.</li>
+<li>(Low) The 5623B must NOT be used on the 6331 (156 °C limit). Same labeling/blocking approach.</li>
+</ul>
+<p>In-house machinability rating: Easy. Plate is water-jet/Zund. Bores are drill-press + manual lathe. PEEK is one of the most machinable engineering plastics. Co-op-shop appropriate.</p>
+<hr>
+<h3 id="path-b-alternative-single-material-no-bushings-titanium-grade-2-frame-direct-bores" tabindex="-1">PATH B (ALTERNATIVE — single material, no bushings): Titanium Grade 2 Frame, Direct Bores</h3>
+<p>Concept: Same overall geometry as Path A, but the entire fixture is commercially pure (Gr 2) titanium. Probe bores are reamed directly into the Ti plate to slip-fit each probe sheath. No insulation bushings — Ti's thermal conductivity (~17 W/m·K, similar to SS) combined with its bulk being smaller than a steel equivalent gives modest thermal-break benefit, and Ti is strong enough to be thinner than SS for the same stiffness, reducing thermal mass.</p>
+<p>Bill of Materials:</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Description</th>
+<th>Qty</th>
+<th>Source</th>
+<th>Est. unit cost</th>
+<th>Subtotal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ti Grade 2 plate, 4 mm × 6 × 8 in</td>
+<td>Lid body</td>
+<td>1</td>
+<td>McMaster 9039K family or specialty Ti supplier</td>
+<td>$120–180</td>
+<td>$150</td>
+</tr>
+<tr>
+<td>Ti Gr 2 plate, 3 mm × 6 × 8 in</td>
+<td>Lower tube carrier</td>
+<td>1</td>
+<td>McMaster</td>
+<td>$80</td>
+<td>$80</td>
+</tr>
+<tr>
+<td>Ti Gr 2 rod</td>
+<td>Standoffs</td>
+<td>as needed</td>
+<td>McMaster</td>
+<td>$40</td>
+<td>$40</td>
+</tr>
+<tr>
+<td>SS fasteners (Ti-compatible)</td>
+<td>Fasteners</td>
+<td>~12</td>
+<td>McMaster</td>
+<td>$10</td>
+<td>$10</td>
+</tr>
+<tr>
+<td>Total</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>~$280</td>
+</tr>
+</tbody>
+</table></div>
+<p>Fabrication approach: Same as Path A but slower. Ti requires sharper tools, slower feeds, flood coolant, and the Zund will likely NOT cut Ti — water jet only. Reaming requires patience. Ti swarf is a fire/health hazard with grinding — manage carefully.</p>
+<p>Thermal performance: k ≈ 17 W/m·K is essentially identical to 316L (16 W/m·K) — so the much-touted &quot;low thermal conductivity&quot; advantage of titanium only really materializes with Gr 5 (Ti-6Al-4V) at k ≈ 7, which is harder still to machine. No meaningful thermal-isolation advantage over Path A's 316L frame, and direct probe-to-Ti contact actually conducts heat into the probe sheath better than via a PEEK bushing.</p>
+<p>Risks / unknowns:</p>
+<ul>
+<li>(High) Cost is ~50–100% above Path A.</li>
+<li>(High) Machining time is ~3× Path A on a manual lathe.</li>
+<li>(Medium) No bushing means if a probe gets stuck or scored, the bore is hard to re-machine in place.</li>
+<li>(Low) Galvanic compatibility with 316 SS probe sheaths is fine in oil/ethanol baths.</li>
+</ul>
+<p>Recommendation: Build this only if Path A fails the PEEK lip-temperature test AND you decide the additional cost is justified. Otherwise it's a worse Path A.</p>
+<hr>
+<h3 id="path-c-contingency-premium-high-t-316-l-frame-macor-bushings-in-6331-variant-only" tabindex="-1">PATH C (CONTINGENCY — premium high-T): 316L Frame + Macor Bushings (in 6331 variant only)</h3>
+<p>Concept: Identical to Path A but the 6331 (280 °C) fixture variant uses Macor bushings instead of PEEK. Macor's CTE matches metals better, has higher temperature ceiling (800 °C), and is rigid (no creep concern at all). The 7381 / 7341 fixtures continue to use cheaper PEEK bushings.</p>
+<p>BOM delta from Path A: Substitute Macor rod for PEEK rod for the 6331-variant bushings only, +$60–120 in stock; otherwise identical.</p>
+<p>Fabrication: Macor machines on standard carbide tooling but is brittle — drill press and lathe work require sharp tools, light cuts, and care. Promega's tooling can handle it but expect ~2× the machining time of PEEK and budget for breaking 1–2 trial bushings.</p>
+<p>Thermal performance: Better than PEEK at high T (no soft point), comparable to PEEK in terms of insulation (k = 1.46 vs 0.25 — Macor is ~6× worse insulator than PEEK, but still ~10× better than 316L).</p>
+<p>Risks / unknowns:</p>
+<ul>
+<li>(Medium) Thermal shock: cycling –80 → +280 °C is exactly the load Corning warns against. Mitigate with thin walls (&lt;5 mm), gradual ramp rates (the bath's natural ~250 min ramp is already gentle), and only using the Macor bushings in the 6331 (high-T) fixture, never in the cryogenic 7381.</li>
+<li>(Low) Brittleness if dropped/over-torqued.</li>
+</ul>
+<p>When to choose Path C: Use Path C bushings specifically in the 6331 (280 °C) fixture variant if PEEK shows any softening or creep, while keeping PEEK bushings in the 7381/7341 fixtures.</p>
+<hr>
+<h3 id="side-by-side-design-summary" tabindex="-1">Side-by-side design summary</h3>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Criterion</th>
+<th>Path A (316L + PEEK)</th>
+<th>Path B (Ti Gr 2 solo)</th>
+<th>Path C (316L + Macor)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Coverage of –80 to +280 °C</td>
+<td>✅ (after PEEK lip-temp test)</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Material cost</td>
+<td>~$177</td>
+<td>~$280</td>
+<td>~$257</td>
+</tr>
+<tr>
+<td>Machining time</td>
+<td>Low</td>
+<td>High</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>In-house tooling sufficient</td>
+<td>✅</td>
+<td>⚠️ Zund probably no</td>
+<td>✅ (carbide)</td>
+</tr>
+<tr>
+<td>Probe-contact thermal isolation</td>
+<td>Best (k=0.25 PEEK)</td>
+<td>Worst (k=17, direct Ti)</td>
+<td>Medium (k=1.46 Macor)</td>
+</tr>
+<tr>
+<td>Mechanical robustness</td>
+<td>Good</td>
+<td>Excellent</td>
+<td>Fair (brittle bushings)</td>
+</tr>
+<tr>
+<td>Maintenance / replaceable parts</td>
+<td>Easy (swap bushings)</td>
+<td>Hard (re-bore plate)</td>
+<td>Easy (swap bushings)</td>
+</tr>
+<tr>
+<td>Risk of in-service failure</td>
+<td>Low</td>
+<td>Low</td>
+<td>Low–Medium (thermal shock)</td>
+</tr>
+<tr>
+<td>Co-op timeline (May/June)</td>
+<td>✅ Achievable</td>
+<td>⚠️ Tight</td>
+<td>✅ Achievable</td>
+</tr>
+<tr>
+<td>Overall</td>
+<td>Recommended</td>
+<td>Backup if A fails</td>
+<td>High-T variant</td>
+</tr>
+</tbody>
+</table></div>
+<hr>
+<h2 id="recommendations" tabindex="-1">Recommendations</h2>
+<h3 id="stage-1-week-1-of-may-2026-burn-down-the-unknowns-the-polymer-phase-left-open" tabindex="-1">Stage 1 (Week 1 of May 2026): Burn down the unknowns the polymer phase left open</h3>
+<ol>
+<li>Run the deferred PEEK lip-temperature test. Take a scrap PEEK piece (rod, plate, or block — even a 3D-printed substitute is acceptable for a rough first read), place it across the 6331 access opening with the bath at 280 °C, and instrument the top surface with a thermocouple or IR thermometer. If the top surface stays below ~220 °C continuous, PEEK bushings are validated. This single measurement is the highest-information action available and was skipped during the polymer phase.</li>
+<li>Physically measure every Feynman bath's lip profile (depth, lip width, any retaining edge), the CMC backup bath's lip profile (likely different), and the actual handle/cable transition dimensions on each of the five probe models. Photograph the existing jigs.</li>
+<li>Contact Fluke Calibration sales and request: (a) drawings/dimensions for the LIG kit fluid-level adapter and the 10-probe carousel, (b) drawings for the 6332A/7342A &quot;optional probe holding fixture.&quot; Use these as reference design even if not purchased.</li>
+<li>30-minute literature pass on NIST SP 250-series thermometer-calibration publications and any ASTM E77/E563/E644 fixture geometry notes — confirms or refines minimum probe-to-probe clearance and depth-stop tolerances.</li>
+</ol>
+<h3 id="stage-2-weeks-2-3-of-may-build-path-a-prototype" tabindex="-1">Stage 2 (Weeks 2–3 of May): Build Path A prototype</h3>
+<ol>
+<li>Order materials via Promega Parts Order Form (SAP ERSA): 316L plate, PEEK rod stock, 316L rod for standoffs, fasteners. McMaster part numbers above.</li>
+<li>Water-jet the lid plate outline and access windows; saw/mill the lower carrier plate.</li>
+<li>Drill+lathe the probe bores in the lid plate; turn the PEEK bushings on the lathe.</li>
+<li>Machine the standoffs and cable shelf posts; assemble.</li>
+<li>Passivate the SS parts (nitric or citric).</li>
+<li>Fit-check on the 7341 bath (mid-range, easiest to work with).</li>
+<li>Run a calibration cycle at –38 °C, 80 °C, 157 °C, 280 °C and record (a) bath stability deviation with and without the fixture in place, (b) probe-tip temperatures vs reference, (c) bushing condition after thermal cycling.</li>
+</ol>
+<h3 id="stage-3-late-may-june-iterate-and-validate" tabindex="-1">Stage 3 (Late May / June): Iterate and validate</h3>
+<ol>
+<li>If PEEK shows any creep, deformation, or temperature concerns at 280 °C: re-machine the 6331-fixture bushings in Macor (Path C bushings) and keep PEEK bushings in the lower-T fixtures.</li>
+<li>If Path A fails outright (extremely unlikely): pivot to Path B (titanium frame, no bushings) — order Ti plate immediately upon failure decision because lead time is longer.</li>
+<li>Build the &quot;baby bath&quot; variant fixtures once the baby bath models/quantities are confirmed by Metrology. Same Path A approach scales down.</li>
+<li>Build the CMC backup-bath variant once that lip profile is measured.</li>
+</ol>
+<h3 id="decision-thresholds-when-to-pivot" tabindex="-1">Decision thresholds — when to pivot</h3>
+<ul>
+<li>Pivot from Path A to Path C if: PEEK lip-temperature test exceeds 230 °C continuous, OR post-cycling PEEK bushings show &gt;0.1 mm dimensional change, OR any sign of creep along the loaded sheath bore.</li>
+<li>Pivot from Path A to Path B if: PEEK fails AND Macor breaks during thermal cycling testing (vanishingly unlikely).</li>
+<li>Add an FFKM (Kalrez 7075) O-ring at the bushing-to-metal interface only if vapor leakage at the lid becomes a measurable problem; otherwise an unsealed bushing is preferable for ease of swap.</li>
+</ul>
+<h3 id="open-questions-ryan-should-still-collect" tabindex="-1">Open questions Ryan should still collect</h3>
+<ul>
+<li>Existing-jig photos and dimensions (already on his action list per the project context)</li>
+<li>Exact lip thickness and any flange retaining-lip on all 4 Feynman baths AND the CMC backup</li>
+<li>Whether the &quot;baby baths&quot; share the 120 × 172 mm lip profile or differ (this changes whether the fixture is truly universal)</li>
+<li>Cable transition handle dimensions on all 5 probe models (drives cable-shelf design)</li>
+<li>6331 wetted-parts material — assumed 304 SS by family, verify from the 6331 user guide before final material decision</li>
+<li>Promega's preferred passivation vendor for 316L (in-house or send-out)</li>
+<li>Annual count of full-range cycles per bath (14–20/year stated — confirm whether this is total or per-bath, drives wear-life calc on PEEK)</li>
+<li>1.5 ml reaction tube exact OD/height tolerance (affects lower-carrier bore size)</li>
+<li>Whether Metrology wants the fixture to also serve as a vapor-loss reduction lid at 280 °C (affects whether to add a solid splash cover above the bushings)</li>
+</ul>
+<hr>
+<h2 id="caveats" tabindex="-1">Caveats</h2>
+<ul>
+<li>Web-research budget was 12 searches this session, exhausted before Inconel/Hastelloy specifics, Fluke OEM probe-holder accessory pricing, aluminum-ethanol corrosion specifics, and NIST/ASTM thermometer-fixture standards could be web-verified. The values cited for those items reflect standard engineering reference data; before procurement, verify Inconel/Hastelloy properties against MatWeb or AMS specs, verify Fluke OEM accessory pricing by direct Fluke sales contact as recommended in Stage 1, and run the 30-minute NIST/ASTM literature pass.</li>
+<li>The 6331 wetted-parts material is not explicitly confirmed in the materials I retrieved; the 7381 is explicitly 304 SS and the family is presumed consistent, but worth confirming from the 6331 user guide before assuming.</li>
+<li>The 5622-32 specific upper temperature limit is the 5622-series family rating of 350 °C from the Fluke product page; the spec sheet I retrieved does not separately call out a different limit for the -32 size. Promega's stated use to 280 °C is well within that, but the 5622 cable rating of 90 °C remains the binding thermal constraint above the bath surface.</li>
+<li>Thermal calculations are order-of-magnitude estimates based on natural-convection assumptions and steady-state 1-D heat flow. For a publication-grade thermal model, a simple Solidworks Flow Simulation or COMSOL run is warranted but is not necessary to start fabrication.</li>
+<li>Material cost estimates are typical small-quantity values from McMaster and industrial distributors; they were not all individually re-quoted in this session and should be confirmed at order time.</li>
+<li>PEEK lip-temperature test result is the single biggest unknown. All Path A confidence is conditional on that test passing. If it fails decisively, Path C (Macor at the 6331 bath only) is the immediate fallback and is also low-risk.</li>
+<li>Aluminum-ethanol corrosion at elevated temperature is a real, well-documented concern but I could not web-verify a specific corrosion-rate datapoint in this session. The disqualification of 6061 in Path discussion rests on (a) the well-established 200 °C+ softening behavior of 6061-T6 (which alone is disqualifying for 280 °C continuous use), and (b) the secondary corrosion risk; the first reason alone is sufficient.</li>
+<li>The recommendation to drop elastomer barriers as the primary thermal break is robust against the materials surveyed; if a novel formulation surfaces (e.g., a perfluoroelastomer with verified –80 °C performance — not currently in any catalog I found), the conclusion would update accordingly.</li>
+<li>Macor's thermal-shock sensitivity is real but practically manageable here because bath ramp rates are slow (the 6331 takes ~250 min to heat from 35 to 300 °C; the 7381 takes ~210 min to cool from 25 to –80 °C). The fixture is exposed gradually, not plunged into hot bath cold.</li>
+<li>The &quot;polymer phase reasoning&quot; (that metal would compromise bath stability via convective heat loss) is partially valid but quantitatively small — see the thermal calc above. The 2026-04-22 pivot to metal was the right call; Path A in this report addresses the residual concern via PEEK bushings as a probe-side thermal break, not via fixture material choice.</li>
+<li>Design pattern literature gap: NIST SP 250 series, ASTM E77/E563/E644, Isotech and Hart application notes, and patent literature were not searched this session. Path A's geometry is built on first-principles + Fluke user-guide best practices, which is sufficient for the May/June timeline, but a confirming literature pass is recommended before final design freeze.</li>
+</ul>
+<div class="callout is-collapsible is-collapsed" data-callout="info"><div class="callout-title"><div class="callout-title-inner"> Details &amp; Notes</div><div class="callout-fold"><i icon-name="chevron-down"></i></div></div>
+<div class="callout-content">
+<p>
+</p><p><strong>Status:</strong> Reference document. Recommendations pending validation via Stage 1 actions (PEEK lip-temp test, physical bath measurements, Fluke OEM accessory inquiry).</p>
+<p><strong>Encountered in:</strong> <a class="internal-link" target="" data-note-icon="undefined" href="/my-projects/calibration-probe-fixture/calibration-probe-fixture/">Calibration Probe Fixture</a></p>
+<p><strong>See also:</strong> <a class="internal-link" target="" data-note-icon="undefined" href="/my-projects/calibration-probe-fixture/calibration-probe-fixture/">Calibration Probe Fixture</a>, <a class="internal-link" target="" data-note-icon="undefined" href="/other/metrology-meeting-2026-04-22/">Metrology Meeting 2026-04-22</a>, <a class="internal-link" target="" data-note-icon="undefined" href="/definitions/metrology/">Metrology</a>, <a class="internal-link" target="" data-note-icon="undefined" href="/definitions/resistance-temperature-detector/">Resistance Temperature Detector</a>, <a class="internal-link" target="" data-note-icon="undefined" href="/people/kimberly-steinhauer/">Kimberly Steinhauer</a>, <a class="internal-link" target="" data-note-icon="undefined" href="/people/matt-wahl/">Matt Wahl</a>, <a class="internal-link" target="" data-note-icon="undefined" href="/people/david-velazquez/">David Velazquez</a>, <a class="internal-link" target="" data-note-icon="undefined" href="/definitions/materials/316-l-stainless-steel/">316L Stainless Steel</a>, <a class="internal-link" target="" data-note-icon="undefined" href="/definitions/materials/peek/">PEEK</a>, <a class="internal-link" target="" data-note-icon="undefined" href="/definitions/materials/delrin/">Delrin</a></p>
+</div></div>
+</main>
+<aside>
+<div class="sidebar">
+<div class="sidebar-container">
+<script type="module">import{forceSimulation,forceManyBody,forceCenter,forceLink,forceCollide,forceRadial}from"d3-force";import{select}from"d3-selection";import{zoom as d3Zoom,zoomIdentity}from"d3-zoom";import{drag as d3Drag}from"d3-drag";const{Application:Application,Container:Container,Graphics:Graphics,Text:Text,Circle:Circle}=PIXI;async function fetchGraphData(){const e=await fetch("/graph.json").then((e=>e.json()));return{graphData:e,fullGraphData:filterFullGraphData(e)}}function filterFullGraphData(e){if(!e)return null;e=JSON.parse(JSON.stringify(e));const t=Object.values(e.nodes).filter((e=>e.hide)).map((e=>e.id));return{links:e.links.filter((e=>-1===t.indexOf(e.source)&&-1===t.indexOf(e.target))),nodes:Object.values(e.nodes).filter((e=>!e.hide))}}function filterLocalGraphData(e){if(!e)return null;const t=JSON.parse(JSON.stringify(e.nodes)),a=JSON.parse(JSON.stringify(e.links));let n=decodeURI(window.location.pathname),o=t[n];if(!o){const e=n.toLowerCase();o=Object.values(t).find((t=>t.url.toLowerCase()===e))}if(o||(o=Object.values(t).find((e=>e.home))),!o)return null;o.current=!0;const l=new Set;l.add(o.url),o.neighbors&&o.neighbors.forEach((e=>l.add(e)));const r=Object.values(t).filter((e=>!e.hide&&l.has(e.url)));if(!o.home&&o.neighbors){const e=r.find((e=>e.home));if(e&&!o.neighbors.includes(e.url)){const t=r.indexOf(e);t>-1&&r.splice(t,1)}}const i=r.map((e=>e.id));return{nodes:r,links:a.filter((e=>i.indexOf(e.target)>-1&&i.indexOf(e.source)>-1))}}function getCssVar(e){return getComputedStyle(document.body).getPropertyValue(e).trim()}const _colorProbe=document.createElement("div");function resolveColor(e){_colorProbe.style.color=e;const t=getComputedStyle(_colorProbe).color.match(/(\d+),\s*(\d+),\s*(\d+)/);return t?(parseInt(t[1])<<16)+(parseInt(t[2])<<8)+parseInt(t[3]):6710886}_colorProbe.style.display="none",document.body.appendChild(_colorProbe);const _decodeEl=document.createElement("textarea");function htmlDecode(e){return _decodeEl.innerHTML=e,_decodeEl.value}function buildDegreeMap(e){const t={};for(const a of e){const e="object"==typeof a.source?a.source.id:a.source,n="object"==typeof a.target?a.target.id:a.target;t[e]=(t[e]||0)+1,t[n]=(t[n]||0)+1}return t}function nodeRadius(e,t){return 2+Math.sqrt(t[e]||0)}function renderGraph(e,t,a){if(!e||!e.nodes||0===e.nodes.length)return null;const n=document.getElementById(t);if(!n)return null;for(;n.firstChild;)n.removeChild(n.firstChild);const o=n.offsetWidth,l=n.offsetHeight||250;if(0===o)return null;const r=resolveColor(getCssVar("--dg-graph-node-color")||getCssVar("--graph-main")||"#666"),i=resolveColor(getCssVar("--dg-graph-node-color-muted")||getCssVar("--graph-muted")||"#ccc"),c=resolveColor(getCssVar("--dg-graph-label-color")||getCssVar("--text-normal")||"#eee"),s=getComputedStyle(document.body).fontFamily||"Sans-Serif",u=buildDegreeMap(e.links),d=e.nodes.map((e=>({...e,text:htmlDecode(e.title)}))),p=e.links.map((e=>({source:e.source,target:e.target}))),f=a?-300:-100,h=a?80:40,g=Math.min(o,l)/3,m=forceSimulation(d).force("charge",forceManyBody().strength(f)).force("center",forceCenter(o/2,l/2).strength(.5)).force("link",forceLink(p).id((e=>e.id)).distance(h)).force("collide",forceCollide((e=>nodeRadius(e.id,u)+1)).iterations(3)).force("radial",forceRadial(g,o/2,l/2).strength(.05)),y=new Application({width:o,height:l,antialias:!0,autoStart:!1,autoDensity:!0,backgroundAlpha:0,resolution:window.devicePixelRatio});n.appendChild(y.view);const C=y.stage;C.interactive=!0,C.hitArea=y.screen;const b=new Graphics,x=new Container,D=new Container;C.addChild(b,x,D);let G=null,v=new Set,w=!1,A=0,S=null,k=zoomIdentity;const L=[],M=[];function O(e){if(G=e,v.clear(),null===e){for(const e of L)e.active=!1;for(const e of M)e.active=!1}else{for(const t of M){const a=t.simulationData.source,n=t.simulationData.target,o="object"==typeof a?a.id:a,l="object"==typeof n?n.id:n;o!==e&&l!==e||(v.add(o),v.add(l)),t.active=o===e||l===e}for(const e of L)e.active=v.has(e.simulationData.id)}}for(const e of d){const t=nodeRadius(e.id,u),a=new Text(e.text,{fontSize:16,fill:c,fontFamily:s});a.resolution=2,a.anchor.set(.5,1),a.scale.set(1/3),a.alpha=0;const n=new Graphics;n.interactive=!0,n.cursor="pointer",n.hitArea=new Circle(0,0,t+2),n._nodeId=e.id;const o=e.current?r:i;n.beginFill(o),n.drawCircle(0,0,t),n.endFill(),e.current&&(n.lineStyle(.5,r),n.drawCircle(0,0,t+1.5));let l=0;n.on("pointerover",(()=>{O(n._nodeId),l=a.alpha,w||j()})),n.on("pointerleave",(()=>{O(null),a.alpha=l,w||j()})),x.addChild(n),D.addChild(a),L.push({simulationData:e,gfx:n,label:a,radius:t,active:!1,baseAlpha:1,targetAlpha:1,currentAlpha:1})}for(const e of p)M.push({simulationData:e,active:!1,baseAlpha:.4,targetAlpha:.4,currentAlpha:.4});function j(){for(const e of L)e.targetAlpha=null!==G?e.active?1:.1:e.baseAlpha;for(const e of M)e.targetAlpha=null!==G?e.active?.8:.05:e.baseAlpha}function I(e,t,a){return e+(t-e)*a}select(y.view).call(d3Drag().container((()=>y.view)).subject((()=>{if(!G)return null;const e=d.find((e=>e.id===G));return e?{x:e.x*k.k+k.x,y:e.y*k.k+k.y,node:e}:null})).on("start",(function(e){e.active||m.alphaTarget(1).restart();const t=e.subject.node;t.fx=t.x,t.fy=t.y,A=Date.now(),S={x:e.x,y:e.y},w=!0})).on("drag",(function(e){const t=e.subject.node;t.fx=(e.x-k.x)/k.k,t.fy=(e.y-k.y)/k.k})).on("end",(function(e){e.active||m.alphaTarget(0);const t=e.subject.node;t.fx=null,t.fy=null,w=!1;const a=Date.now()-A,n=e.x-S.x,o=e.y-S.y,l=Math.sqrt(n*n+o*o);a<500&&l<5&&t.url&&(window.location=t.url)})));const E=d3Zoom().extent([[0,0],[o,l]]).scaleExtent([.25,4]).on("zoom",(({transform:e})=>{k=e,C.scale.set(e.k,e.k),C.position.set(e.x,e.y);const t=Math.max((e.k-1)/3.75,0);for(const e of L)e.simulationData.id!==G&&(e.label.alpha=t)}));select(y.view).call(E);let F=!1;return requestAnimationFrame((function e(){if(!F){for(const e of L){const{x:t,y:a}=e.simulationData;null!=t&&null!=a&&(e.gfx.position.set(t,a),e.label.position.set(t,a-e.radius-2),e.currentAlpha=I(e.currentAlpha,e.targetAlpha,.15),e.gfx.alpha=e.currentAlpha,e.simulationData.id===G&&(e.label.alpha=1))}b.clear();for(const e of M){const t=e.simulationData.source,a=e.simulationData.target;null!=t.x&&null!=a.x&&(e.currentAlpha=I(e.currentAlpha,e.targetAlpha,.15),b.lineStyle(1,e.active?r:i,e.currentAlpha),b.moveTo(t.x,t.y),b.lineTo(a.x,a.y))}y.render(),requestAnimationFrame(e)}})),(a||e.nodes.length>4)&&setTimeout((()=>{let e=1/0,t=-1/0,a=1/0,n=-1/0;for(const o of d)null!=o.x&&null!=o.y&&(e=Math.min(e,o.x),t=Math.max(t,o.x),a=Math.min(a,o.y),n=Math.max(n,o.y));if(e===1/0)return;const r=t-e+100,i=n-a+100,c=Math.min(o/r,l/i,2),s=(e+t)/2,u=(a+n)/2,p=zoomIdentity.translate(o/2-s*c,l/2-u*c).scale(c);select(y.view).call(E.transform,p)}),500),function(){F=!0,m.stop(),select(y.view).on(".drag",null).on(".zoom",null),y.destroy(!0,{children:!0})}}let graphDataCache=null,fullGraphDataCache=null,localGraphCleanup=null,globalGraphCleanup=null;async function init(){const{graphData:e,fullGraphData:t}=await fetchGraphData();graphDataCache=e,fullGraphDataCache=t,renderLocal()}function renderLocal(){localGraphCleanup&&(localGraphCleanup(),localGraphCleanup=null);const e=renderGraph(filterLocalGraphData(graphDataCache),"link-graph",!1);localGraphCleanup=e}function openModal(e){globalGraphCleanup&&(globalGraphCleanup(),globalGraphCleanup=null),document.getElementById("full-graph").style.display="",setTimeout((()=>{globalGraphCleanup=renderGraph(e,"full-graph-container",!0),lucide.createIcons({attrs:{class:["svg-icon"]}})}),50)}function openFullGraph(){openModal(fullGraphDataCache)}function openExpandedLocal(){openModal(filterLocalGraphData(graphDataCache))}function closeFullGraph(){document.getElementById("full-graph").style.display="none",globalGraphCleanup&&(globalGraphCleanup(),globalGraphCleanup=null)}window.__graph={openFullGraph:openFullGraph,closeFullGraph:closeFullGraph,openExpandedLocal:openExpandedLocal,rerenderLocal:renderLocal},document.addEventListener("forestry:css-changed",(function(){graphDataCache&&renderLocal()})),init()</script>
+<div id="graph-component" class="graph" x-data="{ showFullGraph: false }">
+<div class="graph-title-container">
+<div class="graph-title">Connected Pages</div>
+<div id="graph-controls">
+<div class="ctrl-right">
+<span id="global-graph-btn" x-on:click="showFullGraph = true; window.__graph.openFullGraph()"><i data-lucide="globe" aria-hidden="true"></i></span>
+<span id="graph-fs-btn" x-on:click="showFullGraph = true; window.__graph.openExpandedLocal()"><i data-lucide="expand" aria-hidden="true"></i></span>
+</div>
+</div>
+</div>
+<div id="link-graph"></div>
+<div x-show="showFullGraph" id="full-graph" class="show" style="display:none" x-on:click.self="window.__graph.closeFullGraph(); showFullGraph = false;">
+<span id="full-graph-close" x-on:click="window.__graph.closeFullGraph(); showFullGraph = false;"><i data-lucide="x" aria-hidden="true"></i></span>
+<div id="full-graph-container"></div>
+</div>
+</div>
+<div class="toc">
+<div class="toc-title-container">
+<div class="toc-title">
+Calibration Probe Fixture - Materials Research 2026-05-12
+</div>
+</div>
+<div class="toc-container">
+<nav class="toc">
+<ol>
+<li><a href="#tl-dr">TL;DR</a>
+</li>
+<li><a href="#key-findings">Key Findings</a>
+<ol>
+<li><a href="#1-the-three-fluke-baths-share-an-identical-opening-design-one-fixture-for-all">1. The three Fluke baths share an identical opening — design one fixture for all</a>
+</li>
+<li><a href="#2-the-280-c-requirement-is-driven-by-one-probe-5622-32-ceiling-is-actually-300-c">2. The 280 °C requirement is driven by ONE probe (5622-32); ceiling is actually 300 °C</a>
+</li>
+<li><a href="#3-heat-loss-through-a-metal-fixture-is-small-relative-to-bath-authority-verify-don-t-fear">3. Heat loss through a metal fixture is small relative to bath authority — verify, don't fear</a>
+</li>
+<li><a href="#4-elastomer-insulation-barriers-cannot-span-80-c-to-280-c-silicone-is-disqualified-by-silicone-oil-swelling">4. Elastomer insulation barriers cannot span –80 °C to +280 °C; silicone is disqualified by silicone-oil swelling</a>
+</li>
+<li><a href="#5-the-right-and-quot-insulation-and-quot-path-is-a-rigid-polymer-or-ceramic-bushing-in-a-metal-frame">5. The right "insulation" path is a rigid polymer or ceramic bushing in a metal frame</a>
+</li>
+<li><a href="#6-metal-alloy-down-select-316-l-is-the-right-answer">6. Metal alloy down-select — 316L is the right answer</a>
+</li>
+<li><a href="#7-existing-fluke-oem-accessory-landscape">7. Existing Fluke OEM accessory landscape</a>
+</li>
+<li><a href="#8-design-pattern-literature-best-practices-and-gaps">8. Design pattern literature — best practices and gaps</a>
+</li>
+</ol>
+</li>
+<li><a href="#details">Details</a>
+<ol>
+<li><a href="#bath-specifications-confirmed-from-fluke-datasheets-manuals">Bath specifications (confirmed from Fluke datasheets/manuals)</a>
+</li>
+<li><a href="#probe-geometry-summary-confirmed">Probe geometry summary (confirmed)</a>
+</li>
+<li><a href="#insulation-barrier-comparison-revised-with-cost-and-amp-sourcing">Insulation barrier comparison (revised, with cost & sourcing)</a>
+</li>
+<li><a href="#thermal-expansion-check-on-probe-insertion-depth-tolerance">Thermal-expansion check on probe insertion depth tolerance</a>
+</li>
+</ol>
+</li>
+<li><a href="#three-fully-fleshed-out-design-paths">Three Fully Fleshed-Out Design Paths</a>
+<ol>
+<li><a href="#path-a-recommended-316-l-stainless-frame-peek-bushings-open-frame-lower-tube-carrier">PATH A (RECOMMENDED): 316L Stainless Frame + PEEK Bushings + Open-Frame Lower Tube Carrier</a>
+</li>
+<li><a href="#path-b-alternative-single-material-no-bushings-titanium-grade-2-frame-direct-bores">PATH B (ALTERNATIVE — single material, no bushings): Titanium Grade 2 Frame, Direct Bores</a>
+</li>
+<li><a href="#path-c-contingency-premium-high-t-316-l-frame-macor-bushings-in-6331-variant-only">PATH C (CONTINGENCY — premium high-T): 316L Frame + Macor Bushings (in 6331 variant only)</a>
+</li>
+<li><a href="#side-by-side-design-summary">Side-by-side design summary</a>
+</li>
+</ol>
+</li>
+<li><a href="#recommendations">Recommendations</a>
+<ol>
+<li><a href="#stage-1-week-1-of-may-2026-burn-down-the-unknowns-the-polymer-phase-left-open">Stage 1 (Week 1 of May 2026): Burn down the unknowns the polymer phase left open</a>
+</li>
+<li><a href="#stage-2-weeks-2-3-of-may-build-path-a-prototype">Stage 2 (Weeks 2–3 of May): Build Path A prototype</a>
+</li>
+<li><a href="#stage-3-late-may-june-iterate-and-validate">Stage 3 (Late May / June): Iterate and validate</a>
+</li>
+<li><a href="#decision-thresholds-when-to-pivot">Decision thresholds — when to pivot</a>
+</li>
+<li><a href="#open-questions-ryan-should-still-collect">Open questions Ryan should still collect</a>
+</li>
+</ol>
+</li>
+<li><a href="#caveats">Caveats</a>
+</li>
+</ol>
+</nav>
+</div>
+</div>
+<script>!function(){const t=document.querySelectorAll('.toc-container a[href^="#"]');if(!t.length)return;const e=Array.from(t).map((t=>{const e=decodeURIComponent(t.getAttribute("href").slice(1));return{link:t,target:document.getElementById(e)}})).filter((t=>t.target));function n(){let n=e[0];for(const t of e)t.target.getBoundingClientRect().top<=100&&(n=t);t.forEach((t=>t.classList.remove("toc-active"))),n&&n.link.classList.add("toc-active")}window.addEventListener("scroll",n,{passive:!0}),n()}()</script>
+<div class="backlinks">
+<div class="backlink-title">Pages mentioning this page</div>
+<div class="backlink-list"><div class="backlink-card"><i data-lucide="link"></i><a href="/definitions/materials/peek/" data-note-icon="" class="backlink">PEEK</a>
+</div><div class="backlink-card"><i data-lucide="link"></i><a href="/my-projects/calibration-probe-fixture/calibration-probe-fixture/" data-note-icon="" class="backlink">Calibration Probe Fixture</a>
+</div><div class="backlink-card"><i data-lucide="link"></i><a href="/" data-note-icon="" class="backlink">Ryan Meyer</a>
+</div></div>
+</div>
+</div>
+</div>
+</aside>
+<style>#tooltip-wrapper{background:var(--background-primary);padding:1em;border-radius:4px;overflow:hidden;position:fixed;width:80%;max-width:400px;height:auto;max-height:300px;font-size:.8em;box-shadow:0 5px 10px rgba(0,0,0,.1);opacity:0;transition:opacity .1s;unicode-bidi:plaintext;overflow-y:scroll;z-index:10}#tooltip-wrapper:after{content:"";position:absolute;z-index:1;bottom:0;left:0;pointer-events:none;width:100%;unicode-bidi:plaintext;height:75px}.tooltip-pdf{width:100%;height:260px;border:0}</style>
+<div style="opacity:0;display:none" id="tooltip-wrapper">
+<div id="tooltip-content">
+</div>
+</div>
+<iframe style="display:none;height:0;width:0" id="link-preview-iframe" src="">
+</iframe>
+<script>var opacityTimeout,contentTimeout,transitionDurationMs=100,iframe=document.getElementById("link-preview-iframe"),tooltipWrapper=document.getElementById("tooltip-wrapper"),tooltipContent=document.getElementById("tooltip-content"),linkHistories={};function hideTooltip(){opacityTimeout=setTimeout((function(){tooltipWrapper.style.opacity=0,contentTimeout=setTimeout((function(){tooltipContent.innerHTML="",tooltipWrapper.style.display="none"}),transitionDurationMs+1)}),transitionDurationMs)}function positionTooltip(t){var o=t.getClientRects()[t.getClientRects().length-1],e=document.documentElement.clientWidth,i=window.innerHeight,p=12,n=10,l=(o.top,i-(o.top+o.height)),r=(o.left,e-(o.left+o.width)),s=l>=tooltipWrapper.offsetHeight+p?"bottom":"top",a=r>=tooltipWrapper.offsetWidth+p?"right":"left";tooltipWrapper.style.top="bottom"===s?o.top+o.height+p+"px":o.top-tooltipWrapper.offsetHeight-p+"px",tooltipWrapper.style.left="right"===a?o.left+o.width+p+"px":o.left-tooltipWrapper.offsetWidth-p+"px";var c=parseFloat(tooltipWrapper.style.top),f=parseFloat(tooltipWrapper.style.left);c<n?tooltipWrapper.style.top="10px":c+tooltipWrapper.offsetHeight+n>i&&(tooltipWrapper.style.top=i-tooltipWrapper.offsetHeight-n+"px"),f<n?tooltipWrapper.style.left="10px":f+tooltipWrapper.offsetWidth+n>e&&(tooltipWrapper.style.left=e-tooltipWrapper.offsetWidth-n+"px")}function showTooltip(t){var o=t.currentTarget||t.target;if(o){var e=o.getAttribute("href");if(-1===e.indexOf("http")||-1!==e.indexOf(window.location.host)){tooltipWrapper.style.display="block",tooltipWrapper.style.opacity=0,positionTooltip(o);let t=e.split("#")[0];if(t.toLowerCase().endsWith(".pdf"))return tooltipContent.innerHTML='<iframe class="tooltip-pdf" src="'+t+'"></iframe>',tooltipWrapper.scrollTop=0,void setTimeout((function(){positionTooltip(o),tooltipWrapper.style.opacity=1}),1);if(/\.(png|jpg|jpeg|gif|webp|svg)$/i.test(t))return tooltipContent.innerHTML='<img src="'+t+'" style="max-width:100%;height:auto;" />',tooltipWrapper.scrollTop=0,void setTimeout((function(){positionTooltip(o),tooltipWrapper.style.opacity=1}),1);linkHistories[t]?(tooltipContent.innerHTML=linkHistories[t],setTimeout((function(){if(positionTooltip(o),tooltipWrapper.style.opacity=1,-1!=e.indexOf("#")){let t=e.split("#")[1];const o=tooltipWrapper.querySelector(`[id='${t}']`);o.classList.add("referred"),o.scrollIntoView({behavior:"smooth"},!0)}else tooltipWrapper.scroll(0,0)}),1)):(iframe.src=t,iframe.onload=function(){let i,p;try{i=iframe.contentWindow,p=i?i.document:null}catch(t){return tooltipContent.innerHTML="<div>Preview not available for this file.</div>",tooltipWrapper.scrollTop=0,void setTimeout((function(){positionTooltip(o),tooltipWrapper.style.opacity=1}),1)}if(!p)return;const n=p.querySelector("h1"),l=p.querySelector(".content");if(tooltipContentHtml="",n&&(tooltipContentHtml+='<div style="font-weight: bold; unicode-bidi: plaintext;">'+n.innerHTML+"</div>"),l)tooltipContentHtml+=l.innerHTML;else if(p.body)tooltipContentHtml+=p.body.innerHTML;else{if(!p.documentElement)return;tooltipContentHtml+=p.documentElement.innerHTML}tooltipContent.innerHTML=tooltipContentHtml,linkHistories[t]=tooltipContentHtml,tooltipWrapper.scrollTop=0,setTimeout((function(){if(positionTooltip(o),tooltipWrapper.style.opacity=1,-1!=e.indexOf("#")){let t=e.split("#")[1];const o=tooltipWrapper.querySelector(`[id='${t}']`);o.classList.add("referred"),console.log(o),o.scrollIntoView({behavior:"smooth"},!0)}else tooltipWrapper.scroll(0,0)}),1)}),positionTooltip(o)}}}function setupListeners(t){t.addEventListener("mouseleave",(function(t){hideTooltip()})),tooltipWrapper.addEventListener("mouseleave",(function(t){hideTooltip()})),t.addEventListener("mouseenter",(function(t){clearTimeout(opacityTimeout),clearTimeout(contentTimeout),showTooltip(t)})),tooltipWrapper.addEventListener("mouseenter",(function(t){clearTimeout(opacityTimeout),clearTimeout(contentTimeout)}))}window.addEventListener("load",(function(t){document.querySelectorAll(".internal-link").forEach(setupListeners),document.querySelectorAll(".backlink-card a").forEach(setupListeners)}))</script>
+<script>window.location.hash&&document.getElementById(window.location.hash.slice(1)).classList.add("referred"),window.addEventListener("hashchange",(e=>{const t=e.oldURL.split("#");t[1]&&document.getElementById(t[1]).classList.remove("referred");const n=e.newURL.split("#");n[1]&&document.getElementById(n[1]).classList.add("referred")}),!1);const url_parts=window.location.href.split("#"),url=url_parts[0],referrence=url_parts[1];document.querySelectorAll(".cm-s-obsidian > *[id]").forEach((function(e){e.ondblclick=function(e){const t=url+"#"+e.target.id;navigator.clipboard.writeText(t)}}))</script>
+<script src="https://fastly.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js"></script>
+<script defer="defer">TIMESTAMP_FORMAT="MMM dd, yyyy h:mm a",document.querySelectorAll(".human-date").forEach((function(e){date=e.getAttribute("data-date")||e.innerText,parsed_date=luxon.DateTime.fromISO(date),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromSQL(date)),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromHTML(date)),e.innerHTML=parsed_date.toFormat(TIMESTAMP_FORMAT)}))</script>
+<script defer="defer" src="https://unpkg.com/lucide@latest"></script>
+<script defer="defer">document.addEventListener("DOMContentLoaded",(()=>{lucide.createIcons({attrs:{class:["svg-icon"]}})}))</script>
+<script>document.addEventListener("DOMContentLoaded",(function(){document.querySelectorAll(".obsidian-bases-views").forEach((function(e){var t=e.querySelector(".obsidian-bases-active-view"),a=e.querySelector(".obsidian-bases-dropdown"),i=e.querySelectorAll(".obsidian-bases-dropdown-item"),n=e.querySelectorAll(".obsidian-bases-view-panel"),o=e.querySelector(".obsidian-bases-active-view-name"),r=e.querySelector(".obsidian-bases-count-value");t&&a&&(t.addEventListener("click",(function(e){e.stopPropagation();var i="none"!==a.style.display;a.style.display=i?"none":"block",t.setAttribute("aria-expanded",!i)})),document.addEventListener("click",(function(){a.style.display="none",t.setAttribute("aria-expanded","false")})),i.forEach((function(s){s.addEventListener("click",(function(s){s.stopPropagation();var d=this.getAttribute("data-view-index");i.forEach((function(e){e.classList.remove("active")})),this.classList.add("active"),n.forEach((function(e){e.style.display="none"}));var l=e.querySelector('.obsidian-bases-view-panel[data-view-index="'+d+'"]');l&&(l.style.display="block");var c=this.querySelector(".obsidian-bases-view-icon"),u=t.querySelector(".obsidian-bases-view-icon");if(c&&u&&u.replaceWith(c.cloneNode(!0)),o&&(o.textContent=this.textContent.trim()),r&&l){var b=l.querySelectorAll("tbody tr:not(.obsidian-base-group-row), .obsidian-base-card, .obsidian-base-list li");r.textContent=b.length}a.style.display="none",t.setAttribute("aria-expanded","false")}))})))})),document.querySelectorAll(".bases-dynamic-date").forEach((function(e){var t=e.getAttribute("data-type"),a=new Date;if("today"===t){var i=a.getFullYear(),n=String(a.getMonth()+1).padStart(2,"0"),o=String(a.getDate()).padStart(2,"0");e.textContent=i+"-"+n+"-"+o}else if("now"===t){i=a.getFullYear(),n=String(a.getMonth()+1).padStart(2,"0"),o=String(a.getDate()).padStart(2,"0");var r=String(a.getHours()).padStart(2,"0"),s=String(a.getMinutes()).padStart(2,"0");e.textContent=i+"-"+n+"-"+o+" "+r+":"+s}}))}))</script>
+</body>
+</html>

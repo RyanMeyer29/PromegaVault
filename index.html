@@ -192,6 +192,35 @@
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as(&quot;Definitions/Materials&quot;)}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" data-lucide="chevron-down"></i>
+<i x-show="!isOpen" data-lucide="chevron-right"></i>
+<span class="foldername">Materials</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/materials/316-l-stainless-steel/">316L Stainless Steel </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/materials/delrin/">Delrin </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/materials/peek/">PEEK </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/materials/polycarbonate/">Polycarbonate </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
 <div class="folder inner-folder" x-data="{isOpen: $persist(false).as(&quot;Definitions/Parts Process&quot;)}" @click.stop="isOpen=!isOpen">
 <div class="foldername-wrapper align-icon">
 <i x-show="isOpen" style="display:none" data-lucide="chevron-down"></i>
@@ -233,6 +262,50 @@
 <span class="foldername">Quality</span>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as(&quot;Definitions/Quality/CC Sections&quot;)}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" data-lucide="chevron-down"></i>
+<i x-show="!isOpen" data-lucide="chevron-right"></i>
+<span class="foldername">CC Sections</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/quality/cc-sections/additional-description/">Additional Description </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/quality/cc-sections/brief-description/">Brief Description </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/quality/cc-sections/impacted-documentation/">Impacted Documentation </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/quality/cc-sections/implementation-actions/">Implementation Actions </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/quality/cc-sections/justification-for-change/">Justification for Change </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/quality/cc-sections/reason-for-change/">Reason for Change </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/quality/cc-sections/testing-actions/">Testing Actions </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
 <div @click.stop class="notelink">
 <a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/quality/capa/">CAPA </a>
 </div>
@@ -244,7 +317,17 @@
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
 <div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/quality/change-types/">Change Types </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
 <a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/quality/co-c/">CoC </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/quality/design-control-process/">Design Control Process </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
@@ -264,7 +347,17 @@
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
 <div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/quality/form-fit-function/">Form Fit Function </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
 <a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/quality/nonconformance/">Nonconformance </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/quality/program-level-change-control/">Program-Level Change Control </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
@@ -433,6 +526,11 @@
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
 <div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/design-review/">Design Review </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
 <a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/ehs/">EHS </a>
 </div>
 </div>
@@ -448,7 +546,17 @@
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
 <div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/fill-lyophilize-finish/">Fill Lyophilize Finish </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
 <a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/gowning/">Gowning </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/hdpe/">HDPE </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
@@ -589,6 +697,11 @@
 <div x-show="isOpen" style="display:none" class="filelist">
 <div @click.stop class="notelink">
 <a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/steam-in-place/">Steam in Place </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/definitions/transformer-plan/">Transformer Plan </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
@@ -807,6 +920,49 @@
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as(&quot;My Projects/Calibration Probe Fixture&quot;)}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" data-lucide="chevron-down"></i>
+<i x-show="!isOpen" data-lucide="chevron-right"></i>
+<span class="foldername">Calibration Probe Fixture</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div class="folder inner-folder" x-data="{isOpen: $persist(false).as(&quot;My Projects/Calibration Probe Fixture/Technical Specs&quot;)}" @click.stop="isOpen=!isOpen">
+<div class="foldername-wrapper align-icon">
+<i x-show="isOpen" style="display:none" data-lucide="chevron-down"></i>
+<i x-show="!isOpen" data-lucide="chevron-right"></i>
+<span class="foldername">Technical Specs</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/calibration-probe-fixture/technical-specs/bath-and-probe-spec/">Bath and Probe Spec </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/calibration-probe-fixture/technical-specs/fluke-in-house-sop/">Fluke In-House SOP </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/calibration-probe-fixture/calibration-probe-fixture-materials-research-2026-05-12/">Calibration Probe Fixture - Materials Research 2026-05-12 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/calibration-probe-fixture/calibration-probe-fixture/">Calibration Probe Fixture </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/calibration-probe-fixture/probe-summary/">Probe Summary </a>
+</div>
+</div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
 <div class="folder inner-folder" x-data="{isOpen: $persist(false).as(&quot;My Projects/Claude Projects&quot;)}" @click.stop="isOpen=!isOpen">
 <div class="foldername-wrapper align-icon">
 <i x-show="isOpen" style="display:none" data-lucide="chevron-down"></i>
@@ -826,6 +982,11 @@
 <div x-show="isOpen" style="display:none" class="filelist">
 <div @click.stop class="notelink">
 <a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/claude-projects/gizmos-and-gadgets-glossary/">Gizmos and Gadgets Glossary </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/claude-projects/listenr/">Listenr </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
@@ -934,6 +1095,11 @@
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
 <div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/mixer-chuck/mixer-chuck-parts/parlec-er-32-collet/">Parlec ER32 Collet </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
 <a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/mixer-chuck/mixer-chuck-parts/stop-mixer-chuck/">Stop, Mixer Chuck </a>
 </div>
 </div>
@@ -942,6 +1108,11 @@
 <a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/mixer-chuck/mixer-chuck-parts/tool-spanner-mixer-chuck/">Tool, Spanner, Mixer Chuck </a>
 </div>
 </div>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/my-projects/mixer-chuck/mixer-chuck-cc-meeting-2026-06-09/">Mixer Chuck CC Meeting 2026-06-09 </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
@@ -1047,6 +1218,11 @@
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
 <div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/other/metrology-meeting-2026-06-10/">Metrology Meeting 2026-06-10 </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
 <a data-note-icon="" style="text-decoration:none" class="filename" href="/other/vial-tray-jig/">Vial Tray jig </a>
 </div>
 </div>
@@ -1121,7 +1297,17 @@
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
 <div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/cameron-boeder/">Cameron Boeder </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
 <a data-note-icon="" style="text-decoration:none" class="filename" href="/people/chris-rusthoven/">Chris Rusthoven </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/chuck-york/">Chuck York </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
@@ -1141,6 +1327,11 @@
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
 <div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/diego-lamela/">Diego Lamela </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
 <a data-note-icon="" style="text-decoration:none" class="filename" href="/people/doug-fahrenkrug/">Doug Fahrenkrug </a>
 </div>
 </div>
@@ -1152,6 +1343,11 @@
 <div x-show="isOpen" style="display:none" class="filelist">
 <div @click.stop class="notelink">
 <a data-note-icon="" style="text-decoration:none" class="filename" href="/people/ethan-hazra/">Ethan Hazra </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/evelyn-stencel/">Evelyn Stencel </a>
 </div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
@@ -1221,6 +1417,11 @@
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
 <div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/mark-koeff/">Mark Koeff </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
 <a data-note-icon="" style="text-decoration:none" class="filename" href="/people/matt-swanson/">Matt Swanson </a>
 </div>
 </div>
@@ -1286,6 +1487,11 @@
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
 <div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/ryan-kimmel/">Ryan Kimmel </a>
+</div>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
 <a data-note-icon="" style="text-decoration:none" class="filename" href="/people/sean-doering/">Sean Doering </a>
 </div>
 </div>
@@ -1321,11 +1527,6 @@
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
 <div @click.stop class="notelink">
-<a data-note-icon="" style="text-decoration:none" class="filename" href="/people/william-hopfensperger/">William Hopfensperger </a>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink">
 <a data-note-icon="" style="text-decoration:none" class="filename" href="/people/zack-wermeling/">Zack Wermeling </a>
 </div>
 </div>
@@ -1351,6 +1552,11 @@
 <i x-show="isOpen" style="display:none" data-lucide="chevron-down"></i>
 <i x-show="!isOpen" data-lucide="chevron-right"></i>
 <span class="foldername">SolidWorks Macros</span>
+</div>
+<div x-show="isOpen" style="display:none" class="filelist">
+<div @click.stop class="notelink">
+<a data-note-icon="" style="text-decoration:none" class="filename" href="/software/solid-works/solid-works-macros/default-lighting-setter/">Default Lighting Setter </a>
+</div>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
 <div @click.stop class="notelink">
@@ -1477,11 +1683,6 @@
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
 <div @click.stop class="notelink">
-<a data-note-icon="" style="text-decoration:none" class="filename" href="/unknown/design-review/">Design Review </a>
-</div>
-</div>
-<div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink">
 <a data-note-icon="" style="text-decoration:none" class="filename" href="/unknown/drop-gate/">Drop Gate </a>
 </div>
 </div>
@@ -1562,7 +1763,7 @@
 </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/flexsearch@0.7.21/dist/flexsearch.bundle.js"></script>
-<script>document.addEventListener("DOMContentLoaded",init,!1),document.addEventListener("DOMContentLoaded",setCorrectShortcut,!1);const previewCache=new Map;window.toggleSearch=function(){const e=document.getElementById("globalsearch");e.classList.contains("active")?e.classList.remove("active"):(e.classList.add("active"),document.getElementById("term").focus())},window.toggleTagSearch=function(e){const t=e.textContent;t&&(document.getElementById("term").value=t.trim(),window.toggleSearch(),window.search())};const loadingSvg='\n    <div style="display: flex; justify-content: center; padding: 40px;">\n        <svg width="40" height="40" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" stroke="currentColor">\n            <g fill="none" fill-rule="evenodd" transform="translate(1 1)" stroke-width="2">\n                <circle cx="22" cy="22" r="6" stroke-opacity="0">\n                    <animate attributeName="r" begin="1.5s" dur="3s" values="6;22" calcMode="linear" repeatCount="indefinite" />\n                    <animate attributeName="stroke-opacity" begin="1.5s" dur="3s" values="1;0" calcMode="linear" repeatCount="indefinite" />\n                    <animate attributeName="stroke-width" begin="1.5s" dur="3s" values="2;0" calcMode="linear" repeatCount="indefinite" />\n                </circle>\n                <circle cx="22" cy="22" r="6" stroke-opacity="0">\n                    <animate attributeName="r" begin="3s" dur="3s" values="6;22" calcMode="linear" repeatCount="indefinite" />\n                    <animate attributeName="stroke-opacity" begin="3s" dur="3s" values="1;0" calcMode="linear" repeatCount="indefinite" />\n                    <animate attributeName="stroke-width" begin="3s" dur="3s" values="2;0" calcMode="linear" repeatCount="indefinite" />\n                </circle>\n                <circle cx="22" cy="22" r="8">\n                    <animate attributeName="r" begin="0s" dur="1.5s" values="6;1;2;3;4;5;6" calcMode="linear" repeatCount="indefinite" />\n                </circle>\n            </g>\n        </svg>\n    </div>';function debounce(e,t,n){var r;return function(){var i=this,a=arguments,s=n&&!r;clearTimeout(r),r=setTimeout((function(){r=null,n||e.apply(i,a)}),t),s&&e.apply(i,a)}}function setCorrectShortcut(){navigator.platform.toUpperCase().indexOf("MAC")>=0&&document.querySelectorAll(".search-keys").forEach((e=>e.innerHTML="<code>⌘</code>&nbsp;+&nbsp;<code>K</code>"))}function tokenizeSearchTerms(e){const t=[],n=/"([^"]+)"|(\S+)/g;let r;for(;null!==(r=n.exec(e));){const e=(r[1]||r[2]).toLowerCase();e.length>1&&t.push(e)}return t.sort(((e,t)=>t.length-e.length))}function highlightTerms(e,t){if(!t||0===t.length||!e)return e;let n=e;return t.forEach((e=>{const t=e.replace(/[.*+?^${}()|[\]\\]/g,"\\$&"),r=new RegExp(`(${t})`,"gi");n=n.replace(r,'<span class="search-highlight">$1</span>')})),n}function getContextualExcerpt(e,t,n=150){if(!e)return"";const r=e.replace(/<[^>]*>/g,"");if(!t||0===t.length)return truncateText(r,n);let i=r.length;if(t.forEach((e=>{const t=r.toLowerCase().indexOf(e.toLowerCase());-1!==t&&t<i&&(i=t)})),i===r.length)return truncateText(r,n);const a=Math.max(0,i-50),s=Math.min(r.length,a+n);let o=r.substring(a,s);return a>0&&(o="..."+o),s<r.length&&(o+="..."),o}function truncateText(e,t){return e?(e=e.replace(/<[^>]*>/g,"")).length<=t?e:e.substring(0,t-3)+"...":""}async function fetchPreviewContent(e){if(previewCache.has(e))return previewCache.get(e);try{const t=await fetch(e),n=await t.text(),r=new DOMParser,i=r.parseFromString(n,"text/html").querySelector(".content, .cm-s-obsidian, article, main"),a=i?i.innerHTML:"";return previewCache.set(e,a),a}catch(e){return console.error("Failed to fetch preview:",e),""}}function highlightTextNodes(e,t){if(!t||0===t.length)return;const n=document.createTreeWalker(e,NodeFilter.SHOW_TEXT,null,!1),r=[];for(;n.nextNode();)r.push(n.currentNode);r.forEach((e=>{const n=e.textContent;let r=!1;if(t.forEach((e=>{n.toLowerCase().includes(e.toLowerCase())&&(r=!0)})),r){const r=document.createElement("span");r.innerHTML=highlightTerms(n,t),e.parentNode.replaceChild(r,e)}}))}async function showPreview(e){const t=window.searchResults;if(!t||!t[e])return;const n=t[e],r=document.getElementById("search-preview"),i=document.getElementById("preview-content"),a=r.querySelector(".preview-placeholder");if(!r||!i)return;document.querySelectorAll(".searchresult").forEach((e=>e.classList.remove("active")));const s=document.querySelector(`.searchresult[data-index="${e}"]`);s&&s.classList.add("active"),i.innerHTML=loadingSvg,i.classList.add("has-content"),a.style.display="none";const o=await fetchPreviewContent(n.url),c=n.tags&&n.tags.length>0?`<div class="preview-tags">${n.tags.map((e=>`<a class="tag" href="javascript:void(0);" onclick="toggleTagSearch(this)">#${e}</a>`)).join("")}</div>`:"";i.innerHTML=`\n            <div class="preview-title">${highlightTerms(n.title,window.searchTerms)}</div>\n            ${c}\n            <div class="preview-body">${o}</div>\n        `;const l=i.querySelector(".preview-body");l&&window.searchTerms&&highlightTextNodes(l,window.searchTerms),window.currentPreviewIndex=e}function hidePreview(){const e=document.getElementById("search-preview"),t=document.getElementById("preview-content"),n=e?.querySelector(".preview-placeholder");n&&(n.style.display="flex"),t&&(t.classList.remove("has-content"),t.innerHTML=""),window.currentPreviewIndex=-1}function createIndex(e){const t=e=>(e=>e.toLowerCase().normalize("NFD").replace(/n\u0303/g,"ñ").replace(/[\u0300-\u036f]/g,"").normalize("NFC"))(e).split(/([^a-z]|[^\x00-\x7F])/),n=new FlexSearch.Document({cache:!0,charset:"latin:extra",optimize:!0,index:[{field:"content",tokenize:"reverse",encode:t},{field:"title",tokenize:"forward",encode:t},{field:"tags",tokenize:"forward",encode:t}]});return e.forEach(((e,t)=>{n.add({id:t,title:e.title,content:e.content,tags:e.tags})})),n}async function init(){const e=await fetch("/searchIndex.json?v=2026-06-17T16:11:40.463Z").then((e=>e.json())),t=createIndex(e);function n(e){const t=document.querySelectorAll(".searchresult");if(0===t.length)return;let n,r=-1;t.forEach(((e,t)=>{e.classList.contains("active")&&(r=t)})),-1===r?n=e>0?0:t.length-1:(n=r+e,n<0&&(n=t.length-1),n>=t.length&&(n=0)),t.forEach((e=>e.classList.remove("active"))),t[n].classList.add("active"),t[n].scrollIntoView({behavior:"smooth",block:"nearest"}),showPreview(parseInt(t[n].dataset.index))}window.docs=e,window.index=t,document.addEventListener("keydown",(e=>{if((e.ctrlKey||e.metaKey)&&"k"===e.key&&(e.preventDefault(),toggleSearch()),"Escape"===e.key&&document.getElementById("globalsearch").classList.remove("active"),document.getElementById("globalsearch").classList.contains("active")&&("ArrowDown"===e.key&&(e.preventDefault(),n(1)),"ArrowUp"===e.key&&(e.preventDefault(),n(-1)),"Enter"===e.key)){e.preventDefault();const t=document.querySelector(".searchresult.active");if(t){const e=t.dataset.url;e&&(window.location.href=e)}}}));const r=debounce(search,200,!1);window.field=document.querySelector("#term"),field.addEventListener("keydown",(e=>{"ArrowDown"!==e.key&&"ArrowUp"!==e.key&&"Enter"!==e.key&&r()})),window.resultsDiv=document.querySelector("#search-results");const i=new URL(location.href).searchParams;i.get("q")&&(field.setAttribute("value",i.get("q")),toggleSearch(),search())}async function search(){const e=field.value.trim(),t=document.getElementById("search-layout");if(!e)return resultsDiv.innerHTML="<span><i>Enter your search text in the box above</i></span>",hidePreview(),void(t&&t.classList.add("no-preview"));window.lastSearch=e,window.searchTerms=tokenizeSearchTerms(e),resultsDiv.innerHTML=loadingSvg,hidePreview();const n=offlineSearch(e);if(window.searchResults=n,!n.length)return t&&t.classList.add("no-preview"),void(resultsDiv.innerHTML=`\n                <div class="no-results">\n                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">\n                        <circle cx="11" cy="11" r="8"></circle>\n                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>\n                        <line x1="8" y1="11" x2="14" y2="11"></line>\n                    </svg>\n                    <p>No results for "${e}"</p>\n                </div>\n            `);t&&t.classList.remove("no-preview");let r="";n.forEach(((e,t)=>{const n=highlightTerms(getContextualExcerpt(e.content,window.searchTerms,120),window.searchTerms),i=highlightTerms(e.title,window.searchTerms),a=e.tags&&e.tags.length>0?`<div class="result-tags">${e.tags.map((e=>`<span class="tag">#${e}</span>`)).join("")}</div>`:"";r+=`\n                <div class="searchresult${0===t?" active":""}"\n                     data-index="${t}"\n                     data-url="${e.url}"\n                     onmouseenter="showPreview(${t})"\n                     onclick="window.location.href='${e.url}'">\n                    <span class="result-title">${i}</span>\n                    ${a}\n                    <div class="result-excerpt">${n}</div>\n                </div>\n            `})),resultsDiv.innerHTML=r,n.length>0&&showPreview(0),"undefined"!=typeof lucide&&lucide.createIcons()}function offlineSearch(e){const t=window.docs,n="#"===e[0]&&e.length>1?index.search(e.substring(1),[{field:"tags"}]):index.search(e,[{field:"title",limit:5},{field:"content",limit:10}]),r=e=>{const t=n.filter((t=>t.field===e));return 0===t.length?[]:[...t[0].result]};return[...new Set([...r("title"),...r("content"),...r("tags")])].map((e=>{const n={...t[e]};return n.tags=n.tags.filter((e=>"gardenEntry"!==e&&"note"!==e)),n}))}window.lastSearch="",window.searchResults=[],window.searchTerms=[],window.currentPreviewIndex=-1,window.search=search</script>
+<script>document.addEventListener("DOMContentLoaded",init,!1),document.addEventListener("DOMContentLoaded",setCorrectShortcut,!1);const previewCache=new Map;window.toggleSearch=function(){const e=document.getElementById("globalsearch");e.classList.contains("active")?e.classList.remove("active"):(e.classList.add("active"),document.getElementById("term").focus())},window.toggleTagSearch=function(e){const t=e.textContent;t&&(document.getElementById("term").value=t.trim(),window.toggleSearch(),window.search())};const loadingSvg='\n    <div style="display: flex; justify-content: center; padding: 40px;">\n        <svg width="40" height="40" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" stroke="currentColor">\n            <g fill="none" fill-rule="evenodd" transform="translate(1 1)" stroke-width="2">\n                <circle cx="22" cy="22" r="6" stroke-opacity="0">\n                    <animate attributeName="r" begin="1.5s" dur="3s" values="6;22" calcMode="linear" repeatCount="indefinite" />\n                    <animate attributeName="stroke-opacity" begin="1.5s" dur="3s" values="1;0" calcMode="linear" repeatCount="indefinite" />\n                    <animate attributeName="stroke-width" begin="1.5s" dur="3s" values="2;0" calcMode="linear" repeatCount="indefinite" />\n                </circle>\n                <circle cx="22" cy="22" r="6" stroke-opacity="0">\n                    <animate attributeName="r" begin="3s" dur="3s" values="6;22" calcMode="linear" repeatCount="indefinite" />\n                    <animate attributeName="stroke-opacity" begin="3s" dur="3s" values="1;0" calcMode="linear" repeatCount="indefinite" />\n                    <animate attributeName="stroke-width" begin="3s" dur="3s" values="2;0" calcMode="linear" repeatCount="indefinite" />\n                </circle>\n                <circle cx="22" cy="22" r="8">\n                    <animate attributeName="r" begin="0s" dur="1.5s" values="6;1;2;3;4;5;6" calcMode="linear" repeatCount="indefinite" />\n                </circle>\n            </g>\n        </svg>\n    </div>';function debounce(e,t,n){var r;return function(){var i=this,a=arguments,s=n&&!r;clearTimeout(r),r=setTimeout((function(){r=null,n||e.apply(i,a)}),t),s&&e.apply(i,a)}}function setCorrectShortcut(){navigator.platform.toUpperCase().indexOf("MAC")>=0&&document.querySelectorAll(".search-keys").forEach((e=>e.innerHTML="<code>⌘</code>&nbsp;+&nbsp;<code>K</code>"))}function tokenizeSearchTerms(e){const t=[],n=/"([^"]+)"|(\S+)/g;let r;for(;null!==(r=n.exec(e));){const e=(r[1]||r[2]).toLowerCase();e.length>1&&t.push(e)}return t.sort(((e,t)=>t.length-e.length))}function highlightTerms(e,t){if(!t||0===t.length||!e)return e;let n=e;return t.forEach((e=>{const t=e.replace(/[.*+?^${}()|[\]\\]/g,"\\$&"),r=new RegExp(`(${t})`,"gi");n=n.replace(r,'<span class="search-highlight">$1</span>')})),n}function getContextualExcerpt(e,t,n=150){if(!e)return"";const r=e.replace(/<[^>]*>/g,"");if(!t||0===t.length)return truncateText(r,n);let i=r.length;if(t.forEach((e=>{const t=r.toLowerCase().indexOf(e.toLowerCase());-1!==t&&t<i&&(i=t)})),i===r.length)return truncateText(r,n);const a=Math.max(0,i-50),s=Math.min(r.length,a+n);let o=r.substring(a,s);return a>0&&(o="..."+o),s<r.length&&(o+="..."),o}function truncateText(e,t){return e?(e=e.replace(/<[^>]*>/g,"")).length<=t?e:e.substring(0,t-3)+"...":""}async function fetchPreviewContent(e){if(previewCache.has(e))return previewCache.get(e);try{const t=await fetch(e),n=await t.text(),r=new DOMParser,i=r.parseFromString(n,"text/html").querySelector(".content, .cm-s-obsidian, article, main"),a=i?i.innerHTML:"";return previewCache.set(e,a),a}catch(e){return console.error("Failed to fetch preview:",e),""}}function highlightTextNodes(e,t){if(!t||0===t.length)return;const n=document.createTreeWalker(e,NodeFilter.SHOW_TEXT,null,!1),r=[];for(;n.nextNode();)r.push(n.currentNode);r.forEach((e=>{const n=e.textContent;let r=!1;if(t.forEach((e=>{n.toLowerCase().includes(e.toLowerCase())&&(r=!0)})),r){const r=document.createElement("span");r.innerHTML=highlightTerms(n,t),e.parentNode.replaceChild(r,e)}}))}async function showPreview(e){const t=window.searchResults;if(!t||!t[e])return;const n=t[e],r=document.getElementById("search-preview"),i=document.getElementById("preview-content"),a=r.querySelector(".preview-placeholder");if(!r||!i)return;document.querySelectorAll(".searchresult").forEach((e=>e.classList.remove("active")));const s=document.querySelector(`.searchresult[data-index="${e}"]`);s&&s.classList.add("active"),i.innerHTML=loadingSvg,i.classList.add("has-content"),a.style.display="none";const o=await fetchPreviewContent(n.url),c=n.tags&&n.tags.length>0?`<div class="preview-tags">${n.tags.map((e=>`<a class="tag" href="javascript:void(0);" onclick="toggleTagSearch(this)">#${e}</a>`)).join("")}</div>`:"";i.innerHTML=`\n            <div class="preview-title">${highlightTerms(n.title,window.searchTerms)}</div>\n            ${c}\n            <div class="preview-body">${o}</div>\n        `;const l=i.querySelector(".preview-body");l&&window.searchTerms&&highlightTextNodes(l,window.searchTerms),window.currentPreviewIndex=e}function hidePreview(){const e=document.getElementById("search-preview"),t=document.getElementById("preview-content"),n=e?.querySelector(".preview-placeholder");n&&(n.style.display="flex"),t&&(t.classList.remove("has-content"),t.innerHTML=""),window.currentPreviewIndex=-1}function createIndex(e){const t=e=>(e=>e.toLowerCase().normalize("NFD").replace(/n\u0303/g,"ñ").replace(/[\u0300-\u036f]/g,"").normalize("NFC"))(e).split(/([^a-z]|[^\x00-\x7F])/),n=new FlexSearch.Document({cache:!0,charset:"latin:extra",optimize:!0,index:[{field:"content",tokenize:"reverse",encode:t},{field:"title",tokenize:"forward",encode:t},{field:"tags",tokenize:"forward",encode:t}]});return e.forEach(((e,t)=>{n.add({id:t,title:e.title,content:e.content,tags:e.tags})})),n}async function init(){const e=await fetch("/searchIndex.json?v=2026-06-26T19:19:44.350Z").then((e=>e.json())),t=createIndex(e);function n(e){const t=document.querySelectorAll(".searchresult");if(0===t.length)return;let n,r=-1;t.forEach(((e,t)=>{e.classList.contains("active")&&(r=t)})),-1===r?n=e>0?0:t.length-1:(n=r+e,n<0&&(n=t.length-1),n>=t.length&&(n=0)),t.forEach((e=>e.classList.remove("active"))),t[n].classList.add("active"),t[n].scrollIntoView({behavior:"smooth",block:"nearest"}),showPreview(parseInt(t[n].dataset.index))}window.docs=e,window.index=t,document.addEventListener("keydown",(e=>{if((e.ctrlKey||e.metaKey)&&"k"===e.key&&(e.preventDefault(),toggleSearch()),"Escape"===e.key&&document.getElementById("globalsearch").classList.remove("active"),document.getElementById("globalsearch").classList.contains("active")&&("ArrowDown"===e.key&&(e.preventDefault(),n(1)),"ArrowUp"===e.key&&(e.preventDefault(),n(-1)),"Enter"===e.key)){e.preventDefault();const t=document.querySelector(".searchresult.active");if(t){const e=t.dataset.url;e&&(window.location.href=e)}}}));const r=debounce(search,200,!1);window.field=document.querySelector("#term"),field.addEventListener("keydown",(e=>{"ArrowDown"!==e.key&&"ArrowUp"!==e.key&&"Enter"!==e.key&&r()})),window.resultsDiv=document.querySelector("#search-results");const i=new URL(location.href).searchParams;i.get("q")&&(field.setAttribute("value",i.get("q")),toggleSearch(),search())}async function search(){const e=field.value.trim(),t=document.getElementById("search-layout");if(!e)return resultsDiv.innerHTML="<span><i>Enter your search text in the box above</i></span>",hidePreview(),void(t&&t.classList.add("no-preview"));window.lastSearch=e,window.searchTerms=tokenizeSearchTerms(e),resultsDiv.innerHTML=loadingSvg,hidePreview();const n=offlineSearch(e);if(window.searchResults=n,!n.length)return t&&t.classList.add("no-preview"),void(resultsDiv.innerHTML=`\n                <div class="no-results">\n                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">\n                        <circle cx="11" cy="11" r="8"></circle>\n                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>\n                        <line x1="8" y1="11" x2="14" y2="11"></line>\n                    </svg>\n                    <p>No results for "${e}"</p>\n                </div>\n            `);t&&t.classList.remove("no-preview");let r="";n.forEach(((e,t)=>{const n=highlightTerms(getContextualExcerpt(e.content,window.searchTerms,120),window.searchTerms),i=highlightTerms(e.title,window.searchTerms),a=e.tags&&e.tags.length>0?`<div class="result-tags">${e.tags.map((e=>`<span class="tag">#${e}</span>`)).join("")}</div>`:"";r+=`\n                <div class="searchresult${0===t?" active":""}"\n                     data-index="${t}"\n                     data-url="${e.url}"\n                     onmouseenter="showPreview(${t})"\n                     onclick="window.location.href='${e.url}'">\n                    <span class="result-title">${i}</span>\n                    ${a}\n                    <div class="result-excerpt">${n}</div>\n                </div>\n            `})),resultsDiv.innerHTML=r,n.length>0&&showPreview(0),"undefined"!=typeof lucide&&lucide.createIcons()}function offlineSearch(e){const t=window.docs,n="#"===e[0]&&e.length>1?index.search(e.substring(1),[{field:"tags"}]):index.search(e,[{field:"title",limit:5},{field:"content",limit:10}]),r=e=>{const t=n.filter((t=>t.field===e));return 0===t.length?[]:[...t[0].result]};return[...new Set([...r("title"),...r("content"),...r("tags")])].map((e=>{const n={...t[e]};return n.tags=n.tags.filter((e=>"gardenEntry"!==e&&"note"!==e)),n}))}window.lastSearch="",window.searchResults=[],window.searchTerms=[],window.currentPreviewIndex=-1,window.search=search</script>
 <main class="content cm-s-obsidian print">
 <header>
 <h1>Ryan Meyer</h1>
@@ -1588,10 +1789,22 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">Schedule design review and confirm PEEK with bath lip temp measurement</td>
-<td style="text-align:left"><a class="internal-link is-unresolved" href="/404" target="">Calibration Probe Fixture</a></td>
+<td style="text-align:left">Update mixer drawings with the critical dimension</td>
+<td style="text-align:left"><a class="internal-link" target="" data-note-icon="undefined" href="/my-projects/mixer-chuck/mixer-chuck/">Mixer Chuck</a></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Prepare 3 CC draft attachments for Claire meeting (by end of next week)</td>
+<td style="text-align:left"><a class="internal-link" target="" data-note-icon="undefined" href="/my-projects/mixer-chuck/mixer-chuck/">Mixer Chuck</a></td>
+<td style="text-align:left"><a class="internal-link" target="" data-note-icon="undefined" href="/people/claire-moll/">Claire</a></td>
+<td style="text-align:left">Impacted documentation, implementation actions, and testing actions — drafts are fine</td>
+</tr>
+<tr>
+<td style="text-align:left">Start CPF drawings, get part numbers, move files to ePDM</td>
+<td style="text-align:left"><a class="internal-link" target="" data-note-icon="undefined" href="/my-projects/calibration-probe-fixture/calibration-probe-fixture/">Calibration Probe Fixture</a></td>
 <td style="text-align:left"><a class="internal-link" target="" data-note-icon="undefined" href="/people/david-velazquez/">David</a></td>
-<td style="text-align:left">Due June. Bath lip temp at 280°C operation needed to confirm PEEK universal suitability</td>
+<td style="text-align:left">Design review done. Two-jig vs universal still a design call to make while modeling</td>
 </tr>
 <tr>
 <td style="text-align:left">Fix 96 well bracket model and recut</td>
@@ -1624,25 +1837,37 @@
 <td style="text-align:left"></td>
 </tr>
 <tr>
-<td style="text-align:left">Remodel lyo clear cover in SolidWorks sheet metal mode</td>
-<td style="text-align:left"><a class="internal-link" target="" data-note-icon="undefined" href="/my-projects/lyo-clear-cover/">Lyo Clear Cover</a></td>
-<td style="text-align:left"><a class="internal-link" target="" data-note-icon="undefined" href="/people/ali-heinemann/">Ali</a></td>
-<td style="text-align:left">3/8&quot; stock, no top holes, all other dimensions per existing drawing</td>
-</tr>
-<tr>
 <td style="text-align:left">Update SolidWorks templates</td>
 <td style="text-align:left"><a class="internal-link" target="" data-note-icon="undefined" href="/software/solid-works/solid-works-templates/">SolidWorks Templates</a></td>
 <td style="text-align:left"></td>
 <td style="text-align:left">3D part templates and drawing templates</td>
 </tr>
+<tr>
+<td style="text-align:left">Add clearance to bushings</td>
+<td style="text-align:left"><a class="internal-link" target="" data-note-icon="undefined" href="/my-projects/calibration-probe-fixture/calibration-probe-fixture/">Calibration Probe Fixture</a></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Write bend instructions, recut and rebend Lyo Clear Cover</td>
+<td style="text-align:left"><a class="internal-link" target="" data-note-icon="undefined" href="/my-projects/lyo-clear-cover/">Lyo Clear Cover</a></td>
+<td style="text-align:left"><a class="internal-link" target="" data-note-icon="undefined" href="/people/paul-doll/">Paul</a></td>
+<td style="text-align:left">PC confirmed as material. Write step-by-step notebook instructions before next fabrication attempt</td>
+</tr>
+<tr>
+<td style="text-align:left">Follow up with Diego re: speed knob RPM visit at BTC G151C</td>
+<td style="text-align:left"><a class="internal-link is-unresolved" href="/404" target="">102978 Speed Knob Issue</a></td>
+<td style="text-align:left"><a class="internal-link" target="" data-note-icon="undefined" href="/people/diego-lamela/">Diego</a></td>
+<td style="text-align:left">Tachometer confirmed available from Ted. Schedule visit, inspect knob, measure RPM</td>
+</tr>
 </tbody>
 </table></div>
 <h2 id="projects" tabindex="-1">Projects</h2>
 <h3 id="base-list" tabindex="-1">Base List</h3>
-<div class="obsidian-bases-views"><div class="obsidian-bases-toolbar"><span class="obsidian-bases-single-view-name"><svg class="obsidian-bases-view-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="3" y1="15" x2="21" y2="15"></line><line x1="9" y1="3" x2="9" y2="21"></line></svg> Table</span> <span class="obsidian-bases-result-count">27 results</span></div><div class="obsidian-base-table-wrapper"><table class="obsidian-base-table"><thead><tr><th>Name</th><th>Backlinks</th><th>Folder</th><th>Tags</th></tr></thead><tbody><tr><td><a href="/my-projects/96-well-bracket/" class="internal-link">96 Well Bracket</a></td><td><a href="/my-projects/gel-electrophoresis-tray/" class="internal-link">Gel Electrophoresis Tray</a>, <a href="/people/zack-wermeling/" class="internal-link">Zack Wermeling</a>, <a href="/" class="internal-link">Ryan Meyer</a></td><td>My Projects</td><td>My-Projects, active</td></tr><tr><td><a href="/my-projects/ar-c-notes/batch-run-testing/" class="internal-link">Batch Run Testing</a></td><td><a href="/software/batch/" class="internal-link">Batch</a>, <a href="/software/smartsheet/" class="internal-link">Smartsheet</a>, <a href="/" class="internal-link">Ryan Meyer</a></td><td>My Projects/ArC Notes</td><td>My-Projects</td></tr><tr><td><a href="/my-projects/ar-c-notes/fermentation-101/" class="internal-link">Fermentation 101</a></td><td><a href="/buildings/arnold/" class="internal-link">Arnold</a>, <a href="/buildings/rfc/" class="internal-link">RFC</a>, <a href="/my-projects/ar-c-notes/agitator/" class="internal-link">Agitator</a>, <a href="/my-projects/ar-c-notes/biomass/" class="internal-link">Biomass</a>, <a href="/my-projects/ar-c-notes/cell-paste/" class="internal-link">Cell Paste</a>, <a href="/my-projects/ar-c-notes/centrifuge/" class="internal-link">Centrifuge</a>, <a href="/my-projects/ar-c-notes/dissolved-oxygen/" class="internal-link">Dissolved Oxygen</a>, <a href="/my-projects/ar-c-notes/fermentation-media/" class="internal-link">Fermentation Media</a>, <a href="/my-projects/ar-c-notes/fermentation/" class="internal-link">Fermentation</a>, <a href="/my-projects/ar-c-notes/fermenters/" class="internal-link">Fermenters</a>, <a href="/my-projects/ar-c-notes/induction/" class="internal-link">Induction</a>, <a href="/my-projects/ar-c-notes/inoculation/" class="internal-link">Inoculation</a>, <a href="/my-projects/ar-c-notes/luciferase/" class="internal-link">Luciferase</a>, <a href="/my-projects/ar-c-notes/sterilize-in-place/" class="internal-link">Sterilize in Place</a>, <a href="/my-projects/ar-c-notes/supernatant/" class="internal-link">Supernatant</a>, <a href="/my-projects/ar-c-notes/p-h/" class="internal-link">pH</a>, <a href="/software/batch/" class="internal-link">Batch</a>, <a href="/software/engineering-workstations/" class="internal-link">Engineering Workstations</a>, <a href="/" class="internal-link">Ryan Meyer</a></td><td>My Projects/ArC Notes</td><td>My-Projects</td></tr><tr><td><a href="/my-projects/bubble-sensor-tray/" class="internal-link">Bubble Sensor Tray</a></td><td><a href="/" class="internal-link">Ryan Meyer</a></td><td>My Projects</td><td>My-Projects, active</td></tr><tr><td><a href="/my-projects/chair-piece/" class="internal-link">Chair Piece</a></td><td><a href="/" class="internal-link">Ryan Meyer</a></td><td>My Projects</td><td>My-Projects</td></tr><tr><td><a href="/my-projects/claude-projects/brain-dump-interviewer/" class="internal-link">Brain Dump Interviewer</a></td><td><a href="/my-projects/claude-projects/gizmos-and-gadgets-glossary/" class="internal-link">Gizmos and Gadgets Glossary</a>, <a href="/my-projects/claude-projects/new-hire-help-hub/" class="internal-link">New Hire Help Hub</a>, <a href="/my-projects/claude-projects/obsidian-vault-assistant/" class="internal-link">Obsidian Vault Assistant</a>, <a href="/" class="internal-link">Ryan Meyer</a></td><td>My Projects/Claude Projects</td><td>My-Projects</td></tr><tr><td><a href="/my-projects/claude-projects/drawing-from-3-d-model/" class="internal-link">Drawing From 3D Model</a></td><td><a href="/people/jack-miller/" class="internal-link">Jack Miller</a>, <a href="/" class="internal-link">Ryan Meyer</a></td><td>My Projects/Claude Projects</td><td>My-Projects</td></tr><tr><td><a href="/my-projects/claude-projects/gizmos-and-gadgets-glossary/" class="internal-link">Gizmos and Gadgets Glossary</a></td><td><a href="/my-projects/claude-projects/brain-dump-interviewer/" class="internal-link">Brain Dump Interviewer</a>, <a href="/my-projects/claude-projects/new-hire-help-hub/" class="internal-link">New Hire Help Hub</a>, <a href="/my-projects/claude-projects/obsidian-vault-assistant/" class="internal-link">Obsidian Vault Assistant</a>, <a href="/" class="internal-link">Ryan Meyer</a></td><td>My Projects/Claude Projects</td><td>My-Projects</td></tr><tr><td><a href="/my-projects/claude-projects/new-hire-help-hub/" class="internal-link">New Hire Help Hub</a></td><td><a href="/my-projects/claude-projects/brain-dump-interviewer/" class="internal-link">Brain Dump Interviewer</a>, <a href="/my-projects/claude-projects/gizmos-and-gadgets-glossary/" class="internal-link">Gizmos and Gadgets Glossary</a>, <a href="/" class="internal-link">Ryan Meyer</a></td><td>My Projects/Claude Projects</td><td>My-Projects</td></tr><tr><td><a href="/my-projects/claude-projects/obsidian-vault-assistant/" class="internal-link">Obsidian Vault Assistant</a></td><td><a href="/my-projects/claude-projects/new-hire-help-hub/" class="internal-link">New Hire Help Hub</a>, <a href="/" class="internal-link">Ryan Meyer</a></td><td>My Projects/Claude Projects</td><td>My-Projects</td></tr><tr><td><a href="/my-projects/claude-projects/teams-album-of-the-day/" class="internal-link">Teams Album of the Day</a></td><td><a href="/" class="internal-link">Ryan Meyer</a></td><td>My Projects/Claude Projects</td><td>My-Projects</td></tr><tr><td><a href="/my-projects/dip-tube-baffle/dip-tube-baffle-assembly/" class="internal-link">Dip Tube Baffle Assembly</a></td><td><a href="/definitions/in-vitro-dispensing/" class="internal-link">In Vitro Dispensing</a>, <a href="/my-projects/dip-tube-baffle/dip-tube-baffle-drawing-review-1/" class="internal-link">Dip Tube Baffle Drawing Review 1</a>, <a href="/my-projects/dip-tube-baffle/dip-tube-baffle-parts/pickup-rod-2-l/" class="internal-link">Pickup Rod, 2L</a>, <a href="/my-projects/dip-tube-baffle/dip-tube-baffle-parts/split-baffle-assembly-2-l/" class="internal-link">Split Baffle Assembly, 2L</a>, <a href="/my-projects/dip-tube-baffle/dip-tube-baffle-parts/split-baffle-2-l/" class="internal-link">Split Baffle, 2L</a>, <a href="/my-projects/dip-tube-baffle/dip-tube-baffle-parts/two-barb-pickup-2-l/" class="internal-link">Two Barb Pickup, 2L</a>, <a href="/people/philip-mc-keefry/" class="internal-link">Philip McKeefry</a>, <a href="/" class="internal-link">Ryan Meyer</a></td><td>My Projects/Dip Tube Baffle</td><td>My-Projects</td></tr><tr><td><a href="/my-projects/falling-vial-bin/" class="internal-link">Falling Vial Bin</a></td><td><a href="/people/paul-doll/" class="internal-link">Paul Doll</a>, <a href="/" class="internal-link">Ryan Meyer</a>, <a href="/software/solid-works/solidworks-sheet-metal/" class="internal-link">Solidworks Sheet Metal</a></td><td>My Projects</td><td>My-Projects</td></tr><tr><td><a href="/my-projects/filter-connection/" class="internal-link">Filter Connection</a></td><td><a href="/people/patrick-swails/" class="internal-link">Patrick Swails</a>, <a href="/" class="internal-link">Ryan Meyer</a></td><td>My Projects</td><td>My-Projects, active</td></tr><tr><td><a href="/my-projects/flipper-tray-blocker/" class="internal-link">Flipper Tray Blocker</a></td><td><a href="/my-projects/lyo-clear-cover/" class="internal-link">Lyo Clear Cover</a>, <a href="/" class="internal-link">Ryan Meyer</a></td><td>My Projects</td><td>My-Projects</td></tr><tr><td><a href="/my-projects/gel-electrophoresis-tray/" class="internal-link">Gel Electrophoresis Tray</a></td><td><a href="/definitions/electrophoresis/" class="internal-link">Electrophoresis</a>, <a href="/fabrication/laser-cutter/" class="internal-link">Laser Cutter</a>, <a href="/people/zack-wermeling/" class="internal-link">Zack Wermeling</a>, <a href="/" class="internal-link">Ryan Meyer</a></td><td>My Projects</td><td>My-Projects, active</td></tr><tr><td><a href="/my-projects/kpa-cutting-boards/" class="internal-link">KPA Cutting Boards</a></td><td><a href="/" class="internal-link">Ryan Meyer</a></td><td>My Projects</td><td>My-Projects</td></tr><tr><td><a href="/my-projects/label-arm/" class="internal-link">Label Arm</a></td><td><a href="/people/paul-doll/" class="internal-link">Paul Doll</a>, <a href="/" class="internal-link">Ryan Meyer</a></td><td>My Projects</td><td>My-Projects, active</td></tr><tr><td><a href="/my-projects/lyo-clear-cover/" class="internal-link">Lyo Clear Cover</a></td><td><a href="/my-projects/flipper-tray-blocker/" class="internal-link">Flipper Tray Blocker</a>, <a href="/" class="internal-link">Ryan Meyer</a>, <a href="/software/solid-works/solidworks-sheet-metal/" class="internal-link">Solidworks Sheet Metal</a></td><td>My Projects</td><td>My-Projects</td></tr><tr><td><a href="/my-projects/ma-3-pusher-redesign/" class="internal-link">MA3 Pusher Redesign</a></td><td><a href="/lines/ma-3/ma-3-pusher/" class="internal-link">MA3 Pusher</a>, <a href="/lines/ma-3/ma-3/" class="internal-link">MA3</a>, <a href="/people/mike-mc-kuen/" class="internal-link">Mike McKuen</a>, <a href="/" class="internal-link">Ryan Meyer</a>, <a href="/unknown/drop-gate/" class="internal-link">Drop Gate</a></td><td>My Projects</td><td>My-Projects, active</td></tr><tr><td><a href="/my-projects/micro-vu-jig/" class="internal-link">MicroVu Jig</a></td><td><a href="/definitions/qa-and-regulatory-affairs/" class="internal-link">QA and Regulatory Affairs</a>, <a href="/people/doug-fahrenkrug/" class="internal-link">Doug Fahrenkrug</a>, <a href="/people/mike-moothart/" class="internal-link">Mike Moothart</a>, <a href="/" class="internal-link">Ryan Meyer</a></td><td>My Projects</td><td>My-Projects</td></tr><tr><td><a href="/my-projects/mixer-chuck/mixer-chuck-drawing-properties/" class="internal-link">Mixer Chuck Drawing Properties</a></td><td><a href="/software/solid-works/solid-works-macros/json-property-filler/" class="internal-link">JSON Property Filler</a>, <a href="/" class="internal-link">Ryan Meyer</a></td><td>My Projects/Mixer Chuck</td><td>My-Projects</td></tr><tr><td><a href="/my-projects/mixer-chuck/mixer-chuck-notes-archive/" class="internal-link">Mixer Chuck Notes Archive</a></td><td><a href="/my-projects/mixer-chuck/mixer-chuck/" class="internal-link">Mixer Chuck</a>, <a href="/people/jacob-holze/" class="internal-link">Jacob Holze</a>, <a href="/people/travis-beyer/" class="internal-link">Travis Beyer</a>, <a href="/" class="internal-link">Ryan Meyer</a></td><td>My Projects/Mixer Chuck</td><td>My-Projects</td></tr><tr><td><a href="/my-projects/mixer-chuck/mixer-chuck/" class="internal-link">Mixer Chuck</a></td><td><a href="/definitions/equipment/lightnin-mixer/" class="internal-link">Lightnin Mixer</a>, <a href="/definitions/maxx-tooling-er-32-collet-nut/" class="internal-link">Maxx Tooling ER32 Collet Nut</a>, <a href="/definitions/nlag/" class="internal-link">NLAG</a>, <a href="/definitions/parts-process/ersa/" class="internal-link">ERSA</a>, <a href="/definitions/parts-process/multiple-materials-request-spreadsheet/" class="internal-link">Multiple Materials Request Spreadsheet</a>, <a href="/definitions/parts-process/parts-order-form/" class="internal-link">Parts Order Form</a>, <a href="/definitions/parts-process/parts-process/" class="internal-link">Parts Process</a>, <a href="/definitions/shop-request/" class="internal-link">Shop Request</a>, <a href="/my-projects/mixer-chuck/mixer-chuck-drawing-properties/" class="internal-link">Mixer Chuck Drawing Properties</a>, <a href="/my-projects/mixer-chuck/mixer-chuck-drawing-review-1/" class="internal-link">Mixer Chuck Drawing Review 1</a>, <a href="/my-projects/mixer-chuck/mixer-chuck-notes-archive/" class="internal-link">Mixer Chuck Notes Archive</a>, <a href="/my-projects/mixer-chuck/mixer-chuck-parts/chuck-tool-mixer/" class="internal-link">Chuck Tool, Mixer</a>, <a href="/my-projects/mixer-chuck/mixer-chuck-parts/chuck-mixer-style-a/" class="internal-link">Chuck, Mixer, Style A</a>, <a href="/my-projects/mixer-chuck/mixer-chuck-parts/chuck-mixer-style-b/" class="internal-link">Chuck, Mixer, Style B</a>, <a href="/my-projects/mixer-chuck/mixer-chuck-parts/chuck-mixer-style-c/" class="internal-link">Chuck, Mixer, Style C</a>, <a href="/my-projects/mixer-chuck/mixer-chuck-parts/collet-cap-mixer-chuck/" class="internal-link">Collet Cap, Mixer Chuck</a>, <a href="/my-projects/mixer-chuck/mixer-chuck-parts/stop-mixer-chuck/" class="internal-link">Stop, Mixer Chuck</a>, <a href="/my-projects/mixer-chuck/mixer-chuck-parts/tool-spanner-mixer-chuck/" class="internal-link">Tool, Spanner, Mixer Chuck</a>, <a href="/people/alex-rabbach/" class="internal-link">Alex Rabbach</a>, <a href="/people/claire-moll/" class="internal-link">Claire Moll</a>, <a href="/people/garrett-tschanz/" class="internal-link">Garrett Tschanz</a>, <a href="/people/gary-mc-cauley/" class="internal-link">Gary McCauley</a>, <a href="/people/jacob-holze/" class="internal-link">Jacob Holze</a>, <a href="/people/nikki-masterson/" class="internal-link">Nikki Masterson</a>, <a href="/people/sean-doering/" class="internal-link">Sean Doering</a>, <a href="/people/ted-lenoch/" class="internal-link">Ted Lenoch</a>, <a href="/people/travis-beyer/" class="internal-link">Travis Beyer</a>, <a href="/" class="internal-link">Ryan Meyer</a>, <a href="/software/epdm/" class="internal-link">EPDM</a>, <a href="/software/solid-works/solid-works-macros/json-property-filler/" class="internal-link">JSON Property Filler</a></td><td>My Projects/Mixer Chuck</td><td>My-Projects, active</td></tr><tr><td><a href="/my-projects/septa-mat-excel/" class="internal-link">Septa Mat Excel</a></td><td><a href="/" class="internal-link">Ryan Meyer</a></td><td>My Projects</td><td>My-Projects</td></tr><tr><td><a href="/software/solid-works/solid-works-templates/" class="internal-link">SolidWorks Templates</a></td><td><a href="/" class="internal-link">Ryan Meyer</a>, <a href="/software/solid-works/solid-works-macros/json-property-filler/" class="internal-link">JSON Property Filler</a></td><td>Software/SolidWorks</td><td>Software, My-Projects</td></tr><tr><td><a href="/unknown/pauls-finishing-panel/" class="internal-link">Pauls Finishing Panel</a></td><td><a href="/my-projects/lyo-clear-cover/" class="internal-link">Lyo Clear Cover</a>, <a href="/" class="internal-link">Ryan Meyer</a></td><td>Unknown</td><td>My-Projects, unsure-or-needs-to-be-finished</td></tr></tbody></table></div></div><h3 id="high-priority" tabindex="-1">High Priority</h3>
+<div class="obsidian-bases-views"><div class="obsidian-bases-toolbar"><span class="obsidian-bases-single-view-name"><svg class="obsidian-bases-view-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="3" y1="15" x2="21" y2="15"></line><line x1="9" y1="3" x2="9" y2="21"></line></svg> Table</span> <span class="obsidian-bases-result-count">32 results</span></div><div class="obsidian-base-table-wrapper"><table class="obsidian-base-table"><thead><tr><th>Name</th><th>Backlinks</th><th>Folder</th><th>Tags</th></tr></thead><tbody><tr><td><a href="/my-projects/calibration-probe-fixture/calibration-probe-fixture-materials-research-2026-05-12/" class="internal-link">Calibration Probe Fixture - Materials Research 2026-05-12</a></td><td><a href="/definitions/materials/peek/" class="internal-link">PEEK</a>, <a href="/my-projects/calibration-probe-fixture/calibration-probe-fixture/" class="internal-link">Calibration Probe Fixture</a>, <a href="/" class="internal-link">Ryan Meyer</a></td><td>My Projects/Calibration Probe Fixture</td><td>My-Projects, reference</td></tr><tr><td><a href="/my-projects/mixer-chuck/mixer-chuck-cc-meeting-2026-06-09/" class="internal-link">Mixer Chuck CC Meeting 2026-06-09</a></td><td><a href="/other/metrology-meeting-2026-06-10/" class="internal-link">Metrology Meeting 2026-06-10</a>, <a href="/definitions/quality/change-control/" class="internal-link">Change Control</a>, <a href="/my-projects/mixer-chuck/mixer-chuck/" class="internal-link">Mixer Chuck</a>, <a href="/people/mark-koeff/" class="internal-link">Mark Koeff</a>, <a href="/" class="internal-link">Ryan Meyer</a></td><td>My Projects/Mixer Chuck</td><td>My-Projects</td></tr><tr><td><a href="/my-projects/96-well-bracket/" class="internal-link">96 Well Bracket</a></td><td><a href="/buildings/lamarr/" class="internal-link">Lamarr</a>, <a href="/definitions/hdpe/" class="internal-link">HDPE</a>, <a href="/fabrication/zund/" class="internal-link">Zund</a>, <a href="/my-projects/gel-electrophoresis-tray/" class="internal-link">Gel Electrophoresis Tray</a>, <a href="/people/zack-wermeling/" class="internal-link">Zack Wermeling</a>, <a href="/" class="internal-link">Ryan Meyer</a></td><td>My Projects</td><td>My-Projects, active</td></tr><tr><td><a href="/my-projects/ar-c-notes/batch-run-testing/" class="internal-link">Batch Run Testing</a></td><td><a href="/software/batch/" class="internal-link">Batch</a>, <a href="/software/smartsheet/" class="internal-link">Smartsheet</a>, <a href="/" class="internal-link">Ryan Meyer</a></td><td>My Projects/ArC Notes</td><td>My-Projects</td></tr><tr><td><a href="/my-projects/ar-c-notes/fermentation-101/" class="internal-link">Fermentation 101</a></td><td><a href="/buildings/arnold/" class="internal-link">Arnold</a>, <a href="/buildings/rfc/" class="internal-link">RFC</a>, <a href="/my-projects/ar-c-notes/agitator/" class="internal-link">Agitator</a>, <a href="/my-projects/ar-c-notes/biomass/" class="internal-link">Biomass</a>, <a href="/my-projects/ar-c-notes/cell-paste/" class="internal-link">Cell Paste</a>, <a href="/my-projects/ar-c-notes/centrifuge/" class="internal-link">Centrifuge</a>, <a href="/my-projects/ar-c-notes/dissolved-oxygen/" class="internal-link">Dissolved Oxygen</a>, <a href="/my-projects/ar-c-notes/fermentation-media/" class="internal-link">Fermentation Media</a>, <a href="/my-projects/ar-c-notes/fermentation/" class="internal-link">Fermentation</a>, <a href="/my-projects/ar-c-notes/fermenters/" class="internal-link">Fermenters</a>, <a href="/my-projects/ar-c-notes/induction/" class="internal-link">Induction</a>, <a href="/my-projects/ar-c-notes/inoculation/" class="internal-link">Inoculation</a>, <a href="/my-projects/ar-c-notes/luciferase/" class="internal-link">Luciferase</a>, <a href="/my-projects/ar-c-notes/sterilize-in-place/" class="internal-link">Sterilize in Place</a>, <a href="/my-projects/ar-c-notes/supernatant/" class="internal-link">Supernatant</a>, <a href="/my-projects/ar-c-notes/p-h/" class="internal-link">pH</a>, <a href="/software/batch/" class="internal-link">Batch</a>, <a href="/software/engineering-workstations/" class="internal-link">Engineering Workstations</a>, <a href="/" class="internal-link">Ryan Meyer</a></td><td>My Projects/ArC Notes</td><td>My-Projects</td></tr><tr><td><a href="/my-projects/bubble-sensor-tray/" class="internal-link">Bubble Sensor Tray</a></td><td><a href="/people/brian-osterbrink/" class="internal-link">Brian Osterbrink</a>, <a href="/" class="internal-link">Ryan Meyer</a></td><td>My Projects</td><td>My-Projects, active</td></tr><tr><td><a href="/my-projects/calibration-probe-fixture/calibration-probe-fixture/" class="internal-link">Calibration Probe Fixture</a></td><td><a href="/other/metrology-meeting-2026-04-22/" class="internal-link">Metrology Meeting 2026-04-22</a>, <a href="/my-projects/calibration-probe-fixture/calibration-probe-fixture-materials-research-2026-05-12/" class="internal-link">Calibration Probe Fixture - Materials Research 2026-05-12</a>, <a href="/other/metrology-meeting-2026-06-10/" class="internal-link">Metrology Meeting 2026-06-10</a>, <a href="/buildings/chappelle-manufacturing-center/" class="internal-link">Chappelle Manufacturing Center</a>, <a href="/definitions/materials/316-l-stainless-steel/" class="internal-link">316L Stainless Steel</a>, <a href="/definitions/materials/delrin/" class="internal-link">Delrin</a>, <a href="/definitions/materials/peek/" class="internal-link">PEEK</a>, <a href="/definitions/metrology/" class="internal-link">Metrology</a>, <a href="/definitions/resistance-temperature-detector/" class="internal-link">Resistance Temperature Detector</a>, <a href="/fabrication/formlabs-form-3-l/" class="internal-link">Formlabs Form 3L</a>, <a href="/fabrication/mc-master-carr/" class="internal-link">McMaster-Carr</a>, <a href="/my-projects/calibration-probe-fixture/probe-summary/" class="internal-link">Probe Summary</a>, <a href="/my-projects/calibration-probe-fixture/technical-specs/bath-and-probe-spec/" class="internal-link">Bath and Probe Spec</a>, <a href="/my-projects/calibration-probe-fixture/technical-specs/fluke-in-house-sop/" class="internal-link">Fluke In-House SOP</a>, <a href="/people/david-velazquez/" class="internal-link">David Velazquez</a>, <a href="/people/kimberly-steinhauer/" class="internal-link">Kimberly Steinhauer</a>, <a href="/people/matt-wahl/" class="internal-link">Matt Wahl</a>, <a href="/" class="internal-link">Ryan Meyer</a>, <a href="/software/sap/" class="internal-link">SAP</a>, <a href="/software/solid-works/solidworks/" class="internal-link">Solidworks</a></td><td>My Projects/Calibration Probe Fixture</td><td>My-Projects, active</td></tr><tr><td><a href="/my-projects/calibration-probe-fixture/probe-summary/" class="internal-link">Probe Summary</a></td><td><a href="/my-projects/calibration-probe-fixture/calibration-probe-fixture/" class="internal-link">Calibration Probe Fixture</a>, <a href="/my-projects/calibration-probe-fixture/technical-specs/bath-and-probe-spec/" class="internal-link">Bath and Probe Spec</a>, <a href="/my-projects/calibration-probe-fixture/technical-specs/fluke-in-house-sop/" class="internal-link">Fluke In-House SOP</a>, <a href="/" class="internal-link">Ryan Meyer</a></td><td>My Projects/Calibration Probe Fixture</td><td>My-Projects</td></tr><tr><td><a href="/my-projects/chair-piece/" class="internal-link">Chair Piece</a></td><td><a href="/" class="internal-link">Ryan Meyer</a></td><td>My Projects</td><td>My-Projects</td></tr><tr><td><a href="/my-projects/claude-projects/brain-dump-interviewer/" class="internal-link">Brain Dump Interviewer</a></td><td><a href="/my-projects/claude-projects/gizmos-and-gadgets-glossary/" class="internal-link">Gizmos and Gadgets Glossary</a>, <a href="/my-projects/claude-projects/new-hire-help-hub/" class="internal-link">New Hire Help Hub</a>, <a href="/my-projects/claude-projects/obsidian-vault-assistant/" class="internal-link">Obsidian Vault Assistant</a>, <a href="/" class="internal-link">Ryan Meyer</a></td><td>My Projects/Claude Projects</td><td>My-Projects</td></tr><tr><td><a href="/my-projects/claude-projects/drawing-from-3-d-model/" class="internal-link">Drawing From 3D Model</a></td><td><a href="/people/jack-miller/" class="internal-link">Jack Miller</a>, <a href="/" class="internal-link">Ryan Meyer</a></td><td>My Projects/Claude Projects</td><td>My-Projects</td></tr><tr><td><a href="/my-projects/claude-projects/gizmos-and-gadgets-glossary/" class="internal-link">Gizmos and Gadgets Glossary</a></td><td><a href="/my-projects/claude-projects/brain-dump-interviewer/" class="internal-link">Brain Dump Interviewer</a>, <a href="/my-projects/claude-projects/new-hire-help-hub/" class="internal-link">New Hire Help Hub</a>, <a href="/my-projects/claude-projects/obsidian-vault-assistant/" class="internal-link">Obsidian Vault Assistant</a>, <a href="/" class="internal-link">Ryan Meyer</a></td><td>My Projects/Claude Projects</td><td>My-Projects</td></tr><tr><td><a href="/my-projects/claude-projects/listenr/" class="internal-link">Listenr</a></td><td><a href="/" class="internal-link">Ryan Meyer</a></td><td>My Projects/Claude Projects</td><td>My-Projects</td></tr><tr><td><a href="/my-projects/claude-projects/new-hire-help-hub/" class="internal-link">New Hire Help Hub</a></td><td><a href="/my-projects/claude-projects/brain-dump-interviewer/" class="internal-link">Brain Dump Interviewer</a>, <a href="/my-projects/claude-projects/gizmos-and-gadgets-glossary/" class="internal-link">Gizmos and Gadgets Glossary</a>, <a href="/" class="internal-link">Ryan Meyer</a></td><td>My Projects/Claude Projects</td><td>My-Projects</td></tr><tr><td><a href="/my-projects/claude-projects/obsidian-vault-assistant/" class="internal-link">Obsidian Vault Assistant</a></td><td><a href="/my-projects/claude-projects/new-hire-help-hub/" class="internal-link">New Hire Help Hub</a>, <a href="/" class="internal-link">Ryan Meyer</a></td><td>My Projects/Claude Projects</td><td>My-Projects</td></tr><tr><td><a href="/my-projects/claude-projects/teams-album-of-the-day/" class="internal-link">Teams Album of the Day</a></td><td><a href="/software/microsoft-teams/" class="internal-link">Microsoft Teams</a>, <a href="/" class="internal-link">Ryan Meyer</a></td><td>My Projects/Claude Projects</td><td>My-Projects</td></tr><tr><td><a href="/my-projects/dip-tube-baffle/dip-tube-baffle-assembly/" class="internal-link">Dip Tube Baffle Assembly</a></td><td><a href="/definitions/in-vitro-dispensing/" class="internal-link">In Vitro Dispensing</a>, <a href="/definitions/materials/316-l-stainless-steel/" class="internal-link">316L Stainless Steel</a>, <a href="/my-projects/dip-tube-baffle/dip-tube-baffle-drawing-review-1/" class="internal-link">Dip Tube Baffle Drawing Review 1</a>, <a href="/my-projects/dip-tube-baffle/dip-tube-baffle-parts/pickup-rod-2-l/" class="internal-link">Pickup Rod, 2L</a>, <a href="/my-projects/dip-tube-baffle/dip-tube-baffle-parts/split-baffle-assembly-2-l/" class="internal-link">Split Baffle Assembly, 2L</a>, <a href="/my-projects/dip-tube-baffle/dip-tube-baffle-parts/split-baffle-2-l/" class="internal-link">Split Baffle, 2L</a>, <a href="/my-projects/dip-tube-baffle/dip-tube-baffle-parts/two-barb-pickup-2-l/" class="internal-link">Two Barb Pickup, 2L</a>, <a href="/people/philip-mc-keefry/" class="internal-link">Philip McKeefry</a>, <a href="/" class="internal-link">Ryan Meyer</a>, <a href="/software/solid-works/solidworks/" class="internal-link">Solidworks</a></td><td>My Projects/Dip Tube Baffle</td><td>My-Projects</td></tr><tr><td><a href="/my-projects/falling-vial-bin/" class="internal-link">Falling Vial Bin</a></td><td><a href="/definitions/equipment/feynman-bottle-lyophilizer/" class="internal-link">Feynman Bottle Lyophilizer</a>, <a href="/people/paul-doll/" class="internal-link">Paul Doll</a>, <a href="/" class="internal-link">Ryan Meyer</a>, <a href="/software/solid-works/solidworks-sheet-metal/" class="internal-link">Solidworks Sheet Metal</a>, <a href="/software/solid-works/solidworks/" class="internal-link">Solidworks</a></td><td>My Projects</td><td>My-Projects</td></tr><tr><td><a href="/my-projects/filter-connection/" class="internal-link">Filter Connection</a></td><td><a href="/people/patrick-swails/" class="internal-link">Patrick Swails</a>, <a href="/" class="internal-link">Ryan Meyer</a></td><td>My Projects</td><td>My-Projects, active</td></tr><tr><td><a href="/my-projects/flipper-tray-blocker/" class="internal-link">Flipper Tray Blocker</a></td><td><a href="/buildings/lamarr/" class="internal-link">Lamarr</a>, <a href="/definitions/hdpe/" class="internal-link">HDPE</a>, <a href="/fabrication/zund/" class="internal-link">Zund</a>, <a href="/my-projects/lyo-clear-cover/" class="internal-link">Lyo Clear Cover</a>, <a href="/people/paul-doll/" class="internal-link">Paul Doll</a>, <a href="/" class="internal-link">Ryan Meyer</a></td><td>My Projects</td><td>My-Projects</td></tr><tr><td><a href="/my-projects/gel-electrophoresis-tray/" class="internal-link">Gel Electrophoresis Tray</a></td><td><a href="/definitions/electrophoresis/" class="internal-link">Electrophoresis</a>, <a href="/definitions/materials/polycarbonate/" class="internal-link">Polycarbonate</a>, <a href="/definitions/spectrum/" class="internal-link">Spectrum</a>, <a href="/fabrication/laser-cutter/" class="internal-link">Laser Cutter</a>, <a href="/fabrication/zund/" class="internal-link">Zund</a>, <a href="/people/zack-wermeling/" class="internal-link">Zack Wermeling</a>, <a href="/" class="internal-link">Ryan Meyer</a></td><td>My Projects</td><td>My-Projects, active</td></tr><tr><td><a href="/my-projects/kpa-cutting-boards/" class="internal-link">KPA Cutting Boards</a></td><td><a href="/fabrication/zund/" class="internal-link">Zund</a>, <a href="/" class="internal-link">Ryan Meyer</a></td><td>My Projects</td><td>My-Projects</td></tr><tr><td><a href="/my-projects/label-arm/" class="internal-link">Label Arm</a></td><td><a href="/people/paul-doll/" class="internal-link">Paul Doll</a>, <a href="/" class="internal-link">Ryan Meyer</a></td><td>My Projects</td><td>My-Projects</td></tr><tr><td><a href="/my-projects/lyo-clear-cover/" class="internal-link">Lyo Clear Cover</a></td><td><a href="/definitions/equipment/feynman-bottle-lyophilizer/" class="internal-link">Feynman Bottle Lyophilizer</a>, <a href="/definitions/materials/polycarbonate/" class="internal-link">Polycarbonate</a>, <a href="/my-projects/flipper-tray-blocker/" class="internal-link">Flipper Tray Blocker</a>, <a href="/people/paul-doll/" class="internal-link">Paul Doll</a>, <a href="/" class="internal-link">Ryan Meyer</a>, <a href="/software/solid-works/solidworks-sheet-metal/" class="internal-link">Solidworks Sheet Metal</a>, <a href="/software/solid-works/solidworks/" class="internal-link">Solidworks</a>, <a href="/unknown/pauls-finishing-panel/" class="internal-link">Pauls Finishing Panel</a></td><td>My Projects</td><td>My-Projects</td></tr><tr><td><a href="/my-projects/ma-3-pusher-redesign/" class="internal-link">MA3 Pusher Redesign</a></td><td><a href="/definitions/design-review/" class="internal-link">Design Review</a>, <a href="/definitions/quality/engineering-study/" class="internal-link">Engineering Study</a>, <a href="/lines/ma-3/ma-3-pusher/" class="internal-link">MA3 Pusher</a>, <a href="/lines/ma-3/ma-3/" class="internal-link">MA3</a>, <a href="/people/mike-mc-kuen/" class="internal-link">Mike McKuen</a>, <a href="/" class="internal-link">Ryan Meyer</a>, <a href="/unknown/drop-gate/" class="internal-link">Drop Gate</a></td><td>My Projects</td><td>My-Projects, active</td></tr><tr><td><a href="/my-projects/micro-vu-jig/" class="internal-link">MicroVu Jig</a></td><td><a href="/definitions/qa-and-regulatory-affairs/" class="internal-link">QA and Regulatory Affairs</a>, <a href="/people/doug-fahrenkrug/" class="internal-link">Doug Fahrenkrug</a>, <a href="/people/mike-moothart/" class="internal-link">Mike Moothart</a>, <a href="/people/ryan-kimmel/" class="internal-link">Ryan Kimmel</a>, <a href="/" class="internal-link">Ryan Meyer</a></td><td>My Projects</td><td>My-Projects</td></tr><tr><td><a href="/my-projects/mixer-chuck/mixer-chuck-drawing-properties/" class="internal-link">Mixer Chuck Drawing Properties</a></td><td><a href="/software/solid-works/solid-works-macros/json-property-filler/" class="internal-link">JSON Property Filler</a>, <a href="/" class="internal-link">Ryan Meyer</a></td><td>My Projects/Mixer Chuck</td><td>My-Projects</td></tr><tr><td><a href="/my-projects/mixer-chuck/mixer-chuck-notes-archive/" class="internal-link">Mixer Chuck Notes Archive</a></td><td><a href="/my-projects/mixer-chuck/mixer-chuck/" class="internal-link">Mixer Chuck</a>, <a href="/people/jacob-holze/" class="internal-link">Jacob Holze</a>, <a href="/people/travis-beyer/" class="internal-link">Travis Beyer</a>, <a href="/" class="internal-link">Ryan Meyer</a></td><td>My Projects/Mixer Chuck</td><td>My-Projects</td></tr><tr><td><a href="/my-projects/mixer-chuck/mixer-chuck/" class="internal-link">Mixer Chuck</a></td><td><a href="/my-projects/mixer-chuck/mixer-chuck-cc-meeting-2026-06-09/" class="internal-link">Mixer Chuck CC Meeting 2026-06-09</a>, <a href="/buildings/lamarr/" class="internal-link">Lamarr</a>, <a href="/definitions/ehs/" class="internal-link">EHS</a>, <a href="/definitions/equipment/lightnin-mixer/" class="internal-link">Lightnin Mixer</a>, <a href="/definitions/in-vitro-dispensing/" class="internal-link">In Vitro Dispensing</a>, <a href="/definitions/materials/316-l-stainless-steel/" class="internal-link">316L Stainless Steel</a>, <a href="/definitions/maxx-tooling-er-32-collet-nut/" class="internal-link">Maxx Tooling ER32 Collet Nut</a>, <a href="/definitions/nlag/" class="internal-link">NLAG</a>, <a href="/definitions/parts-process/ersa/" class="internal-link">ERSA</a>, <a href="/definitions/parts-process/multiple-materials-request-spreadsheet/" class="internal-link">Multiple Materials Request Spreadsheet</a>, <a href="/definitions/parts-process/parts-order-form/" class="internal-link">Parts Order Form</a>, <a href="/definitions/parts-process/parts-process/" class="internal-link">Parts Process</a>, <a href="/definitions/shop-request/" class="internal-link">Shop Request</a>, <a href="/fabrication/mc-master-carr/" class="internal-link">McMaster-Carr</a>, <a href="/my-projects/mixer-chuck/mixer-chuck-drawing-properties/" class="internal-link">Mixer Chuck Drawing Properties</a>, <a href="/my-projects/mixer-chuck/mixer-chuck-drawing-review-1/" class="internal-link">Mixer Chuck Drawing Review 1</a>, <a href="/my-projects/mixer-chuck/mixer-chuck-notes-archive/" class="internal-link">Mixer Chuck Notes Archive</a>, <a href="/my-projects/mixer-chuck/mixer-chuck-parts/chuck-tool-mixer/" class="internal-link">Chuck Tool, Mixer</a>, <a href="/my-projects/mixer-chuck/mixer-chuck-parts/chuck-mixer-style-a/" class="internal-link">Chuck, Mixer, Style A</a>, <a href="/my-projects/mixer-chuck/mixer-chuck-parts/chuck-mixer-style-b/" class="internal-link">Chuck, Mixer, Style B</a>, <a href="/my-projects/mixer-chuck/mixer-chuck-parts/chuck-mixer-style-c/" class="internal-link">Chuck, Mixer, Style C</a>, <a href="/my-projects/mixer-chuck/mixer-chuck-parts/collet-cap-mixer-chuck/" class="internal-link">Collet Cap, Mixer Chuck</a>, <a href="/my-projects/mixer-chuck/mixer-chuck-parts/parlec-er-32-collet/" class="internal-link">Parlec ER32 Collet</a>, <a href="/my-projects/mixer-chuck/mixer-chuck-parts/stop-mixer-chuck/" class="internal-link">Stop, Mixer Chuck</a>, <a href="/my-projects/mixer-chuck/mixer-chuck-parts/tool-spanner-mixer-chuck/" class="internal-link">Tool, Spanner, Mixer Chuck</a>, <a href="/people/alex-rabbach/" class="internal-link">Alex Rabbach</a>, <a href="/people/amanda-maly/" class="internal-link">Amanda Maly</a>, <a href="/people/claire-moll/" class="internal-link">Claire Moll</a>, <a href="/people/diego-lamela/" class="internal-link">Diego Lamela</a>, <a href="/people/garrett-tschanz/" class="internal-link">Garrett Tschanz</a>, <a href="/people/gary-mc-cauley/" class="internal-link">Gary McCauley</a>, <a href="/people/jacob-holze/" class="internal-link">Jacob Holze</a>, <a href="/people/kent-toepfer/" class="internal-link">Kent Toepfer</a>, <a href="/people/mark-koeff/" class="internal-link">Mark Koeff</a>, <a href="/people/nikki-masterson/" class="internal-link">Nikki Masterson</a>, <a href="/people/sean-doering/" class="internal-link">Sean Doering</a>, <a href="/people/ted-lenoch/" class="internal-link">Ted Lenoch</a>, <a href="/people/travis-beyer/" class="internal-link">Travis Beyer</a>, <a href="/" class="internal-link">Ryan Meyer</a>, <a href="/software/epdm/" class="internal-link">EPDM</a>, <a href="/software/microsoft-teams/" class="internal-link">Microsoft Teams</a>, <a href="/software/sap/" class="internal-link">SAP</a>, <a href="/software/solid-works/solid-works-macros/json-property-filler/" class="internal-link">JSON Property Filler</a></td><td>My Projects/Mixer Chuck</td><td>My-Projects, active</td></tr><tr><td><a href="/my-projects/septa-mat-excel/" class="internal-link">Septa Mat Excel</a></td><td><a href="/" class="internal-link">Ryan Meyer</a></td><td>My Projects</td><td>My-Projects</td></tr><tr><td><a href="/software/solid-works/solid-works-templates/" class="internal-link">SolidWorks Templates</a></td><td><a href="/" class="internal-link">Ryan Meyer</a>, <a href="/software/solid-works/solid-works-macros/default-lighting-setter/" class="internal-link">Default Lighting Setter</a>, <a href="/software/solid-works/solid-works-macros/json-property-filler/" class="internal-link">JSON Property Filler</a>, <a href="/software/solid-works/solidworks/" class="internal-link">Solidworks</a></td><td>Software/SolidWorks</td><td>Software, My-Projects</td></tr><tr><td><a href="/unknown/pauls-finishing-panel/" class="internal-link">Pauls Finishing Panel</a></td><td><a href="/my-projects/lyo-clear-cover/" class="internal-link">Lyo Clear Cover</a>, <a href="/people/paul-doll/" class="internal-link">Paul Doll</a>, <a href="/" class="internal-link">Ryan Meyer</a>, <a href="/software/microsoft-teams/" class="internal-link">Microsoft Teams</a></td><td>Unknown</td><td>My-Projects, unsure-or-needs-to-be-finished</td></tr></tbody></table></div></div><h3 id="high-priority" tabindex="-1">High Priority</h3>
 <ol>
-<li><a class="internal-link is-unresolved" href="/404" target="">Calibration Probe Fixture</a> (<strong>DUE JUNE</strong>)<br>
-STATUS: Schedule design review with Metrology. Material direction is PEEK universal, pending bath lip temperature measurement at 280°C operation to confirm suitability.</li>
+<li><a class="internal-link" target="" data-note-icon="undefined" href="/my-projects/calibration-probe-fixture/calibration-probe-fixture/">Calibration Probe Fixture</a> (<strong>DUE JUNE</strong>)<br>
+STATUS: Design review done. Material confirmed as 316L stainless, frame + PEEK bushings. Two-jig vs universal still a design call to make while modeling. Next steps: start drawings, get part numbers, move to ePDM.</li>
 <li><a class="internal-link" target="" data-note-icon="undefined" href="/my-projects/96-well-bracket/">96 Well Bracket</a><br>
 STATUS: Test fit failed — bad measurements and Z-axis clearance issue with metal tabs. New measurements taken, model needs fixing, recut on Zund and retest with Zack.</li>
 <li><a class="internal-link" target="" data-note-icon="undefined" href="/unknown/pauls-finishing-panel/">Paul's Finishing Panel</a><br>
@@ -1652,7 +1877,7 @@ STATUS: Redesign models with rabbet joint, update drawings, machine and test fit
 </ol>
 <h3 id="medium-priority" tabindex="-1">Medium Priority</h3>
 <p><a class="internal-link" target="" data-note-icon="undefined" href="/my-projects/lyo-clear-cover/">Lyo Clear Cover</a><br>
-STATUS: Remodel in SolidWorks sheet metal mode. 3/8&quot; acrylic stock (changing from original 8 mm metric). No holes on top per Paul. Drawing exists with current dimensions.</p>
+STATUS: PC confirmed as material. Two attempts done — acrylic snapped, PC worked but had bowing. Next: write step-by-step bend instructions in notebook before recut.</p>
 <h3 id="low-priority" tabindex="-1">Low Priority</h3>
 <p><a class="internal-link" target="" data-note-icon="undefined" href="/my-projects/ma-3-pusher-redesign/">MA3 Pusher Redesign</a><br>
 STATUS: Model fixed, reprinted, fit well — determine next steps.</p>
@@ -1660,9 +1885,9 @@ STATUS: Model fixed, reprinted, fit well — determine next steps.</p>
 STATUS: Update part and drawing templates when time allows.</p>
 <h3 id="waiting-on-something" tabindex="-1">Waiting on something</h3>
 <p><a class="internal-link" target="" data-note-icon="undefined" href="/my-projects/mixer-chuck/mixer-chuck/">Mixer Chuck</a><br>
-STATUS: Shop request submitted 2026-05-11. Waiting on fabrication, then receive, assemble, and deliver.</p>
+STATUS: Fabrication in progress at Lamarr, shop target 07/29/26. CC prep running in parallel — need 3 draft attachments for Claire by end of next week (impacted documentation, implementation actions, testing actions).</p>
 <p><a class="internal-link" target="" data-note-icon="undefined" href="/my-projects/dip-tube-baffle/dip-tube-baffle-assembly/">Dip Tube Baffle Assembly</a><br>
-STATUS: Drawings delivered to Philip. Waiting on next steps from him.</p>
+STATUS: Drawings complete. Waiting on Philip for new SAP numbers for the barb piece and assembly — Nikki working on getting them assigned.</p>
 <p><a class="internal-link" target="" data-note-icon="undefined" href="/my-projects/label-arm/">Label Arm</a><br>
 STATUS: Waiting on Paul indefinitely. Bottle alignment CoC and drawings still needed when Paul provides them.</p>
 <p><a class="internal-link" target="" data-note-icon="undefined" href="/my-projects/filter-connection/">Filter Connection</a><br>
