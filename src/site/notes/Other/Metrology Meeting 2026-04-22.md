@@ -1,11 +1,11 @@
 ---
-{"dg-publish":true,"permalink":"/other/metrology-meeting-2026-04-22/","tags":["Other"],"dg-note-properties":{"tags":["Other"],"source":"personal_notes","last_updated":"2026-04-23"}}
+{"dg-publish":true,"permalink":"/other/metrology-meeting-2026-04-22/","tags":["Other"],"dg-note-properties":{"tags":["Other"],"source":"personal_notes","last_updated":"2026-05-15"}}
 ---
 
 
 #Other
 
-Meeting notes for Metrology meeting on 2026-04-22 regarding the [[My Projects/Calibration Probe Fixture\|Calibration Probe Fixture]] project. Attendees include [[People/Kimberly Steinhauer\|Kimberly]], [[People/Matt Wahl\|Matt]], and [[People/David Velazquez\|David]].
+Meeting notes for Metrology meeting on 2026-04-22 regarding the [[My Projects/Calibration Probe Fixture/Calibration Probe Fixture\|Calibration Probe Fixture]] project. Attendees include [[People/Kimberly Steinhauer\|Kimberly]], [[People/Matt Wahl\|Matt]], and [[People/David Velazquez\|David]].
 
 ## Outcomes (from 2026-04-22)
 
@@ -13,6 +13,12 @@ Meeting notes for Metrology meeting on 2026-04-22 regarding the [[My Projects/Ca
 - Kimberly refers to smaller baths as "baby baths" — these go to 220°C. Possibly 2 coming to Feynman; count not confirmed.
 - Full range calibration cycle runs 14–20 times per year.
 - The bath lab is open access — can run the bath independently to take the lip temperature measurement. Need to find a temperature gun in the facilities shop first.
+
+## Post-meeting follow-ups (added 2026-05-15)
+
+- [[People/David Velazquez\|David]] later clarified the 5628-12-S was the unmeasured probe and is in scope per the [[My Projects/Calibration Probe Fixture/Technical Specs/Bath and Probe Spec\|Bath and Probe Spec]] — it had been missing from the project notes up to that point.
+- [[People/David Velazquez\|David]] clarified the 5606 is the probe that dangles, not the small-diameter 5622 probes (Teams, 2026-04-02).
+- The 5622-05 phase-out claim was retracted — see the Open Questions section on the main [[My Projects/Calibration Probe Fixture/Calibration Probe Fixture\|Calibration Probe Fixture]] note.
 
 ---
 
@@ -38,7 +44,7 @@ Current position: PEEK universal is the preferred direction for cold and mid-ran
 
 - One universal fixture or two? Preference is universal, but if metal is only viable for the hot bath, that naturally splits. Ask what they want to work with day-to-day.
 - Does the 280°C bath need to accommodate all probe types, or just the 5622-32? The 5622-32 is the only probe rated to 280°C — if that is the only probe they would run in Heat Source 4, the hot fixture can be much simpler.
-- Confirm which probe models are actually in scope: 5606, 5622-32, 5622-05, 5622-10, 5623B. The 5 mm probes (5622-05?) are being phased out — confirm if still in scope or if the fixture can be designed around them.
+- Confirm which probe models are actually in scope: 5606, 5622-32, 5622-05, 5622-10, 5623B. The 5 mm probes (5622-05?) are being phased out — confirm if still in scope or if the fixture can be designed around them. *(Note 2026-05-15: the phase-out claim was incorrect. David retracted it later. Full probe list is now confirmed via the live [[My Projects/Calibration Probe Fixture/Technical Specs/Bath and Probe Spec\|Bath and Probe Spec]].)*
 
 ---
 
@@ -60,4 +66,4 @@ Timeline: targeting May 2026, June acceptable. No CAD started yet — this conve
 >
 > **Status:** Meeting complete. Outcomes documented above.
 >
-> **See also:** [[My Projects/Calibration Probe Fixture\|Calibration Probe Fixture]], [[Definitions/Metrology\|Metrology]], [[People/Kimberly Steinhauer\|Kimberly Steinhauer]], [[People/Matt Wahl\|Matt Wahl]], [[People/David Velazquez\|David Velazquez]]
+> **See also:** [[My Projects/Calibration Probe Fixture/Calibration Probe Fixture\|Calibration Probe Fixture]], [[Definitions/Metrology\|Metrology]], [[People/Kimberly Steinhauer\|Kimberly Steinhauer]], [[People/Matt Wahl\|Matt Wahl]], [[People/David Velazquez\|David Velazquez]]

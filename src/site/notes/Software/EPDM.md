@@ -76,10 +76,10 @@ ePDM (Engineering Product Data Management) is Promega's engineering drawing and 
 >
 > **Full 11 SAP list:** 102956, 112142, 122278, 122277, 102943, 113417, 113418, 117266, 127950, 120019, 102883
 >
-> Equipment Manufacturer: Promega for all of the above. The [[Definitions/Parlec ER32 Collet\|Parlec ER32 Collet]] (stock component) gets Parlec.
+> Equipment Manufacturer: Promega for all of the above. The [[My Projects/Mixer Chuck/Mixer Chuck Parts/Parlec ER32 Collet\|Parlec ER32 Collet]] (stock component) gets Parlec.
 
 > [!info]- Details & Notes
 >
 > **Encountered in:** [[My Projects/Mixer Chuck/Mixer Chuck\|Mixer Chuck]] (checking in drawings before shop request submission)
 >
-> **See also:** [[Definitions/Shop Request\|Shop Request]], [[Definitions/Quality/Change Control\|Change Control]]
+> **See also:** [[Definitions/Shop Request\|Shop Request]], [[Definitions/Quality/Change Control\|Change Control]], [[Definitions/Parts Process/Parts Process\|Parts Process]]

@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/my-projects/dip-tube-baffle/dip-tube-baffle-drawing-review-1/","tags":["Drawing-Reviews"],"dg-note-properties":{"tags":["Drawing-Reviews"],"source":"personal_notes","last_updated":"2026-05-07"}}
+{"dg-publish":true,"permalink":"/my-projects/dip-tube-baffle/dip-tube-baffle-drawing-review-1/","tags":["Drawing-Reviews"],"dg-note-properties":{"aliases":["Dip Tube Baffle Assembly Drawing Review 1"],"tags":["Drawing-Reviews"],"source":"personal_notes","last_updated":"2026-05-07"}}
 ---
 
 

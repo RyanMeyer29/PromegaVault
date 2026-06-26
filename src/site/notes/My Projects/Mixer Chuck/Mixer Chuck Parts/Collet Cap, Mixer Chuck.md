@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/my-projects/mixer-chuck/mixer-chuck-parts/collet-cap-mixer-chuck/","tags":["Definitions"],"dg-note-properties":{"tags":["Definitions"],"aliases":["Collet Cap"],"source":"personal_notes","last_updated":"2026-05-07"}}
+{"dg-publish":true,"permalink":"/my-projects/mixer-chuck/mixer-chuck-parts/collet-cap-mixer-chuck/","tags":["Definitions"],"dg-note-properties":{"tags":["Definitions"],"aliases":["Collet Cap","Maxx Tooling Collet Cap"],"source":"personal_notes","last_updated":"2026-05-07"}}
 ---
 
 

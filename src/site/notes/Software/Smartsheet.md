@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/software/smartsheet/","tags":["Software"],"dg-note-properties":{"tags":["Software"],"source":"personal_notes","last_updated":"2025-01-01"}}
+{"dg-publish":true,"permalink":"/software/smartsheet/","tags":["Software"],"dg-note-properties":{"tags":["Software"],"source":"personal_notes","last_updated":"2026-06-15"}}
 ---
 
 
@@ -9,6 +9,6 @@ Smartsheet is a cloud-based work management and collaboration tool. At Promega, 
 
 > [!info]- Details & Notes
 >
-> **Encountered in:** [[My Projects/ArC Notes/Batch Run Testing\|Batch Run Testing]]
+> **Encountered in:** [[My Projects/ArC Notes/Batch Run Testing\|Batch Run Testing]], [[Definitions/Parts Process/Parts Process\|Parts Process]] (Parts Order Form is Smartsheet-hosted), [[Definitions/Shop Request\|Shop Request]] (Shop Request tracker is Smartsheet-hosted)
 >
-> **See also:** [[Software/Batch\|Batch]], [[My Projects/ArC Notes/Batch Run Testing\|Batch Run Testing]], [[Definitions/Cybertrol\|Cybertrol]]
+> **See also:** [[Software/Batch\|Batch]], [[My Projects/ArC Notes/Batch Run Testing\|Batch Run Testing]], [[Definitions/Cybertrol\|Cybertrol]], [[Definitions/Shop Request\|Shop Request]], [[Definitions/Parts Process/Parts Order Form\|Parts Order Form]]

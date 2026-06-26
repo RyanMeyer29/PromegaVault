@@ -21,4 +21,4 @@ Per Maxx Tooling terms and conditions, this data is prohibited from being used o
 >
 > **Encountered in:** [[My Projects/Mixer Chuck/Mixer Chuck\|Mixer Chuck]] project
 >
-> **See also:** [[Definitions/Parlec ER32 Collet\|Parlec ER32 Collet]], [[My Projects/Mixer Chuck/Mixer Chuck\|Mixer Chuck]]
+> **See also:** [[My Projects/Mixer Chuck/Mixer Chuck Parts/Parlec ER32 Collet\|Parlec ER32 Collet]], [[My Projects/Mixer Chuck/Mixer Chuck\|Mixer Chuck]], [[Definitions/Materials/316L Stainless Steel\|316L Stainless Steel]], [[Definitions/Materials/Delrin\|Delrin]]

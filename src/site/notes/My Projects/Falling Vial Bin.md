@@ -1,15 +1,12 @@
 ---
-{"dg-publish":true,"permalink":"/my-projects/falling-vial-bin/","tags":["My-Projects"],"dg-note-properties":{"tags":["My-Projects"],"last_updated":"2026-04-03"}}
+{"dg-publish":true,"permalink":"/my-projects/falling-vial-bin/","tags":["My-Projects"],"dg-note-properties":{"tags":["My-Projects"],"source":"personal_notes","last_updated":"2026-06-15"}}
 ---
 
 #My-Projects
 
-⚠️ HIGH PRIORITY — flagged in 1:1 with [[People/Ali Heinemann\|Ali]] on 2026-04-03. Get this off the list.
-
 ## Status
-- Waiting for Paul to update me on testing results from 03/02/26. 
-- Can make sheet metal ramp or other modifications if necessary.
-- Once confirmed, I will do parts process
+
+Complete. No parts process needed. Parts were fabricated and installed; Paul confirmed the fix worked.
 
 ## Background
 

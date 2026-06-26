@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/buildings/btc/","tags":["Buildings"],"dg-note-properties":{"aliases":["BioPharmaceutical Technology Center"],"tags":["Buildings"],"source":"personal_notes","last_updated":"2025-03-13"}}
+{"dg-publish":true,"permalink":"/buildings/btc/","tags":["Buildings"],"dg-note-properties":{"aliases":["BioPharmaceutical Technology Center"],"tags":["Buildings"],"source":"personal_notes","last_updated":"2026-06-15"}}
 ---
 
 
@@ -11,4 +11,4 @@ BTC stands for BioPharmaceutical Technology Center. It houses at least two [[Def
 >
 > **Unknowns:** Role and department of scientists in BTC not yet confirmed. Relationship to other science-focused buildings like Kornberg unclear.
 >
-> **See also:** [[Definitions/Lyophilizer\|Lyophilizer]], [[Buildings/Kornberg\|Kornberg]]
+> **See also:** [[Definitions/Lyophilizer\|Lyophilizer]], [[Buildings/Kornberg\|Kornberg]], [[Definitions/Equipment/Lightnin Mixer\|Lightnin Mixer]], [[Definitions/In Vitro Dispensing\|In Vitro Dispensing]], [[People/Zack Wermeling\|Zack Wermeling]]

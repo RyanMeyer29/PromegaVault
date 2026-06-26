@@ -1,10 +1,12 @@
 ---
-{"dg-publish":true,"permalink":"/software/solid-works/solid-works-templates/","tags":["Software","My-Projects"],"dg-note-properties":{"tags":["Software","My-Projects"],"aliases":["SW Templates"],"source":"personal_notes","last_updated":"2026-05-07"}}
+{"dg-publish":true,"permalink":"/software/solid-works/solid-works-templates/","tags":["Software","My-Projects"],"dg-note-properties":{"tags":["Software","My-Projects"],"aliases":["SW Templates"],"source":"personal_notes","last_updated":"2026-05-15"}}
 ---
 
 #Software #My-Projects
 
 SolidWorks template files used at Promega for part, assembly, and drawing creation. Templates are stored in the SolidWorks template directory and load automatically on new file creation. The goal of this project is to make sure all templates are properly configured so new files don't require manual cleanup each time.
+
+There are 6 template files to keep in sync: Part.PRTDOT, Part_Inch.PRTDOT, Part_Metric.PRTDOT, Assembly.ASMDOT, Assembly_Inch.ASMDOT, and Assembly_Metric.ASMDOT. Stored locally in the SolidWorks Templates OneDrive folder.
 
 ## Status
 
@@ -13,7 +15,7 @@ In progress -- see task items below.
 ## To Do
 
 - [ ] 3D part template: confirm custom properties are present (SAP#, Equipment#, Description, Material, Finish, DesignedBy, etc.)
-- [ ] 3D part template: set lighting to a normal/standard configuration
+- [x] 3D part template: set lighting to a normal/standard configuration -- handled by [[Software/SolidWorks/SolidWorks Macros/Default Lighting Setter\|Default Lighting Setter]] macro, run once per template
 - [ ] 3D part template: hide all reference planes on new file creation
 - [ ] Drawing template: add a general note at the top for breaking sharp edges (e.g. "DEBURR AND BREAK ALL SHARP EDGES")
 - [ ] Drawing template: link the Drawing Number field in the title block to the SAP# custom property so they stay in sync automatically
@@ -35,4 +37,4 @@ Used for sheet metal parts. May need flat pattern view pre-configured. Same titl
 >
 > **Unknowns:** Template file locations on the network not yet confirmed -- need to find where Promega stores the master templates
 >
-> **See also:** [[Software/SolidWorks/Solidworks\|Solidworks]], [[Software/SolidWorks/Solidworks Sheet Metal\|Solidworks Sheet Metal]], [[Software/EPDM\|EPDM]]
+> **See also:** [[Software/SolidWorks/Solidworks\|Solidworks]], [[Software/SolidWorks/Solidworks Sheet Metal\|Solidworks Sheet Metal]], [[Software/EPDM\|EPDM]], [[Software/SolidWorks/SolidWorks Macros/Default Lighting Setter\|Default Lighting Setter]]

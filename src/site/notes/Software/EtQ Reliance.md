@@ -11,4 +11,4 @@ EtQ Reliance is Promega's electronic Quality Management System (eQMS). It is one
 >
 > **Unknowns:** Specific modules used and how engineers interact with EtQ day-to-day not yet documented.
 >
-> **See also:** [[Software/SAP\|SAP]], [[Software/EPDM\|EPDM]], [[Definitions/QA and Regulatory Affairs\|QA and Regulatory Affairs]]
+> **See also:** [[Software/SAP\|SAP]], [[Software/EPDM\|EPDM]], [[Definitions/QA and Regulatory Affairs\|QA and Regulatory Affairs]], [[Definitions/Quality/Change Control\|Change Control]]

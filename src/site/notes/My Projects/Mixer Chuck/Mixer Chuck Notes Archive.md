@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/my-projects/mixer-chuck/mixer-chuck-notes-archive/","tags":["My-Projects"],"dg-note-properties":{"aliases":["Mixer Chuck Archive"],"tags":["My-Projects"],"source":"personal_notes","last_updated":"2026-04-29"}}
+{"dg-publish":true,"permalink":"/my-projects/mixer-chuck/mixer-chuck-notes-archive/","tags":["My-Projects"],"dg-note-properties":{"aliases":["Mixer Chuck Archive"],"tags":["My-Projects"],"source":"personal_notes","last_updated":"2026-06-09"}}
 ---
 
 #My-Projects
@@ -120,6 +120,26 @@ Travis confirmed he was given dimensions by someone else when he built the model
 
 Background on how this session happened: Jake had a car accident on Friday 2026-04-18 and was out Monday/Tuesday. He recommended reaching out to [[People/Nikki Masterson\|Nikki]] and [[People/Alex Rabbach\|Alex]]. Alex helped with the IVD session; Sean Doering directed access to the BTC units (split across G153, G152, G151B — all available, height not set to anything specific).
 
+---
+
+## Meeting Notes (2026-05-18)
+
+Lamarr office hours meeting with [[People/Kent Toepfer\|Kent]], [[People/Travis Beyer\|Travis]], and [[People/Amanda Maly\|Amanda]] to clarify the shop request submitted 2026-05-11. The large quantity of parts prompted a sit-down to walk through ordering responsibility and finalize a few open items.
+
+Ordering split: the shop will order most parts. [[People/Amanda Maly\|Amanda]] will order the [[Maxx Tooling Collet Cap\|Maxx Tooling Collet Cap]] and [[My Projects/Mixer Chuck/Mixer Chuck Parts/Parlec ER32 Collet\|Parlec ER32 Collet]] directly from their vendors since they are specialty stock items, 18 of each. Stock screws (stop screws and handle set screws) will be sourced by the shop from in-house stock or McMaster if needed.
+
+Chuck tool handle: diameter is changing from 1.5" to 1.0" on SAP 1016459. [[People/Ted Lenoch\|Ted]] and the IVD team had previously raised the concern to [[People/Travis Beyer\|Travis]] that the handle felt too large, and the new 1.0" diameter was agreed upon after follow-up.
+
+Prototype hardware modifications: [[People/Travis Beyer\|Travis]] will modify the existing prototypes currently held from [[People/Jacob Holze\|Jake]] rather than remake them from scratch. The Style C chuck needs the chuck tool hole drilled, and the prototype collet cap is missing its second slot which Travis will cut. The current drawings already reflect both features; the prototypes were simply made before those features were finalized.
+
+Style A chamfer: SAP 1016437 (Style A) has a chamfer difference between the prototype and the modeled version. The shoulder is cosmetic and the difference is non-critical. Ryan will seek a deviation and manufacture as drawn with the square form.
+
+Part number etching: etch the part number on the lower face of the part so it remains visible when the cap is removed. May need a small flat pocket on the round surface to accommodate.
+
+[[People/Diego Lamela\|Diego]] (BTC, Production Scientist 2 under [[People/Sean Doering\|Sean]]) has emailed asking for the installation timeline. He will be updated once [[People/Travis Beyer\|Travis]] enters the runtime estimate and a due-by date in Smartsheet — the system will auto-generate a notification.
+
 > [!info]- Details & Notes
 >
-> **See also:** [[My Projects/Mixer Chuck/Mixer Chuck\|Mixer Chuck]], [[People/Travis Beyer\|Travis Beyer]], [[People/Jacob Holze\|Jacob Holze]], [[People/Alex Rabbach\|Alex Rabbach]], [[People/Brian Osterbrink\|Brian Osterbrink]]
+> **Associated files:** [[MIXER CHUCK ORDER COUNT.txt]], [[MIXER CHUCK SHOP REQUEST ADDITIONAL INFO.txt]]
+>
+> **See also:** [[My Projects/Mixer Chuck/Mixer Chuck\|Mixer Chuck]], [[People/Travis Beyer\|Travis Beyer]], [[People/Jacob Holze\|Jacob Holze]], [[People/Alex Rabbach\|Alex Rabbach]], [[People/Brian Osterbrink\|Brian Osterbrink]], [[People/Kent Toepfer\|Kent Toepfer]], [[People/Amanda Maly\|Amanda Maly]], [[People/Diego Lamela\|Diego Lamela]]

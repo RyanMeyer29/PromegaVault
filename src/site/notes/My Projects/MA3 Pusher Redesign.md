@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/my-projects/ma-3-pusher-redesign/","tags":["My-Projects","active"],"dg-note-properties":{"aliases":["New pusher design","MA3 Push"],"tags":["My-Projects","active"]}}
+{"dg-publish":true,"permalink":"/my-projects/ma-3-pusher-redesign/","tags":["My-Projects","active"],"dg-note-properties":{"aliases":["New pusher design","MA3 Push"],"tags":["My-Projects","active"],"source":"personal_notes","last_updated":"2026-06-15"}}
 ---
 
 
@@ -8,7 +8,7 @@
 #My-Projects
 
 ## Action Items
-- [ ] Check with [[People/Matt Wahl\|Matt]] about what improvements he has in mind for the pusher (flagged in 1:1, 2026-04-10)
+- [ ] Check with [[People/Matt Swanson\|Matt]] about what improvements he has in mind for the pusher (flagged in 1:1, 2026-04-10)
 - [ ] Verify whether the slots on the front plate are still needed (flagged in 1:1, 2026-04-10)
 - [ ] Investigate fine adjustment mechanism for pusher plate position
 - [x] Shift front plate left by ~1-2 mm in model to correct alignment offset
@@ -57,6 +57,7 @@ Note: some or all of the dimensional errors below may be attributable to polymer
 ## Long-Term Plan
 
 - Evaluate model options, including 3D printed versions
+- Conduct [[Definitions/Design Review\|Design Review]] before finalizing design
 - Conduct [[Definitions/Quality/Engineering Study\|Engineering Study]] (Ryan leads) — a structured internal process with informal steps **(active as of 2026-03-20)**
 - Narrow down design options
 - Machine final part

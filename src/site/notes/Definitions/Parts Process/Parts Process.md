@@ -7,7 +7,7 @@
 
 An Internally Produced Production Part (IPPP) is any component produced or manufactured internally by the Operations Engineering or Packaging Engineering departments with the intention of being permanently used in a Promega production environment. Prototype parts are explicitly out of scope. The full process for creating and deploying an IPPP is governed by SOP22698 #unsure-or-needs-to-be-finished (SOP number may also be SOP226898 — verify against the document control system).
 
-The parts process touches [[Software/SAP\|SAP]], [[Software/EPDM\|EPDM]], and the [[Definitions/Quality/CoC\|Certificate of Compliance]] form at different stages. Getting a part number from the [[SAP Analyst\|SAP Analyst]] is the first step before anything else happens. As of early 2026, that contact is [[People/Gary McCauley\|Gary McCauley]].
+The parts process touches [[Software/SAP\|SAP]], [[Software/EPDM\|EPDM]], and the [[Definitions/Quality/CoC\|Certificate of Compliance]] form at different stages. Getting a part number from the SAP Analyst is the first step before anything else happens. As of early 2026, that contact is [[People/Gary McCauley\|Gary McCauley]].
 
 ---
 
@@ -80,4 +80,4 @@ Once the [[Definitions/Quality/CoC\|CoC]] is uploaded to [[Software/EPDM\|EPDM]]
 >
 > **Encountered in:** [[My Projects/Mixer Chuck/Mixer Chuck\|Mixer Chuck]] (parts process is a key deliverable for this project)
 >
-> **See also:** [[Software/SAP\|SAP]], [[Software/EPDM\|EPDM]], [[Definitions/Quality/CoC\|CoC]], [[Buildings/Lamarr\|Lamarr]], [[People/Gary McCauley\|Gary McCauley]], [[Definitions/Quality/Change Control\|Change Control]], [[Definitions/Parts Process/Parts Order Form\|Parts Order Form]], [[Definitions/Parts Process/Multiple Materials Request Spreadsheet\|Multiple Materials Request Spreadsheet]], [[People/Nikki Masterson\|Nikki]]
+> **See also:** [[Software/SAP\|SAP]], [[Software/EPDM\|EPDM]], [[Definitions/Quality/CoC\|CoC]], [[Buildings/Lamarr\|Lamarr]], [[People/Gary McCauley\|Gary McCauley]], [[Definitions/Quality/Change Control\|Change Control]], [[Definitions/Parts Process/Parts Order Form\|Parts Order Form]], [[Definitions/Parts Process/Multiple Materials Request Spreadsheet\|Multiple Materials Request Spreadsheet]], [[People/Nikki Masterson\|Nikki]], [[Definitions/Shop Request\|Shop Request]]

@@ -11,6 +11,6 @@ Validation is the formal process of confirming that a piece of equipment or a pr
 >
 > **Unknowns:** Specific validation processes and requirements at Promega not yet documented.
 >
-> **See also:** [[Definitions/Quality/Change Control\|Change Control]], [[Definitions/Quality/Engineering Study\|Engineering Study]]
+> **See also:** [[Definitions/Quality/Change Control\|Change Control]], [[Definitions/Quality/Engineering Study\|Engineering Study]], [[Definitions/Parts Process/Parts Process\|Parts Process]]
 >
 > **Status:** This entry needs verification.

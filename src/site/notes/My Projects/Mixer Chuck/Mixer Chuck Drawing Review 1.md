@@ -104,7 +104,7 @@ Travis's answers to open questions are resolved below and reflected in each sect
 
 ## Collet, Mixer Chuck (SAP 1016456)
 
-No drawing required. This is an unmodified stock part. See [[Definitions/Parlec ER32 Collet\|Parlec ER32 Collet]] for part info, MSC sourcing, and specs.
+No drawing required. This is an unmodified stock part. See [[My Projects/Mixer Chuck/Mixer Chuck Parts/Parlec ER32 Collet\|Parlec ER32 Collet]] for part info, MSC sourcing, and specs.
 
 ---
 
@@ -175,7 +175,7 @@ No drawing required. This is an unmodified stock part. See [[Definitions/Parlec 
 ## Questions for Travis (resolved 2026-05-04)
 
 - [x] Chuck shaft diameter: 1.374 vs 1.376 — intentional. Section 1 is 1.376 (larger by design). Sections 2 and 4 are bearing surfaces at 1.374. Section 3 is a separate smaller step. All four must be dimensioned independently.
-- [x] Stainless steel grade — 316L SS for all machined parts (chuck bodies, stop, spanner tool stainless components, chuck tool stainless components). Collet cap is manufacturer spec 440C. Collet is stock (see [[Definitions/Parlec ER32 Collet\|Parlec ER32 Collet]]).
+- [x] Stainless steel grade — 316L SS for all machined parts (chuck bodies, stop, spanner tool stainless components, chuck tool stainless components). Collet cap is manufacturer spec 440C. Collet is stock (see [[My Projects/Mixer Chuck/Mixer Chuck Parts/Parlec ER32 Collet\|Parlec ER32 Collet]]).
 - [x] Spanner tool handle — handle follows dimensions of existing plastic handle on hand. Handle is welded in place. Drawing needs full rework as multi-sheet.
 - [x] Stop set screw — stop is not tapped. Collet cap is tapped M4 x 0.7. M4 x 0.7 screw threads into cap and clamps stop against it. Stop needs a clearance hole only.
 - [x] Snap ring groove — detail view still required. Pull dims from data sheet. Do not assume shaft diameters match — all must be explicitly dimensioned.

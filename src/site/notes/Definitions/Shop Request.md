@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/definitions/shop-request/","tags":["Definitions"],"dg-note-properties":{"tags":["Definitions"],"source":"personal_notes","last_updated":"2026-05-11"}}
+{"dg-publish":true,"permalink":"/definitions/shop-request/","tags":["Definitions"],"dg-note-properties":{"tags":["Definitions"],"source":"personal_notes","last_updated":"2026-05-18"}}
 ---
 
 
@@ -99,10 +99,21 @@ This is the default for most Operations Engineering project work.
 The shop holds office hours **every Monday from 10am - 11am at Lamarr**. Recommended after submitting a request to discuss the project and ensure alignment. Contact one of the following to be added to the invite:
 
 - [[People/Travis Beyer\|Travis Beyer]]
-- Chris Rusthoven
+- [[People/Chris Rusthoven\|Chris Rusthoven]]
 - [[People/Kent Toepfer\|Kent Toepfer]]
 
 In-person or virtual attendance is fine — let them know which you prefer.
+
+---
+
+## Shop Workflow Conventions
+
+A few process conventions worth knowing when working with the [[Buildings/Lamarr\|Lamarr Shop]]:
+
+- The shop counts assemblies, not individual sub-components, when scheduling and tracking work. A request with 5 parts per assembly across 18 assemblies is treated as 18 units of work, not 90, for scheduling purposes.
+- When the shop enters runtime estimates and due-by dates into Smartsheet, the system auto-generates a completion-date email to the requestor. You do not need to ask separately for an ETA after submission.
+- The weekly schedule review at office hours covers items completed last week, items in progress this week, and items being held because information is missing. If your request is in the missing-info bucket, that is where it will surface.
+- The vault location for the model is sufficient in the request form. There is no need to extend or attach drawings into Smartsheet beyond what is already in [[Software/EPDM\|EPDM]] — the shop pulls from the vault directly.
 
 ---
 

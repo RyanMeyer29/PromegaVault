@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/definitions/solid-works-drawings/asme-y14-5-2018/parsed/index-asme-y14-5-2018/","tags":["Definitions","reference-document"],"dg-note-properties":{"tags":["Definitions","reference-document"],"source":"ASME Y14.5-2018","last_updated":"2026-04-30"}}
+{"dg-publish":true,"permalink":"/definitions/solid-works-drawings/asme-y14-5-2018/parsed/index-asme-y14-5-2018/","tags":["Definitions","reference-document"],"dg-note-properties":{"tags":["Definitions","reference-document"],"source":"ASME Y14.5-2018","last_updated":"2026-06-09"}}
 ---
 
 
@@ -7,7 +7,7 @@
 
 ASME Y14.5-2018 Dimensioning and Tolerancing — Engineering Product Definition and Related Documentation Practices. Revision of ASME Y14.5-2009.
 
-PDF location: `Definitions/SolidWorks Drawings/ASME Y14.5-2018/ASME-Y14.5-2018-R2024-Dimensioning-and-Tolerancing.pdf`
+PDF: [ASME-Y14.5-2018-R2024-Dimensioning-and-Tolerancing.pdf](/img/user/Definitions/SolidWorks%20Drawings/ASME%20Y14.5-2018/ASME-Y14.5-2018-R2024-Dimensioning-and-Tolerancing.pdf)
 
 > All page numbers below are PDF page numbers (file position, not printed page number).
 

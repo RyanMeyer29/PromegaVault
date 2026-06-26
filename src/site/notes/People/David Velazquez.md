@@ -5,7 +5,7 @@
 
 #People
 
-David Velazquez is a QA Specialist in the Metrology department at Promega. He reports to [[People/Mike Moothart\|Mike]] (Manager, Quality Assurance - Validation). I encountered him through the [[My Projects/Calibration Probe Fixture\|Calibration Probe Fixture]] project.
+David Velazquez is a QA Specialist in the Metrology department at Promega. He reports to [[People/Mike Moothart\|Mike]] (Manager, Quality Assurance - Validation). I encountered him through the [[My Projects/Calibration Probe Fixture/Calibration Probe Fixture\|Calibration Probe Fixture]] project.
 
 > [!info]- Details & Notes
 >
@@ -13,6 +13,6 @@ David Velazquez is a QA Specialist in the Metrology department at Promega. He re
 >
 > **Reports to:** [[People/Mike Moothart\|Mike Moothart]]
 >
-> **Encountered in:** [[My Projects/Calibration Probe Fixture\|Calibration Probe Fixture]]
+> **Encountered in:** [[My Projects/Calibration Probe Fixture/Calibration Probe Fixture\|Calibration Probe Fixture]]
 >
 > **See also:** [[People/Kimberly Steinhauer\|Kimberly Steinhauer]], [[People/Matt Wahl\|Matt Wahl]], [[Definitions/Metrology\|Metrology]]

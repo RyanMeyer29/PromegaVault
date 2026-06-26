@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/buildings/feynman/","tags":["Buildings"],"dg-note-properties":{"tags":["Buildings"],"source":"personal_notes","last_updated":"2025-03-13"}}
+{"dg-publish":true,"permalink":"/buildings/feynman/","tags":["Buildings"],"dg-note-properties":{"tags":["Buildings"],"source":"personal_notes","last_updated":"2026-06-15"}}
 ---
 
 
@@ -11,4 +11,4 @@ Feynman is the building where the fill/finish team is based, including the Opera
 >
 > **Unknowns:** Full list of ECRs and which lines are in each room not yet documented.
 >
-> **See also:** [[Lines/MA1\|MA1]], [[Lines/MA2\|MA2]], [[Lines/MA3/MA3\|MA3]], [[Lines/FAB\|FAB]], [[Lines/KPA\|KPA]], [[Definitions/Operations\|Operations]]
+> **See also:** [[Lines/MA1\|MA1]], [[Lines/MA2\|MA2]], [[Lines/MA3/MA3\|MA3]], [[Lines/FAB\|FAB]], [[Lines/KPA\|KPA]], [[Definitions/Operations\|Operations]], [[Definitions/Equipment/Lightnin Mixer\|Lightnin Mixer]], [[Definitions/Fill Lyophilize Finish\|Fill Lyophilize Finish]], [[Definitions/Metrology\|Metrology]]

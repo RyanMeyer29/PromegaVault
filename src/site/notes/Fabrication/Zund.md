@@ -1,10 +1,10 @@
 ---
-{"dg-publish":true,"permalink":"/fabrication/zund/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/fabrication/zund/","tags":["Fabrication"],"dg-note-properties":{"tags":["Fabrication"],"source":"personal_notes","last_updated":"2026-06-15"}}
 ---
 
 #Fabrication
 
-Cuts stuff CNC style
+The Zund is a CNC cutting table located at [[Buildings/Lamarr\|Lamarr]]. It cuts flat sheet material using a routing bit and is used for fabricating parts from [[Definitions/HDPE\|HDPE]], [[Definitions/Materials/Polycarbonate\|Polycarbonate]], and similar sheet stock. Files are uploaded via Google Drive and dragged to a hotfolder queue before cutting. Metric files go to HOTFOLDER; imperial files go to DXF HOTFOLDER.
 
 ## Uploading Files
 #### Google Drive login:
@@ -17,8 +17,6 @@ Cuts stuff CNC style
 	If Metric: Drag to "HOTFOLDER" ?
 	If Imperial: Drag to "DXF HOTFOLDER"?
 4. Open file from queue
-
-
 
 ## Changing a routing bit
 From Main menu:
@@ -36,8 +34,15 @@ From Main menu:
 12. Place assembly back on to the arm, and make sure it is rotated to slot into position
 13. Tighten the knob
 14. Click OK
-15. Auto Initialize from Module 3 menu 
+15. Auto Initialize from Module 3 menu
 	1. Click Initialization (2)
 	2. Auto-init (2)
 	3. Click Start
 
+> [!info]- Details & Notes
+>
+> **Location:** [[Buildings/Lamarr\|Lamarr]]
+>
+> **Encountered in:** [[My Projects/Flipper Tray Blocker\|Flipper Tray Blocker]], [[My Projects/96 Well Bracket\|96 Well Bracket]], [[My Projects/Gel Electrophoresis Tray\|Gel Electrophoresis Tray]], [[My Projects/KPA Cutting Boards\|KPA Cutting Boards]]
+>
+> **See also:** [[Buildings/Lamarr\|Lamarr]], [[Fabrication/Water Jet\|Water Jet]], [[Definitions/HDPE\|HDPE]], [[Definitions/Materials/Polycarbonate\|Polycarbonate]]

@@ -17,4 +17,4 @@ MA1 (MaxAuto1) is one of the MaxAuto fill/finish lines in the Feynman building. 
 
 > [!info]- Details & Notes
 >
-> **See also:** [[Lines/MaxAuto\|MaxAuto]], [[Lines/MA2\|MA2]], [[Lines/MA3/MA3\|MA3]], [[Definitions/Equipment/Maxwell RSC\|Maxwell RSC]]
+> **See also:** [[Lines/MaxAuto\|MaxAuto]], [[Lines/MA2\|MA2]], [[Lines/MA3/MA3\|MA3]], [[Definitions/Equipment/Maxwell RSC\|Maxwell RSC]], [[People/Madeline Henneman\|Madeline Henneman]]

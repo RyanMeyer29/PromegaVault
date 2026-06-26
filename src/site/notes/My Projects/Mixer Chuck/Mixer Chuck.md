@@ -1,12 +1,13 @@
 ---
-{"dg-publish":true,"permalink":"/my-projects/mixer-chuck/mixer-chuck/","tags":["My-Projects","active"],"dg-note-properties":{"aliases":["Mixer Chuck","Mixer Chukc"],"tags":["My-Projects","active"],"source":"personal_notes","last_updated":"2026-05-06"}}
+{"dg-publish":true,"permalink":"/my-projects/mixer-chuck/mixer-chuck/","tags":["My-Projects","active"],"dg-note-properties":{"aliases":["Mixer Chuck","Mixer Chukc"],"tags":["My-Projects","active"],"source":"personal_notes","last_updated":"2026-06-25"}}
 ---
 
 #My-Projects
 
-**Related Areas:** [[Lines/MA2\|MA2]], [[Buildings/Lamarr\|Lamarr]]
+**Related Areas:** [[Lines/MA2\|MA2]], [[Buildings/Lamarr\|Lamarr]], [[Definitions/Equipment/Lightnin Mixer\|Lightnin Mixer]]
 **Drawing review notes:** [[My Projects/Mixer Chuck/Mixer Chuck Drawing Review 1\|Mixer Chuck Drawing Review 1]]
 **Historical notes:** [[My Projects/Mixer Chuck/Mixer Chuck Notes Archive\|Mixer Chuck Notes Archive]]
+**CC notes:** [[My Projects/Mixer Chuck/Mixer Chuck CC Meeting 2026-06-09\|Mixer Chuck CC Meeting 2026-06-09]]
 **Part notes:** [[My Projects/Mixer Chuck/Mixer Chuck Parts/Chuck, Mixer, Style A\|Chuck, Mixer, Style A]] — [[My Projects/Mixer Chuck/Mixer Chuck Parts/Chuck, Mixer, Style B\|Chuck, Mixer, Style B]] — [[My Projects/Mixer Chuck/Mixer Chuck Parts/Chuck, Mixer, Style C\|Chuck, Mixer, Style C]] — [[My Projects/Mixer Chuck/Mixer Chuck Parts/Stop, Mixer Chuck\|Stop, Mixer Chuck]] — [[My Projects/Mixer Chuck/Mixer Chuck Parts/Collet Cap, Mixer Chuck\|Collet Cap, Mixer Chuck]] — [[My Projects/Mixer Chuck/Mixer Chuck Parts/Tool, Spanner, Mixer Chuck\|Tool, Spanner, Mixer Chuck]] — [[My Projects/Mixer Chuck/Mixer Chuck Parts/Chuck Tool, Mixer\|Chuck Tool, Mixer]]
 
 ---
@@ -21,9 +22,9 @@ Chuck styles are now confirmed for all in-scope models. X5P33 (all BTC units) = 
 
 There are no in-service mixers using Style A. [[People/Jacob Holze\|Jake]] has requested one Style A chuck be ordered anyway as a standby, in case units in storage require it.
 
-[[Definitions/Quality/Change Control\|CCs]] are confirmed as required for the IVD mixers. [[People/Ted Lenoch\|Ted Lenoch]] and [[People/Garrett Tschanz\|Garrett]] are the main contacts for organizing CCs and associated downtime. Reach out to them early before installation begins.
+[[Definitions/Quality/Change Control\|CCs]] are confirmed as required for the IVD mixers. [[People/Ted Lenoch\|Ted Lenoch]] and [[People/Garrett Tschanz\|Garrett]] are the main contacts for organizing CCs and associated downtime. Reach out to them early before installation begins. BTC mixers do not require a CC — confirmed by [[People/Diego Lamela\|Diego]] on 2026-05-28, as they are not part of a GMP-regulated process.
 
-**Timeline:** Last drawing is being finalized — one part remodeled based on new info from [[People/Travis Beyer\|Travis]] (as of 2026-05-06). [[People/Brian Osterbrink\|Brian]] approval to be requested at morning coffee 2026-05-07. Once approved, submit shop request to [[People/Travis Beyer\|Travis]]. Spares quantity confirmed (1 per style, 3 extra assemblies total, confirmed 2026-05-05).
+**Timeline:** All drawings are approved by [[People/Brian Osterbrink\|Brian]]. Shop request was submitted 2026-05-11 and was clarified with [[People/Kent Toepfer\|Kent]], [[People/Travis Beyer\|Travis]], and [[People/Amanda Maly\|Amanda]] at the 2026-05-18 office hours meeting (see [[My Projects/Mixer Chuck/Mixer Chuck Notes Archive\|Mixer Chuck Notes Archive]]). Spares quantity confirmed (1 per style, 3 extra assemblies total, confirmed 2026-05-05). Machine shop request #1903 was scheduled 2026-05-28 with target completion 07/29/26.
 
 ---
 
@@ -32,7 +33,9 @@ There are no in-service mixers using Style A. [[People/Jacob Holze\|Jake]] has r
 ### Phase 1 — Drawings (in progress)
 
 - [x] Fix all drawing files to move equipment numbers into the Notes section of the title block
-- [ ] Get drawings approved by [[People/Brian Osterbrink\|Brian]] (review done, edits in progress)
+- [x] Get drawings approved by [[People/Brian Osterbrink\|Brian]]
+- [ ] Add inspection dimensions (circle/oval markers) to all critical dimensions across all 8 drawings — bearing surfaces, lengths, depths of different diameters, and groove dimensions
+- [x] Change chuck tool handle diameter from 1.5" to 1.0" on SAP 1016459 per [[People/Ted Lenoch\|Ted]] / IVD feedback
 - [ ] Once approved, submit for [[Software/EPDM\|ePDM]] rename/move (Phase 2)
 
 #### Drawing Notes Section Checklist
@@ -49,7 +52,7 @@ There are no in-service mixers using Style A. [[People/Jacob Holze\|Jake]] has r
 ### Phase 2 — ePDM (after approval)
 
 - [x] Rename each file to its SAP part number
-- [ ] Move each file to the correct [[Software/EPDM\|ePDM]] folder (keep [[Software/SolidWorks/Solidworks\|Solidworks]] references intact)
+- [x] Move each file to the correct [[Software/EPDM\|ePDM]] folder (keep [[Software/SolidWorks/Solidworks\|Solidworks]] references intact)
 
 #### ePDM Rename and Move Process
 
@@ -66,7 +69,9 @@ Process files in this order: parts first, then assemblies, then drawings. This f
 ### Phase 3 — Shop Request
 
 - [x] Confirm spares quantity — 1 spare per style, 3 extra assemblies total (confirmed 2026-05-05)
-- [ ] Submit shop request to [[People/Travis Beyer\|Travis]] once drawings are approved
+- [x] Submit shop request to [[People/Travis Beyer\|Travis]] (submitted 2026-05-11)
+- [x] Send [[People/Amanda Maly\|Amanda]] the vendor links for the [[Maxx Tooling Collet Cap\|Maxx Tooling Collet Cap]] and [[My Projects/Mixer Chuck/Mixer Chuck Parts/Parlec ER32 Collet\|Parlec ER32 Collet]] (18 of each)
+- [x] Update [[People/Diego Lamela\|Diego]] when [[People/Travis Beyer\|Travis]] enters the timeline — shop scheduled 2026-05-28, Diego notified
 
 Style A: order at least 1 as standby per [[People/Jacob Holze\|Jake]] — no in-service units currently use it but there may be units in storage.
 Style B: all 5 BTC X5P33 units.
@@ -112,7 +117,7 @@ Advantages: holds multiple shaft sizes, easy to source replacement parts from [[
 
 [[People/Aaron Vergiels\|Aaron Vergiels]] originally obtained the list of mixer equipment. [[People/Travis Beyer\|Travis Beyer]] designed the 3 chuck styles and built the SolidWorks models. SAP part numbers 1016437–1016439 and 1016455–1016459 are assigned. See drawing review note for correction checklist: [[My Projects/Mixer Chuck/Mixer Chuck Drawing Review 1\|Mixer Chuck Drawing Review 1]].
 
-The collet (SAP 1016456) is an unmodified stock part — no drawing is required. See [[Definitions/Parlec ER32 Collet\|Parlec ER32 Collet]] for part info and sourcing.
+The collet (SAP 1016456) is an unmodified stock part — no drawing is required. See [[My Projects/Mixer Chuck/Mixer Chuck Parts/Parlec ER32 Collet\|Parlec ER32 Collet]] for part info and sourcing.
 
 ---
 
@@ -174,8 +179,8 @@ The collet (SAP 1016456) is an unmodified stock part — no drawing is required.
 | 1016438        | Chuck, Mixer, Style B                       | TBD                               | 5x BTC X5P33 units                                                                                                         |
 | 1016439        | Chuck, Mixer, Style C                       | TBD                               | 6x IVD + 1x RDC; XSS5P33 assumed                                                                                           |
 | 1016455        | Stop, Mixer Chuck, Stainless Steel          | TBD                               | 2 per chuck ordered (across all styles)                                                                                    |
-| 1016456        | Collet, Mixer Chuck, Stainless Steel        | TBD                               | 1 per chuck ordered (across all styles); plus TBD extras for Jake's partial assemblies (chuck bodies only, no accessories) |
-| 1016457        | Collet Cap, Mixer Chuck, Stainless Steel    | TBD                               | 1 per chuck ordered (across all styles); plus TBD extras for Jake's partial assemblies                                     |
+| 1016456        | Collet, Mixer Chuck, Stainless Steel        | 18                                | Ordered by [[People/Amanda Maly\|Amanda]] directly from vendor                                                                     |
+| 1016457        | Collet Cap, Mixer Chuck, Stainless Steel    | 18                                | Ordered by [[People/Amanda Maly\|Amanda]] directly from vendor                                                                     |
 | 1016458        | Tool, Spanner, Mixer Chuck, Stainless Steel | TBD                               | 1 per chuck ordered (across all styles); plus TBD extras for Jake's partial assemblies                                     |
 | 1016459        | Chuck Tool, Mixer, Stainless/Delrin         | TBD                               | 1 per chuck ordered (across all styles); plus TBD extras for Jake's partial assemblies                                     |
 
@@ -190,3 +195,41 @@ The EV5L25M (102978) has been removed from scope. It was on the list due to misi
 No in-service mixers use Style A. Jake wants one ordered as a standby in case units in storage require it.
 
 Drawings are currently being edited per Brian's review notes. Once Brian approves, the shop request will be submitted. Spares quantity has not been confirmed with [[People/Claire Moll\|Claire]] — needs follow-up.
+
+## 📝 Updates (2026-06-25)
+
+CC document review meeting scheduled today with [[People/Claire Moll\|Claire]] and [[People/Ali Heinemann\|Ali]] (Feynman-2450, 2:00–2:30 PM). Implementation Actions and Testing Actions drafts are prepared and ready to review. Evaluations section in ETQ still to be decided — bringing the following open questions into the meeting:
+
+- Which evaluations to check: Contamination Controls and Material/Equipment Safety are likely yes; Validation, Design Records, and Purchasing need Claire's input
+- Evaluator and approver names (Claire is helping identify)
+- CC due date (parts not available until 07/29/26; target something in September/October per Ali's guidance)
+
+## 📝 Updates (2026-06-17)
+
+CC11570 initialized in ETQ on 2026-06-17. Claire asked via Teams to have the three draft attachments ready before a meeting end of next week. Metrology confirmed no action needed (calibration sensors will not be disturbed during installation). ETQ initialization fields used:
+
+Brief Description: Replace mixer chuck assemblies on 5 IVD Lightnin mixers in Feynman with collet-style chuck system.
+
+Reason for Change: This change is necessary because the existing mixer chuck design uses a set screw that has loosened during mixing operations, introducing metal shavings into the product and creating a safety hazard as impellers can drop out of the mixer while spinning.
+
+Additional Description filed in ETQ covering all 5 unit equipment numbers, functional locations, and new part SAP numbers (1016439, 1016455–1016459). Change type: Hardware Modification. Building: Feynman Center.
+
+## 📝 Updates (2026-06-15)
+
+IVD CC kickoff meeting sent 2026-06-04 to [[People/Claire Moll\|Claire Moll]], [[People/Ted Lenoch\|Ted Lenoch]], and [[People/Jacob Holze\|Jake]] (cc: [[People/Ali Heinemann\|Ali Heinemann]], [[People/Garrett Tschanz\|Garrett]]; bcc: Feynman-2450). Scope: 5 IVD mixers. Topics: number of CCs required, mixer downtime coordination, SOP updates, and new training.
+
+CC kickoff meeting held 2026-06-09 with [[People/Ted Lenoch\|Ted Lenoch]] and [[People/Garrett Tschanz\|Garrett]]. Key decisions and answers from that meeting (full notes: [[My Projects/Mixer Chuck/Mixer Chuck CC Meeting 2026-06-09\|Mixer Chuck CC Meeting 2026-06-09]]):
+
+All 5 IVD units can go on one CC with separate details per unit. No Metrology action is needed as long as the calibration sensors are not disturbed — confirm with Metrology before installation. [[People/Claire Moll\|Claire]] will help with evaluators and approvers. Plan is to swap one unit at a time (may change). Testing approach: confirm the chuck is not slipping, test the tools, check that the chuck is properly guarded (may loop in [[Definitions/EHS\|EHS]]); Ryan does the initial testing, then a scientist assists for the more official testing pass. SOP21008 section 2 needs to be updated to reflect the new chucks; TRN0324 may need a training update. Next step: initialize the ETQ CC.
+
+### Phase 5 — IVD Change Control
+
+- [x] Prepare draft attachments for Claire meeting: Implementation Actions and Testing Actions drafted and ready to review (Impacted Documentation removed per Ali — SOP/TRN update steps moved into Implementation Actions Post Change). Meeting: 2026-06-25 Feynman-2450 2:00 PM with Claire and Ali
+- [x] Initialize ETQ CC for IVD mixer chuck installation (all 5 units on one CC, separate details) — CC11570 initialized 2026-06-17
+- [x] Confirm with Metrology: calibration sensors not disturbed during installation — confirmed, no Metrology action needed
+- [ ] Work with [[People/Claire Moll\|Claire]] to identify evaluators and approvers
+- [ ] Identify and list all impacted documentation: SOP21008 (section 2 update confirmed), TRN0324 (training, likely impacted)
+- [ ] Determine testing actions: chuck grip/slip test, tool function test, guarding check (possible [[Definitions/EHS\|EHS]] involvement)
+- [ ] Coordinate scientist for official testing pass
+- [ ] Set CC due date — allow buffer beyond internal target to avoid escalation emails
+- [ ] Coordinate installation downtime with [[People/Ted Lenoch\|Ted Lenoch]] and [[People/Garrett Tschanz\|Garrett]] — one unit at a time, schedule as needed

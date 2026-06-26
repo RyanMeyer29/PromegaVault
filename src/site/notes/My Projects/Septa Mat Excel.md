@@ -1,21 +1,23 @@
 ---
-{"dg-publish":true,"permalink":"/my-projects/septa-mat-excel/","tags":["My-Projects"],"dg-note-properties":{"tags":["My-Projects"]}}
+{"dg-publish":true,"permalink":"/my-projects/septa-mat-excel/","tags":["My-Projects"],"dg-note-properties":{"tags":["My-Projects"],"source":"personal_notes","last_updated":"2026-06-15"}}
 ---
 
 #My-Projects
 
-Septa Mat Excel is an Excel file in the [[Software/OneDrive\|OneDrive]] of [[Ryan Meyer\|Ryan Meyer]], that has transcribed run logs of the [[Definitions/Equipment/Septa Mat Cutting Robot\|Septa Mat Cutting Robot]], compiling information on run times and failed runs. 
+Septa Mat Excel is an Excel file in the [[Software/OneDrive\|OneDrive]] of [[Ryan Meyer\|Ryan Meyer]], that has transcribed run logs of the [[Definitions/Equipment/Septa Mat Cutting Robot\|Septa Mat Cutting Robot]], compiling information on run times and failed runs.
 
 ## History
 Ali gave me a few scanned copies of handwritten [[Definitions/Septa Mats\|Septa Mat]] Cutting logs, with the plan to digitize them. I wrote them into the excel sheet as separate tabs.
 
 ## Future Goals
 The future plan is to have these combined into one easy to read sheet, with the following criteria:
-  
+
 - how many good mats in a day (other time period)
 - how often are we down and what problems
 - total down time, what call [[People/Jeremy Dassler\|Jeremy Dassler]] had
 
-
-
-
+> [!info]- Details & Notes
+>
+> **Encountered in:** Request from [[People/Ali Heinemann\|Ali Heinemann]]
+>
+> **See also:** [[Definitions/Equipment/Septa Mat Cutting Robot\|Septa Mat Cutting Robot]], [[Definitions/Septa Mats\|Septa Mats]], [[People/Jeremy Dassler\|Jeremy Dassler]], [[People/Ali Heinemann\|Ali Heinemann]], [[Software/OneDrive\|OneDrive]]

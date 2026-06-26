@@ -39,3 +39,20 @@ Stored in frontmatter at the top of a note. `Ctrl+K` handles this automatically.
 aliases: [EMT, Short Name]
 ---
 ```
+
+## Scripts
+
+Custom JavaScript macros that power the Ctrl+L and Ctrl+K shortcuts above. These live in the vault root and are loaded by the Obsidian Macro plugin.
+
+- [[create-linked-note.js]] — creates a new note from highlighted text and links to it (Ctrl+L)
+- [[link-to-existing-note.js]] — links highlighted text to an existing note, auto-resolving aliases (Ctrl+K)
+
+## Bases Files
+
+Obsidian Bases are database-style views built on top of vault notes. They use `.base` files which cannot contain frontmatter and cannot be linked to from inside their own file, so they are referenced here instead.
+
+- [[Active Projects.base]] — query view of active project notes
+- [[People.base]] — query view of People notes
+- [[Software.base]] — query view of Software notes
+- [[Unpublished.base]] — query view of notes where dg-publish is false or absent
+- [[Untitled.base\|Untitled.base]] — unnamed base file; contents unconfirmed

@@ -12,6 +12,6 @@ Vial-It is a piece of production equipment at Promega, believed to be a vialling
 >
 > **Encountered in:** Vial-It Refurbishment project (kickoff Feb 2026)
 >
-> **See also:** [[People/Brian Osterbrink\|Brian Osterbrink]], [[People/Mindy Becker\|Mindy Becker]], [[Buildings/BTC\|BTC]]
+> **See also:** [[People/Brian Osterbrink\|Brian Osterbrink]], [[People/Mindy Becker\|Mindy Becker]], [[Buildings/BTC\|BTC]], [[Definitions/Vials\|Vials]], [[Definitions/Fill Lyophilize Finish\|Fill Lyophilize Finish]]
 >
 > **Status:** This entry needs verification.

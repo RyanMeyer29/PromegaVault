@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/my-projects/gel-electrophoresis-tray/","tags":["My-Projects","active"],"dg-note-properties":{"tags":["My-Projects","active"],"source":"personal_notes","last_updated":"2026-04-10"}}
+{"dg-publish":true,"permalink":"/my-projects/gel-electrophoresis-tray/","tags":["My-Projects","active"],"dg-note-properties":{"tags":["My-Projects","active"],"source":"personal_notes","last_updated":"2026-06-15"}}
 ---
 
 
@@ -69,5 +69,9 @@ Most cuts are done on the [[Fabrication/Zund\|Zund]]. The Zund struggles with ve
 
 Note: Tray (1016469) contains 3 sub-part numbers (PN-A, PN-B, PN-C) for its different subcomponents — to be assigned.
 
-See also: [[Definitions/Electrophoresis\|Electrophoresis]], [[Fabrication/Zund\|Zund]], [[Fabrication/Laser Cutter\|Laser Cutter]], [[Buildings/Lamarr\|Lamarr]]
+> [!info]- Details & Notes
+>
+> **Encountered in:** Request from [[People/Zack Wermeling\|Zack Wermeling]]
+>
+> **See also:** [[Definitions/Electrophoresis\|Electrophoresis]], [[Fabrication/Zund\|Zund]], [[Fabrication/Laser Cutter\|Laser Cutter]], [[Buildings/Lamarr\|Lamarr]], [[People/Zack Wermeling\|Zack Wermeling]], [[People/Nikki Masterson\|Nikki Masterson]]
 

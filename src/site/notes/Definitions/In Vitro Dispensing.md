@@ -13,4 +13,4 @@ In Vitro Dispensing (IVD) is a team at Promega involved in dispensing operations
 >
 > **Encountered in:** [[My Projects/Dip Tube Baffle/Dip Tube Baffle Assembly\|Dip Tube Baffle Assembly]]
 >
-> **See also:** [[People/Philip McKeefry\|Philip McKeefry]]
+> **See also:** [[People/Philip McKeefry\|Philip McKeefry]], [[Definitions/Equipment/Lightnin Mixer\|Lightnin Mixer]], [[My Projects/Mixer Chuck/Mixer Chuck\|Mixer Chuck]], [[My Projects/Dip Tube Baffle/Dip Tube Baffle Assembly\|Dip Tube Baffle Assembly]]

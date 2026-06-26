@@ -11,4 +11,4 @@ Vials are the small containers that liquid product is filled into during fill/fi
 >
 > **Unknowns:** Full range of vial sizes used at Promega not yet documented. #unsure-or-needs-to-be-finished
 >
-> **See also:** [[Definitions/Cleanroom\|Cleanroom]], [[Buildings/Feynman\|Feynman]]
+> **See also:** [[Definitions/Cleanroom\|Cleanroom]], [[Buildings/Feynman\|Feynman]], [[Definitions/Equipment/Feynman Bottle Lyophilizer\|Feynman Bottle Lyophilizer]], [[Definitions/Fill Lyophilize Finish\|Fill Lyophilize Finish]]

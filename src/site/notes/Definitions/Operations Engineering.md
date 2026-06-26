@@ -9,4 +9,4 @@ Operations Engineering is a department at Promega responsible for automation and
 
 > [!info]- Details & Notes
 >
-> **See also:** [[People/Mindy Becker\|Mindy Becker]], [[People/Bethany Zepnick\|Bethany Zepnick]], [[People/Stirling Mitchell\|Stirling Mitchell]], [[People/Ali Heinemann\|Ali Heinemann]], [[People/Brian Osterbrink\|Brian Osterbrink]], [[People/Aaron Vergiels\|Aaron Vergiels]]
+> **See also:** [[People/Mindy Becker\|Mindy Becker]], [[People/Bethany Zepnick\|Bethany Zepnick]], [[People/Stirling Mitchell\|Stirling Mitchell]], [[People/Amanda Maly\|Amanda Maly]], [[People/Ali Heinemann\|Ali Heinemann]], [[People/Brian Osterbrink\|Brian Osterbrink]], [[People/Aaron Vergiels\|Aaron Vergiels]]

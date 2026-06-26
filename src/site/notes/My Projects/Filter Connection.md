@@ -16,4 +16,4 @@ A part number still needs to be obtained — see TO DO in [[Ryan Meyer\|Ryan Mey
 >
 > **Unknowns:** Full design context and scope not documented.
 >
-> **See also:** [[Definitions/Quality/ECR\|ECR]], [[People/Kent Toepfer\|Kent Toepfer]]
+> **See also:** [[Definitions/Quality/ECR\|ECR]], [[People/Kent Toepfer\|Kent Toepfer]], [[Definitions/Parts Process/Parts Process\|Parts Process]], [[Buildings/Feynman\|Feynman]]

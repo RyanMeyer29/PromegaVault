@@ -40,7 +40,7 @@ Circular runout symbol: single arrow (↗).
 
 Total runout controls the entire surface simultaneously. The indicator is moved along the full length of the surface while the part rotates. All surface elements must fall within the total runout tolerance zone.
 
-Applied to a cylindrical surface: controls cylindricity and coaxiality combined.
+Applied to a cylindrical surface: controls cylindricity and co-axiality combined.
 Applied to a face: controls flatness and perpendicularity to the datum axis combined.
 
 Total runout symbol: double arrow (⇗).

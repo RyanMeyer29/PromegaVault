@@ -5,8 +5,8 @@
 
 #Definitions
 
-Design Control is a formal engineering process at Promega structured into distinct phases with phase gates. It involves a cross-functional team including representatives from R&D, QA, and Manufacturing, with risk management applied throughout the product lifecycle. It is governed by QP14 (Rev 1). Design Control is distinct from a [[Unknown/Design Review\|Design Review]], which is a single checkpoint within a design process.
+Design Control is a formal engineering process at Promega structured into distinct phases with phase gates. It involves a cross-functional team including representatives from R&D, QA, and Manufacturing, with risk management applied throughout the product lifecycle. It is governed by QP14 (Rev 1). Design Control is distinct from a [[Definitions/Design Review\|Design Review]], which is a single checkpoint within a design process.
 
 > [!info]- Details & Notes
 >
-> **See also:** [[Unknown/Design Review\|Design Review]], [[Definitions/Quality/Risk Assessment\|Risk Assessment]], [[Definitions/Quality/Validation\|Validation]], [[Definitions/Quality/Change Control\|Change Control]]
+> **See also:** [[Definitions/Design Review\|Design Review]], [[Definitions/Quality/Risk Assessment\|Risk Assessment]], [[Definitions/Quality/Validation\|Validation]], [[Definitions/Quality/Change Control\|Change Control]]

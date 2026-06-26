@@ -5,7 +5,7 @@
 
 #People
 
-Kimberly Steinhauer is the Supervisor of Metrology at Promega. She reports to [[People/Mike Moothart\|Mike]] (Manager, Quality Assurance - Validation). I encountered her through the [[My Projects/Calibration Probe Fixture\|Calibration Probe Fixture]] project.
+Kimberly Steinhauer is the Supervisor of Metrology at Promega. She reports to [[People/Mike Moothart\|Mike]] (Manager, Quality Assurance - Validation). I encountered her through the [[My Projects/Calibration Probe Fixture/Calibration Probe Fixture\|Calibration Probe Fixture]] project.
 
 > [!info]- Details & Notes
 >
@@ -13,6 +13,6 @@ Kimberly Steinhauer is the Supervisor of Metrology at Promega. She reports to [[
 >
 > **Reports to:** [[People/Mike Moothart\|Mike Moothart]]
 >
-> **Encountered in:** [[My Projects/Calibration Probe Fixture\|Calibration Probe Fixture]]
+> **Encountered in:** [[My Projects/Calibration Probe Fixture/Calibration Probe Fixture\|Calibration Probe Fixture]]
 >
 > **See also:** [[People/Matt Wahl\|Matt Wahl]], [[People/David Velazquez\|David Velazquez]], [[Definitions/Metrology\|Metrology]]

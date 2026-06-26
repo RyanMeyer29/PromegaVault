@@ -9,4 +9,4 @@ QA and Regulatory Affairs is a department at Promega responsible for quality ass
 
 > [!info]- Details & Notes
 >
-> **See also:** [[People/Mike Moothart\|Mike Moothart]], [[People/Doug Fahrenkrug\|Doug Fahrenkrug]]
+> **See also:** [[People/Mike Moothart\|Mike Moothart]], [[People/Doug Fahrenkrug\|Doug Fahrenkrug]], [[People/Ryan Kimmel\|Ryan Kimmel]]

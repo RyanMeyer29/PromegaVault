@@ -9,4 +9,4 @@ Preventive Maintenance (PM) is a scheduled maintenance process applied to produc
 
 > [!info]- Details & Notes
 >
-> **See also:** [[Lines/KPA\|KPA]], [[Definitions/Operations Engineering\|Operations Engineering]]
+> **See also:** [[Lines/KPA\|KPA]], [[Definitions/Operations Engineering\|Operations Engineering]], [[Definitions/Shop Request\|Shop Request]], [[Definitions/Quality/Change Control\|Change Control]]

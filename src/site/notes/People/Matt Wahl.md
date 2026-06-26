@@ -5,7 +5,7 @@
 
 #People
 
-Matt Wahl is an Associate Metrologist in the Metrology department at Promega. He reports to [[People/Kimberly Steinhauer\|Kimberly]]. I encountered him through the [[My Projects/Calibration Probe Fixture\|Calibration Probe Fixture]] project.
+Matt Wahl is an Associate Metrologist in the Metrology department at Promega. He reports to [[People/Kimberly Steinhauer\|Kimberly]]. I encountered him through the [[My Projects/Calibration Probe Fixture/Calibration Probe Fixture\|Calibration Probe Fixture]] project.
 
 > [!info]- Details & Notes
 >
@@ -13,6 +13,6 @@ Matt Wahl is an Associate Metrologist in the Metrology department at Promega. He
 >
 > **Reports to:** [[People/Kimberly Steinhauer\|Kimberly Steinhauer]]
 >
-> **Encountered in:** [[My Projects/Calibration Probe Fixture\|Calibration Probe Fixture]]
+> **Encountered in:** [[My Projects/Calibration Probe Fixture/Calibration Probe Fixture\|Calibration Probe Fixture]]
 >
 > **See also:** [[People/Kimberly Steinhauer\|Kimberly Steinhauer]], [[People/David Velazquez\|David Velazquez]], [[Definitions/Metrology\|Metrology]]

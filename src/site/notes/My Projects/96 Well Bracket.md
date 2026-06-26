@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/my-projects/96-well-bracket/","tags":["My-Projects","active"],"dg-note-properties":{"tags":["My-Projects","active"],"last_updated":"2026-04-10"}}
+{"dg-publish":true,"permalink":"/my-projects/96-well-bracket/","tags":["My-Projects","active"],"dg-note-properties":{"tags":["My-Projects","active"],"source":"personal_notes","last_updated":"2026-04-10"}}
 ---
 
 #My-Projects

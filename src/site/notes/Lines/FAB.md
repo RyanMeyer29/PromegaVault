@@ -9,4 +9,4 @@ Feynman Automatic Bottling (FAB) is a bottling line located in the Feynman build
 
 > [!info]- Details & Notes
 >
-> **See also:** [[Definitions/ESST\|ESST]], [[Definitions/Optima\|Optima]], [[Buildings/Feynman\|Feynman]]
+> **See also:** [[Definitions/ESST\|ESST]], [[Definitions/Optima\|Optima]], [[Buildings/Feynman\|Feynman]], [[People/Stirling Mitchell\|Stirling Mitchell]]

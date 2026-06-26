@@ -13,6 +13,6 @@ Drop Gate is a component on the [[Lines/MA3/MA3\|MA3]] line that moves up and do
 >
 > **Encountered in:** [[My Projects/MA3 Pusher Redesign\|MA3 Pusher Redesign]]
 >
-> **See also:** [[Lines/MA3/MA3\|MA3]], [[Lines/MA3/MA3 Pusher\|MA3 Pusher]], [[My Projects/MA3 Pusher Redesign\|MA3 Pusher Redesign]]
+> **See also:** [[Lines/MA3/MA3\|MA3]], [[Lines/MA3/MA3 Pusher\|MA3 Pusher]], [[My Projects/MA3 Pusher Redesign\|MA3 Pusher Redesign]], [[Definitions/Quality/Engineering Study\|Engineering Study]]
 >
 > **Status:** This entry needs verification.

@@ -13,4 +13,6 @@ The EMT Mill is a milling machine located in the EMT workshop in [[Buildings/Fey
 >
 > **Encountered in:** 1:1 with [[People/Ali Heinemann\|Ali]], 2026-04-03
 >
+> **See also:** [[Buildings/Feynman\|Feynman]], [[People/Ali Heinemann\|Ali Heinemann]], [[People/Trish Gates\|Trish Gates]]
+>
 > **Status:** This entry needs verification.

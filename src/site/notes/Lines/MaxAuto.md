@@ -11,4 +11,4 @@ The MaxAuto lines are a family of automated fill/finish production lines located
 >
 > **Unknowns:** Full list of cartridge types produced across all lines not yet confirmed. It is known that at least the AS140A cartridge is produced, which goes into the Maxwell® RSC Plant DNA Kit.
 >
-> **See also:** [[Lines/MA1\|MA1]], [[Lines/MA2\|MA2]], [[Lines/MA3/MA3\|MA3]], [[Definitions/Equipment/Maxwell RSC\|Maxwell RSC]], [[Definitions/In Vitro Dispensing\|IVD]], [[People/Product finishing Team\|Product finishing Team]], [[Lines/FAB\|FAB]]
+> **See also:** [[Lines/MA1\|MA1]], [[Lines/MA2\|MA2]], [[Lines/MA3/MA3\|MA3]], [[Definitions/Equipment/Maxwell RSC\|Maxwell RSC]], [[Definitions/In Vitro Dispensing\|IVD]], [[People/Product finishing Team\|Product finishing Team]], [[Lines/FAB\|FAB]], [[Definitions/Fill Lyophilize Finish\|Fill Lyophilize Finish]]

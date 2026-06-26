@@ -20,6 +20,6 @@ New project as of 2026-04-10. [[People/Paul Doll\|Paul]] is the associated conta
 >
 > **Unknowns:** Project scope, deliverables, and timeline not yet confirmed.
 >
-> **See also:** [[People/Paul Doll\|Paul Doll]], [[People/Ali Heinemann\|Ali Heinemann]]
+> **See also:** [[People/Paul Doll\|Paul Doll]], [[People/Ali Heinemann\|Ali Heinemann]], [[Definitions/Fill Lyophilize Finish\|Fill Lyophilize Finish]], [[My Projects/Lyo Clear Cover\|Lyo Clear Cover]]
 >
 > **Status:** This entry needs verification.
